@@ -8,7 +8,7 @@ import { JwtService } from '@nestjs/jwt';
 import { ErrorCatch } from '../common/filters/error-catch.filter';
 import { Request, Response } from 'express';
 
-@Controller('/v1/auth')
+@Controller('/api/v1/auth')
 export class AuthController {
   constructor(
     private readonly authService: AuthService,

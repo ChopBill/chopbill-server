@@ -24,6 +24,6 @@ describe('AppController (e2e)', () => {
       .get('/')
 
       .expect(200)
-      .expect({ message: 'Welcome to DutchPay API', success: true, version: '1.1.0' });
+      .expect({ message: 'Welcome to ChopBill API', success: true, version: '1.1.0' });
   });
 });
