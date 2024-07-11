@@ -1,9 +1,11 @@
-import { Trim } from 'class-sanitizer';
-import { IsNotEmpty, IsEmail } from 'class-validator';
+import { z } from 'zod';
 
-export class EmailDto {
-  @IsNotEmpty()
-  @IsEmail()
-  @Trim()
+export const EmailSchema = z.object({
+  email: z
+    .string({ message: 'fullname is required and must be a string' })
+    .email({ message: 'email invalid' }),
+});
+
+export interface EmailDto {
   email: string;
 }

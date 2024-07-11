@@ -5,7 +5,7 @@ export class AppService {
   getWelcome(): any {
     return {
       success: true,
-      message: 'Welcome to DutchPay API',
+      message: 'Welcome to ChopBill API',
       version: '1.1.0',
     };
   }

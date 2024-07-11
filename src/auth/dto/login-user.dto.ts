@@ -1,13 +1,10 @@
-import { Trim } from 'class-sanitizer';
-import { IsNotEmpty, IsString } from 'class-validator';
+import { z } from 'zod';
 
-export class LoginUserDto {
-  @IsNotEmpty()
-  @IsString()
-  @Trim()
+export const CreateUserSchema = z.object({
+  phone_number: z.string({ message: 'phone_number is required and must be a string' }),
+  password: z.string({ message: 'password is required and must be a string' }),
+});
+export interface LoginUserDto {
   phone_number: string;
-
-  @IsNotEmpty()
-  @IsString()
   password: string;
 }

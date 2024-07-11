@@ -1,4 +1,4 @@
-import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
+import { Global, MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { HelmetMiddleware } from './common/middlewares/helmet.middleware';
 import { GoogleSessionMiddleware } from './common/middlewares/google-session.middleware';
@@ -7,7 +7,10 @@ import { AuthModule } from './auth/auth.module';
 import { AppService } from './app.service';
 import { AppController } from './app.controller';
 import { UsersModule } from './users/users.module';
+import { PassportModule } from '@nestjs/passport';
+import { JwtModule } from '@nestjs/jwt';
 
+@Global()
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -15,9 +18,15 @@ import { UsersModule } from './users/users.module';
     }),
     AuthModule,
     UsersModule,
+    PassportModule.register({ defaultStrategy: 'jwt', session: false }),
+    JwtModule.register({
+      secret: process.env.SECRET_KEY,
+      signOptions: { expiresIn: '7d' },
+    }),
   ],
   controllers: [AppController],
   providers: [AppService],
+  exports: [JwtModule],
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {

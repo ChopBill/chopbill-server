@@ -2,12 +2,12 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { AuthService } from '../auth.service';
 import { PhoneDto } from '../dto/check-phone-number.dto';
 import { PrismaService } from '../../db/db.service';
-import { CreateUserDto } from '../dto/create-user.dto';
 import { ErrorHandler } from '../../common/filters/error-handler';
+import { CreateUserDto } from '../dto/create-user.dto';
 import { LoginUserDto } from '../dto/login-user.dto';
 
 describe('AuthService', () => {
-  let service: AuthService;
+  let authService: AuthService;
   let prismaService: PrismaService;
 
   beforeEach(async () => {
@@ -17,52 +17,50 @@ describe('AuthService', () => {
         {
           provide: PrismaService,
           useValue: {
-            client: {
-              users: {
-                findUnique: jest.fn(),
-                create: jest.fn(),
-              },
+            users: {
+              findUnique: jest.fn(),
+              create: jest.fn(),
             },
           },
         },
       ],
     }).compile();
 
-    service = module.get<AuthService>(AuthService);
+    authService = module.get<AuthService>(AuthService);
     prismaService = module.get<PrismaService>(PrismaService);
   });
 
-  it('should be defined', () => {
-    expect(service).toBeDefined();
+  afterEach(() => {
+    jest.clearAllMocks(); // Clear mocks after each test
   });
 
   it('should check if a phone number is already registered', async () => {
     const phoneDto: PhoneDto = { phone_number: '1234567890' };
-    jest.spyOn(prismaService.users, 'findUnique').mockResolvedValueOnce(null);
+    (prismaService.users.findUnique as jest.Mock).mockResolvedValueOnce(null);
 
-    const result = await service.checkRegisteredPhoneService(phoneDto);
+    const result = await authService.checkRegisteredPhoneService(phoneDto);
 
-    expect(result).toBeDefined();
+    expect(result).toBeNull();
   });
 
   it('should throw an error if the phone number is already registered', async () => {
     const phoneDto: PhoneDto = { phone_number: '1234567890' };
-    jest.spyOn(prismaService.users, 'findUnique').mockResolvedValueOnce({
-      id: null,
-      username: '',
+    (prismaService.users.findUnique as jest.Mock).mockResolvedValueOnce({
+      id: 1,
+      username: 'test',
       password: '',
-      fullname: '',
+      fullname: 'Test user',
       phone_number: '1234567890',
-      email: '',
-      bio: '',
+      email: 'test@test.com',
+      bio: 'test',
       dob: new Date(),
-      photo_profile: '',
+      photo_profile: 'test.com/test',
       created_at: new Date(),
       update_at: new Date(),
     });
 
     try {
-      await service.checkRegisteredPhoneService(phoneDto);
+      await authService.checkRegisteredPhoneService(phoneDto);
       fail('Expected checkRegisteredPhoneService to throw an error, but it did not.');
     } catch (error) {
       expect(error).toBeInstanceOf(ErrorHandler);
@@ -79,7 +77,7 @@ describe('AuthService', () => {
     jest.spyOn(prismaService.users, 'findUnique').mockResolvedValueOnce(null);
     jest.spyOn(prismaService.users, 'create').mockResolvedValueOnce(createUserDto as any);
 
-    const result = await service.registerUserbyPhoneService(createUserDto);
+    const result = await authService.registerUserbyPhoneService(createUserDto);
 
     expect(result).toEqual(createUserDto);
   });
@@ -105,7 +103,7 @@ describe('AuthService', () => {
 
     jest.spyOn(prismaService.users, 'findUnique').mockResolvedValueOnce(foundUser);
 
-    const result = await service.loginUserService(loginUserDto);
+    const result = await authService.loginUserService(loginUserDto);
 
     expect(result).toBeDefined();
   });
@@ -141,7 +139,7 @@ describe('AuthService', () => {
       update_at: new Date(),
     });
 
-    const result = await service.registerUserbyGoogleService(fullname, email);
+    const result = await authService.registerUserbyGoogleService(fullname, email);
 
     expect(result).toEqual(1);
     expect(prismaService.users.create).toHaveBeenCalledWith({

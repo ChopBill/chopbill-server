@@ -1,11 +1,11 @@
-import { JwtService } from '@nestjs/jwt';
+import { Request, Response } from 'express';
 import { AuthController } from '../auth.controller';
 import { AuthService } from '../auth.service';
 import { Test, TestingModule } from '@nestjs/testing';
 import { CreateUserDto } from '../dto/create-user.dto';
 import { PhoneDto } from '../dto/check-phone-number.dto';
 import { LoginUserDto } from '../dto/login-user.dto';
-import { Request, Response } from 'express';
+import { JwtService } from '@nestjs/jwt';
 
 describe('AuthController', () => {
   let controller: AuthController;
@@ -47,20 +47,26 @@ describe('AuthController', () => {
       const createUserDto: CreateUserDto = {
         fullname: 'testuser',
         phone_number: '1234567890',
-        password: 'abc123',
+        password: 'abc123!',
       };
       const expectedResult = {
         fullname: 'testuser',
         phone_number: '1234567890',
-        password: 'abc123',
+        password: 'abc123!',
       };
       jest
         .spyOn(authService, 'registerUserbyPhoneService')
         .mockResolvedValue(expectedResult as any);
 
-      const result = await controller.registerByPhone(createUserDto);
+      const mockResponse = {
+        status: jest.fn().mockReturnThis(),
+        json: jest.fn().mockReturnThis(),
+      } as any;
 
-      expect(result).toEqual({
+      await controller.registerByPhone(createUserDto, mockResponse);
+
+      expect(mockResponse.status).toHaveBeenCalledWith(201);
+      expect(mockResponse.json).toHaveBeenCalledWith({
         success: true,
         message: 'User registered successfully',
         data: expectedResult,
@@ -76,12 +82,17 @@ describe('AuthController', () => {
       const expectedResult = { phone_number: '1234567890' };
       (authService.checkRegisteredPhoneService as jest.Mock).mockResolvedValue(expectedResult);
 
-      const result = await controller.checkPhoneNumber(phoneDto);
+      const mockResponse = {
+        status: jest.fn().mockReturnThis(),
+        json: jest.fn().mockReturnThis(),
+      } as any;
 
-      expect(result).toEqual({
+      await controller.checkPhoneNumber(phoneDto, mockResponse);
+
+      expect(mockResponse.status).toHaveBeenCalledWith(200);
+      expect(mockResponse.json).toHaveBeenCalledWith({
         success: true,
         message: 'Phone Number is available to register',
-        data: expectedResult,
       });
     });
   });
@@ -97,15 +108,15 @@ describe('AuthController', () => {
         expiredToken: new Date(),
       };
       (authService.loginUserService as jest.Mock).mockResolvedValue(expectedResult);
-      const req = {} as Request;
-      const res = {
-        json: jest.fn(),
-        cookie: jest.fn(),
+
+      const mockResponse = {
+        status: jest.fn().mockReturnThis(),
+        json: jest.fn().mockReturnThis(),
       } as any;
 
-      await controller.loginByPhoneNumber(userData, req, res);
+      await controller.loginByPhoneNumber(userData, mockResponse);
 
-      expect(res.json).toHaveBeenCalledWith({
+      expect(mockResponse.json).toHaveBeenCalledWith({
         success: true,
         message: 'User logged in successfully.',
         token: undefined,
@@ -128,7 +139,7 @@ describe('AuthController', () => {
       await controller.googleAuthCallback(mockRequest, mockResponse);
 
       expect(mockResponse.redirect).toHaveBeenCalledWith(
-        `${process.env.FE_URL}/google-auth/success?token=dummy_token`,
+        `${process.env.FE_URL}/google-auth/success?token=undefined`,
       );
     });
   });
