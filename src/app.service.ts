@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class AppService {
-  getWelcome(): any {
+  getWelcome(): { success: boolean; message: string; version: string } {
     return {
       success: true,
       message: 'Welcome to ChopBill API',

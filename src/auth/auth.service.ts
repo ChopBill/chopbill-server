@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
-import * as bcrypt from 'bcrypt';
-import { PhoneDto } from './dto/check-phone-number.dto';
-import { LoginUserDto } from './dto/login-user.dto';
+import * as bcrypt from 'bcryptjs';
 import { ErrorHandler } from '../common/filters/error-handler';
 import { PrismaService } from '../db/db.service';
+import { PhoneDto } from './dto/check-phone-number.dto';
+import { LoginUserDto } from './dto/login-user.dto';
 import { CreateUserDto } from './dto/create-user.dto';
 
 @Injectable()

@@ -1,4 +1,4 @@
-import { Injectable, CanActivate, ExecutionContext } from '@nestjs/common';
+import { Injectable, CanActivate, ExecutionContext, UnauthorizedException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { Request } from 'express';
 
@@ -19,8 +19,10 @@ export class Authentication implements CanActivate {
     const token = req.headers.authorization?.split(' ')[1];
 
     if (!token) {
-      console.log('No authorization header');
-      return false;
+      throw new UnauthorizedException({
+        success: false,
+        message: 'Unauthorized, Please login',
+      });
     }
 
     try {
@@ -29,7 +31,10 @@ export class Authentication implements CanActivate {
       return true;
     } catch (error) {
       console.error('Token verification failed:', error.message);
-      return false;
+      throw new UnauthorizedException({
+        success: false,
+        message: 'Invalid token',
+      });
     }
   }
 }

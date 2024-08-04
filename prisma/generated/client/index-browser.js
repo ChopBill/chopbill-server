@@ -133,57 +133,40 @@ exports.Prisma.UsersScalarFieldEnum = {
   update_at: 'update_at'
 };
 
-exports.Prisma.OrdersScalarFieldEnum = {
+exports.Prisma.Order_detailScalarFieldEnum = {
   id: 'id',
-  user_id: 'user_id',
-  bill_id: 'bill_id',
-  menu_name: 'menu_name',
-  qty: 'qty',
+  friend_order_id: 'friend_order_id',
+  menu: 'menu',
+  quantity: 'quantity',
   price: 'price'
 };
 
-exports.Prisma.Friends_orderScalarFieldEnum = {
+exports.Prisma.Friend_orderScalarFieldEnum = {
   id: 'id',
-  orders_id: 'orders_id',
-  friends_id: 'friends_id',
-  friend_order_price: 'friend_order_price',
-  is_paid: 'is_paid',
-  created_at: 'created_at',
-  update_at: 'update_at'
-};
-
-exports.Prisma.FriendsScalarFieldEnum = {
-  id: 'id',
-  user_id: 'user_id',
-  friends_name: 'friends_name',
-  friends_photo: 'friends_photo'
+  bill_id: 'bill_id',
+  name: 'name',
+  is_paid: 'is_paid'
 };
 
 exports.Prisma.BillScalarFieldEnum = {
   id: 'id',
   user_id: 'user_id',
-  payment_method_id: 'payment_method_id',
+  payment_account_id: 'payment_account_id',
   description: 'description',
   discount: 'discount',
   tax: 'tax',
   service: 'service',
   total_price: 'total_price',
-  date: 'date',
-  is_completed: 'is_completed'
+  date: 'date'
 };
 
-exports.Prisma.Payment_methodScalarFieldEnum = {
-  id: 'id',
-  payment_method_name: 'payment_method_name',
-  payment_method_logo: 'payment_method_logo'
-};
-
-exports.Prisma.Payment_method_detailScalarFieldEnum = {
+exports.Prisma.Payment_accountScalarFieldEnum = {
   id: 'id',
   user_id: 'user_id',
-  payment_method_id: 'payment_method_id',
-  card_number: 'card_number',
-  card_name: 'card_name'
+  name: 'name',
+  number: 'number',
+  card_holder: 'card_holder',
+  is_activated: 'is_activated'
 };
 
 exports.Prisma.SortOrder = {
@@ -204,12 +187,10 @@ exports.Prisma.NullsOrder = {
 
 exports.Prisma.ModelName = {
   users: 'users',
-  orders: 'orders',
-  friends_order: 'friends_order',
-  friends: 'friends',
+  order_detail: 'order_detail',
+  friend_order: 'friend_order',
   bill: 'bill',
-  payment_method: 'payment_method',
-  payment_method_detail: 'payment_method_detail'
+  payment_account: 'payment_account'
 };
 
 /**

@@ -1,5 +1,3 @@
-import { IsNumber } from 'class-validator';
-export class UserDto {
-  @IsNumber()
+export interface UserDto {
   id: number;
 }

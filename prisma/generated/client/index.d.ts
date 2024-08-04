@@ -19,35 +19,25 @@ export type PrismaPromise<T> = $Public.PrismaPromise<T>
  */
 export type users = $Result.DefaultSelection<Prisma.$usersPayload>
 /**
- * Model orders
+ * Model order_detail
  * 
  */
-export type orders = $Result.DefaultSelection<Prisma.$ordersPayload>
+export type order_detail = $Result.DefaultSelection<Prisma.$order_detailPayload>
 /**
- * Model friends_order
+ * Model friend_order
  * 
  */
-export type friends_order = $Result.DefaultSelection<Prisma.$friends_orderPayload>
-/**
- * Model friends
- * 
- */
-export type friends = $Result.DefaultSelection<Prisma.$friendsPayload>
+export type friend_order = $Result.DefaultSelection<Prisma.$friend_orderPayload>
 /**
  * Model bill
  * 
  */
 export type bill = $Result.DefaultSelection<Prisma.$billPayload>
 /**
- * Model payment_method
+ * Model payment_account
  * 
  */
-export type payment_method = $Result.DefaultSelection<Prisma.$payment_methodPayload>
-/**
- * Model payment_method_detail
- * 
- */
-export type payment_method_detail = $Result.DefaultSelection<Prisma.$payment_method_detailPayload>
+export type payment_account = $Result.DefaultSelection<Prisma.$payment_accountPayload>
 
 /**
  * ##  Prisma Client ʲˢ
@@ -182,34 +172,24 @@ export class PrismaClient<
   get users(): Prisma.usersDelegate<ExtArgs>;
 
   /**
-   * `prisma.orders`: Exposes CRUD operations for the **orders** model.
+   * `prisma.order_detail`: Exposes CRUD operations for the **order_detail** model.
     * Example usage:
     * ```ts
-    * // Fetch zero or more Orders
-    * const orders = await prisma.orders.findMany()
+    * // Fetch zero or more Order_details
+    * const order_details = await prisma.order_detail.findMany()
     * ```
     */
-  get orders(): Prisma.ordersDelegate<ExtArgs>;
+  get order_detail(): Prisma.order_detailDelegate<ExtArgs>;
 
   /**
-   * `prisma.friends_order`: Exposes CRUD operations for the **friends_order** model.
+   * `prisma.friend_order`: Exposes CRUD operations for the **friend_order** model.
     * Example usage:
     * ```ts
-    * // Fetch zero or more Friends_orders
-    * const friends_orders = await prisma.friends_order.findMany()
+    * // Fetch zero or more Friend_orders
+    * const friend_orders = await prisma.friend_order.findMany()
     * ```
     */
-  get friends_order(): Prisma.friends_orderDelegate<ExtArgs>;
-
-  /**
-   * `prisma.friends`: Exposes CRUD operations for the **friends** model.
-    * Example usage:
-    * ```ts
-    * // Fetch zero or more Friends
-    * const friends = await prisma.friends.findMany()
-    * ```
-    */
-  get friends(): Prisma.friendsDelegate<ExtArgs>;
+  get friend_order(): Prisma.friend_orderDelegate<ExtArgs>;
 
   /**
    * `prisma.bill`: Exposes CRUD operations for the **bill** model.
@@ -222,24 +202,14 @@ export class PrismaClient<
   get bill(): Prisma.billDelegate<ExtArgs>;
 
   /**
-   * `prisma.payment_method`: Exposes CRUD operations for the **payment_method** model.
+   * `prisma.payment_account`: Exposes CRUD operations for the **payment_account** model.
     * Example usage:
     * ```ts
-    * // Fetch zero or more Payment_methods
-    * const payment_methods = await prisma.payment_method.findMany()
+    * // Fetch zero or more Payment_accounts
+    * const payment_accounts = await prisma.payment_account.findMany()
     * ```
     */
-  get payment_method(): Prisma.payment_methodDelegate<ExtArgs>;
-
-  /**
-   * `prisma.payment_method_detail`: Exposes CRUD operations for the **payment_method_detail** model.
-    * Example usage:
-    * ```ts
-    * // Fetch zero or more Payment_method_details
-    * const payment_method_details = await prisma.payment_method_detail.findMany()
-    * ```
-    */
-  get payment_method_detail(): Prisma.payment_method_detailDelegate<ExtArgs>;
+  get payment_account(): Prisma.payment_accountDelegate<ExtArgs>;
 }
 
 export namespace Prisma {
@@ -711,12 +681,10 @@ export namespace Prisma {
 
   export const ModelName: {
     users: 'users',
-    orders: 'orders',
-    friends_order: 'friends_order',
-    friends: 'friends',
+    order_detail: 'order_detail',
+    friend_order: 'friend_order',
     bill: 'bill',
-    payment_method: 'payment_method',
-    payment_method_detail: 'payment_method_detail'
+    payment_account: 'payment_account'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -733,7 +701,7 @@ export namespace Prisma {
 
   export type TypeMap<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     meta: {
-      modelProps: 'users' | 'orders' | 'friends_order' | 'friends' | 'bill' | 'payment_method' | 'payment_method_detail'
+      modelProps: 'users' | 'order_detail' | 'friend_order' | 'bill' | 'payment_account'
       txIsolationLevel: Prisma.TransactionIsolationLevel
     },
     model: {
@@ -803,201 +771,135 @@ export namespace Prisma {
           }
         }
       }
-      orders: {
-        payload: Prisma.$ordersPayload<ExtArgs>
-        fields: Prisma.ordersFieldRefs
+      order_detail: {
+        payload: Prisma.$order_detailPayload<ExtArgs>
+        fields: Prisma.order_detailFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.ordersFindUniqueArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$ordersPayload> | null
+            args: Prisma.order_detailFindUniqueArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$order_detailPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.ordersFindUniqueOrThrowArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$ordersPayload>
+            args: Prisma.order_detailFindUniqueOrThrowArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$order_detailPayload>
           }
           findFirst: {
-            args: Prisma.ordersFindFirstArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$ordersPayload> | null
+            args: Prisma.order_detailFindFirstArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$order_detailPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.ordersFindFirstOrThrowArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$ordersPayload>
+            args: Prisma.order_detailFindFirstOrThrowArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$order_detailPayload>
           }
           findMany: {
-            args: Prisma.ordersFindManyArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$ordersPayload>[]
+            args: Prisma.order_detailFindManyArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$order_detailPayload>[]
           }
           create: {
-            args: Prisma.ordersCreateArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$ordersPayload>
+            args: Prisma.order_detailCreateArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$order_detailPayload>
           }
           createMany: {
-            args: Prisma.ordersCreateManyArgs<ExtArgs>,
+            args: Prisma.order_detailCreateManyArgs<ExtArgs>,
             result: Prisma.BatchPayload
           }
           delete: {
-            args: Prisma.ordersDeleteArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$ordersPayload>
+            args: Prisma.order_detailDeleteArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$order_detailPayload>
           }
           update: {
-            args: Prisma.ordersUpdateArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$ordersPayload>
+            args: Prisma.order_detailUpdateArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$order_detailPayload>
           }
           deleteMany: {
-            args: Prisma.ordersDeleteManyArgs<ExtArgs>,
+            args: Prisma.order_detailDeleteManyArgs<ExtArgs>,
             result: Prisma.BatchPayload
           }
           updateMany: {
-            args: Prisma.ordersUpdateManyArgs<ExtArgs>,
+            args: Prisma.order_detailUpdateManyArgs<ExtArgs>,
             result: Prisma.BatchPayload
           }
           upsert: {
-            args: Prisma.ordersUpsertArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$ordersPayload>
+            args: Prisma.order_detailUpsertArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$order_detailPayload>
           }
           aggregate: {
-            args: Prisma.OrdersAggregateArgs<ExtArgs>,
-            result: $Utils.Optional<AggregateOrders>
+            args: Prisma.Order_detailAggregateArgs<ExtArgs>,
+            result: $Utils.Optional<AggregateOrder_detail>
           }
           groupBy: {
-            args: Prisma.ordersGroupByArgs<ExtArgs>,
-            result: $Utils.Optional<OrdersGroupByOutputType>[]
+            args: Prisma.order_detailGroupByArgs<ExtArgs>,
+            result: $Utils.Optional<Order_detailGroupByOutputType>[]
           }
           count: {
-            args: Prisma.ordersCountArgs<ExtArgs>,
-            result: $Utils.Optional<OrdersCountAggregateOutputType> | number
+            args: Prisma.order_detailCountArgs<ExtArgs>,
+            result: $Utils.Optional<Order_detailCountAggregateOutputType> | number
           }
         }
       }
-      friends_order: {
-        payload: Prisma.$friends_orderPayload<ExtArgs>
-        fields: Prisma.friends_orderFieldRefs
+      friend_order: {
+        payload: Prisma.$friend_orderPayload<ExtArgs>
+        fields: Prisma.friend_orderFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.friends_orderFindUniqueArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$friends_orderPayload> | null
+            args: Prisma.friend_orderFindUniqueArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$friend_orderPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.friends_orderFindUniqueOrThrowArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$friends_orderPayload>
+            args: Prisma.friend_orderFindUniqueOrThrowArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$friend_orderPayload>
           }
           findFirst: {
-            args: Prisma.friends_orderFindFirstArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$friends_orderPayload> | null
+            args: Prisma.friend_orderFindFirstArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$friend_orderPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.friends_orderFindFirstOrThrowArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$friends_orderPayload>
+            args: Prisma.friend_orderFindFirstOrThrowArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$friend_orderPayload>
           }
           findMany: {
-            args: Prisma.friends_orderFindManyArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$friends_orderPayload>[]
+            args: Prisma.friend_orderFindManyArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$friend_orderPayload>[]
           }
           create: {
-            args: Prisma.friends_orderCreateArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$friends_orderPayload>
+            args: Prisma.friend_orderCreateArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$friend_orderPayload>
           }
           createMany: {
-            args: Prisma.friends_orderCreateManyArgs<ExtArgs>,
+            args: Prisma.friend_orderCreateManyArgs<ExtArgs>,
             result: Prisma.BatchPayload
           }
           delete: {
-            args: Prisma.friends_orderDeleteArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$friends_orderPayload>
+            args: Prisma.friend_orderDeleteArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$friend_orderPayload>
           }
           update: {
-            args: Prisma.friends_orderUpdateArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$friends_orderPayload>
+            args: Prisma.friend_orderUpdateArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$friend_orderPayload>
           }
           deleteMany: {
-            args: Prisma.friends_orderDeleteManyArgs<ExtArgs>,
+            args: Prisma.friend_orderDeleteManyArgs<ExtArgs>,
             result: Prisma.BatchPayload
           }
           updateMany: {
-            args: Prisma.friends_orderUpdateManyArgs<ExtArgs>,
+            args: Prisma.friend_orderUpdateManyArgs<ExtArgs>,
             result: Prisma.BatchPayload
           }
           upsert: {
-            args: Prisma.friends_orderUpsertArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$friends_orderPayload>
+            args: Prisma.friend_orderUpsertArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$friend_orderPayload>
           }
           aggregate: {
-            args: Prisma.Friends_orderAggregateArgs<ExtArgs>,
-            result: $Utils.Optional<AggregateFriends_order>
+            args: Prisma.Friend_orderAggregateArgs<ExtArgs>,
+            result: $Utils.Optional<AggregateFriend_order>
           }
           groupBy: {
-            args: Prisma.friends_orderGroupByArgs<ExtArgs>,
-            result: $Utils.Optional<Friends_orderGroupByOutputType>[]
+            args: Prisma.friend_orderGroupByArgs<ExtArgs>,
+            result: $Utils.Optional<Friend_orderGroupByOutputType>[]
           }
           count: {
-            args: Prisma.friends_orderCountArgs<ExtArgs>,
-            result: $Utils.Optional<Friends_orderCountAggregateOutputType> | number
-          }
-        }
-      }
-      friends: {
-        payload: Prisma.$friendsPayload<ExtArgs>
-        fields: Prisma.friendsFieldRefs
-        operations: {
-          findUnique: {
-            args: Prisma.friendsFindUniqueArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$friendsPayload> | null
-          }
-          findUniqueOrThrow: {
-            args: Prisma.friendsFindUniqueOrThrowArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$friendsPayload>
-          }
-          findFirst: {
-            args: Prisma.friendsFindFirstArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$friendsPayload> | null
-          }
-          findFirstOrThrow: {
-            args: Prisma.friendsFindFirstOrThrowArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$friendsPayload>
-          }
-          findMany: {
-            args: Prisma.friendsFindManyArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$friendsPayload>[]
-          }
-          create: {
-            args: Prisma.friendsCreateArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$friendsPayload>
-          }
-          createMany: {
-            args: Prisma.friendsCreateManyArgs<ExtArgs>,
-            result: Prisma.BatchPayload
-          }
-          delete: {
-            args: Prisma.friendsDeleteArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$friendsPayload>
-          }
-          update: {
-            args: Prisma.friendsUpdateArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$friendsPayload>
-          }
-          deleteMany: {
-            args: Prisma.friendsDeleteManyArgs<ExtArgs>,
-            result: Prisma.BatchPayload
-          }
-          updateMany: {
-            args: Prisma.friendsUpdateManyArgs<ExtArgs>,
-            result: Prisma.BatchPayload
-          }
-          upsert: {
-            args: Prisma.friendsUpsertArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$friendsPayload>
-          }
-          aggregate: {
-            args: Prisma.FriendsAggregateArgs<ExtArgs>,
-            result: $Utils.Optional<AggregateFriends>
-          }
-          groupBy: {
-            args: Prisma.friendsGroupByArgs<ExtArgs>,
-            result: $Utils.Optional<FriendsGroupByOutputType>[]
-          }
-          count: {
-            args: Prisma.friendsCountArgs<ExtArgs>,
-            result: $Utils.Optional<FriendsCountAggregateOutputType> | number
+            args: Prisma.friend_orderCountArgs<ExtArgs>,
+            result: $Utils.Optional<Friend_orderCountAggregateOutputType> | number
           }
         }
       }
@@ -1067,135 +969,69 @@ export namespace Prisma {
           }
         }
       }
-      payment_method: {
-        payload: Prisma.$payment_methodPayload<ExtArgs>
-        fields: Prisma.payment_methodFieldRefs
+      payment_account: {
+        payload: Prisma.$payment_accountPayload<ExtArgs>
+        fields: Prisma.payment_accountFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.payment_methodFindUniqueArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$payment_methodPayload> | null
+            args: Prisma.payment_accountFindUniqueArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$payment_accountPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.payment_methodFindUniqueOrThrowArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$payment_methodPayload>
+            args: Prisma.payment_accountFindUniqueOrThrowArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$payment_accountPayload>
           }
           findFirst: {
-            args: Prisma.payment_methodFindFirstArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$payment_methodPayload> | null
+            args: Prisma.payment_accountFindFirstArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$payment_accountPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.payment_methodFindFirstOrThrowArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$payment_methodPayload>
+            args: Prisma.payment_accountFindFirstOrThrowArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$payment_accountPayload>
           }
           findMany: {
-            args: Prisma.payment_methodFindManyArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$payment_methodPayload>[]
+            args: Prisma.payment_accountFindManyArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$payment_accountPayload>[]
           }
           create: {
-            args: Prisma.payment_methodCreateArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$payment_methodPayload>
+            args: Prisma.payment_accountCreateArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$payment_accountPayload>
           }
           createMany: {
-            args: Prisma.payment_methodCreateManyArgs<ExtArgs>,
+            args: Prisma.payment_accountCreateManyArgs<ExtArgs>,
             result: Prisma.BatchPayload
           }
           delete: {
-            args: Prisma.payment_methodDeleteArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$payment_methodPayload>
+            args: Prisma.payment_accountDeleteArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$payment_accountPayload>
           }
           update: {
-            args: Prisma.payment_methodUpdateArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$payment_methodPayload>
+            args: Prisma.payment_accountUpdateArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$payment_accountPayload>
           }
           deleteMany: {
-            args: Prisma.payment_methodDeleteManyArgs<ExtArgs>,
+            args: Prisma.payment_accountDeleteManyArgs<ExtArgs>,
             result: Prisma.BatchPayload
           }
           updateMany: {
-            args: Prisma.payment_methodUpdateManyArgs<ExtArgs>,
+            args: Prisma.payment_accountUpdateManyArgs<ExtArgs>,
             result: Prisma.BatchPayload
           }
           upsert: {
-            args: Prisma.payment_methodUpsertArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$payment_methodPayload>
+            args: Prisma.payment_accountUpsertArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$payment_accountPayload>
           }
           aggregate: {
-            args: Prisma.Payment_methodAggregateArgs<ExtArgs>,
-            result: $Utils.Optional<AggregatePayment_method>
+            args: Prisma.Payment_accountAggregateArgs<ExtArgs>,
+            result: $Utils.Optional<AggregatePayment_account>
           }
           groupBy: {
-            args: Prisma.payment_methodGroupByArgs<ExtArgs>,
-            result: $Utils.Optional<Payment_methodGroupByOutputType>[]
+            args: Prisma.payment_accountGroupByArgs<ExtArgs>,
+            result: $Utils.Optional<Payment_accountGroupByOutputType>[]
           }
           count: {
-            args: Prisma.payment_methodCountArgs<ExtArgs>,
-            result: $Utils.Optional<Payment_methodCountAggregateOutputType> | number
-          }
-        }
-      }
-      payment_method_detail: {
-        payload: Prisma.$payment_method_detailPayload<ExtArgs>
-        fields: Prisma.payment_method_detailFieldRefs
-        operations: {
-          findUnique: {
-            args: Prisma.payment_method_detailFindUniqueArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$payment_method_detailPayload> | null
-          }
-          findUniqueOrThrow: {
-            args: Prisma.payment_method_detailFindUniqueOrThrowArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$payment_method_detailPayload>
-          }
-          findFirst: {
-            args: Prisma.payment_method_detailFindFirstArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$payment_method_detailPayload> | null
-          }
-          findFirstOrThrow: {
-            args: Prisma.payment_method_detailFindFirstOrThrowArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$payment_method_detailPayload>
-          }
-          findMany: {
-            args: Prisma.payment_method_detailFindManyArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$payment_method_detailPayload>[]
-          }
-          create: {
-            args: Prisma.payment_method_detailCreateArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$payment_method_detailPayload>
-          }
-          createMany: {
-            args: Prisma.payment_method_detailCreateManyArgs<ExtArgs>,
-            result: Prisma.BatchPayload
-          }
-          delete: {
-            args: Prisma.payment_method_detailDeleteArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$payment_method_detailPayload>
-          }
-          update: {
-            args: Prisma.payment_method_detailUpdateArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$payment_method_detailPayload>
-          }
-          deleteMany: {
-            args: Prisma.payment_method_detailDeleteManyArgs<ExtArgs>,
-            result: Prisma.BatchPayload
-          }
-          updateMany: {
-            args: Prisma.payment_method_detailUpdateManyArgs<ExtArgs>,
-            result: Prisma.BatchPayload
-          }
-          upsert: {
-            args: Prisma.payment_method_detailUpsertArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$payment_method_detailPayload>
-          }
-          aggregate: {
-            args: Prisma.Payment_method_detailAggregateArgs<ExtArgs>,
-            result: $Utils.Optional<AggregatePayment_method_detail>
-          }
-          groupBy: {
-            args: Prisma.payment_method_detailGroupByArgs<ExtArgs>,
-            result: $Utils.Optional<Payment_method_detailGroupByOutputType>[]
-          }
-          count: {
-            args: Prisma.payment_method_detailCountArgs<ExtArgs>,
-            result: $Utils.Optional<Payment_method_detailCountAggregateOutputType> | number
+            args: Prisma.payment_accountCountArgs<ExtArgs>,
+            result: $Utils.Optional<Payment_accountCountAggregateOutputType> | number
           }
         }
       }
@@ -1358,17 +1194,13 @@ export namespace Prisma {
    */
 
   export type UsersCountOutputType = {
-    friends: number
-    orders: number
     bill: number
-    payment_method_detail: number
+    payment_account: number
   }
 
   export type UsersCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    friends?: boolean | UsersCountOutputTypeCountFriendsArgs
-    orders?: boolean | UsersCountOutputTypeCountOrdersArgs
     bill?: boolean | UsersCountOutputTypeCountBillArgs
-    payment_method_detail?: boolean | UsersCountOutputTypeCountPayment_method_detailArgs
+    payment_account?: boolean | UsersCountOutputTypeCountPayment_accountArgs
   }
 
   // Custom InputTypes
@@ -1387,22 +1219,6 @@ export namespace Prisma {
   /**
    * UsersCountOutputType without action
    */
-  export type UsersCountOutputTypeCountFriendsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: friendsWhereInput
-  }
-
-
-  /**
-   * UsersCountOutputType without action
-   */
-  export type UsersCountOutputTypeCountOrdersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: ordersWhereInput
-  }
-
-
-  /**
-   * UsersCountOutputType without action
-   */
   export type UsersCountOutputTypeCountBillArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: billWhereInput
   }
@@ -1411,76 +1227,42 @@ export namespace Prisma {
   /**
    * UsersCountOutputType without action
    */
-  export type UsersCountOutputTypeCountPayment_method_detailArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: payment_method_detailWhereInput
+  export type UsersCountOutputTypeCountPayment_accountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: payment_accountWhereInput
   }
 
 
 
   /**
-   * Count Type OrdersCountOutputType
+   * Count Type Friend_orderCountOutputType
    */
 
-  export type OrdersCountOutputType = {
-    friends_order: number
+  export type Friend_orderCountOutputType = {
+    order_detail: number
   }
 
-  export type OrdersCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    friends_order?: boolean | OrdersCountOutputTypeCountFriends_orderArgs
+  export type Friend_orderCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    order_detail?: boolean | Friend_orderCountOutputTypeCountOrder_detailArgs
   }
 
   // Custom InputTypes
 
   /**
-   * OrdersCountOutputType without action
+   * Friend_orderCountOutputType without action
    */
-  export type OrdersCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Friend_orderCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the OrdersCountOutputType
+     * Select specific fields to fetch from the Friend_orderCountOutputType
      */
-    select?: OrdersCountOutputTypeSelect<ExtArgs> | null
+    select?: Friend_orderCountOutputTypeSelect<ExtArgs> | null
   }
 
 
   /**
-   * OrdersCountOutputType without action
+   * Friend_orderCountOutputType without action
    */
-  export type OrdersCountOutputTypeCountFriends_orderArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: friends_orderWhereInput
-  }
-
-
-
-  /**
-   * Count Type FriendsCountOutputType
-   */
-
-  export type FriendsCountOutputType = {
-    friends_order: number
-  }
-
-  export type FriendsCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    friends_order?: boolean | FriendsCountOutputTypeCountFriends_orderArgs
-  }
-
-  // Custom InputTypes
-
-  /**
-   * FriendsCountOutputType without action
-   */
-  export type FriendsCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the FriendsCountOutputType
-     */
-    select?: FriendsCountOutputTypeSelect<ExtArgs> | null
-  }
-
-
-  /**
-   * FriendsCountOutputType without action
-   */
-  export type FriendsCountOutputTypeCountFriends_orderArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: friends_orderWhereInput
+  export type Friend_orderCountOutputTypeCountOrder_detailArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: order_detailWhereInput
   }
 
 
@@ -1490,11 +1272,11 @@ export namespace Prisma {
    */
 
   export type BillCountOutputType = {
-    orders: number
+    friend_order: number
   }
 
   export type BillCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    orders?: boolean | BillCountOutputTypeCountOrdersArgs
+    friend_order?: boolean | BillCountOutputTypeCountFriend_orderArgs
   }
 
   // Custom InputTypes
@@ -1513,75 +1295,41 @@ export namespace Prisma {
   /**
    * BillCountOutputType without action
    */
-  export type BillCountOutputTypeCountOrdersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: ordersWhereInput
+  export type BillCountOutputTypeCountFriend_orderArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: friend_orderWhereInput
   }
 
 
 
   /**
-   * Count Type Payment_methodCountOutputType
+   * Count Type Payment_accountCountOutputType
    */
 
-  export type Payment_methodCountOutputType = {
-    payment_method_detail: number
-  }
-
-  export type Payment_methodCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    payment_method_detail?: boolean | Payment_methodCountOutputTypeCountPayment_method_detailArgs
-  }
-
-  // Custom InputTypes
-
-  /**
-   * Payment_methodCountOutputType without action
-   */
-  export type Payment_methodCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Payment_methodCountOutputType
-     */
-    select?: Payment_methodCountOutputTypeSelect<ExtArgs> | null
-  }
-
-
-  /**
-   * Payment_methodCountOutputType without action
-   */
-  export type Payment_methodCountOutputTypeCountPayment_method_detailArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: payment_method_detailWhereInput
-  }
-
-
-
-  /**
-   * Count Type Payment_method_detailCountOutputType
-   */
-
-  export type Payment_method_detailCountOutputType = {
+  export type Payment_accountCountOutputType = {
     bill: number
   }
 
-  export type Payment_method_detailCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    bill?: boolean | Payment_method_detailCountOutputTypeCountBillArgs
+  export type Payment_accountCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    bill?: boolean | Payment_accountCountOutputTypeCountBillArgs
   }
 
   // Custom InputTypes
 
   /**
-   * Payment_method_detailCountOutputType without action
+   * Payment_accountCountOutputType without action
    */
-  export type Payment_method_detailCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Payment_accountCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Payment_method_detailCountOutputType
+     * Select specific fields to fetch from the Payment_accountCountOutputType
      */
-    select?: Payment_method_detailCountOutputTypeSelect<ExtArgs> | null
+    select?: Payment_accountCountOutputTypeSelect<ExtArgs> | null
   }
 
 
   /**
-   * Payment_method_detailCountOutputType without action
+   * Payment_accountCountOutputType without action
    */
-  export type Payment_method_detailCountOutputTypeCountBillArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Payment_accountCountOutputTypeCountBillArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: billWhereInput
   }
 
@@ -1837,10 +1585,8 @@ export namespace Prisma {
     photo_profile?: boolean
     created_at?: boolean
     update_at?: boolean
-    friends?: boolean | users$friendsArgs<ExtArgs>
-    orders?: boolean | users$ordersArgs<ExtArgs>
     bill?: boolean | users$billArgs<ExtArgs>
-    payment_method_detail?: boolean | users$payment_method_detailArgs<ExtArgs>
+    payment_account?: boolean | users$payment_accountArgs<ExtArgs>
     _count?: boolean | UsersCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["users"]>
 
@@ -1859,10 +1605,8 @@ export namespace Prisma {
   }
 
   export type usersInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    friends?: boolean | users$friendsArgs<ExtArgs>
-    orders?: boolean | users$ordersArgs<ExtArgs>
     bill?: boolean | users$billArgs<ExtArgs>
-    payment_method_detail?: boolean | users$payment_method_detailArgs<ExtArgs>
+    payment_account?: boolean | users$payment_accountArgs<ExtArgs>
     _count?: boolean | UsersCountOutputTypeDefaultArgs<ExtArgs>
   }
 
@@ -1870,10 +1614,8 @@ export namespace Prisma {
   export type $usersPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "users"
     objects: {
-      friends: Prisma.$friendsPayload<ExtArgs>[]
-      orders: Prisma.$ordersPayload<ExtArgs>[]
       bill: Prisma.$billPayload<ExtArgs>[]
-      payment_method_detail: Prisma.$payment_method_detailPayload<ExtArgs>[]
+      payment_account: Prisma.$payment_accountPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
@@ -2252,13 +1994,9 @@ export namespace Prisma {
   export interface Prisma__usersClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: 'PrismaPromise';
 
-    friends<T extends users$friendsArgs<ExtArgs> = {}>(args?: Subset<T, users$friendsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$friendsPayload<ExtArgs>, T, 'findMany'> | Null>;
-
-    orders<T extends users$ordersArgs<ExtArgs> = {}>(args?: Subset<T, users$ordersArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ordersPayload<ExtArgs>, T, 'findMany'> | Null>;
-
     bill<T extends users$billArgs<ExtArgs> = {}>(args?: Subset<T, users$billArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$billPayload<ExtArgs>, T, 'findMany'> | Null>;
 
-    payment_method_detail<T extends users$payment_method_detailArgs<ExtArgs> = {}>(args?: Subset<T, users$payment_method_detailArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$payment_method_detailPayload<ExtArgs>, T, 'findMany'> | Null>;
+    payment_account<T extends users$payment_accountArgs<ExtArgs> = {}>(args?: Subset<T, users$payment_accountArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$payment_accountPayload<ExtArgs>, T, 'findMany'> | Null>;
 
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -2611,48 +2349,6 @@ export namespace Prisma {
 
 
   /**
-   * users.friends
-   */
-  export type users$friendsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the friends
-     */
-    select?: friendsSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: friendsInclude<ExtArgs> | null
-    where?: friendsWhereInput
-    orderBy?: friendsOrderByWithRelationInput | friendsOrderByWithRelationInput[]
-    cursor?: friendsWhereUniqueInput
-    take?: number
-    skip?: number
-    distinct?: FriendsScalarFieldEnum | FriendsScalarFieldEnum[]
-  }
-
-
-  /**
-   * users.orders
-   */
-  export type users$ordersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the orders
-     */
-    select?: ordersSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: ordersInclude<ExtArgs> | null
-    where?: ordersWhereInput
-    orderBy?: ordersOrderByWithRelationInput | ordersOrderByWithRelationInput[]
-    cursor?: ordersWhereUniqueInput
-    take?: number
-    skip?: number
-    distinct?: OrdersScalarFieldEnum | OrdersScalarFieldEnum[]
-  }
-
-
-  /**
    * users.bill
    */
   export type users$billArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -2674,23 +2370,23 @@ export namespace Prisma {
 
 
   /**
-   * users.payment_method_detail
+   * users.payment_account
    */
-  export type users$payment_method_detailArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type users$payment_accountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the payment_method_detail
+     * Select specific fields to fetch from the payment_account
      */
-    select?: payment_method_detailSelect<ExtArgs> | null
+    select?: payment_accountSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well.
      */
-    include?: payment_method_detailInclude<ExtArgs> | null
-    where?: payment_method_detailWhereInput
-    orderBy?: payment_method_detailOrderByWithRelationInput | payment_method_detailOrderByWithRelationInput[]
-    cursor?: payment_method_detailWhereUniqueInput
+    include?: payment_accountInclude<ExtArgs> | null
+    where?: payment_accountWhereInput
+    orderBy?: payment_accountOrderByWithRelationInput | payment_accountOrderByWithRelationInput[]
+    cursor?: payment_accountWhereUniqueInput
     take?: number
     skip?: number
-    distinct?: Payment_method_detailScalarFieldEnum | Payment_method_detailScalarFieldEnum[]
+    distinct?: Payment_accountScalarFieldEnum | Payment_accountScalarFieldEnum[]
   }
 
 
@@ -2711,418 +2407,396 @@ export namespace Prisma {
 
 
   /**
-   * Model orders
+   * Model order_detail
    */
 
-  export type AggregateOrders = {
-    _count: OrdersCountAggregateOutputType | null
-    _avg: OrdersAvgAggregateOutputType | null
-    _sum: OrdersSumAggregateOutputType | null
-    _min: OrdersMinAggregateOutputType | null
-    _max: OrdersMaxAggregateOutputType | null
+  export type AggregateOrder_detail = {
+    _count: Order_detailCountAggregateOutputType | null
+    _avg: Order_detailAvgAggregateOutputType | null
+    _sum: Order_detailSumAggregateOutputType | null
+    _min: Order_detailMinAggregateOutputType | null
+    _max: Order_detailMaxAggregateOutputType | null
   }
 
-  export type OrdersAvgAggregateOutputType = {
+  export type Order_detailAvgAggregateOutputType = {
     id: number | null
-    user_id: number | null
-    bill_id: number | null
-    qty: number | null
+    friend_order_id: number | null
+    quantity: number | null
     price: number | null
   }
 
-  export type OrdersSumAggregateOutputType = {
+  export type Order_detailSumAggregateOutputType = {
     id: number | null
-    user_id: number | null
-    bill_id: number | null
-    qty: number | null
-    price: bigint | null
+    friend_order_id: number | null
+    quantity: number | null
+    price: number | null
   }
 
-  export type OrdersMinAggregateOutputType = {
+  export type Order_detailMinAggregateOutputType = {
     id: number | null
-    user_id: number | null
-    bill_id: number | null
-    menu_name: string | null
-    qty: number | null
-    price: bigint | null
+    friend_order_id: number | null
+    menu: string | null
+    quantity: number | null
+    price: number | null
   }
 
-  export type OrdersMaxAggregateOutputType = {
+  export type Order_detailMaxAggregateOutputType = {
     id: number | null
-    user_id: number | null
-    bill_id: number | null
-    menu_name: string | null
-    qty: number | null
-    price: bigint | null
+    friend_order_id: number | null
+    menu: string | null
+    quantity: number | null
+    price: number | null
   }
 
-  export type OrdersCountAggregateOutputType = {
+  export type Order_detailCountAggregateOutputType = {
     id: number
-    user_id: number
-    bill_id: number
-    menu_name: number
-    qty: number
+    friend_order_id: number
+    menu: number
+    quantity: number
     price: number
     _all: number
   }
 
 
-  export type OrdersAvgAggregateInputType = {
+  export type Order_detailAvgAggregateInputType = {
     id?: true
-    user_id?: true
-    bill_id?: true
-    qty?: true
+    friend_order_id?: true
+    quantity?: true
     price?: true
   }
 
-  export type OrdersSumAggregateInputType = {
+  export type Order_detailSumAggregateInputType = {
     id?: true
-    user_id?: true
-    bill_id?: true
-    qty?: true
+    friend_order_id?: true
+    quantity?: true
     price?: true
   }
 
-  export type OrdersMinAggregateInputType = {
+  export type Order_detailMinAggregateInputType = {
     id?: true
-    user_id?: true
-    bill_id?: true
-    menu_name?: true
-    qty?: true
+    friend_order_id?: true
+    menu?: true
+    quantity?: true
     price?: true
   }
 
-  export type OrdersMaxAggregateInputType = {
+  export type Order_detailMaxAggregateInputType = {
     id?: true
-    user_id?: true
-    bill_id?: true
-    menu_name?: true
-    qty?: true
+    friend_order_id?: true
+    menu?: true
+    quantity?: true
     price?: true
   }
 
-  export type OrdersCountAggregateInputType = {
+  export type Order_detailCountAggregateInputType = {
     id?: true
-    user_id?: true
-    bill_id?: true
-    menu_name?: true
-    qty?: true
+    friend_order_id?: true
+    menu?: true
+    quantity?: true
     price?: true
     _all?: true
   }
 
-  export type OrdersAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Order_detailAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which orders to aggregate.
+     * Filter which order_detail to aggregate.
      */
-    where?: ordersWhereInput
+    where?: order_detailWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of orders to fetch.
+     * Determine the order of order_details to fetch.
      */
-    orderBy?: ordersOrderByWithRelationInput | ordersOrderByWithRelationInput[]
+    orderBy?: order_detailOrderByWithRelationInput | order_detailOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: ordersWhereUniqueInput
+    cursor?: order_detailWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` orders from the position of the cursor.
+     * Take `±n` order_details from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` orders.
+     * Skip the first `n` order_details.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned orders
+     * Count returned order_details
     **/
-    _count?: true | OrdersCountAggregateInputType
+    _count?: true | Order_detailCountAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to average
     **/
-    _avg?: OrdersAvgAggregateInputType
+    _avg?: Order_detailAvgAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to sum
     **/
-    _sum?: OrdersSumAggregateInputType
+    _sum?: Order_detailSumAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the minimum value
     **/
-    _min?: OrdersMinAggregateInputType
+    _min?: Order_detailMinAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the maximum value
     **/
-    _max?: OrdersMaxAggregateInputType
+    _max?: Order_detailMaxAggregateInputType
   }
 
-  export type GetOrdersAggregateType<T extends OrdersAggregateArgs> = {
-        [P in keyof T & keyof AggregateOrders]: P extends '_count' | 'count'
+  export type GetOrder_detailAggregateType<T extends Order_detailAggregateArgs> = {
+        [P in keyof T & keyof AggregateOrder_detail]: P extends '_count' | 'count'
       ? T[P] extends true
         ? number
-        : GetScalarType<T[P], AggregateOrders[P]>
-      : GetScalarType<T[P], AggregateOrders[P]>
+        : GetScalarType<T[P], AggregateOrder_detail[P]>
+      : GetScalarType<T[P], AggregateOrder_detail[P]>
   }
 
 
 
 
-  export type ordersGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: ordersWhereInput
-    orderBy?: ordersOrderByWithAggregationInput | ordersOrderByWithAggregationInput[]
-    by: OrdersScalarFieldEnum[] | OrdersScalarFieldEnum
-    having?: ordersScalarWhereWithAggregatesInput
+  export type order_detailGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: order_detailWhereInput
+    orderBy?: order_detailOrderByWithAggregationInput | order_detailOrderByWithAggregationInput[]
+    by: Order_detailScalarFieldEnum[] | Order_detailScalarFieldEnum
+    having?: order_detailScalarWhereWithAggregatesInput
     take?: number
     skip?: number
-    _count?: OrdersCountAggregateInputType | true
-    _avg?: OrdersAvgAggregateInputType
-    _sum?: OrdersSumAggregateInputType
-    _min?: OrdersMinAggregateInputType
-    _max?: OrdersMaxAggregateInputType
+    _count?: Order_detailCountAggregateInputType | true
+    _avg?: Order_detailAvgAggregateInputType
+    _sum?: Order_detailSumAggregateInputType
+    _min?: Order_detailMinAggregateInputType
+    _max?: Order_detailMaxAggregateInputType
   }
 
-  export type OrdersGroupByOutputType = {
+  export type Order_detailGroupByOutputType = {
     id: number
-    user_id: number | null
-    bill_id: number | null
-    menu_name: string
-    qty: number
-    price: bigint
-    _count: OrdersCountAggregateOutputType | null
-    _avg: OrdersAvgAggregateOutputType | null
-    _sum: OrdersSumAggregateOutputType | null
-    _min: OrdersMinAggregateOutputType | null
-    _max: OrdersMaxAggregateOutputType | null
+    friend_order_id: number | null
+    menu: string
+    quantity: number
+    price: number
+    _count: Order_detailCountAggregateOutputType | null
+    _avg: Order_detailAvgAggregateOutputType | null
+    _sum: Order_detailSumAggregateOutputType | null
+    _min: Order_detailMinAggregateOutputType | null
+    _max: Order_detailMaxAggregateOutputType | null
   }
 
-  type GetOrdersGroupByPayload<T extends ordersGroupByArgs> = Prisma.PrismaPromise<
+  type GetOrder_detailGroupByPayload<T extends order_detailGroupByArgs> = Prisma.PrismaPromise<
     Array<
-      PickEnumerable<OrdersGroupByOutputType, T['by']> &
+      PickEnumerable<Order_detailGroupByOutputType, T['by']> &
         {
-          [P in ((keyof T) & (keyof OrdersGroupByOutputType))]: P extends '_count'
+          [P in ((keyof T) & (keyof Order_detailGroupByOutputType))]: P extends '_count'
             ? T[P] extends boolean
               ? number
-              : GetScalarType<T[P], OrdersGroupByOutputType[P]>
-            : GetScalarType<T[P], OrdersGroupByOutputType[P]>
+              : GetScalarType<T[P], Order_detailGroupByOutputType[P]>
+            : GetScalarType<T[P], Order_detailGroupByOutputType[P]>
         }
       >
     >
 
 
-  export type ordersSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type order_detailSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    user_id?: boolean
-    bill_id?: boolean
-    menu_name?: boolean
-    qty?: boolean
+    friend_order_id?: boolean
+    menu?: boolean
+    quantity?: boolean
     price?: boolean
-    users?: boolean | orders$usersArgs<ExtArgs>
-    bill?: boolean | orders$billArgs<ExtArgs>
-    friends_order?: boolean | orders$friends_orderArgs<ExtArgs>
-    _count?: boolean | OrdersCountOutputTypeDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["orders"]>
+    friend_order?: boolean | order_detail$friend_orderArgs<ExtArgs>
+  }, ExtArgs["result"]["order_detail"]>
 
-  export type ordersSelectScalar = {
+  export type order_detailSelectScalar = {
     id?: boolean
-    user_id?: boolean
-    bill_id?: boolean
-    menu_name?: boolean
-    qty?: boolean
+    friend_order_id?: boolean
+    menu?: boolean
+    quantity?: boolean
     price?: boolean
   }
 
-  export type ordersInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    users?: boolean | orders$usersArgs<ExtArgs>
-    bill?: boolean | orders$billArgs<ExtArgs>
-    friends_order?: boolean | orders$friends_orderArgs<ExtArgs>
-    _count?: boolean | OrdersCountOutputTypeDefaultArgs<ExtArgs>
+  export type order_detailInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    friend_order?: boolean | order_detail$friend_orderArgs<ExtArgs>
   }
 
 
-  export type $ordersPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "orders"
+  export type $order_detailPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "order_detail"
     objects: {
-      users: Prisma.$usersPayload<ExtArgs> | null
-      bill: Prisma.$billPayload<ExtArgs> | null
-      friends_order: Prisma.$friends_orderPayload<ExtArgs>[]
+      friend_order: Prisma.$friend_orderPayload<ExtArgs> | null
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
-      user_id: number | null
-      bill_id: number | null
-      menu_name: string
-      qty: number
-      price: bigint
-    }, ExtArgs["result"]["orders"]>
+      friend_order_id: number | null
+      menu: string
+      quantity: number
+      price: number
+    }, ExtArgs["result"]["order_detail"]>
     composites: {}
   }
 
 
-  type ordersGetPayload<S extends boolean | null | undefined | ordersDefaultArgs> = $Result.GetResult<Prisma.$ordersPayload, S>
+  type order_detailGetPayload<S extends boolean | null | undefined | order_detailDefaultArgs> = $Result.GetResult<Prisma.$order_detailPayload, S>
 
-  type ordersCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
-    Omit<ordersFindManyArgs, 'select' | 'include' | 'distinct'> & {
-      select?: OrdersCountAggregateInputType | true
+  type order_detailCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<order_detailFindManyArgs, 'select' | 'include' | 'distinct'> & {
+      select?: Order_detailCountAggregateInputType | true
     }
 
-  export interface ordersDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['orders'], meta: { name: 'orders' } }
+  export interface order_detailDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['order_detail'], meta: { name: 'order_detail' } }
     /**
-     * Find zero or one Orders that matches the filter.
-     * @param {ordersFindUniqueArgs} args - Arguments to find a Orders
+     * Find zero or one Order_detail that matches the filter.
+     * @param {order_detailFindUniqueArgs} args - Arguments to find a Order_detail
      * @example
-     * // Get one Orders
-     * const orders = await prisma.orders.findUnique({
+     * // Get one Order_detail
+     * const order_detail = await prisma.order_detail.findUnique({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
     **/
-    findUnique<T extends ordersFindUniqueArgs<ExtArgs>>(
-      args: SelectSubset<T, ordersFindUniqueArgs<ExtArgs>>
-    ): Prisma__ordersClient<$Result.GetResult<Prisma.$ordersPayload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
+    findUnique<T extends order_detailFindUniqueArgs<ExtArgs>>(
+      args: SelectSubset<T, order_detailFindUniqueArgs<ExtArgs>>
+    ): Prisma__order_detailClient<$Result.GetResult<Prisma.$order_detailPayload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
 
     /**
-     * Find one Orders that matches the filter or throw an error  with `error.code='P2025'` 
+     * Find one Order_detail that matches the filter or throw an error  with `error.code='P2025'` 
      *     if no matches were found.
-     * @param {ordersFindUniqueOrThrowArgs} args - Arguments to find a Orders
+     * @param {order_detailFindUniqueOrThrowArgs} args - Arguments to find a Order_detail
      * @example
-     * // Get one Orders
-     * const orders = await prisma.orders.findUniqueOrThrow({
+     * // Get one Order_detail
+     * const order_detail = await prisma.order_detail.findUniqueOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
     **/
-    findUniqueOrThrow<T extends ordersFindUniqueOrThrowArgs<ExtArgs>>(
-      args?: SelectSubset<T, ordersFindUniqueOrThrowArgs<ExtArgs>>
-    ): Prisma__ordersClient<$Result.GetResult<Prisma.$ordersPayload<ExtArgs>, T, 'findUniqueOrThrow'>, never, ExtArgs>
+    findUniqueOrThrow<T extends order_detailFindUniqueOrThrowArgs<ExtArgs>>(
+      args?: SelectSubset<T, order_detailFindUniqueOrThrowArgs<ExtArgs>>
+    ): Prisma__order_detailClient<$Result.GetResult<Prisma.$order_detailPayload<ExtArgs>, T, 'findUniqueOrThrow'>, never, ExtArgs>
 
     /**
-     * Find the first Orders that matches the filter.
+     * Find the first Order_detail that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ordersFindFirstArgs} args - Arguments to find a Orders
+     * @param {order_detailFindFirstArgs} args - Arguments to find a Order_detail
      * @example
-     * // Get one Orders
-     * const orders = await prisma.orders.findFirst({
+     * // Get one Order_detail
+     * const order_detail = await prisma.order_detail.findFirst({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
     **/
-    findFirst<T extends ordersFindFirstArgs<ExtArgs>>(
-      args?: SelectSubset<T, ordersFindFirstArgs<ExtArgs>>
-    ): Prisma__ordersClient<$Result.GetResult<Prisma.$ordersPayload<ExtArgs>, T, 'findFirst'> | null, null, ExtArgs>
+    findFirst<T extends order_detailFindFirstArgs<ExtArgs>>(
+      args?: SelectSubset<T, order_detailFindFirstArgs<ExtArgs>>
+    ): Prisma__order_detailClient<$Result.GetResult<Prisma.$order_detailPayload<ExtArgs>, T, 'findFirst'> | null, null, ExtArgs>
 
     /**
-     * Find the first Orders that matches the filter or
+     * Find the first Order_detail that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ordersFindFirstOrThrowArgs} args - Arguments to find a Orders
+     * @param {order_detailFindFirstOrThrowArgs} args - Arguments to find a Order_detail
      * @example
-     * // Get one Orders
-     * const orders = await prisma.orders.findFirstOrThrow({
+     * // Get one Order_detail
+     * const order_detail = await prisma.order_detail.findFirstOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
     **/
-    findFirstOrThrow<T extends ordersFindFirstOrThrowArgs<ExtArgs>>(
-      args?: SelectSubset<T, ordersFindFirstOrThrowArgs<ExtArgs>>
-    ): Prisma__ordersClient<$Result.GetResult<Prisma.$ordersPayload<ExtArgs>, T, 'findFirstOrThrow'>, never, ExtArgs>
+    findFirstOrThrow<T extends order_detailFindFirstOrThrowArgs<ExtArgs>>(
+      args?: SelectSubset<T, order_detailFindFirstOrThrowArgs<ExtArgs>>
+    ): Prisma__order_detailClient<$Result.GetResult<Prisma.$order_detailPayload<ExtArgs>, T, 'findFirstOrThrow'>, never, ExtArgs>
 
     /**
-     * Find zero or more Orders that matches the filter.
+     * Find zero or more Order_details that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ordersFindManyArgs=} args - Arguments to filter and select certain fields only.
+     * @param {order_detailFindManyArgs=} args - Arguments to filter and select certain fields only.
      * @example
-     * // Get all Orders
-     * const orders = await prisma.orders.findMany()
+     * // Get all Order_details
+     * const order_details = await prisma.order_detail.findMany()
      * 
-     * // Get first 10 Orders
-     * const orders = await prisma.orders.findMany({ take: 10 })
+     * // Get first 10 Order_details
+     * const order_details = await prisma.order_detail.findMany({ take: 10 })
      * 
      * // Only select the `id`
-     * const ordersWithIdOnly = await prisma.orders.findMany({ select: { id: true } })
+     * const order_detailWithIdOnly = await prisma.order_detail.findMany({ select: { id: true } })
      * 
     **/
-    findMany<T extends ordersFindManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, ordersFindManyArgs<ExtArgs>>
-    ): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ordersPayload<ExtArgs>, T, 'findMany'>>
+    findMany<T extends order_detailFindManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, order_detailFindManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<$Result.GetResult<Prisma.$order_detailPayload<ExtArgs>, T, 'findMany'>>
 
     /**
-     * Create a Orders.
-     * @param {ordersCreateArgs} args - Arguments to create a Orders.
+     * Create a Order_detail.
+     * @param {order_detailCreateArgs} args - Arguments to create a Order_detail.
      * @example
-     * // Create one Orders
-     * const Orders = await prisma.orders.create({
+     * // Create one Order_detail
+     * const Order_detail = await prisma.order_detail.create({
      *   data: {
-     *     // ... data to create a Orders
+     *     // ... data to create a Order_detail
      *   }
      * })
      * 
     **/
-    create<T extends ordersCreateArgs<ExtArgs>>(
-      args: SelectSubset<T, ordersCreateArgs<ExtArgs>>
-    ): Prisma__ordersClient<$Result.GetResult<Prisma.$ordersPayload<ExtArgs>, T, 'create'>, never, ExtArgs>
+    create<T extends order_detailCreateArgs<ExtArgs>>(
+      args: SelectSubset<T, order_detailCreateArgs<ExtArgs>>
+    ): Prisma__order_detailClient<$Result.GetResult<Prisma.$order_detailPayload<ExtArgs>, T, 'create'>, never, ExtArgs>
 
     /**
-     * Create many Orders.
-     *     @param {ordersCreateManyArgs} args - Arguments to create many Orders.
+     * Create many Order_details.
+     *     @param {order_detailCreateManyArgs} args - Arguments to create many Order_details.
      *     @example
-     *     // Create many Orders
-     *     const orders = await prisma.orders.createMany({
+     *     // Create many Order_details
+     *     const order_detail = await prisma.order_detail.createMany({
      *       data: {
      *         // ... provide data here
      *       }
      *     })
      *     
     **/
-    createMany<T extends ordersCreateManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, ordersCreateManyArgs<ExtArgs>>
+    createMany<T extends order_detailCreateManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, order_detailCreateManyArgs<ExtArgs>>
     ): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Delete a Orders.
-     * @param {ordersDeleteArgs} args - Arguments to delete one Orders.
+     * Delete a Order_detail.
+     * @param {order_detailDeleteArgs} args - Arguments to delete one Order_detail.
      * @example
-     * // Delete one Orders
-     * const Orders = await prisma.orders.delete({
+     * // Delete one Order_detail
+     * const Order_detail = await prisma.order_detail.delete({
      *   where: {
-     *     // ... filter to delete one Orders
+     *     // ... filter to delete one Order_detail
      *   }
      * })
      * 
     **/
-    delete<T extends ordersDeleteArgs<ExtArgs>>(
-      args: SelectSubset<T, ordersDeleteArgs<ExtArgs>>
-    ): Prisma__ordersClient<$Result.GetResult<Prisma.$ordersPayload<ExtArgs>, T, 'delete'>, never, ExtArgs>
+    delete<T extends order_detailDeleteArgs<ExtArgs>>(
+      args: SelectSubset<T, order_detailDeleteArgs<ExtArgs>>
+    ): Prisma__order_detailClient<$Result.GetResult<Prisma.$order_detailPayload<ExtArgs>, T, 'delete'>, never, ExtArgs>
 
     /**
-     * Update one Orders.
-     * @param {ordersUpdateArgs} args - Arguments to update one Orders.
+     * Update one Order_detail.
+     * @param {order_detailUpdateArgs} args - Arguments to update one Order_detail.
      * @example
-     * // Update one Orders
-     * const orders = await prisma.orders.update({
+     * // Update one Order_detail
+     * const order_detail = await prisma.order_detail.update({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -3132,34 +2806,34 @@ export namespace Prisma {
      * })
      * 
     **/
-    update<T extends ordersUpdateArgs<ExtArgs>>(
-      args: SelectSubset<T, ordersUpdateArgs<ExtArgs>>
-    ): Prisma__ordersClient<$Result.GetResult<Prisma.$ordersPayload<ExtArgs>, T, 'update'>, never, ExtArgs>
+    update<T extends order_detailUpdateArgs<ExtArgs>>(
+      args: SelectSubset<T, order_detailUpdateArgs<ExtArgs>>
+    ): Prisma__order_detailClient<$Result.GetResult<Prisma.$order_detailPayload<ExtArgs>, T, 'update'>, never, ExtArgs>
 
     /**
-     * Delete zero or more Orders.
-     * @param {ordersDeleteManyArgs} args - Arguments to filter Orders to delete.
+     * Delete zero or more Order_details.
+     * @param {order_detailDeleteManyArgs} args - Arguments to filter Order_details to delete.
      * @example
-     * // Delete a few Orders
-     * const { count } = await prisma.orders.deleteMany({
+     * // Delete a few Order_details
+     * const { count } = await prisma.order_detail.deleteMany({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      * 
     **/
-    deleteMany<T extends ordersDeleteManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, ordersDeleteManyArgs<ExtArgs>>
+    deleteMany<T extends order_detailDeleteManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, order_detailDeleteManyArgs<ExtArgs>>
     ): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more Orders.
+     * Update zero or more Order_details.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ordersUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {order_detailUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
-     * // Update many Orders
-     * const orders = await prisma.orders.updateMany({
+     * // Update many Order_details
+     * const order_detail = await prisma.order_detail.updateMany({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -3169,59 +2843,59 @@ export namespace Prisma {
      * })
      * 
     **/
-    updateMany<T extends ordersUpdateManyArgs<ExtArgs>>(
-      args: SelectSubset<T, ordersUpdateManyArgs<ExtArgs>>
+    updateMany<T extends order_detailUpdateManyArgs<ExtArgs>>(
+      args: SelectSubset<T, order_detailUpdateManyArgs<ExtArgs>>
     ): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Create or update one Orders.
-     * @param {ordersUpsertArgs} args - Arguments to update or create a Orders.
+     * Create or update one Order_detail.
+     * @param {order_detailUpsertArgs} args - Arguments to update or create a Order_detail.
      * @example
-     * // Update or create a Orders
-     * const orders = await prisma.orders.upsert({
+     * // Update or create a Order_detail
+     * const order_detail = await prisma.order_detail.upsert({
      *   create: {
-     *     // ... data to create a Orders
+     *     // ... data to create a Order_detail
      *   },
      *   update: {
      *     // ... in case it already exists, update
      *   },
      *   where: {
-     *     // ... the filter for the Orders we want to update
+     *     // ... the filter for the Order_detail we want to update
      *   }
      * })
     **/
-    upsert<T extends ordersUpsertArgs<ExtArgs>>(
-      args: SelectSubset<T, ordersUpsertArgs<ExtArgs>>
-    ): Prisma__ordersClient<$Result.GetResult<Prisma.$ordersPayload<ExtArgs>, T, 'upsert'>, never, ExtArgs>
+    upsert<T extends order_detailUpsertArgs<ExtArgs>>(
+      args: SelectSubset<T, order_detailUpsertArgs<ExtArgs>>
+    ): Prisma__order_detailClient<$Result.GetResult<Prisma.$order_detailPayload<ExtArgs>, T, 'upsert'>, never, ExtArgs>
 
     /**
-     * Count the number of Orders.
+     * Count the number of Order_details.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ordersCountArgs} args - Arguments to filter Orders to count.
+     * @param {order_detailCountArgs} args - Arguments to filter Order_details to count.
      * @example
-     * // Count the number of Orders
-     * const count = await prisma.orders.count({
+     * // Count the number of Order_details
+     * const count = await prisma.order_detail.count({
      *   where: {
-     *     // ... the filter for the Orders we want to count
+     *     // ... the filter for the Order_details we want to count
      *   }
      * })
     **/
-    count<T extends ordersCountArgs>(
-      args?: Subset<T, ordersCountArgs>,
+    count<T extends order_detailCountArgs>(
+      args?: Subset<T, order_detailCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
           ? number
-          : GetScalarType<T['select'], OrdersCountAggregateOutputType>
+          : GetScalarType<T['select'], Order_detailCountAggregateOutputType>
         : number
     >
 
     /**
-     * Allows you to perform aggregations operations on a Orders.
+     * Allows you to perform aggregations operations on a Order_detail.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {OrdersAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @param {Order_detailAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
      * @example
      * // Ordered by age ascending
      * // Where email contains prisma.io
@@ -3241,13 +2915,13 @@ export namespace Prisma {
      *   take: 10,
      * })
     **/
-    aggregate<T extends OrdersAggregateArgs>(args: Subset<T, OrdersAggregateArgs>): Prisma.PrismaPromise<GetOrdersAggregateType<T>>
+    aggregate<T extends Order_detailAggregateArgs>(args: Subset<T, Order_detailAggregateArgs>): Prisma.PrismaPromise<GetOrder_detailAggregateType<T>>
 
     /**
-     * Group by Orders.
+     * Group by Order_detail.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ordersGroupByArgs} args - Group by arguments.
+     * @param {order_detailGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -3262,14 +2936,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends ordersGroupByArgs,
+      T extends order_detailGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: ordersGroupByArgs['orderBy'] }
-        : { orderBy?: ordersGroupByArgs['orderBy'] },
+        ? { orderBy: order_detailGroupByArgs['orderBy'] }
+        : { orderBy?: order_detailGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -3318,27 +2992,23 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, ordersGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetOrdersGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, order_detailGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetOrder_detailGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the orders model
+   * Fields of the order_detail model
    */
-  readonly fields: ordersFieldRefs;
+  readonly fields: order_detailFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for orders.
+   * The delegate class that acts as a "Promise-like" for order_detail.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__ordersClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__order_detailClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: 'PrismaPromise';
 
-    users<T extends orders$usersArgs<ExtArgs> = {}>(args?: Subset<T, orders$usersArgs<ExtArgs>>): Prisma__usersClient<$Result.GetResult<Prisma.$usersPayload<ExtArgs>, T, 'findUniqueOrThrow'> | null, null, ExtArgs>;
-
-    bill<T extends orders$billArgs<ExtArgs> = {}>(args?: Subset<T, orders$billArgs<ExtArgs>>): Prisma__billClient<$Result.GetResult<Prisma.$billPayload<ExtArgs>, T, 'findUniqueOrThrow'> | null, null, ExtArgs>;
-
-    friends_order<T extends orders$friends_orderArgs<ExtArgs> = {}>(args?: Subset<T, orders$friends_orderArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$friends_orderPayload<ExtArgs>, T, 'findMany'> | Null>;
+    friend_order<T extends order_detail$friend_orderArgs<ExtArgs> = {}>(args?: Subset<T, order_detail$friend_orderArgs<ExtArgs>>): Prisma__friend_orderClient<$Result.GetResult<Prisma.$friend_orderPayload<ExtArgs>, T, 'findUniqueOrThrow'> | null, null, ExtArgs>;
 
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -3365,346 +3035,1297 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the orders model
+   * Fields of the order_detail model
    */ 
-  interface ordersFieldRefs {
-    readonly id: FieldRef<"orders", 'Int'>
-    readonly user_id: FieldRef<"orders", 'Int'>
-    readonly bill_id: FieldRef<"orders", 'Int'>
-    readonly menu_name: FieldRef<"orders", 'String'>
-    readonly qty: FieldRef<"orders", 'Int'>
-    readonly price: FieldRef<"orders", 'BigInt'>
+  interface order_detailFieldRefs {
+    readonly id: FieldRef<"order_detail", 'Int'>
+    readonly friend_order_id: FieldRef<"order_detail", 'Int'>
+    readonly menu: FieldRef<"order_detail", 'String'>
+    readonly quantity: FieldRef<"order_detail", 'Int'>
+    readonly price: FieldRef<"order_detail", 'Int'>
   }
     
 
   // Custom InputTypes
 
   /**
-   * orders findUnique
+   * order_detail findUnique
    */
-  export type ordersFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type order_detailFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the orders
+     * Select specific fields to fetch from the order_detail
      */
-    select?: ordersSelect<ExtArgs> | null
+    select?: order_detailSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well.
      */
-    include?: ordersInclude<ExtArgs> | null
+    include?: order_detailInclude<ExtArgs> | null
     /**
-     * Filter, which orders to fetch.
+     * Filter, which order_detail to fetch.
      */
-    where: ordersWhereUniqueInput
+    where: order_detailWhereUniqueInput
   }
 
 
   /**
-   * orders findUniqueOrThrow
+   * order_detail findUniqueOrThrow
    */
-  export type ordersFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type order_detailFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the orders
+     * Select specific fields to fetch from the order_detail
      */
-    select?: ordersSelect<ExtArgs> | null
+    select?: order_detailSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well.
      */
-    include?: ordersInclude<ExtArgs> | null
+    include?: order_detailInclude<ExtArgs> | null
     /**
-     * Filter, which orders to fetch.
+     * Filter, which order_detail to fetch.
      */
-    where: ordersWhereUniqueInput
+    where: order_detailWhereUniqueInput
   }
 
 
   /**
-   * orders findFirst
+   * order_detail findFirst
    */
-  export type ordersFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type order_detailFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the orders
+     * Select specific fields to fetch from the order_detail
      */
-    select?: ordersSelect<ExtArgs> | null
+    select?: order_detailSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well.
      */
-    include?: ordersInclude<ExtArgs> | null
+    include?: order_detailInclude<ExtArgs> | null
     /**
-     * Filter, which orders to fetch.
+     * Filter, which order_detail to fetch.
      */
-    where?: ordersWhereInput
+    where?: order_detailWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of orders to fetch.
+     * Determine the order of order_details to fetch.
      */
-    orderBy?: ordersOrderByWithRelationInput | ordersOrderByWithRelationInput[]
+    orderBy?: order_detailOrderByWithRelationInput | order_detailOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for orders.
+     * Sets the position for searching for order_details.
      */
-    cursor?: ordersWhereUniqueInput
+    cursor?: order_detailWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` orders from the position of the cursor.
+     * Take `±n` order_details from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` orders.
+     * Skip the first `n` order_details.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of orders.
+     * Filter by unique combinations of order_details.
      */
-    distinct?: OrdersScalarFieldEnum | OrdersScalarFieldEnum[]
+    distinct?: Order_detailScalarFieldEnum | Order_detailScalarFieldEnum[]
   }
 
 
   /**
-   * orders findFirstOrThrow
+   * order_detail findFirstOrThrow
    */
-  export type ordersFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type order_detailFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the orders
+     * Select specific fields to fetch from the order_detail
      */
-    select?: ordersSelect<ExtArgs> | null
+    select?: order_detailSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well.
      */
-    include?: ordersInclude<ExtArgs> | null
+    include?: order_detailInclude<ExtArgs> | null
     /**
-     * Filter, which orders to fetch.
+     * Filter, which order_detail to fetch.
      */
-    where?: ordersWhereInput
+    where?: order_detailWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of orders to fetch.
+     * Determine the order of order_details to fetch.
      */
-    orderBy?: ordersOrderByWithRelationInput | ordersOrderByWithRelationInput[]
+    orderBy?: order_detailOrderByWithRelationInput | order_detailOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for orders.
+     * Sets the position for searching for order_details.
      */
-    cursor?: ordersWhereUniqueInput
+    cursor?: order_detailWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` orders from the position of the cursor.
+     * Take `±n` order_details from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` orders.
+     * Skip the first `n` order_details.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of orders.
+     * Filter by unique combinations of order_details.
      */
-    distinct?: OrdersScalarFieldEnum | OrdersScalarFieldEnum[]
+    distinct?: Order_detailScalarFieldEnum | Order_detailScalarFieldEnum[]
   }
 
 
   /**
-   * orders findMany
+   * order_detail findMany
    */
-  export type ordersFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type order_detailFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the orders
+     * Select specific fields to fetch from the order_detail
      */
-    select?: ordersSelect<ExtArgs> | null
+    select?: order_detailSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well.
      */
-    include?: ordersInclude<ExtArgs> | null
+    include?: order_detailInclude<ExtArgs> | null
     /**
-     * Filter, which orders to fetch.
+     * Filter, which order_details to fetch.
      */
-    where?: ordersWhereInput
+    where?: order_detailWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of orders to fetch.
+     * Determine the order of order_details to fetch.
      */
-    orderBy?: ordersOrderByWithRelationInput | ordersOrderByWithRelationInput[]
+    orderBy?: order_detailOrderByWithRelationInput | order_detailOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing orders.
+     * Sets the position for listing order_details.
      */
-    cursor?: ordersWhereUniqueInput
+    cursor?: order_detailWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` orders from the position of the cursor.
+     * Take `±n` order_details from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` orders.
+     * Skip the first `n` order_details.
      */
     skip?: number
-    distinct?: OrdersScalarFieldEnum | OrdersScalarFieldEnum[]
+    distinct?: Order_detailScalarFieldEnum | Order_detailScalarFieldEnum[]
   }
 
 
   /**
-   * orders create
+   * order_detail create
    */
-  export type ordersCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type order_detailCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the orders
+     * Select specific fields to fetch from the order_detail
      */
-    select?: ordersSelect<ExtArgs> | null
+    select?: order_detailSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well.
      */
-    include?: ordersInclude<ExtArgs> | null
+    include?: order_detailInclude<ExtArgs> | null
     /**
-     * The data needed to create a orders.
+     * The data needed to create a order_detail.
      */
-    data: XOR<ordersCreateInput, ordersUncheckedCreateInput>
+    data: XOR<order_detailCreateInput, order_detailUncheckedCreateInput>
   }
 
 
   /**
-   * orders createMany
+   * order_detail createMany
    */
-  export type ordersCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type order_detailCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many orders.
+     * The data used to create many order_details.
      */
-    data: ordersCreateManyInput | ordersCreateManyInput[]
+    data: order_detailCreateManyInput | order_detailCreateManyInput[]
     skipDuplicates?: boolean
   }
 
 
   /**
-   * orders update
+   * order_detail update
    */
-  export type ordersUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type order_detailUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the orders
+     * Select specific fields to fetch from the order_detail
      */
-    select?: ordersSelect<ExtArgs> | null
+    select?: order_detailSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well.
      */
-    include?: ordersInclude<ExtArgs> | null
+    include?: order_detailInclude<ExtArgs> | null
     /**
-     * The data needed to update a orders.
+     * The data needed to update a order_detail.
      */
-    data: XOR<ordersUpdateInput, ordersUncheckedUpdateInput>
+    data: XOR<order_detailUpdateInput, order_detailUncheckedUpdateInput>
     /**
-     * Choose, which orders to update.
+     * Choose, which order_detail to update.
      */
-    where: ordersWhereUniqueInput
+    where: order_detailWhereUniqueInput
   }
 
 
   /**
-   * orders updateMany
+   * order_detail updateMany
    */
-  export type ordersUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type order_detailUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update orders.
+     * The data used to update order_details.
      */
-    data: XOR<ordersUpdateManyMutationInput, ordersUncheckedUpdateManyInput>
+    data: XOR<order_detailUpdateManyMutationInput, order_detailUncheckedUpdateManyInput>
     /**
-     * Filter which orders to update
+     * Filter which order_details to update
      */
-    where?: ordersWhereInput
+    where?: order_detailWhereInput
   }
 
 
   /**
-   * orders upsert
+   * order_detail upsert
    */
-  export type ordersUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type order_detailUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the orders
+     * Select specific fields to fetch from the order_detail
      */
-    select?: ordersSelect<ExtArgs> | null
+    select?: order_detailSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well.
      */
-    include?: ordersInclude<ExtArgs> | null
+    include?: order_detailInclude<ExtArgs> | null
     /**
-     * The filter to search for the orders to update in case it exists.
+     * The filter to search for the order_detail to update in case it exists.
      */
-    where: ordersWhereUniqueInput
+    where: order_detailWhereUniqueInput
     /**
-     * In case the orders found by the `where` argument doesn't exist, create a new orders with this data.
+     * In case the order_detail found by the `where` argument doesn't exist, create a new order_detail with this data.
      */
-    create: XOR<ordersCreateInput, ordersUncheckedCreateInput>
+    create: XOR<order_detailCreateInput, order_detailUncheckedCreateInput>
     /**
-     * In case the orders was found with the provided `where` argument, update it with this data.
+     * In case the order_detail was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<ordersUpdateInput, ordersUncheckedUpdateInput>
+    update: XOR<order_detailUpdateInput, order_detailUncheckedUpdateInput>
   }
 
 
   /**
-   * orders delete
+   * order_detail delete
    */
-  export type ordersDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type order_detailDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the orders
+     * Select specific fields to fetch from the order_detail
      */
-    select?: ordersSelect<ExtArgs> | null
+    select?: order_detailSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well.
      */
-    include?: ordersInclude<ExtArgs> | null
+    include?: order_detailInclude<ExtArgs> | null
     /**
-     * Filter which orders to delete.
+     * Filter which order_detail to delete.
      */
-    where: ordersWhereUniqueInput
+    where: order_detailWhereUniqueInput
   }
 
 
   /**
-   * orders deleteMany
+   * order_detail deleteMany
    */
-  export type ordersDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type order_detailDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which orders to delete
+     * Filter which order_details to delete
      */
-    where?: ordersWhereInput
+    where?: order_detailWhereInput
   }
 
 
   /**
-   * orders.users
+   * order_detail.friend_order
    */
-  export type orders$usersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type order_detail$friend_orderArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the users
+     * Select specific fields to fetch from the friend_order
      */
-    select?: usersSelect<ExtArgs> | null
+    select?: friend_orderSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well.
      */
-    include?: usersInclude<ExtArgs> | null
-    where?: usersWhereInput
+    include?: friend_orderInclude<ExtArgs> | null
+    where?: friend_orderWhereInput
   }
 
 
   /**
-   * orders.bill
+   * order_detail without action
    */
-  export type orders$billArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type order_detailDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the order_detail
+     */
+    select?: order_detailSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: order_detailInclude<ExtArgs> | null
+  }
+
+
+
+  /**
+   * Model friend_order
+   */
+
+  export type AggregateFriend_order = {
+    _count: Friend_orderCountAggregateOutputType | null
+    _avg: Friend_orderAvgAggregateOutputType | null
+    _sum: Friend_orderSumAggregateOutputType | null
+    _min: Friend_orderMinAggregateOutputType | null
+    _max: Friend_orderMaxAggregateOutputType | null
+  }
+
+  export type Friend_orderAvgAggregateOutputType = {
+    id: number | null
+    bill_id: number | null
+  }
+
+  export type Friend_orderSumAggregateOutputType = {
+    id: number | null
+    bill_id: number | null
+  }
+
+  export type Friend_orderMinAggregateOutputType = {
+    id: number | null
+    bill_id: number | null
+    name: string | null
+    is_paid: boolean | null
+  }
+
+  export type Friend_orderMaxAggregateOutputType = {
+    id: number | null
+    bill_id: number | null
+    name: string | null
+    is_paid: boolean | null
+  }
+
+  export type Friend_orderCountAggregateOutputType = {
+    id: number
+    bill_id: number
+    name: number
+    is_paid: number
+    _all: number
+  }
+
+
+  export type Friend_orderAvgAggregateInputType = {
+    id?: true
+    bill_id?: true
+  }
+
+  export type Friend_orderSumAggregateInputType = {
+    id?: true
+    bill_id?: true
+  }
+
+  export type Friend_orderMinAggregateInputType = {
+    id?: true
+    bill_id?: true
+    name?: true
+    is_paid?: true
+  }
+
+  export type Friend_orderMaxAggregateInputType = {
+    id?: true
+    bill_id?: true
+    name?: true
+    is_paid?: true
+  }
+
+  export type Friend_orderCountAggregateInputType = {
+    id?: true
+    bill_id?: true
+    name?: true
+    is_paid?: true
+    _all?: true
+  }
+
+  export type Friend_orderAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which friend_order to aggregate.
+     */
+    where?: friend_orderWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of friend_orders to fetch.
+     */
+    orderBy?: friend_orderOrderByWithRelationInput | friend_orderOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: friend_orderWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` friend_orders from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` friend_orders.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned friend_orders
+    **/
+    _count?: true | Friend_orderCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: Friend_orderAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: Friend_orderSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: Friend_orderMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: Friend_orderMaxAggregateInputType
+  }
+
+  export type GetFriend_orderAggregateType<T extends Friend_orderAggregateArgs> = {
+        [P in keyof T & keyof AggregateFriend_order]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateFriend_order[P]>
+      : GetScalarType<T[P], AggregateFriend_order[P]>
+  }
+
+
+
+
+  export type friend_orderGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: friend_orderWhereInput
+    orderBy?: friend_orderOrderByWithAggregationInput | friend_orderOrderByWithAggregationInput[]
+    by: Friend_orderScalarFieldEnum[] | Friend_orderScalarFieldEnum
+    having?: friend_orderScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: Friend_orderCountAggregateInputType | true
+    _avg?: Friend_orderAvgAggregateInputType
+    _sum?: Friend_orderSumAggregateInputType
+    _min?: Friend_orderMinAggregateInputType
+    _max?: Friend_orderMaxAggregateInputType
+  }
+
+  export type Friend_orderGroupByOutputType = {
+    id: number
+    bill_id: number | null
+    name: string
+    is_paid: boolean
+    _count: Friend_orderCountAggregateOutputType | null
+    _avg: Friend_orderAvgAggregateOutputType | null
+    _sum: Friend_orderSumAggregateOutputType | null
+    _min: Friend_orderMinAggregateOutputType | null
+    _max: Friend_orderMaxAggregateOutputType | null
+  }
+
+  type GetFriend_orderGroupByPayload<T extends friend_orderGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<Friend_orderGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof Friend_orderGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], Friend_orderGroupByOutputType[P]>
+            : GetScalarType<T[P], Friend_orderGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type friend_orderSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    bill_id?: boolean
+    name?: boolean
+    is_paid?: boolean
+    bill?: boolean | friend_order$billArgs<ExtArgs>
+    order_detail?: boolean | friend_order$order_detailArgs<ExtArgs>
+    _count?: boolean | Friend_orderCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["friend_order"]>
+
+  export type friend_orderSelectScalar = {
+    id?: boolean
+    bill_id?: boolean
+    name?: boolean
+    is_paid?: boolean
+  }
+
+  export type friend_orderInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    bill?: boolean | friend_order$billArgs<ExtArgs>
+    order_detail?: boolean | friend_order$order_detailArgs<ExtArgs>
+    _count?: boolean | Friend_orderCountOutputTypeDefaultArgs<ExtArgs>
+  }
+
+
+  export type $friend_orderPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "friend_order"
+    objects: {
+      bill: Prisma.$billPayload<ExtArgs> | null
+      order_detail: Prisma.$order_detailPayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      bill_id: number | null
+      name: string
+      is_paid: boolean
+    }, ExtArgs["result"]["friend_order"]>
+    composites: {}
+  }
+
+
+  type friend_orderGetPayload<S extends boolean | null | undefined | friend_orderDefaultArgs> = $Result.GetResult<Prisma.$friend_orderPayload, S>
+
+  type friend_orderCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<friend_orderFindManyArgs, 'select' | 'include' | 'distinct'> & {
+      select?: Friend_orderCountAggregateInputType | true
+    }
+
+  export interface friend_orderDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['friend_order'], meta: { name: 'friend_order' } }
+    /**
+     * Find zero or one Friend_order that matches the filter.
+     * @param {friend_orderFindUniqueArgs} args - Arguments to find a Friend_order
+     * @example
+     * // Get one Friend_order
+     * const friend_order = await prisma.friend_order.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findUnique<T extends friend_orderFindUniqueArgs<ExtArgs>>(
+      args: SelectSubset<T, friend_orderFindUniqueArgs<ExtArgs>>
+    ): Prisma__friend_orderClient<$Result.GetResult<Prisma.$friend_orderPayload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
+
+    /**
+     * Find one Friend_order that matches the filter or throw an error  with `error.code='P2025'` 
+     *     if no matches were found.
+     * @param {friend_orderFindUniqueOrThrowArgs} args - Arguments to find a Friend_order
+     * @example
+     * // Get one Friend_order
+     * const friend_order = await prisma.friend_order.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findUniqueOrThrow<T extends friend_orderFindUniqueOrThrowArgs<ExtArgs>>(
+      args?: SelectSubset<T, friend_orderFindUniqueOrThrowArgs<ExtArgs>>
+    ): Prisma__friend_orderClient<$Result.GetResult<Prisma.$friend_orderPayload<ExtArgs>, T, 'findUniqueOrThrow'>, never, ExtArgs>
+
+    /**
+     * Find the first Friend_order that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {friend_orderFindFirstArgs} args - Arguments to find a Friend_order
+     * @example
+     * // Get one Friend_order
+     * const friend_order = await prisma.friend_order.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findFirst<T extends friend_orderFindFirstArgs<ExtArgs>>(
+      args?: SelectSubset<T, friend_orderFindFirstArgs<ExtArgs>>
+    ): Prisma__friend_orderClient<$Result.GetResult<Prisma.$friend_orderPayload<ExtArgs>, T, 'findFirst'> | null, null, ExtArgs>
+
+    /**
+     * Find the first Friend_order that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {friend_orderFindFirstOrThrowArgs} args - Arguments to find a Friend_order
+     * @example
+     * // Get one Friend_order
+     * const friend_order = await prisma.friend_order.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findFirstOrThrow<T extends friend_orderFindFirstOrThrowArgs<ExtArgs>>(
+      args?: SelectSubset<T, friend_orderFindFirstOrThrowArgs<ExtArgs>>
+    ): Prisma__friend_orderClient<$Result.GetResult<Prisma.$friend_orderPayload<ExtArgs>, T, 'findFirstOrThrow'>, never, ExtArgs>
+
+    /**
+     * Find zero or more Friend_orders that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {friend_orderFindManyArgs=} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Friend_orders
+     * const friend_orders = await prisma.friend_order.findMany()
+     * 
+     * // Get first 10 Friend_orders
+     * const friend_orders = await prisma.friend_order.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const friend_orderWithIdOnly = await prisma.friend_order.findMany({ select: { id: true } })
+     * 
+    **/
+    findMany<T extends friend_orderFindManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, friend_orderFindManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<$Result.GetResult<Prisma.$friend_orderPayload<ExtArgs>, T, 'findMany'>>
+
+    /**
+     * Create a Friend_order.
+     * @param {friend_orderCreateArgs} args - Arguments to create a Friend_order.
+     * @example
+     * // Create one Friend_order
+     * const Friend_order = await prisma.friend_order.create({
+     *   data: {
+     *     // ... data to create a Friend_order
+     *   }
+     * })
+     * 
+    **/
+    create<T extends friend_orderCreateArgs<ExtArgs>>(
+      args: SelectSubset<T, friend_orderCreateArgs<ExtArgs>>
+    ): Prisma__friend_orderClient<$Result.GetResult<Prisma.$friend_orderPayload<ExtArgs>, T, 'create'>, never, ExtArgs>
+
+    /**
+     * Create many Friend_orders.
+     *     @param {friend_orderCreateManyArgs} args - Arguments to create many Friend_orders.
+     *     @example
+     *     // Create many Friend_orders
+     *     const friend_order = await prisma.friend_order.createMany({
+     *       data: {
+     *         // ... provide data here
+     *       }
+     *     })
+     *     
+    **/
+    createMany<T extends friend_orderCreateManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, friend_orderCreateManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Delete a Friend_order.
+     * @param {friend_orderDeleteArgs} args - Arguments to delete one Friend_order.
+     * @example
+     * // Delete one Friend_order
+     * const Friend_order = await prisma.friend_order.delete({
+     *   where: {
+     *     // ... filter to delete one Friend_order
+     *   }
+     * })
+     * 
+    **/
+    delete<T extends friend_orderDeleteArgs<ExtArgs>>(
+      args: SelectSubset<T, friend_orderDeleteArgs<ExtArgs>>
+    ): Prisma__friend_orderClient<$Result.GetResult<Prisma.$friend_orderPayload<ExtArgs>, T, 'delete'>, never, ExtArgs>
+
+    /**
+     * Update one Friend_order.
+     * @param {friend_orderUpdateArgs} args - Arguments to update one Friend_order.
+     * @example
+     * // Update one Friend_order
+     * const friend_order = await prisma.friend_order.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+    **/
+    update<T extends friend_orderUpdateArgs<ExtArgs>>(
+      args: SelectSubset<T, friend_orderUpdateArgs<ExtArgs>>
+    ): Prisma__friend_orderClient<$Result.GetResult<Prisma.$friend_orderPayload<ExtArgs>, T, 'update'>, never, ExtArgs>
+
+    /**
+     * Delete zero or more Friend_orders.
+     * @param {friend_orderDeleteManyArgs} args - Arguments to filter Friend_orders to delete.
+     * @example
+     * // Delete a few Friend_orders
+     * const { count } = await prisma.friend_order.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+    **/
+    deleteMany<T extends friend_orderDeleteManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, friend_orderDeleteManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Friend_orders.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {friend_orderUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Friend_orders
+     * const friend_order = await prisma.friend_order.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+    **/
+    updateMany<T extends friend_orderUpdateManyArgs<ExtArgs>>(
+      args: SelectSubset<T, friend_orderUpdateManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one Friend_order.
+     * @param {friend_orderUpsertArgs} args - Arguments to update or create a Friend_order.
+     * @example
+     * // Update or create a Friend_order
+     * const friend_order = await prisma.friend_order.upsert({
+     *   create: {
+     *     // ... data to create a Friend_order
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Friend_order we want to update
+     *   }
+     * })
+    **/
+    upsert<T extends friend_orderUpsertArgs<ExtArgs>>(
+      args: SelectSubset<T, friend_orderUpsertArgs<ExtArgs>>
+    ): Prisma__friend_orderClient<$Result.GetResult<Prisma.$friend_orderPayload<ExtArgs>, T, 'upsert'>, never, ExtArgs>
+
+    /**
+     * Count the number of Friend_orders.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {friend_orderCountArgs} args - Arguments to filter Friend_orders to count.
+     * @example
+     * // Count the number of Friend_orders
+     * const count = await prisma.friend_order.count({
+     *   where: {
+     *     // ... the filter for the Friend_orders we want to count
+     *   }
+     * })
+    **/
+    count<T extends friend_orderCountArgs>(
+      args?: Subset<T, friend_orderCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Friend_orderCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Friend_order.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Friend_orderAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends Friend_orderAggregateArgs>(args: Subset<T, Friend_orderAggregateArgs>): Prisma.PrismaPromise<GetFriend_orderAggregateType<T>>
+
+    /**
+     * Group by Friend_order.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {friend_orderGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends friend_orderGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: friend_orderGroupByArgs['orderBy'] }
+        : { orderBy?: friend_orderGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, friend_orderGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetFriend_orderGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the friend_order model
+   */
+  readonly fields: friend_orderFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for friend_order.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__friend_orderClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: 'PrismaPromise';
+
+    bill<T extends friend_order$billArgs<ExtArgs> = {}>(args?: Subset<T, friend_order$billArgs<ExtArgs>>): Prisma__billClient<$Result.GetResult<Prisma.$billPayload<ExtArgs>, T, 'findUniqueOrThrow'> | null, null, ExtArgs>;
+
+    order_detail<T extends friend_order$order_detailArgs<ExtArgs> = {}>(args?: Subset<T, friend_order$order_detailArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$order_detailPayload<ExtArgs>, T, 'findMany'> | Null>;
+
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>;
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>;
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>;
+  }
+
+
+
+  /**
+   * Fields of the friend_order model
+   */ 
+  interface friend_orderFieldRefs {
+    readonly id: FieldRef<"friend_order", 'Int'>
+    readonly bill_id: FieldRef<"friend_order", 'Int'>
+    readonly name: FieldRef<"friend_order", 'String'>
+    readonly is_paid: FieldRef<"friend_order", 'Boolean'>
+  }
+    
+
+  // Custom InputTypes
+
+  /**
+   * friend_order findUnique
+   */
+  export type friend_orderFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the friend_order
+     */
+    select?: friend_orderSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: friend_orderInclude<ExtArgs> | null
+    /**
+     * Filter, which friend_order to fetch.
+     */
+    where: friend_orderWhereUniqueInput
+  }
+
+
+  /**
+   * friend_order findUniqueOrThrow
+   */
+  export type friend_orderFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the friend_order
+     */
+    select?: friend_orderSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: friend_orderInclude<ExtArgs> | null
+    /**
+     * Filter, which friend_order to fetch.
+     */
+    where: friend_orderWhereUniqueInput
+  }
+
+
+  /**
+   * friend_order findFirst
+   */
+  export type friend_orderFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the friend_order
+     */
+    select?: friend_orderSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: friend_orderInclude<ExtArgs> | null
+    /**
+     * Filter, which friend_order to fetch.
+     */
+    where?: friend_orderWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of friend_orders to fetch.
+     */
+    orderBy?: friend_orderOrderByWithRelationInput | friend_orderOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for friend_orders.
+     */
+    cursor?: friend_orderWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` friend_orders from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` friend_orders.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of friend_orders.
+     */
+    distinct?: Friend_orderScalarFieldEnum | Friend_orderScalarFieldEnum[]
+  }
+
+
+  /**
+   * friend_order findFirstOrThrow
+   */
+  export type friend_orderFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the friend_order
+     */
+    select?: friend_orderSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: friend_orderInclude<ExtArgs> | null
+    /**
+     * Filter, which friend_order to fetch.
+     */
+    where?: friend_orderWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of friend_orders to fetch.
+     */
+    orderBy?: friend_orderOrderByWithRelationInput | friend_orderOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for friend_orders.
+     */
+    cursor?: friend_orderWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` friend_orders from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` friend_orders.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of friend_orders.
+     */
+    distinct?: Friend_orderScalarFieldEnum | Friend_orderScalarFieldEnum[]
+  }
+
+
+  /**
+   * friend_order findMany
+   */
+  export type friend_orderFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the friend_order
+     */
+    select?: friend_orderSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: friend_orderInclude<ExtArgs> | null
+    /**
+     * Filter, which friend_orders to fetch.
+     */
+    where?: friend_orderWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of friend_orders to fetch.
+     */
+    orderBy?: friend_orderOrderByWithRelationInput | friend_orderOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing friend_orders.
+     */
+    cursor?: friend_orderWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` friend_orders from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` friend_orders.
+     */
+    skip?: number
+    distinct?: Friend_orderScalarFieldEnum | Friend_orderScalarFieldEnum[]
+  }
+
+
+  /**
+   * friend_order create
+   */
+  export type friend_orderCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the friend_order
+     */
+    select?: friend_orderSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: friend_orderInclude<ExtArgs> | null
+    /**
+     * The data needed to create a friend_order.
+     */
+    data: XOR<friend_orderCreateInput, friend_orderUncheckedCreateInput>
+  }
+
+
+  /**
+   * friend_order createMany
+   */
+  export type friend_orderCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many friend_orders.
+     */
+    data: friend_orderCreateManyInput | friend_orderCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+
+  /**
+   * friend_order update
+   */
+  export type friend_orderUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the friend_order
+     */
+    select?: friend_orderSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: friend_orderInclude<ExtArgs> | null
+    /**
+     * The data needed to update a friend_order.
+     */
+    data: XOR<friend_orderUpdateInput, friend_orderUncheckedUpdateInput>
+    /**
+     * Choose, which friend_order to update.
+     */
+    where: friend_orderWhereUniqueInput
+  }
+
+
+  /**
+   * friend_order updateMany
+   */
+  export type friend_orderUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update friend_orders.
+     */
+    data: XOR<friend_orderUpdateManyMutationInput, friend_orderUncheckedUpdateManyInput>
+    /**
+     * Filter which friend_orders to update
+     */
+    where?: friend_orderWhereInput
+  }
+
+
+  /**
+   * friend_order upsert
+   */
+  export type friend_orderUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the friend_order
+     */
+    select?: friend_orderSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: friend_orderInclude<ExtArgs> | null
+    /**
+     * The filter to search for the friend_order to update in case it exists.
+     */
+    where: friend_orderWhereUniqueInput
+    /**
+     * In case the friend_order found by the `where` argument doesn't exist, create a new friend_order with this data.
+     */
+    create: XOR<friend_orderCreateInput, friend_orderUncheckedCreateInput>
+    /**
+     * In case the friend_order was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<friend_orderUpdateInput, friend_orderUncheckedUpdateInput>
+  }
+
+
+  /**
+   * friend_order delete
+   */
+  export type friend_orderDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the friend_order
+     */
+    select?: friend_orderSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: friend_orderInclude<ExtArgs> | null
+    /**
+     * Filter which friend_order to delete.
+     */
+    where: friend_orderWhereUniqueInput
+  }
+
+
+  /**
+   * friend_order deleteMany
+   */
+  export type friend_orderDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which friend_orders to delete
+     */
+    where?: friend_orderWhereInput
+  }
+
+
+  /**
+   * friend_order.bill
+   */
+  export type friend_order$billArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * Select specific fields to fetch from the bill
      */
@@ -3718,2050 +4339,38 @@ export namespace Prisma {
 
 
   /**
-   * orders.friends_order
+   * friend_order.order_detail
    */
-  export type orders$friends_orderArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type friend_order$order_detailArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the friends_order
+     * Select specific fields to fetch from the order_detail
      */
-    select?: friends_orderSelect<ExtArgs> | null
+    select?: order_detailSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well.
      */
-    include?: friends_orderInclude<ExtArgs> | null
-    where?: friends_orderWhereInput
-    orderBy?: friends_orderOrderByWithRelationInput | friends_orderOrderByWithRelationInput[]
-    cursor?: friends_orderWhereUniqueInput
+    include?: order_detailInclude<ExtArgs> | null
+    where?: order_detailWhereInput
+    orderBy?: order_detailOrderByWithRelationInput | order_detailOrderByWithRelationInput[]
+    cursor?: order_detailWhereUniqueInput
     take?: number
     skip?: number
-    distinct?: Friends_orderScalarFieldEnum | Friends_orderScalarFieldEnum[]
+    distinct?: Order_detailScalarFieldEnum | Order_detailScalarFieldEnum[]
   }
 
 
   /**
-   * orders without action
+   * friend_order without action
    */
-  export type ordersDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type friend_orderDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the orders
+     * Select specific fields to fetch from the friend_order
      */
-    select?: ordersSelect<ExtArgs> | null
+    select?: friend_orderSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well.
      */
-    include?: ordersInclude<ExtArgs> | null
-  }
-
-
-
-  /**
-   * Model friends_order
-   */
-
-  export type AggregateFriends_order = {
-    _count: Friends_orderCountAggregateOutputType | null
-    _avg: Friends_orderAvgAggregateOutputType | null
-    _sum: Friends_orderSumAggregateOutputType | null
-    _min: Friends_orderMinAggregateOutputType | null
-    _max: Friends_orderMaxAggregateOutputType | null
-  }
-
-  export type Friends_orderAvgAggregateOutputType = {
-    id: number | null
-    orders_id: number | null
-    friends_id: number | null
-    friend_order_price: number | null
-  }
-
-  export type Friends_orderSumAggregateOutputType = {
-    id: number | null
-    orders_id: number | null
-    friends_id: number | null
-    friend_order_price: bigint | null
-  }
-
-  export type Friends_orderMinAggregateOutputType = {
-    id: number | null
-    orders_id: number | null
-    friends_id: number | null
-    friend_order_price: bigint | null
-    is_paid: boolean | null
-    created_at: Date | null
-    update_at: Date | null
-  }
-
-  export type Friends_orderMaxAggregateOutputType = {
-    id: number | null
-    orders_id: number | null
-    friends_id: number | null
-    friend_order_price: bigint | null
-    is_paid: boolean | null
-    created_at: Date | null
-    update_at: Date | null
-  }
-
-  export type Friends_orderCountAggregateOutputType = {
-    id: number
-    orders_id: number
-    friends_id: number
-    friend_order_price: number
-    is_paid: number
-    created_at: number
-    update_at: number
-    _all: number
-  }
-
-
-  export type Friends_orderAvgAggregateInputType = {
-    id?: true
-    orders_id?: true
-    friends_id?: true
-    friend_order_price?: true
-  }
-
-  export type Friends_orderSumAggregateInputType = {
-    id?: true
-    orders_id?: true
-    friends_id?: true
-    friend_order_price?: true
-  }
-
-  export type Friends_orderMinAggregateInputType = {
-    id?: true
-    orders_id?: true
-    friends_id?: true
-    friend_order_price?: true
-    is_paid?: true
-    created_at?: true
-    update_at?: true
-  }
-
-  export type Friends_orderMaxAggregateInputType = {
-    id?: true
-    orders_id?: true
-    friends_id?: true
-    friend_order_price?: true
-    is_paid?: true
-    created_at?: true
-    update_at?: true
-  }
-
-  export type Friends_orderCountAggregateInputType = {
-    id?: true
-    orders_id?: true
-    friends_id?: true
-    friend_order_price?: true
-    is_paid?: true
-    created_at?: true
-    update_at?: true
-    _all?: true
-  }
-
-  export type Friends_orderAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which friends_order to aggregate.
-     */
-    where?: friends_orderWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of friends_orders to fetch.
-     */
-    orderBy?: friends_orderOrderByWithRelationInput | friends_orderOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the start position
-     */
-    cursor?: friends_orderWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` friends_orders from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` friends_orders.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Count returned friends_orders
-    **/
-    _count?: true | Friends_orderCountAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to average
-    **/
-    _avg?: Friends_orderAvgAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to sum
-    **/
-    _sum?: Friends_orderSumAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the minimum value
-    **/
-    _min?: Friends_orderMinAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the maximum value
-    **/
-    _max?: Friends_orderMaxAggregateInputType
-  }
-
-  export type GetFriends_orderAggregateType<T extends Friends_orderAggregateArgs> = {
-        [P in keyof T & keyof AggregateFriends_order]: P extends '_count' | 'count'
-      ? T[P] extends true
-        ? number
-        : GetScalarType<T[P], AggregateFriends_order[P]>
-      : GetScalarType<T[P], AggregateFriends_order[P]>
-  }
-
-
-
-
-  export type friends_orderGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: friends_orderWhereInput
-    orderBy?: friends_orderOrderByWithAggregationInput | friends_orderOrderByWithAggregationInput[]
-    by: Friends_orderScalarFieldEnum[] | Friends_orderScalarFieldEnum
-    having?: friends_orderScalarWhereWithAggregatesInput
-    take?: number
-    skip?: number
-    _count?: Friends_orderCountAggregateInputType | true
-    _avg?: Friends_orderAvgAggregateInputType
-    _sum?: Friends_orderSumAggregateInputType
-    _min?: Friends_orderMinAggregateInputType
-    _max?: Friends_orderMaxAggregateInputType
-  }
-
-  export type Friends_orderGroupByOutputType = {
-    id: number
-    orders_id: number | null
-    friends_id: number | null
-    friend_order_price: bigint
-    is_paid: boolean
-    created_at: Date
-    update_at: Date
-    _count: Friends_orderCountAggregateOutputType | null
-    _avg: Friends_orderAvgAggregateOutputType | null
-    _sum: Friends_orderSumAggregateOutputType | null
-    _min: Friends_orderMinAggregateOutputType | null
-    _max: Friends_orderMaxAggregateOutputType | null
-  }
-
-  type GetFriends_orderGroupByPayload<T extends friends_orderGroupByArgs> = Prisma.PrismaPromise<
-    Array<
-      PickEnumerable<Friends_orderGroupByOutputType, T['by']> &
-        {
-          [P in ((keyof T) & (keyof Friends_orderGroupByOutputType))]: P extends '_count'
-            ? T[P] extends boolean
-              ? number
-              : GetScalarType<T[P], Friends_orderGroupByOutputType[P]>
-            : GetScalarType<T[P], Friends_orderGroupByOutputType[P]>
-        }
-      >
-    >
-
-
-  export type friends_orderSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    orders_id?: boolean
-    friends_id?: boolean
-    friend_order_price?: boolean
-    is_paid?: boolean
-    created_at?: boolean
-    update_at?: boolean
-    orders?: boolean | friends_order$ordersArgs<ExtArgs>
-    friends?: boolean | friends_order$friendsArgs<ExtArgs>
-  }, ExtArgs["result"]["friends_order"]>
-
-  export type friends_orderSelectScalar = {
-    id?: boolean
-    orders_id?: boolean
-    friends_id?: boolean
-    friend_order_price?: boolean
-    is_paid?: boolean
-    created_at?: boolean
-    update_at?: boolean
-  }
-
-  export type friends_orderInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    orders?: boolean | friends_order$ordersArgs<ExtArgs>
-    friends?: boolean | friends_order$friendsArgs<ExtArgs>
-  }
-
-
-  export type $friends_orderPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "friends_order"
-    objects: {
-      orders: Prisma.$ordersPayload<ExtArgs> | null
-      friends: Prisma.$friendsPayload<ExtArgs> | null
-    }
-    scalars: $Extensions.GetPayloadResult<{
-      id: number
-      orders_id: number | null
-      friends_id: number | null
-      friend_order_price: bigint
-      is_paid: boolean
-      created_at: Date
-      update_at: Date
-    }, ExtArgs["result"]["friends_order"]>
-    composites: {}
-  }
-
-
-  type friends_orderGetPayload<S extends boolean | null | undefined | friends_orderDefaultArgs> = $Result.GetResult<Prisma.$friends_orderPayload, S>
-
-  type friends_orderCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
-    Omit<friends_orderFindManyArgs, 'select' | 'include' | 'distinct'> & {
-      select?: Friends_orderCountAggregateInputType | true
-    }
-
-  export interface friends_orderDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['friends_order'], meta: { name: 'friends_order' } }
-    /**
-     * Find zero or one Friends_order that matches the filter.
-     * @param {friends_orderFindUniqueArgs} args - Arguments to find a Friends_order
-     * @example
-     * // Get one Friends_order
-     * const friends_order = await prisma.friends_order.findUnique({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-    **/
-    findUnique<T extends friends_orderFindUniqueArgs<ExtArgs>>(
-      args: SelectSubset<T, friends_orderFindUniqueArgs<ExtArgs>>
-    ): Prisma__friends_orderClient<$Result.GetResult<Prisma.$friends_orderPayload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
-
-    /**
-     * Find one Friends_order that matches the filter or throw an error  with `error.code='P2025'` 
-     *     if no matches were found.
-     * @param {friends_orderFindUniqueOrThrowArgs} args - Arguments to find a Friends_order
-     * @example
-     * // Get one Friends_order
-     * const friends_order = await prisma.friends_order.findUniqueOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-    **/
-    findUniqueOrThrow<T extends friends_orderFindUniqueOrThrowArgs<ExtArgs>>(
-      args?: SelectSubset<T, friends_orderFindUniqueOrThrowArgs<ExtArgs>>
-    ): Prisma__friends_orderClient<$Result.GetResult<Prisma.$friends_orderPayload<ExtArgs>, T, 'findUniqueOrThrow'>, never, ExtArgs>
-
-    /**
-     * Find the first Friends_order that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {friends_orderFindFirstArgs} args - Arguments to find a Friends_order
-     * @example
-     * // Get one Friends_order
-     * const friends_order = await prisma.friends_order.findFirst({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-    **/
-    findFirst<T extends friends_orderFindFirstArgs<ExtArgs>>(
-      args?: SelectSubset<T, friends_orderFindFirstArgs<ExtArgs>>
-    ): Prisma__friends_orderClient<$Result.GetResult<Prisma.$friends_orderPayload<ExtArgs>, T, 'findFirst'> | null, null, ExtArgs>
-
-    /**
-     * Find the first Friends_order that matches the filter or
-     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {friends_orderFindFirstOrThrowArgs} args - Arguments to find a Friends_order
-     * @example
-     * // Get one Friends_order
-     * const friends_order = await prisma.friends_order.findFirstOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-    **/
-    findFirstOrThrow<T extends friends_orderFindFirstOrThrowArgs<ExtArgs>>(
-      args?: SelectSubset<T, friends_orderFindFirstOrThrowArgs<ExtArgs>>
-    ): Prisma__friends_orderClient<$Result.GetResult<Prisma.$friends_orderPayload<ExtArgs>, T, 'findFirstOrThrow'>, never, ExtArgs>
-
-    /**
-     * Find zero or more Friends_orders that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {friends_orderFindManyArgs=} args - Arguments to filter and select certain fields only.
-     * @example
-     * // Get all Friends_orders
-     * const friends_orders = await prisma.friends_order.findMany()
-     * 
-     * // Get first 10 Friends_orders
-     * const friends_orders = await prisma.friends_order.findMany({ take: 10 })
-     * 
-     * // Only select the `id`
-     * const friends_orderWithIdOnly = await prisma.friends_order.findMany({ select: { id: true } })
-     * 
-    **/
-    findMany<T extends friends_orderFindManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, friends_orderFindManyArgs<ExtArgs>>
-    ): Prisma.PrismaPromise<$Result.GetResult<Prisma.$friends_orderPayload<ExtArgs>, T, 'findMany'>>
-
-    /**
-     * Create a Friends_order.
-     * @param {friends_orderCreateArgs} args - Arguments to create a Friends_order.
-     * @example
-     * // Create one Friends_order
-     * const Friends_order = await prisma.friends_order.create({
-     *   data: {
-     *     // ... data to create a Friends_order
-     *   }
-     * })
-     * 
-    **/
-    create<T extends friends_orderCreateArgs<ExtArgs>>(
-      args: SelectSubset<T, friends_orderCreateArgs<ExtArgs>>
-    ): Prisma__friends_orderClient<$Result.GetResult<Prisma.$friends_orderPayload<ExtArgs>, T, 'create'>, never, ExtArgs>
-
-    /**
-     * Create many Friends_orders.
-     *     @param {friends_orderCreateManyArgs} args - Arguments to create many Friends_orders.
-     *     @example
-     *     // Create many Friends_orders
-     *     const friends_order = await prisma.friends_order.createMany({
-     *       data: {
-     *         // ... provide data here
-     *       }
-     *     })
-     *     
-    **/
-    createMany<T extends friends_orderCreateManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, friends_orderCreateManyArgs<ExtArgs>>
-    ): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Delete a Friends_order.
-     * @param {friends_orderDeleteArgs} args - Arguments to delete one Friends_order.
-     * @example
-     * // Delete one Friends_order
-     * const Friends_order = await prisma.friends_order.delete({
-     *   where: {
-     *     // ... filter to delete one Friends_order
-     *   }
-     * })
-     * 
-    **/
-    delete<T extends friends_orderDeleteArgs<ExtArgs>>(
-      args: SelectSubset<T, friends_orderDeleteArgs<ExtArgs>>
-    ): Prisma__friends_orderClient<$Result.GetResult<Prisma.$friends_orderPayload<ExtArgs>, T, 'delete'>, never, ExtArgs>
-
-    /**
-     * Update one Friends_order.
-     * @param {friends_orderUpdateArgs} args - Arguments to update one Friends_order.
-     * @example
-     * // Update one Friends_order
-     * const friends_order = await prisma.friends_order.update({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-    **/
-    update<T extends friends_orderUpdateArgs<ExtArgs>>(
-      args: SelectSubset<T, friends_orderUpdateArgs<ExtArgs>>
-    ): Prisma__friends_orderClient<$Result.GetResult<Prisma.$friends_orderPayload<ExtArgs>, T, 'update'>, never, ExtArgs>
-
-    /**
-     * Delete zero or more Friends_orders.
-     * @param {friends_orderDeleteManyArgs} args - Arguments to filter Friends_orders to delete.
-     * @example
-     * // Delete a few Friends_orders
-     * const { count } = await prisma.friends_order.deleteMany({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     * 
-    **/
-    deleteMany<T extends friends_orderDeleteManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, friends_orderDeleteManyArgs<ExtArgs>>
-    ): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Update zero or more Friends_orders.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {friends_orderUpdateManyArgs} args - Arguments to update one or more rows.
-     * @example
-     * // Update many Friends_orders
-     * const friends_order = await prisma.friends_order.updateMany({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-    **/
-    updateMany<T extends friends_orderUpdateManyArgs<ExtArgs>>(
-      args: SelectSubset<T, friends_orderUpdateManyArgs<ExtArgs>>
-    ): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Create or update one Friends_order.
-     * @param {friends_orderUpsertArgs} args - Arguments to update or create a Friends_order.
-     * @example
-     * // Update or create a Friends_order
-     * const friends_order = await prisma.friends_order.upsert({
-     *   create: {
-     *     // ... data to create a Friends_order
-     *   },
-     *   update: {
-     *     // ... in case it already exists, update
-     *   },
-     *   where: {
-     *     // ... the filter for the Friends_order we want to update
-     *   }
-     * })
-    **/
-    upsert<T extends friends_orderUpsertArgs<ExtArgs>>(
-      args: SelectSubset<T, friends_orderUpsertArgs<ExtArgs>>
-    ): Prisma__friends_orderClient<$Result.GetResult<Prisma.$friends_orderPayload<ExtArgs>, T, 'upsert'>, never, ExtArgs>
-
-    /**
-     * Count the number of Friends_orders.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {friends_orderCountArgs} args - Arguments to filter Friends_orders to count.
-     * @example
-     * // Count the number of Friends_orders
-     * const count = await prisma.friends_order.count({
-     *   where: {
-     *     // ... the filter for the Friends_orders we want to count
-     *   }
-     * })
-    **/
-    count<T extends friends_orderCountArgs>(
-      args?: Subset<T, friends_orderCountArgs>,
-    ): Prisma.PrismaPromise<
-      T extends $Utils.Record<'select', any>
-        ? T['select'] extends true
-          ? number
-          : GetScalarType<T['select'], Friends_orderCountAggregateOutputType>
-        : number
-    >
-
-    /**
-     * Allows you to perform aggregations operations on a Friends_order.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {Friends_orderAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
-     * @example
-     * // Ordered by age ascending
-     * // Where email contains prisma.io
-     * // Limited to the 10 users
-     * const aggregations = await prisma.user.aggregate({
-     *   _avg: {
-     *     age: true,
-     *   },
-     *   where: {
-     *     email: {
-     *       contains: "prisma.io",
-     *     },
-     *   },
-     *   orderBy: {
-     *     age: "asc",
-     *   },
-     *   take: 10,
-     * })
-    **/
-    aggregate<T extends Friends_orderAggregateArgs>(args: Subset<T, Friends_orderAggregateArgs>): Prisma.PrismaPromise<GetFriends_orderAggregateType<T>>
-
-    /**
-     * Group by Friends_order.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {friends_orderGroupByArgs} args - Group by arguments.
-     * @example
-     * // Group by city, order by createdAt, get count
-     * const result = await prisma.user.groupBy({
-     *   by: ['city', 'createdAt'],
-     *   orderBy: {
-     *     createdAt: true
-     *   },
-     *   _count: {
-     *     _all: true
-     *   },
-     * })
-     * 
-    **/
-    groupBy<
-      T extends friends_orderGroupByArgs,
-      HasSelectOrTake extends Or<
-        Extends<'skip', Keys<T>>,
-        Extends<'take', Keys<T>>
-      >,
-      OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: friends_orderGroupByArgs['orderBy'] }
-        : { orderBy?: friends_orderGroupByArgs['orderBy'] },
-      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
-      ByFields extends MaybeTupleToUnion<T['by']>,
-      ByValid extends Has<ByFields, OrderFields>,
-      HavingFields extends GetHavingFields<T['having']>,
-      HavingValid extends Has<ByFields, HavingFields>,
-      ByEmpty extends T['by'] extends never[] ? True : False,
-      InputErrors extends ByEmpty extends True
-      ? `Error: "by" must not be empty.`
-      : HavingValid extends False
-      ? {
-          [P in HavingFields]: P extends ByFields
-            ? never
-            : P extends string
-            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
-            : [
-                Error,
-                'Field ',
-                P,
-                ` in "having" needs to be provided in "by"`,
-              ]
-        }[HavingFields]
-      : 'take' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "take", you also need to provide "orderBy"'
-      : 'skip' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "skip", you also need to provide "orderBy"'
-      : ByValid extends True
-      ? {}
-      : {
-          [P in OrderFields]: P extends ByFields
-            ? never
-            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-        }[OrderFields]
-    >(args: SubsetIntersection<T, friends_orderGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetFriends_orderGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
-  /**
-   * Fields of the friends_order model
-   */
-  readonly fields: friends_orderFieldRefs;
-  }
-
-  /**
-   * The delegate class that acts as a "Promise-like" for friends_order.
-   * Why is this prefixed with `Prisma__`?
-   * Because we want to prevent naming conflicts as mentioned in
-   * https://github.com/prisma/prisma-client-js/issues/707
-   */
-  export interface Prisma__friends_orderClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
-    readonly [Symbol.toStringTag]: 'PrismaPromise';
-
-    orders<T extends friends_order$ordersArgs<ExtArgs> = {}>(args?: Subset<T, friends_order$ordersArgs<ExtArgs>>): Prisma__ordersClient<$Result.GetResult<Prisma.$ordersPayload<ExtArgs>, T, 'findUniqueOrThrow'> | null, null, ExtArgs>;
-
-    friends<T extends friends_order$friendsArgs<ExtArgs> = {}>(args?: Subset<T, friends_order$friendsArgs<ExtArgs>>): Prisma__friendsClient<$Result.GetResult<Prisma.$friendsPayload<ExtArgs>, T, 'findUniqueOrThrow'> | null, null, ExtArgs>;
-
-    /**
-     * Attaches callbacks for the resolution and/or rejection of the Promise.
-     * @param onfulfilled The callback to execute when the Promise is resolved.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of which ever callback is executed.
-     */
-    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>;
-    /**
-     * Attaches a callback for only the rejection of the Promise.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of the callback.
-     */
-    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>;
-    /**
-     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
-     * resolved value cannot be modified from the callback.
-     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
-     * @returns A Promise for the completion of the callback.
-     */
-    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>;
-  }
-
-
-
-  /**
-   * Fields of the friends_order model
-   */ 
-  interface friends_orderFieldRefs {
-    readonly id: FieldRef<"friends_order", 'Int'>
-    readonly orders_id: FieldRef<"friends_order", 'Int'>
-    readonly friends_id: FieldRef<"friends_order", 'Int'>
-    readonly friend_order_price: FieldRef<"friends_order", 'BigInt'>
-    readonly is_paid: FieldRef<"friends_order", 'Boolean'>
-    readonly created_at: FieldRef<"friends_order", 'DateTime'>
-    readonly update_at: FieldRef<"friends_order", 'DateTime'>
-  }
-    
-
-  // Custom InputTypes
-
-  /**
-   * friends_order findUnique
-   */
-  export type friends_orderFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the friends_order
-     */
-    select?: friends_orderSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: friends_orderInclude<ExtArgs> | null
-    /**
-     * Filter, which friends_order to fetch.
-     */
-    where: friends_orderWhereUniqueInput
-  }
-
-
-  /**
-   * friends_order findUniqueOrThrow
-   */
-  export type friends_orderFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the friends_order
-     */
-    select?: friends_orderSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: friends_orderInclude<ExtArgs> | null
-    /**
-     * Filter, which friends_order to fetch.
-     */
-    where: friends_orderWhereUniqueInput
-  }
-
-
-  /**
-   * friends_order findFirst
-   */
-  export type friends_orderFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the friends_order
-     */
-    select?: friends_orderSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: friends_orderInclude<ExtArgs> | null
-    /**
-     * Filter, which friends_order to fetch.
-     */
-    where?: friends_orderWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of friends_orders to fetch.
-     */
-    orderBy?: friends_orderOrderByWithRelationInput | friends_orderOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for friends_orders.
-     */
-    cursor?: friends_orderWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` friends_orders from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` friends_orders.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of friends_orders.
-     */
-    distinct?: Friends_orderScalarFieldEnum | Friends_orderScalarFieldEnum[]
-  }
-
-
-  /**
-   * friends_order findFirstOrThrow
-   */
-  export type friends_orderFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the friends_order
-     */
-    select?: friends_orderSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: friends_orderInclude<ExtArgs> | null
-    /**
-     * Filter, which friends_order to fetch.
-     */
-    where?: friends_orderWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of friends_orders to fetch.
-     */
-    orderBy?: friends_orderOrderByWithRelationInput | friends_orderOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for friends_orders.
-     */
-    cursor?: friends_orderWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` friends_orders from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` friends_orders.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of friends_orders.
-     */
-    distinct?: Friends_orderScalarFieldEnum | Friends_orderScalarFieldEnum[]
-  }
-
-
-  /**
-   * friends_order findMany
-   */
-  export type friends_orderFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the friends_order
-     */
-    select?: friends_orderSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: friends_orderInclude<ExtArgs> | null
-    /**
-     * Filter, which friends_orders to fetch.
-     */
-    where?: friends_orderWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of friends_orders to fetch.
-     */
-    orderBy?: friends_orderOrderByWithRelationInput | friends_orderOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for listing friends_orders.
-     */
-    cursor?: friends_orderWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` friends_orders from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` friends_orders.
-     */
-    skip?: number
-    distinct?: Friends_orderScalarFieldEnum | Friends_orderScalarFieldEnum[]
-  }
-
-
-  /**
-   * friends_order create
-   */
-  export type friends_orderCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the friends_order
-     */
-    select?: friends_orderSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: friends_orderInclude<ExtArgs> | null
-    /**
-     * The data needed to create a friends_order.
-     */
-    data: XOR<friends_orderCreateInput, friends_orderUncheckedCreateInput>
-  }
-
-
-  /**
-   * friends_order createMany
-   */
-  export type friends_orderCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to create many friends_orders.
-     */
-    data: friends_orderCreateManyInput | friends_orderCreateManyInput[]
-    skipDuplicates?: boolean
-  }
-
-
-  /**
-   * friends_order update
-   */
-  export type friends_orderUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the friends_order
-     */
-    select?: friends_orderSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: friends_orderInclude<ExtArgs> | null
-    /**
-     * The data needed to update a friends_order.
-     */
-    data: XOR<friends_orderUpdateInput, friends_orderUncheckedUpdateInput>
-    /**
-     * Choose, which friends_order to update.
-     */
-    where: friends_orderWhereUniqueInput
-  }
-
-
-  /**
-   * friends_order updateMany
-   */
-  export type friends_orderUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to update friends_orders.
-     */
-    data: XOR<friends_orderUpdateManyMutationInput, friends_orderUncheckedUpdateManyInput>
-    /**
-     * Filter which friends_orders to update
-     */
-    where?: friends_orderWhereInput
-  }
-
-
-  /**
-   * friends_order upsert
-   */
-  export type friends_orderUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the friends_order
-     */
-    select?: friends_orderSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: friends_orderInclude<ExtArgs> | null
-    /**
-     * The filter to search for the friends_order to update in case it exists.
-     */
-    where: friends_orderWhereUniqueInput
-    /**
-     * In case the friends_order found by the `where` argument doesn't exist, create a new friends_order with this data.
-     */
-    create: XOR<friends_orderCreateInput, friends_orderUncheckedCreateInput>
-    /**
-     * In case the friends_order was found with the provided `where` argument, update it with this data.
-     */
-    update: XOR<friends_orderUpdateInput, friends_orderUncheckedUpdateInput>
-  }
-
-
-  /**
-   * friends_order delete
-   */
-  export type friends_orderDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the friends_order
-     */
-    select?: friends_orderSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: friends_orderInclude<ExtArgs> | null
-    /**
-     * Filter which friends_order to delete.
-     */
-    where: friends_orderWhereUniqueInput
-  }
-
-
-  /**
-   * friends_order deleteMany
-   */
-  export type friends_orderDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which friends_orders to delete
-     */
-    where?: friends_orderWhereInput
-  }
-
-
-  /**
-   * friends_order.orders
-   */
-  export type friends_order$ordersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the orders
-     */
-    select?: ordersSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: ordersInclude<ExtArgs> | null
-    where?: ordersWhereInput
-  }
-
-
-  /**
-   * friends_order.friends
-   */
-  export type friends_order$friendsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the friends
-     */
-    select?: friendsSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: friendsInclude<ExtArgs> | null
-    where?: friendsWhereInput
-  }
-
-
-  /**
-   * friends_order without action
-   */
-  export type friends_orderDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the friends_order
-     */
-    select?: friends_orderSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: friends_orderInclude<ExtArgs> | null
-  }
-
-
-
-  /**
-   * Model friends
-   */
-
-  export type AggregateFriends = {
-    _count: FriendsCountAggregateOutputType | null
-    _avg: FriendsAvgAggregateOutputType | null
-    _sum: FriendsSumAggregateOutputType | null
-    _min: FriendsMinAggregateOutputType | null
-    _max: FriendsMaxAggregateOutputType | null
-  }
-
-  export type FriendsAvgAggregateOutputType = {
-    id: number | null
-    user_id: number | null
-  }
-
-  export type FriendsSumAggregateOutputType = {
-    id: number | null
-    user_id: number | null
-  }
-
-  export type FriendsMinAggregateOutputType = {
-    id: number | null
-    user_id: number | null
-    friends_name: string | null
-    friends_photo: string | null
-  }
-
-  export type FriendsMaxAggregateOutputType = {
-    id: number | null
-    user_id: number | null
-    friends_name: string | null
-    friends_photo: string | null
-  }
-
-  export type FriendsCountAggregateOutputType = {
-    id: number
-    user_id: number
-    friends_name: number
-    friends_photo: number
-    _all: number
-  }
-
-
-  export type FriendsAvgAggregateInputType = {
-    id?: true
-    user_id?: true
-  }
-
-  export type FriendsSumAggregateInputType = {
-    id?: true
-    user_id?: true
-  }
-
-  export type FriendsMinAggregateInputType = {
-    id?: true
-    user_id?: true
-    friends_name?: true
-    friends_photo?: true
-  }
-
-  export type FriendsMaxAggregateInputType = {
-    id?: true
-    user_id?: true
-    friends_name?: true
-    friends_photo?: true
-  }
-
-  export type FriendsCountAggregateInputType = {
-    id?: true
-    user_id?: true
-    friends_name?: true
-    friends_photo?: true
-    _all?: true
-  }
-
-  export type FriendsAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which friends to aggregate.
-     */
-    where?: friendsWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of friends to fetch.
-     */
-    orderBy?: friendsOrderByWithRelationInput | friendsOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the start position
-     */
-    cursor?: friendsWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` friends from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` friends.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Count returned friends
-    **/
-    _count?: true | FriendsCountAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to average
-    **/
-    _avg?: FriendsAvgAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to sum
-    **/
-    _sum?: FriendsSumAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the minimum value
-    **/
-    _min?: FriendsMinAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the maximum value
-    **/
-    _max?: FriendsMaxAggregateInputType
-  }
-
-  export type GetFriendsAggregateType<T extends FriendsAggregateArgs> = {
-        [P in keyof T & keyof AggregateFriends]: P extends '_count' | 'count'
-      ? T[P] extends true
-        ? number
-        : GetScalarType<T[P], AggregateFriends[P]>
-      : GetScalarType<T[P], AggregateFriends[P]>
-  }
-
-
-
-
-  export type friendsGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: friendsWhereInput
-    orderBy?: friendsOrderByWithAggregationInput | friendsOrderByWithAggregationInput[]
-    by: FriendsScalarFieldEnum[] | FriendsScalarFieldEnum
-    having?: friendsScalarWhereWithAggregatesInput
-    take?: number
-    skip?: number
-    _count?: FriendsCountAggregateInputType | true
-    _avg?: FriendsAvgAggregateInputType
-    _sum?: FriendsSumAggregateInputType
-    _min?: FriendsMinAggregateInputType
-    _max?: FriendsMaxAggregateInputType
-  }
-
-  export type FriendsGroupByOutputType = {
-    id: number
-    user_id: number | null
-    friends_name: string
-    friends_photo: string | null
-    _count: FriendsCountAggregateOutputType | null
-    _avg: FriendsAvgAggregateOutputType | null
-    _sum: FriendsSumAggregateOutputType | null
-    _min: FriendsMinAggregateOutputType | null
-    _max: FriendsMaxAggregateOutputType | null
-  }
-
-  type GetFriendsGroupByPayload<T extends friendsGroupByArgs> = Prisma.PrismaPromise<
-    Array<
-      PickEnumerable<FriendsGroupByOutputType, T['by']> &
-        {
-          [P in ((keyof T) & (keyof FriendsGroupByOutputType))]: P extends '_count'
-            ? T[P] extends boolean
-              ? number
-              : GetScalarType<T[P], FriendsGroupByOutputType[P]>
-            : GetScalarType<T[P], FriendsGroupByOutputType[P]>
-        }
-      >
-    >
-
-
-  export type friendsSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    user_id?: boolean
-    friends_name?: boolean
-    friends_photo?: boolean
-    users?: boolean | friends$usersArgs<ExtArgs>
-    friends_order?: boolean | friends$friends_orderArgs<ExtArgs>
-    _count?: boolean | FriendsCountOutputTypeDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["friends"]>
-
-  export type friendsSelectScalar = {
-    id?: boolean
-    user_id?: boolean
-    friends_name?: boolean
-    friends_photo?: boolean
-  }
-
-  export type friendsInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    users?: boolean | friends$usersArgs<ExtArgs>
-    friends_order?: boolean | friends$friends_orderArgs<ExtArgs>
-    _count?: boolean | FriendsCountOutputTypeDefaultArgs<ExtArgs>
-  }
-
-
-  export type $friendsPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "friends"
-    objects: {
-      users: Prisma.$usersPayload<ExtArgs> | null
-      friends_order: Prisma.$friends_orderPayload<ExtArgs>[]
-    }
-    scalars: $Extensions.GetPayloadResult<{
-      id: number
-      user_id: number | null
-      friends_name: string
-      friends_photo: string | null
-    }, ExtArgs["result"]["friends"]>
-    composites: {}
-  }
-
-
-  type friendsGetPayload<S extends boolean | null | undefined | friendsDefaultArgs> = $Result.GetResult<Prisma.$friendsPayload, S>
-
-  type friendsCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
-    Omit<friendsFindManyArgs, 'select' | 'include' | 'distinct'> & {
-      select?: FriendsCountAggregateInputType | true
-    }
-
-  export interface friendsDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['friends'], meta: { name: 'friends' } }
-    /**
-     * Find zero or one Friends that matches the filter.
-     * @param {friendsFindUniqueArgs} args - Arguments to find a Friends
-     * @example
-     * // Get one Friends
-     * const friends = await prisma.friends.findUnique({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-    **/
-    findUnique<T extends friendsFindUniqueArgs<ExtArgs>>(
-      args: SelectSubset<T, friendsFindUniqueArgs<ExtArgs>>
-    ): Prisma__friendsClient<$Result.GetResult<Prisma.$friendsPayload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
-
-    /**
-     * Find one Friends that matches the filter or throw an error  with `error.code='P2025'` 
-     *     if no matches were found.
-     * @param {friendsFindUniqueOrThrowArgs} args - Arguments to find a Friends
-     * @example
-     * // Get one Friends
-     * const friends = await prisma.friends.findUniqueOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-    **/
-    findUniqueOrThrow<T extends friendsFindUniqueOrThrowArgs<ExtArgs>>(
-      args?: SelectSubset<T, friendsFindUniqueOrThrowArgs<ExtArgs>>
-    ): Prisma__friendsClient<$Result.GetResult<Prisma.$friendsPayload<ExtArgs>, T, 'findUniqueOrThrow'>, never, ExtArgs>
-
-    /**
-     * Find the first Friends that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {friendsFindFirstArgs} args - Arguments to find a Friends
-     * @example
-     * // Get one Friends
-     * const friends = await prisma.friends.findFirst({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-    **/
-    findFirst<T extends friendsFindFirstArgs<ExtArgs>>(
-      args?: SelectSubset<T, friendsFindFirstArgs<ExtArgs>>
-    ): Prisma__friendsClient<$Result.GetResult<Prisma.$friendsPayload<ExtArgs>, T, 'findFirst'> | null, null, ExtArgs>
-
-    /**
-     * Find the first Friends that matches the filter or
-     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {friendsFindFirstOrThrowArgs} args - Arguments to find a Friends
-     * @example
-     * // Get one Friends
-     * const friends = await prisma.friends.findFirstOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-    **/
-    findFirstOrThrow<T extends friendsFindFirstOrThrowArgs<ExtArgs>>(
-      args?: SelectSubset<T, friendsFindFirstOrThrowArgs<ExtArgs>>
-    ): Prisma__friendsClient<$Result.GetResult<Prisma.$friendsPayload<ExtArgs>, T, 'findFirstOrThrow'>, never, ExtArgs>
-
-    /**
-     * Find zero or more Friends that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {friendsFindManyArgs=} args - Arguments to filter and select certain fields only.
-     * @example
-     * // Get all Friends
-     * const friends = await prisma.friends.findMany()
-     * 
-     * // Get first 10 Friends
-     * const friends = await prisma.friends.findMany({ take: 10 })
-     * 
-     * // Only select the `id`
-     * const friendsWithIdOnly = await prisma.friends.findMany({ select: { id: true } })
-     * 
-    **/
-    findMany<T extends friendsFindManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, friendsFindManyArgs<ExtArgs>>
-    ): Prisma.PrismaPromise<$Result.GetResult<Prisma.$friendsPayload<ExtArgs>, T, 'findMany'>>
-
-    /**
-     * Create a Friends.
-     * @param {friendsCreateArgs} args - Arguments to create a Friends.
-     * @example
-     * // Create one Friends
-     * const Friends = await prisma.friends.create({
-     *   data: {
-     *     // ... data to create a Friends
-     *   }
-     * })
-     * 
-    **/
-    create<T extends friendsCreateArgs<ExtArgs>>(
-      args: SelectSubset<T, friendsCreateArgs<ExtArgs>>
-    ): Prisma__friendsClient<$Result.GetResult<Prisma.$friendsPayload<ExtArgs>, T, 'create'>, never, ExtArgs>
-
-    /**
-     * Create many Friends.
-     *     @param {friendsCreateManyArgs} args - Arguments to create many Friends.
-     *     @example
-     *     // Create many Friends
-     *     const friends = await prisma.friends.createMany({
-     *       data: {
-     *         // ... provide data here
-     *       }
-     *     })
-     *     
-    **/
-    createMany<T extends friendsCreateManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, friendsCreateManyArgs<ExtArgs>>
-    ): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Delete a Friends.
-     * @param {friendsDeleteArgs} args - Arguments to delete one Friends.
-     * @example
-     * // Delete one Friends
-     * const Friends = await prisma.friends.delete({
-     *   where: {
-     *     // ... filter to delete one Friends
-     *   }
-     * })
-     * 
-    **/
-    delete<T extends friendsDeleteArgs<ExtArgs>>(
-      args: SelectSubset<T, friendsDeleteArgs<ExtArgs>>
-    ): Prisma__friendsClient<$Result.GetResult<Prisma.$friendsPayload<ExtArgs>, T, 'delete'>, never, ExtArgs>
-
-    /**
-     * Update one Friends.
-     * @param {friendsUpdateArgs} args - Arguments to update one Friends.
-     * @example
-     * // Update one Friends
-     * const friends = await prisma.friends.update({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-    **/
-    update<T extends friendsUpdateArgs<ExtArgs>>(
-      args: SelectSubset<T, friendsUpdateArgs<ExtArgs>>
-    ): Prisma__friendsClient<$Result.GetResult<Prisma.$friendsPayload<ExtArgs>, T, 'update'>, never, ExtArgs>
-
-    /**
-     * Delete zero or more Friends.
-     * @param {friendsDeleteManyArgs} args - Arguments to filter Friends to delete.
-     * @example
-     * // Delete a few Friends
-     * const { count } = await prisma.friends.deleteMany({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     * 
-    **/
-    deleteMany<T extends friendsDeleteManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, friendsDeleteManyArgs<ExtArgs>>
-    ): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Update zero or more Friends.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {friendsUpdateManyArgs} args - Arguments to update one or more rows.
-     * @example
-     * // Update many Friends
-     * const friends = await prisma.friends.updateMany({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-    **/
-    updateMany<T extends friendsUpdateManyArgs<ExtArgs>>(
-      args: SelectSubset<T, friendsUpdateManyArgs<ExtArgs>>
-    ): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Create or update one Friends.
-     * @param {friendsUpsertArgs} args - Arguments to update or create a Friends.
-     * @example
-     * // Update or create a Friends
-     * const friends = await prisma.friends.upsert({
-     *   create: {
-     *     // ... data to create a Friends
-     *   },
-     *   update: {
-     *     // ... in case it already exists, update
-     *   },
-     *   where: {
-     *     // ... the filter for the Friends we want to update
-     *   }
-     * })
-    **/
-    upsert<T extends friendsUpsertArgs<ExtArgs>>(
-      args: SelectSubset<T, friendsUpsertArgs<ExtArgs>>
-    ): Prisma__friendsClient<$Result.GetResult<Prisma.$friendsPayload<ExtArgs>, T, 'upsert'>, never, ExtArgs>
-
-    /**
-     * Count the number of Friends.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {friendsCountArgs} args - Arguments to filter Friends to count.
-     * @example
-     * // Count the number of Friends
-     * const count = await prisma.friends.count({
-     *   where: {
-     *     // ... the filter for the Friends we want to count
-     *   }
-     * })
-    **/
-    count<T extends friendsCountArgs>(
-      args?: Subset<T, friendsCountArgs>,
-    ): Prisma.PrismaPromise<
-      T extends $Utils.Record<'select', any>
-        ? T['select'] extends true
-          ? number
-          : GetScalarType<T['select'], FriendsCountAggregateOutputType>
-        : number
-    >
-
-    /**
-     * Allows you to perform aggregations operations on a Friends.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {FriendsAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
-     * @example
-     * // Ordered by age ascending
-     * // Where email contains prisma.io
-     * // Limited to the 10 users
-     * const aggregations = await prisma.user.aggregate({
-     *   _avg: {
-     *     age: true,
-     *   },
-     *   where: {
-     *     email: {
-     *       contains: "prisma.io",
-     *     },
-     *   },
-     *   orderBy: {
-     *     age: "asc",
-     *   },
-     *   take: 10,
-     * })
-    **/
-    aggregate<T extends FriendsAggregateArgs>(args: Subset<T, FriendsAggregateArgs>): Prisma.PrismaPromise<GetFriendsAggregateType<T>>
-
-    /**
-     * Group by Friends.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {friendsGroupByArgs} args - Group by arguments.
-     * @example
-     * // Group by city, order by createdAt, get count
-     * const result = await prisma.user.groupBy({
-     *   by: ['city', 'createdAt'],
-     *   orderBy: {
-     *     createdAt: true
-     *   },
-     *   _count: {
-     *     _all: true
-     *   },
-     * })
-     * 
-    **/
-    groupBy<
-      T extends friendsGroupByArgs,
-      HasSelectOrTake extends Or<
-        Extends<'skip', Keys<T>>,
-        Extends<'take', Keys<T>>
-      >,
-      OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: friendsGroupByArgs['orderBy'] }
-        : { orderBy?: friendsGroupByArgs['orderBy'] },
-      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
-      ByFields extends MaybeTupleToUnion<T['by']>,
-      ByValid extends Has<ByFields, OrderFields>,
-      HavingFields extends GetHavingFields<T['having']>,
-      HavingValid extends Has<ByFields, HavingFields>,
-      ByEmpty extends T['by'] extends never[] ? True : False,
-      InputErrors extends ByEmpty extends True
-      ? `Error: "by" must not be empty.`
-      : HavingValid extends False
-      ? {
-          [P in HavingFields]: P extends ByFields
-            ? never
-            : P extends string
-            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
-            : [
-                Error,
-                'Field ',
-                P,
-                ` in "having" needs to be provided in "by"`,
-              ]
-        }[HavingFields]
-      : 'take' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "take", you also need to provide "orderBy"'
-      : 'skip' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "skip", you also need to provide "orderBy"'
-      : ByValid extends True
-      ? {}
-      : {
-          [P in OrderFields]: P extends ByFields
-            ? never
-            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-        }[OrderFields]
-    >(args: SubsetIntersection<T, friendsGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetFriendsGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
-  /**
-   * Fields of the friends model
-   */
-  readonly fields: friendsFieldRefs;
-  }
-
-  /**
-   * The delegate class that acts as a "Promise-like" for friends.
-   * Why is this prefixed with `Prisma__`?
-   * Because we want to prevent naming conflicts as mentioned in
-   * https://github.com/prisma/prisma-client-js/issues/707
-   */
-  export interface Prisma__friendsClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
-    readonly [Symbol.toStringTag]: 'PrismaPromise';
-
-    users<T extends friends$usersArgs<ExtArgs> = {}>(args?: Subset<T, friends$usersArgs<ExtArgs>>): Prisma__usersClient<$Result.GetResult<Prisma.$usersPayload<ExtArgs>, T, 'findUniqueOrThrow'> | null, null, ExtArgs>;
-
-    friends_order<T extends friends$friends_orderArgs<ExtArgs> = {}>(args?: Subset<T, friends$friends_orderArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$friends_orderPayload<ExtArgs>, T, 'findMany'> | Null>;
-
-    /**
-     * Attaches callbacks for the resolution and/or rejection of the Promise.
-     * @param onfulfilled The callback to execute when the Promise is resolved.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of which ever callback is executed.
-     */
-    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>;
-    /**
-     * Attaches a callback for only the rejection of the Promise.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of the callback.
-     */
-    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>;
-    /**
-     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
-     * resolved value cannot be modified from the callback.
-     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
-     * @returns A Promise for the completion of the callback.
-     */
-    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>;
-  }
-
-
-
-  /**
-   * Fields of the friends model
-   */ 
-  interface friendsFieldRefs {
-    readonly id: FieldRef<"friends", 'Int'>
-    readonly user_id: FieldRef<"friends", 'Int'>
-    readonly friends_name: FieldRef<"friends", 'String'>
-    readonly friends_photo: FieldRef<"friends", 'String'>
-  }
-    
-
-  // Custom InputTypes
-
-  /**
-   * friends findUnique
-   */
-  export type friendsFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the friends
-     */
-    select?: friendsSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: friendsInclude<ExtArgs> | null
-    /**
-     * Filter, which friends to fetch.
-     */
-    where: friendsWhereUniqueInput
-  }
-
-
-  /**
-   * friends findUniqueOrThrow
-   */
-  export type friendsFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the friends
-     */
-    select?: friendsSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: friendsInclude<ExtArgs> | null
-    /**
-     * Filter, which friends to fetch.
-     */
-    where: friendsWhereUniqueInput
-  }
-
-
-  /**
-   * friends findFirst
-   */
-  export type friendsFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the friends
-     */
-    select?: friendsSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: friendsInclude<ExtArgs> | null
-    /**
-     * Filter, which friends to fetch.
-     */
-    where?: friendsWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of friends to fetch.
-     */
-    orderBy?: friendsOrderByWithRelationInput | friendsOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for friends.
-     */
-    cursor?: friendsWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` friends from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` friends.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of friends.
-     */
-    distinct?: FriendsScalarFieldEnum | FriendsScalarFieldEnum[]
-  }
-
-
-  /**
-   * friends findFirstOrThrow
-   */
-  export type friendsFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the friends
-     */
-    select?: friendsSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: friendsInclude<ExtArgs> | null
-    /**
-     * Filter, which friends to fetch.
-     */
-    where?: friendsWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of friends to fetch.
-     */
-    orderBy?: friendsOrderByWithRelationInput | friendsOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for friends.
-     */
-    cursor?: friendsWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` friends from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` friends.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of friends.
-     */
-    distinct?: FriendsScalarFieldEnum | FriendsScalarFieldEnum[]
-  }
-
-
-  /**
-   * friends findMany
-   */
-  export type friendsFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the friends
-     */
-    select?: friendsSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: friendsInclude<ExtArgs> | null
-    /**
-     * Filter, which friends to fetch.
-     */
-    where?: friendsWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of friends to fetch.
-     */
-    orderBy?: friendsOrderByWithRelationInput | friendsOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for listing friends.
-     */
-    cursor?: friendsWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` friends from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` friends.
-     */
-    skip?: number
-    distinct?: FriendsScalarFieldEnum | FriendsScalarFieldEnum[]
-  }
-
-
-  /**
-   * friends create
-   */
-  export type friendsCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the friends
-     */
-    select?: friendsSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: friendsInclude<ExtArgs> | null
-    /**
-     * The data needed to create a friends.
-     */
-    data: XOR<friendsCreateInput, friendsUncheckedCreateInput>
-  }
-
-
-  /**
-   * friends createMany
-   */
-  export type friendsCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to create many friends.
-     */
-    data: friendsCreateManyInput | friendsCreateManyInput[]
-    skipDuplicates?: boolean
-  }
-
-
-  /**
-   * friends update
-   */
-  export type friendsUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the friends
-     */
-    select?: friendsSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: friendsInclude<ExtArgs> | null
-    /**
-     * The data needed to update a friends.
-     */
-    data: XOR<friendsUpdateInput, friendsUncheckedUpdateInput>
-    /**
-     * Choose, which friends to update.
-     */
-    where: friendsWhereUniqueInput
-  }
-
-
-  /**
-   * friends updateMany
-   */
-  export type friendsUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to update friends.
-     */
-    data: XOR<friendsUpdateManyMutationInput, friendsUncheckedUpdateManyInput>
-    /**
-     * Filter which friends to update
-     */
-    where?: friendsWhereInput
-  }
-
-
-  /**
-   * friends upsert
-   */
-  export type friendsUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the friends
-     */
-    select?: friendsSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: friendsInclude<ExtArgs> | null
-    /**
-     * The filter to search for the friends to update in case it exists.
-     */
-    where: friendsWhereUniqueInput
-    /**
-     * In case the friends found by the `where` argument doesn't exist, create a new friends with this data.
-     */
-    create: XOR<friendsCreateInput, friendsUncheckedCreateInput>
-    /**
-     * In case the friends was found with the provided `where` argument, update it with this data.
-     */
-    update: XOR<friendsUpdateInput, friendsUncheckedUpdateInput>
-  }
-
-
-  /**
-   * friends delete
-   */
-  export type friendsDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the friends
-     */
-    select?: friendsSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: friendsInclude<ExtArgs> | null
-    /**
-     * Filter which friends to delete.
-     */
-    where: friendsWhereUniqueInput
-  }
-
-
-  /**
-   * friends deleteMany
-   */
-  export type friendsDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which friends to delete
-     */
-    where?: friendsWhereInput
-  }
-
-
-  /**
-   * friends.users
-   */
-  export type friends$usersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the users
-     */
-    select?: usersSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: usersInclude<ExtArgs> | null
-    where?: usersWhereInput
-  }
-
-
-  /**
-   * friends.friends_order
-   */
-  export type friends$friends_orderArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the friends_order
-     */
-    select?: friends_orderSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: friends_orderInclude<ExtArgs> | null
-    where?: friends_orderWhereInput
-    orderBy?: friends_orderOrderByWithRelationInput | friends_orderOrderByWithRelationInput[]
-    cursor?: friends_orderWhereUniqueInput
-    take?: number
-    skip?: number
-    distinct?: Friends_orderScalarFieldEnum | Friends_orderScalarFieldEnum[]
-  }
-
-
-  /**
-   * friends without action
-   */
-  export type friendsDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the friends
-     */
-    select?: friendsSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: friendsInclude<ExtArgs> | null
+    include?: friend_orderInclude<ExtArgs> | null
   }
 
 
@@ -5781,7 +4390,7 @@ export namespace Prisma {
   export type BillAvgAggregateOutputType = {
     id: number | null
     user_id: number | null
-    payment_method_id: number | null
+    payment_account_id: number | null
     discount: number | null
     tax: number | null
     service: number | null
@@ -5791,50 +4400,47 @@ export namespace Prisma {
   export type BillSumAggregateOutputType = {
     id: number | null
     user_id: number | null
-    payment_method_id: number | null
+    payment_account_id: number | null
     discount: number | null
     tax: number | null
     service: number | null
-    total_price: bigint | null
+    total_price: number | null
   }
 
   export type BillMinAggregateOutputType = {
     id: number | null
     user_id: number | null
-    payment_method_id: number | null
+    payment_account_id: number | null
     description: string | null
     discount: number | null
     tax: number | null
     service: number | null
-    total_price: bigint | null
+    total_price: number | null
     date: Date | null
-    is_completed: boolean | null
   }
 
   export type BillMaxAggregateOutputType = {
     id: number | null
     user_id: number | null
-    payment_method_id: number | null
+    payment_account_id: number | null
     description: string | null
     discount: number | null
     tax: number | null
     service: number | null
-    total_price: bigint | null
+    total_price: number | null
     date: Date | null
-    is_completed: boolean | null
   }
 
   export type BillCountAggregateOutputType = {
     id: number
     user_id: number
-    payment_method_id: number
+    payment_account_id: number
     description: number
     discount: number
     tax: number
     service: number
     total_price: number
     date: number
-    is_completed: number
     _all: number
   }
 
@@ -5842,7 +4448,7 @@ export namespace Prisma {
   export type BillAvgAggregateInputType = {
     id?: true
     user_id?: true
-    payment_method_id?: true
+    payment_account_id?: true
     discount?: true
     tax?: true
     service?: true
@@ -5852,7 +4458,7 @@ export namespace Prisma {
   export type BillSumAggregateInputType = {
     id?: true
     user_id?: true
-    payment_method_id?: true
+    payment_account_id?: true
     discount?: true
     tax?: true
     service?: true
@@ -5862,40 +4468,37 @@ export namespace Prisma {
   export type BillMinAggregateInputType = {
     id?: true
     user_id?: true
-    payment_method_id?: true
+    payment_account_id?: true
     description?: true
     discount?: true
     tax?: true
     service?: true
     total_price?: true
     date?: true
-    is_completed?: true
   }
 
   export type BillMaxAggregateInputType = {
     id?: true
     user_id?: true
-    payment_method_id?: true
+    payment_account_id?: true
     description?: true
     discount?: true
     tax?: true
     service?: true
     total_price?: true
     date?: true
-    is_completed?: true
   }
 
   export type BillCountAggregateInputType = {
     id?: true
     user_id?: true
-    payment_method_id?: true
+    payment_account_id?: true
     description?: true
     discount?: true
     tax?: true
     service?: true
     total_price?: true
     date?: true
-    is_completed?: true
     _all?: true
   }
 
@@ -5988,14 +4591,13 @@ export namespace Prisma {
   export type BillGroupByOutputType = {
     id: number
     user_id: number | null
-    payment_method_id: number | null
+    payment_account_id: number | null
     description: string
     discount: number | null
     tax: number
     service: number | null
-    total_price: bigint
+    total_price: number
     date: Date
-    is_completed: boolean
     _count: BillCountAggregateOutputType | null
     _avg: BillAvgAggregateOutputType | null
     _sum: BillSumAggregateOutputType | null
@@ -6020,37 +4622,35 @@ export namespace Prisma {
   export type billSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     user_id?: boolean
-    payment_method_id?: boolean
+    payment_account_id?: boolean
     description?: boolean
     discount?: boolean
     tax?: boolean
     service?: boolean
     total_price?: boolean
     date?: boolean
-    is_completed?: boolean
     users?: boolean | bill$usersArgs<ExtArgs>
-    payment_method_details?: boolean | bill$payment_method_detailsArgs<ExtArgs>
-    orders?: boolean | bill$ordersArgs<ExtArgs>
+    payment_account?: boolean | bill$payment_accountArgs<ExtArgs>
+    friend_order?: boolean | bill$friend_orderArgs<ExtArgs>
     _count?: boolean | BillCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["bill"]>
 
   export type billSelectScalar = {
     id?: boolean
     user_id?: boolean
-    payment_method_id?: boolean
+    payment_account_id?: boolean
     description?: boolean
     discount?: boolean
     tax?: boolean
     service?: boolean
     total_price?: boolean
     date?: boolean
-    is_completed?: boolean
   }
 
   export type billInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     users?: boolean | bill$usersArgs<ExtArgs>
-    payment_method_details?: boolean | bill$payment_method_detailsArgs<ExtArgs>
-    orders?: boolean | bill$ordersArgs<ExtArgs>
+    payment_account?: boolean | bill$payment_accountArgs<ExtArgs>
+    friend_order?: boolean | bill$friend_orderArgs<ExtArgs>
     _count?: boolean | BillCountOutputTypeDefaultArgs<ExtArgs>
   }
 
@@ -6059,20 +4659,19 @@ export namespace Prisma {
     name: "bill"
     objects: {
       users: Prisma.$usersPayload<ExtArgs> | null
-      payment_method_details: Prisma.$payment_method_detailPayload<ExtArgs> | null
-      orders: Prisma.$ordersPayload<ExtArgs>[]
+      payment_account: Prisma.$payment_accountPayload<ExtArgs> | null
+      friend_order: Prisma.$friend_orderPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
       user_id: number | null
-      payment_method_id: number | null
+      payment_account_id: number | null
       description: string
       discount: number | null
       tax: number
       service: number | null
-      total_price: bigint
+      total_price: number
       date: Date
-      is_completed: boolean
     }, ExtArgs["result"]["bill"]>
     composites: {}
   }
@@ -6440,9 +5039,9 @@ export namespace Prisma {
 
     users<T extends bill$usersArgs<ExtArgs> = {}>(args?: Subset<T, bill$usersArgs<ExtArgs>>): Prisma__usersClient<$Result.GetResult<Prisma.$usersPayload<ExtArgs>, T, 'findUniqueOrThrow'> | null, null, ExtArgs>;
 
-    payment_method_details<T extends bill$payment_method_detailsArgs<ExtArgs> = {}>(args?: Subset<T, bill$payment_method_detailsArgs<ExtArgs>>): Prisma__payment_method_detailClient<$Result.GetResult<Prisma.$payment_method_detailPayload<ExtArgs>, T, 'findUniqueOrThrow'> | null, null, ExtArgs>;
+    payment_account<T extends bill$payment_accountArgs<ExtArgs> = {}>(args?: Subset<T, bill$payment_accountArgs<ExtArgs>>): Prisma__payment_accountClient<$Result.GetResult<Prisma.$payment_accountPayload<ExtArgs>, T, 'findUniqueOrThrow'> | null, null, ExtArgs>;
 
-    orders<T extends bill$ordersArgs<ExtArgs> = {}>(args?: Subset<T, bill$ordersArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ordersPayload<ExtArgs>, T, 'findMany'> | Null>;
+    friend_order<T extends bill$friend_orderArgs<ExtArgs> = {}>(args?: Subset<T, bill$friend_orderArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$friend_orderPayload<ExtArgs>, T, 'findMany'> | Null>;
 
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -6474,14 +5073,13 @@ export namespace Prisma {
   interface billFieldRefs {
     readonly id: FieldRef<"bill", 'Int'>
     readonly user_id: FieldRef<"bill", 'Int'>
-    readonly payment_method_id: FieldRef<"bill", 'Int'>
+    readonly payment_account_id: FieldRef<"bill", 'Int'>
     readonly description: FieldRef<"bill", 'String'>
     readonly discount: FieldRef<"bill", 'Float'>
     readonly tax: FieldRef<"bill", 'Int'>
     readonly service: FieldRef<"bill", 'Float'>
-    readonly total_price: FieldRef<"bill", 'BigInt'>
+    readonly total_price: FieldRef<"bill", 'Int'>
     readonly date: FieldRef<"bill", 'DateTime'>
-    readonly is_completed: FieldRef<"bill", 'Boolean'>
   }
     
 
@@ -6810,39 +5408,39 @@ export namespace Prisma {
 
 
   /**
-   * bill.payment_method_details
+   * bill.payment_account
    */
-  export type bill$payment_method_detailsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type bill$payment_accountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the payment_method_detail
+     * Select specific fields to fetch from the payment_account
      */
-    select?: payment_method_detailSelect<ExtArgs> | null
+    select?: payment_accountSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well.
      */
-    include?: payment_method_detailInclude<ExtArgs> | null
-    where?: payment_method_detailWhereInput
+    include?: payment_accountInclude<ExtArgs> | null
+    where?: payment_accountWhereInput
   }
 
 
   /**
-   * bill.orders
+   * bill.friend_order
    */
-  export type bill$ordersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type bill$friend_orderArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the orders
+     * Select specific fields to fetch from the friend_order
      */
-    select?: ordersSelect<ExtArgs> | null
+    select?: friend_orderSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well.
      */
-    include?: ordersInclude<ExtArgs> | null
-    where?: ordersWhereInput
-    orderBy?: ordersOrderByWithRelationInput | ordersOrderByWithRelationInput[]
-    cursor?: ordersWhereUniqueInput
+    include?: friend_orderInclude<ExtArgs> | null
+    where?: friend_orderWhereInput
+    orderBy?: friend_orderOrderByWithRelationInput | friend_orderOrderByWithRelationInput[]
+    cursor?: friend_orderWhereUniqueInput
     take?: number
     skip?: number
-    distinct?: OrdersScalarFieldEnum | OrdersScalarFieldEnum[]
+    distinct?: Friend_orderScalarFieldEnum | Friend_orderScalarFieldEnum[]
   }
 
 
@@ -6863,1357 +5461,403 @@ export namespace Prisma {
 
 
   /**
-   * Model payment_method
+   * Model payment_account
    */
 
-  export type AggregatePayment_method = {
-    _count: Payment_methodCountAggregateOutputType | null
-    _avg: Payment_methodAvgAggregateOutputType | null
-    _sum: Payment_methodSumAggregateOutputType | null
-    _min: Payment_methodMinAggregateOutputType | null
-    _max: Payment_methodMaxAggregateOutputType | null
+  export type AggregatePayment_account = {
+    _count: Payment_accountCountAggregateOutputType | null
+    _avg: Payment_accountAvgAggregateOutputType | null
+    _sum: Payment_accountSumAggregateOutputType | null
+    _min: Payment_accountMinAggregateOutputType | null
+    _max: Payment_accountMaxAggregateOutputType | null
   }
 
-  export type Payment_methodAvgAggregateOutputType = {
-    id: number | null
-  }
-
-  export type Payment_methodSumAggregateOutputType = {
-    id: number | null
-  }
-
-  export type Payment_methodMinAggregateOutputType = {
-    id: number | null
-    payment_method_name: string | null
-    payment_method_logo: string | null
-  }
-
-  export type Payment_methodMaxAggregateOutputType = {
-    id: number | null
-    payment_method_name: string | null
-    payment_method_logo: string | null
-  }
-
-  export type Payment_methodCountAggregateOutputType = {
-    id: number
-    payment_method_name: number
-    payment_method_logo: number
-    _all: number
-  }
-
-
-  export type Payment_methodAvgAggregateInputType = {
-    id?: true
-  }
-
-  export type Payment_methodSumAggregateInputType = {
-    id?: true
-  }
-
-  export type Payment_methodMinAggregateInputType = {
-    id?: true
-    payment_method_name?: true
-    payment_method_logo?: true
-  }
-
-  export type Payment_methodMaxAggregateInputType = {
-    id?: true
-    payment_method_name?: true
-    payment_method_logo?: true
-  }
-
-  export type Payment_methodCountAggregateInputType = {
-    id?: true
-    payment_method_name?: true
-    payment_method_logo?: true
-    _all?: true
-  }
-
-  export type Payment_methodAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which payment_method to aggregate.
-     */
-    where?: payment_methodWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of payment_methods to fetch.
-     */
-    orderBy?: payment_methodOrderByWithRelationInput | payment_methodOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the start position
-     */
-    cursor?: payment_methodWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` payment_methods from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` payment_methods.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Count returned payment_methods
-    **/
-    _count?: true | Payment_methodCountAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to average
-    **/
-    _avg?: Payment_methodAvgAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to sum
-    **/
-    _sum?: Payment_methodSumAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the minimum value
-    **/
-    _min?: Payment_methodMinAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the maximum value
-    **/
-    _max?: Payment_methodMaxAggregateInputType
-  }
-
-  export type GetPayment_methodAggregateType<T extends Payment_methodAggregateArgs> = {
-        [P in keyof T & keyof AggregatePayment_method]: P extends '_count' | 'count'
-      ? T[P] extends true
-        ? number
-        : GetScalarType<T[P], AggregatePayment_method[P]>
-      : GetScalarType<T[P], AggregatePayment_method[P]>
-  }
-
-
-
-
-  export type payment_methodGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: payment_methodWhereInput
-    orderBy?: payment_methodOrderByWithAggregationInput | payment_methodOrderByWithAggregationInput[]
-    by: Payment_methodScalarFieldEnum[] | Payment_methodScalarFieldEnum
-    having?: payment_methodScalarWhereWithAggregatesInput
-    take?: number
-    skip?: number
-    _count?: Payment_methodCountAggregateInputType | true
-    _avg?: Payment_methodAvgAggregateInputType
-    _sum?: Payment_methodSumAggregateInputType
-    _min?: Payment_methodMinAggregateInputType
-    _max?: Payment_methodMaxAggregateInputType
-  }
-
-  export type Payment_methodGroupByOutputType = {
-    id: number
-    payment_method_name: string
-    payment_method_logo: string
-    _count: Payment_methodCountAggregateOutputType | null
-    _avg: Payment_methodAvgAggregateOutputType | null
-    _sum: Payment_methodSumAggregateOutputType | null
-    _min: Payment_methodMinAggregateOutputType | null
-    _max: Payment_methodMaxAggregateOutputType | null
-  }
-
-  type GetPayment_methodGroupByPayload<T extends payment_methodGroupByArgs> = Prisma.PrismaPromise<
-    Array<
-      PickEnumerable<Payment_methodGroupByOutputType, T['by']> &
-        {
-          [P in ((keyof T) & (keyof Payment_methodGroupByOutputType))]: P extends '_count'
-            ? T[P] extends boolean
-              ? number
-              : GetScalarType<T[P], Payment_methodGroupByOutputType[P]>
-            : GetScalarType<T[P], Payment_methodGroupByOutputType[P]>
-        }
-      >
-    >
-
-
-  export type payment_methodSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    payment_method_name?: boolean
-    payment_method_logo?: boolean
-    payment_method_detail?: boolean | payment_method$payment_method_detailArgs<ExtArgs>
-    _count?: boolean | Payment_methodCountOutputTypeDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["payment_method"]>
-
-  export type payment_methodSelectScalar = {
-    id?: boolean
-    payment_method_name?: boolean
-    payment_method_logo?: boolean
-  }
-
-  export type payment_methodInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    payment_method_detail?: boolean | payment_method$payment_method_detailArgs<ExtArgs>
-    _count?: boolean | Payment_methodCountOutputTypeDefaultArgs<ExtArgs>
-  }
-
-
-  export type $payment_methodPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "payment_method"
-    objects: {
-      payment_method_detail: Prisma.$payment_method_detailPayload<ExtArgs>[]
-    }
-    scalars: $Extensions.GetPayloadResult<{
-      id: number
-      payment_method_name: string
-      payment_method_logo: string
-    }, ExtArgs["result"]["payment_method"]>
-    composites: {}
-  }
-
-
-  type payment_methodGetPayload<S extends boolean | null | undefined | payment_methodDefaultArgs> = $Result.GetResult<Prisma.$payment_methodPayload, S>
-
-  type payment_methodCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
-    Omit<payment_methodFindManyArgs, 'select' | 'include' | 'distinct'> & {
-      select?: Payment_methodCountAggregateInputType | true
-    }
-
-  export interface payment_methodDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['payment_method'], meta: { name: 'payment_method' } }
-    /**
-     * Find zero or one Payment_method that matches the filter.
-     * @param {payment_methodFindUniqueArgs} args - Arguments to find a Payment_method
-     * @example
-     * // Get one Payment_method
-     * const payment_method = await prisma.payment_method.findUnique({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-    **/
-    findUnique<T extends payment_methodFindUniqueArgs<ExtArgs>>(
-      args: SelectSubset<T, payment_methodFindUniqueArgs<ExtArgs>>
-    ): Prisma__payment_methodClient<$Result.GetResult<Prisma.$payment_methodPayload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
-
-    /**
-     * Find one Payment_method that matches the filter or throw an error  with `error.code='P2025'` 
-     *     if no matches were found.
-     * @param {payment_methodFindUniqueOrThrowArgs} args - Arguments to find a Payment_method
-     * @example
-     * // Get one Payment_method
-     * const payment_method = await prisma.payment_method.findUniqueOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-    **/
-    findUniqueOrThrow<T extends payment_methodFindUniqueOrThrowArgs<ExtArgs>>(
-      args?: SelectSubset<T, payment_methodFindUniqueOrThrowArgs<ExtArgs>>
-    ): Prisma__payment_methodClient<$Result.GetResult<Prisma.$payment_methodPayload<ExtArgs>, T, 'findUniqueOrThrow'>, never, ExtArgs>
-
-    /**
-     * Find the first Payment_method that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {payment_methodFindFirstArgs} args - Arguments to find a Payment_method
-     * @example
-     * // Get one Payment_method
-     * const payment_method = await prisma.payment_method.findFirst({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-    **/
-    findFirst<T extends payment_methodFindFirstArgs<ExtArgs>>(
-      args?: SelectSubset<T, payment_methodFindFirstArgs<ExtArgs>>
-    ): Prisma__payment_methodClient<$Result.GetResult<Prisma.$payment_methodPayload<ExtArgs>, T, 'findFirst'> | null, null, ExtArgs>
-
-    /**
-     * Find the first Payment_method that matches the filter or
-     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {payment_methodFindFirstOrThrowArgs} args - Arguments to find a Payment_method
-     * @example
-     * // Get one Payment_method
-     * const payment_method = await prisma.payment_method.findFirstOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-    **/
-    findFirstOrThrow<T extends payment_methodFindFirstOrThrowArgs<ExtArgs>>(
-      args?: SelectSubset<T, payment_methodFindFirstOrThrowArgs<ExtArgs>>
-    ): Prisma__payment_methodClient<$Result.GetResult<Prisma.$payment_methodPayload<ExtArgs>, T, 'findFirstOrThrow'>, never, ExtArgs>
-
-    /**
-     * Find zero or more Payment_methods that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {payment_methodFindManyArgs=} args - Arguments to filter and select certain fields only.
-     * @example
-     * // Get all Payment_methods
-     * const payment_methods = await prisma.payment_method.findMany()
-     * 
-     * // Get first 10 Payment_methods
-     * const payment_methods = await prisma.payment_method.findMany({ take: 10 })
-     * 
-     * // Only select the `id`
-     * const payment_methodWithIdOnly = await prisma.payment_method.findMany({ select: { id: true } })
-     * 
-    **/
-    findMany<T extends payment_methodFindManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, payment_methodFindManyArgs<ExtArgs>>
-    ): Prisma.PrismaPromise<$Result.GetResult<Prisma.$payment_methodPayload<ExtArgs>, T, 'findMany'>>
-
-    /**
-     * Create a Payment_method.
-     * @param {payment_methodCreateArgs} args - Arguments to create a Payment_method.
-     * @example
-     * // Create one Payment_method
-     * const Payment_method = await prisma.payment_method.create({
-     *   data: {
-     *     // ... data to create a Payment_method
-     *   }
-     * })
-     * 
-    **/
-    create<T extends payment_methodCreateArgs<ExtArgs>>(
-      args: SelectSubset<T, payment_methodCreateArgs<ExtArgs>>
-    ): Prisma__payment_methodClient<$Result.GetResult<Prisma.$payment_methodPayload<ExtArgs>, T, 'create'>, never, ExtArgs>
-
-    /**
-     * Create many Payment_methods.
-     *     @param {payment_methodCreateManyArgs} args - Arguments to create many Payment_methods.
-     *     @example
-     *     // Create many Payment_methods
-     *     const payment_method = await prisma.payment_method.createMany({
-     *       data: {
-     *         // ... provide data here
-     *       }
-     *     })
-     *     
-    **/
-    createMany<T extends payment_methodCreateManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, payment_methodCreateManyArgs<ExtArgs>>
-    ): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Delete a Payment_method.
-     * @param {payment_methodDeleteArgs} args - Arguments to delete one Payment_method.
-     * @example
-     * // Delete one Payment_method
-     * const Payment_method = await prisma.payment_method.delete({
-     *   where: {
-     *     // ... filter to delete one Payment_method
-     *   }
-     * })
-     * 
-    **/
-    delete<T extends payment_methodDeleteArgs<ExtArgs>>(
-      args: SelectSubset<T, payment_methodDeleteArgs<ExtArgs>>
-    ): Prisma__payment_methodClient<$Result.GetResult<Prisma.$payment_methodPayload<ExtArgs>, T, 'delete'>, never, ExtArgs>
-
-    /**
-     * Update one Payment_method.
-     * @param {payment_methodUpdateArgs} args - Arguments to update one Payment_method.
-     * @example
-     * // Update one Payment_method
-     * const payment_method = await prisma.payment_method.update({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-    **/
-    update<T extends payment_methodUpdateArgs<ExtArgs>>(
-      args: SelectSubset<T, payment_methodUpdateArgs<ExtArgs>>
-    ): Prisma__payment_methodClient<$Result.GetResult<Prisma.$payment_methodPayload<ExtArgs>, T, 'update'>, never, ExtArgs>
-
-    /**
-     * Delete zero or more Payment_methods.
-     * @param {payment_methodDeleteManyArgs} args - Arguments to filter Payment_methods to delete.
-     * @example
-     * // Delete a few Payment_methods
-     * const { count } = await prisma.payment_method.deleteMany({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     * 
-    **/
-    deleteMany<T extends payment_methodDeleteManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, payment_methodDeleteManyArgs<ExtArgs>>
-    ): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Update zero or more Payment_methods.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {payment_methodUpdateManyArgs} args - Arguments to update one or more rows.
-     * @example
-     * // Update many Payment_methods
-     * const payment_method = await prisma.payment_method.updateMany({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-    **/
-    updateMany<T extends payment_methodUpdateManyArgs<ExtArgs>>(
-      args: SelectSubset<T, payment_methodUpdateManyArgs<ExtArgs>>
-    ): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Create or update one Payment_method.
-     * @param {payment_methodUpsertArgs} args - Arguments to update or create a Payment_method.
-     * @example
-     * // Update or create a Payment_method
-     * const payment_method = await prisma.payment_method.upsert({
-     *   create: {
-     *     // ... data to create a Payment_method
-     *   },
-     *   update: {
-     *     // ... in case it already exists, update
-     *   },
-     *   where: {
-     *     // ... the filter for the Payment_method we want to update
-     *   }
-     * })
-    **/
-    upsert<T extends payment_methodUpsertArgs<ExtArgs>>(
-      args: SelectSubset<T, payment_methodUpsertArgs<ExtArgs>>
-    ): Prisma__payment_methodClient<$Result.GetResult<Prisma.$payment_methodPayload<ExtArgs>, T, 'upsert'>, never, ExtArgs>
-
-    /**
-     * Count the number of Payment_methods.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {payment_methodCountArgs} args - Arguments to filter Payment_methods to count.
-     * @example
-     * // Count the number of Payment_methods
-     * const count = await prisma.payment_method.count({
-     *   where: {
-     *     // ... the filter for the Payment_methods we want to count
-     *   }
-     * })
-    **/
-    count<T extends payment_methodCountArgs>(
-      args?: Subset<T, payment_methodCountArgs>,
-    ): Prisma.PrismaPromise<
-      T extends $Utils.Record<'select', any>
-        ? T['select'] extends true
-          ? number
-          : GetScalarType<T['select'], Payment_methodCountAggregateOutputType>
-        : number
-    >
-
-    /**
-     * Allows you to perform aggregations operations on a Payment_method.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {Payment_methodAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
-     * @example
-     * // Ordered by age ascending
-     * // Where email contains prisma.io
-     * // Limited to the 10 users
-     * const aggregations = await prisma.user.aggregate({
-     *   _avg: {
-     *     age: true,
-     *   },
-     *   where: {
-     *     email: {
-     *       contains: "prisma.io",
-     *     },
-     *   },
-     *   orderBy: {
-     *     age: "asc",
-     *   },
-     *   take: 10,
-     * })
-    **/
-    aggregate<T extends Payment_methodAggregateArgs>(args: Subset<T, Payment_methodAggregateArgs>): Prisma.PrismaPromise<GetPayment_methodAggregateType<T>>
-
-    /**
-     * Group by Payment_method.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {payment_methodGroupByArgs} args - Group by arguments.
-     * @example
-     * // Group by city, order by createdAt, get count
-     * const result = await prisma.user.groupBy({
-     *   by: ['city', 'createdAt'],
-     *   orderBy: {
-     *     createdAt: true
-     *   },
-     *   _count: {
-     *     _all: true
-     *   },
-     * })
-     * 
-    **/
-    groupBy<
-      T extends payment_methodGroupByArgs,
-      HasSelectOrTake extends Or<
-        Extends<'skip', Keys<T>>,
-        Extends<'take', Keys<T>>
-      >,
-      OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: payment_methodGroupByArgs['orderBy'] }
-        : { orderBy?: payment_methodGroupByArgs['orderBy'] },
-      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
-      ByFields extends MaybeTupleToUnion<T['by']>,
-      ByValid extends Has<ByFields, OrderFields>,
-      HavingFields extends GetHavingFields<T['having']>,
-      HavingValid extends Has<ByFields, HavingFields>,
-      ByEmpty extends T['by'] extends never[] ? True : False,
-      InputErrors extends ByEmpty extends True
-      ? `Error: "by" must not be empty.`
-      : HavingValid extends False
-      ? {
-          [P in HavingFields]: P extends ByFields
-            ? never
-            : P extends string
-            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
-            : [
-                Error,
-                'Field ',
-                P,
-                ` in "having" needs to be provided in "by"`,
-              ]
-        }[HavingFields]
-      : 'take' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "take", you also need to provide "orderBy"'
-      : 'skip' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "skip", you also need to provide "orderBy"'
-      : ByValid extends True
-      ? {}
-      : {
-          [P in OrderFields]: P extends ByFields
-            ? never
-            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-        }[OrderFields]
-    >(args: SubsetIntersection<T, payment_methodGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPayment_methodGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
-  /**
-   * Fields of the payment_method model
-   */
-  readonly fields: payment_methodFieldRefs;
-  }
-
-  /**
-   * The delegate class that acts as a "Promise-like" for payment_method.
-   * Why is this prefixed with `Prisma__`?
-   * Because we want to prevent naming conflicts as mentioned in
-   * https://github.com/prisma/prisma-client-js/issues/707
-   */
-  export interface Prisma__payment_methodClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
-    readonly [Symbol.toStringTag]: 'PrismaPromise';
-
-    payment_method_detail<T extends payment_method$payment_method_detailArgs<ExtArgs> = {}>(args?: Subset<T, payment_method$payment_method_detailArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$payment_method_detailPayload<ExtArgs>, T, 'findMany'> | Null>;
-
-    /**
-     * Attaches callbacks for the resolution and/or rejection of the Promise.
-     * @param onfulfilled The callback to execute when the Promise is resolved.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of which ever callback is executed.
-     */
-    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>;
-    /**
-     * Attaches a callback for only the rejection of the Promise.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of the callback.
-     */
-    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>;
-    /**
-     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
-     * resolved value cannot be modified from the callback.
-     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
-     * @returns A Promise for the completion of the callback.
-     */
-    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>;
-  }
-
-
-
-  /**
-   * Fields of the payment_method model
-   */ 
-  interface payment_methodFieldRefs {
-    readonly id: FieldRef<"payment_method", 'Int'>
-    readonly payment_method_name: FieldRef<"payment_method", 'String'>
-    readonly payment_method_logo: FieldRef<"payment_method", 'String'>
-  }
-    
-
-  // Custom InputTypes
-
-  /**
-   * payment_method findUnique
-   */
-  export type payment_methodFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the payment_method
-     */
-    select?: payment_methodSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: payment_methodInclude<ExtArgs> | null
-    /**
-     * Filter, which payment_method to fetch.
-     */
-    where: payment_methodWhereUniqueInput
-  }
-
-
-  /**
-   * payment_method findUniqueOrThrow
-   */
-  export type payment_methodFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the payment_method
-     */
-    select?: payment_methodSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: payment_methodInclude<ExtArgs> | null
-    /**
-     * Filter, which payment_method to fetch.
-     */
-    where: payment_methodWhereUniqueInput
-  }
-
-
-  /**
-   * payment_method findFirst
-   */
-  export type payment_methodFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the payment_method
-     */
-    select?: payment_methodSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: payment_methodInclude<ExtArgs> | null
-    /**
-     * Filter, which payment_method to fetch.
-     */
-    where?: payment_methodWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of payment_methods to fetch.
-     */
-    orderBy?: payment_methodOrderByWithRelationInput | payment_methodOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for payment_methods.
-     */
-    cursor?: payment_methodWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` payment_methods from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` payment_methods.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of payment_methods.
-     */
-    distinct?: Payment_methodScalarFieldEnum | Payment_methodScalarFieldEnum[]
-  }
-
-
-  /**
-   * payment_method findFirstOrThrow
-   */
-  export type payment_methodFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the payment_method
-     */
-    select?: payment_methodSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: payment_methodInclude<ExtArgs> | null
-    /**
-     * Filter, which payment_method to fetch.
-     */
-    where?: payment_methodWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of payment_methods to fetch.
-     */
-    orderBy?: payment_methodOrderByWithRelationInput | payment_methodOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for payment_methods.
-     */
-    cursor?: payment_methodWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` payment_methods from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` payment_methods.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of payment_methods.
-     */
-    distinct?: Payment_methodScalarFieldEnum | Payment_methodScalarFieldEnum[]
-  }
-
-
-  /**
-   * payment_method findMany
-   */
-  export type payment_methodFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the payment_method
-     */
-    select?: payment_methodSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: payment_methodInclude<ExtArgs> | null
-    /**
-     * Filter, which payment_methods to fetch.
-     */
-    where?: payment_methodWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of payment_methods to fetch.
-     */
-    orderBy?: payment_methodOrderByWithRelationInput | payment_methodOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for listing payment_methods.
-     */
-    cursor?: payment_methodWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` payment_methods from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` payment_methods.
-     */
-    skip?: number
-    distinct?: Payment_methodScalarFieldEnum | Payment_methodScalarFieldEnum[]
-  }
-
-
-  /**
-   * payment_method create
-   */
-  export type payment_methodCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the payment_method
-     */
-    select?: payment_methodSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: payment_methodInclude<ExtArgs> | null
-    /**
-     * The data needed to create a payment_method.
-     */
-    data: XOR<payment_methodCreateInput, payment_methodUncheckedCreateInput>
-  }
-
-
-  /**
-   * payment_method createMany
-   */
-  export type payment_methodCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to create many payment_methods.
-     */
-    data: payment_methodCreateManyInput | payment_methodCreateManyInput[]
-    skipDuplicates?: boolean
-  }
-
-
-  /**
-   * payment_method update
-   */
-  export type payment_methodUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the payment_method
-     */
-    select?: payment_methodSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: payment_methodInclude<ExtArgs> | null
-    /**
-     * The data needed to update a payment_method.
-     */
-    data: XOR<payment_methodUpdateInput, payment_methodUncheckedUpdateInput>
-    /**
-     * Choose, which payment_method to update.
-     */
-    where: payment_methodWhereUniqueInput
-  }
-
-
-  /**
-   * payment_method updateMany
-   */
-  export type payment_methodUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to update payment_methods.
-     */
-    data: XOR<payment_methodUpdateManyMutationInput, payment_methodUncheckedUpdateManyInput>
-    /**
-     * Filter which payment_methods to update
-     */
-    where?: payment_methodWhereInput
-  }
-
-
-  /**
-   * payment_method upsert
-   */
-  export type payment_methodUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the payment_method
-     */
-    select?: payment_methodSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: payment_methodInclude<ExtArgs> | null
-    /**
-     * The filter to search for the payment_method to update in case it exists.
-     */
-    where: payment_methodWhereUniqueInput
-    /**
-     * In case the payment_method found by the `where` argument doesn't exist, create a new payment_method with this data.
-     */
-    create: XOR<payment_methodCreateInput, payment_methodUncheckedCreateInput>
-    /**
-     * In case the payment_method was found with the provided `where` argument, update it with this data.
-     */
-    update: XOR<payment_methodUpdateInput, payment_methodUncheckedUpdateInput>
-  }
-
-
-  /**
-   * payment_method delete
-   */
-  export type payment_methodDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the payment_method
-     */
-    select?: payment_methodSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: payment_methodInclude<ExtArgs> | null
-    /**
-     * Filter which payment_method to delete.
-     */
-    where: payment_methodWhereUniqueInput
-  }
-
-
-  /**
-   * payment_method deleteMany
-   */
-  export type payment_methodDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which payment_methods to delete
-     */
-    where?: payment_methodWhereInput
-  }
-
-
-  /**
-   * payment_method.payment_method_detail
-   */
-  export type payment_method$payment_method_detailArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the payment_method_detail
-     */
-    select?: payment_method_detailSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: payment_method_detailInclude<ExtArgs> | null
-    where?: payment_method_detailWhereInput
-    orderBy?: payment_method_detailOrderByWithRelationInput | payment_method_detailOrderByWithRelationInput[]
-    cursor?: payment_method_detailWhereUniqueInput
-    take?: number
-    skip?: number
-    distinct?: Payment_method_detailScalarFieldEnum | Payment_method_detailScalarFieldEnum[]
-  }
-
-
-  /**
-   * payment_method without action
-   */
-  export type payment_methodDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the payment_method
-     */
-    select?: payment_methodSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: payment_methodInclude<ExtArgs> | null
-  }
-
-
-
-  /**
-   * Model payment_method_detail
-   */
-
-  export type AggregatePayment_method_detail = {
-    _count: Payment_method_detailCountAggregateOutputType | null
-    _avg: Payment_method_detailAvgAggregateOutputType | null
-    _sum: Payment_method_detailSumAggregateOutputType | null
-    _min: Payment_method_detailMinAggregateOutputType | null
-    _max: Payment_method_detailMaxAggregateOutputType | null
-  }
-
-  export type Payment_method_detailAvgAggregateOutputType = {
+  export type Payment_accountAvgAggregateOutputType = {
     id: number | null
     user_id: number | null
-    payment_method_id: number | null
-    card_number: number | null
   }
 
-  export type Payment_method_detailSumAggregateOutputType = {
+  export type Payment_accountSumAggregateOutputType = {
     id: number | null
     user_id: number | null
-    payment_method_id: number | null
-    card_number: bigint | null
   }
 
-  export type Payment_method_detailMinAggregateOutputType = {
+  export type Payment_accountMinAggregateOutputType = {
     id: number | null
     user_id: number | null
-    payment_method_id: number | null
-    card_number: bigint | null
-    card_name: string | null
+    name: string | null
+    number: string | null
+    card_holder: string | null
+    is_activated: boolean | null
   }
 
-  export type Payment_method_detailMaxAggregateOutputType = {
+  export type Payment_accountMaxAggregateOutputType = {
     id: number | null
     user_id: number | null
-    payment_method_id: number | null
-    card_number: bigint | null
-    card_name: string | null
+    name: string | null
+    number: string | null
+    card_holder: string | null
+    is_activated: boolean | null
   }
 
-  export type Payment_method_detailCountAggregateOutputType = {
+  export type Payment_accountCountAggregateOutputType = {
     id: number
     user_id: number
-    payment_method_id: number
-    card_number: number
-    card_name: number
+    name: number
+    number: number
+    card_holder: number
+    is_activated: number
     _all: number
   }
 
 
-  export type Payment_method_detailAvgAggregateInputType = {
+  export type Payment_accountAvgAggregateInputType = {
     id?: true
     user_id?: true
-    payment_method_id?: true
-    card_number?: true
   }
 
-  export type Payment_method_detailSumAggregateInputType = {
+  export type Payment_accountSumAggregateInputType = {
     id?: true
     user_id?: true
-    payment_method_id?: true
-    card_number?: true
   }
 
-  export type Payment_method_detailMinAggregateInputType = {
+  export type Payment_accountMinAggregateInputType = {
     id?: true
     user_id?: true
-    payment_method_id?: true
-    card_number?: true
-    card_name?: true
+    name?: true
+    number?: true
+    card_holder?: true
+    is_activated?: true
   }
 
-  export type Payment_method_detailMaxAggregateInputType = {
+  export type Payment_accountMaxAggregateInputType = {
     id?: true
     user_id?: true
-    payment_method_id?: true
-    card_number?: true
-    card_name?: true
+    name?: true
+    number?: true
+    card_holder?: true
+    is_activated?: true
   }
 
-  export type Payment_method_detailCountAggregateInputType = {
+  export type Payment_accountCountAggregateInputType = {
     id?: true
     user_id?: true
-    payment_method_id?: true
-    card_number?: true
-    card_name?: true
+    name?: true
+    number?: true
+    card_holder?: true
+    is_activated?: true
     _all?: true
   }
 
-  export type Payment_method_detailAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Payment_accountAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which payment_method_detail to aggregate.
+     * Filter which payment_account to aggregate.
      */
-    where?: payment_method_detailWhereInput
+    where?: payment_accountWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of payment_method_details to fetch.
+     * Determine the order of payment_accounts to fetch.
      */
-    orderBy?: payment_method_detailOrderByWithRelationInput | payment_method_detailOrderByWithRelationInput[]
+    orderBy?: payment_accountOrderByWithRelationInput | payment_accountOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: payment_method_detailWhereUniqueInput
+    cursor?: payment_accountWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` payment_method_details from the position of the cursor.
+     * Take `±n` payment_accounts from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` payment_method_details.
+     * Skip the first `n` payment_accounts.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned payment_method_details
+     * Count returned payment_accounts
     **/
-    _count?: true | Payment_method_detailCountAggregateInputType
+    _count?: true | Payment_accountCountAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to average
     **/
-    _avg?: Payment_method_detailAvgAggregateInputType
+    _avg?: Payment_accountAvgAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to sum
     **/
-    _sum?: Payment_method_detailSumAggregateInputType
+    _sum?: Payment_accountSumAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the minimum value
     **/
-    _min?: Payment_method_detailMinAggregateInputType
+    _min?: Payment_accountMinAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the maximum value
     **/
-    _max?: Payment_method_detailMaxAggregateInputType
+    _max?: Payment_accountMaxAggregateInputType
   }
 
-  export type GetPayment_method_detailAggregateType<T extends Payment_method_detailAggregateArgs> = {
-        [P in keyof T & keyof AggregatePayment_method_detail]: P extends '_count' | 'count'
+  export type GetPayment_accountAggregateType<T extends Payment_accountAggregateArgs> = {
+        [P in keyof T & keyof AggregatePayment_account]: P extends '_count' | 'count'
       ? T[P] extends true
         ? number
-        : GetScalarType<T[P], AggregatePayment_method_detail[P]>
-      : GetScalarType<T[P], AggregatePayment_method_detail[P]>
+        : GetScalarType<T[P], AggregatePayment_account[P]>
+      : GetScalarType<T[P], AggregatePayment_account[P]>
   }
 
 
 
 
-  export type payment_method_detailGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: payment_method_detailWhereInput
-    orderBy?: payment_method_detailOrderByWithAggregationInput | payment_method_detailOrderByWithAggregationInput[]
-    by: Payment_method_detailScalarFieldEnum[] | Payment_method_detailScalarFieldEnum
-    having?: payment_method_detailScalarWhereWithAggregatesInput
+  export type payment_accountGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: payment_accountWhereInput
+    orderBy?: payment_accountOrderByWithAggregationInput | payment_accountOrderByWithAggregationInput[]
+    by: Payment_accountScalarFieldEnum[] | Payment_accountScalarFieldEnum
+    having?: payment_accountScalarWhereWithAggregatesInput
     take?: number
     skip?: number
-    _count?: Payment_method_detailCountAggregateInputType | true
-    _avg?: Payment_method_detailAvgAggregateInputType
-    _sum?: Payment_method_detailSumAggregateInputType
-    _min?: Payment_method_detailMinAggregateInputType
-    _max?: Payment_method_detailMaxAggregateInputType
+    _count?: Payment_accountCountAggregateInputType | true
+    _avg?: Payment_accountAvgAggregateInputType
+    _sum?: Payment_accountSumAggregateInputType
+    _min?: Payment_accountMinAggregateInputType
+    _max?: Payment_accountMaxAggregateInputType
   }
 
-  export type Payment_method_detailGroupByOutputType = {
+  export type Payment_accountGroupByOutputType = {
     id: number
     user_id: number | null
-    payment_method_id: number | null
-    card_number: bigint
-    card_name: string
-    _count: Payment_method_detailCountAggregateOutputType | null
-    _avg: Payment_method_detailAvgAggregateOutputType | null
-    _sum: Payment_method_detailSumAggregateOutputType | null
-    _min: Payment_method_detailMinAggregateOutputType | null
-    _max: Payment_method_detailMaxAggregateOutputType | null
+    name: string
+    number: string
+    card_holder: string
+    is_activated: boolean
+    _count: Payment_accountCountAggregateOutputType | null
+    _avg: Payment_accountAvgAggregateOutputType | null
+    _sum: Payment_accountSumAggregateOutputType | null
+    _min: Payment_accountMinAggregateOutputType | null
+    _max: Payment_accountMaxAggregateOutputType | null
   }
 
-  type GetPayment_method_detailGroupByPayload<T extends payment_method_detailGroupByArgs> = Prisma.PrismaPromise<
+  type GetPayment_accountGroupByPayload<T extends payment_accountGroupByArgs> = Prisma.PrismaPromise<
     Array<
-      PickEnumerable<Payment_method_detailGroupByOutputType, T['by']> &
+      PickEnumerable<Payment_accountGroupByOutputType, T['by']> &
         {
-          [P in ((keyof T) & (keyof Payment_method_detailGroupByOutputType))]: P extends '_count'
+          [P in ((keyof T) & (keyof Payment_accountGroupByOutputType))]: P extends '_count'
             ? T[P] extends boolean
               ? number
-              : GetScalarType<T[P], Payment_method_detailGroupByOutputType[P]>
-            : GetScalarType<T[P], Payment_method_detailGroupByOutputType[P]>
+              : GetScalarType<T[P], Payment_accountGroupByOutputType[P]>
+            : GetScalarType<T[P], Payment_accountGroupByOutputType[P]>
         }
       >
     >
 
 
-  export type payment_method_detailSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type payment_accountSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     user_id?: boolean
-    payment_method_id?: boolean
-    card_number?: boolean
-    card_name?: boolean
-    users?: boolean | payment_method_detail$usersArgs<ExtArgs>
-    payment_method?: boolean | payment_method_detail$payment_methodArgs<ExtArgs>
-    bill?: boolean | payment_method_detail$billArgs<ExtArgs>
-    _count?: boolean | Payment_method_detailCountOutputTypeDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["payment_method_detail"]>
+    name?: boolean
+    number?: boolean
+    card_holder?: boolean
+    is_activated?: boolean
+    users?: boolean | payment_account$usersArgs<ExtArgs>
+    bill?: boolean | payment_account$billArgs<ExtArgs>
+    _count?: boolean | Payment_accountCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["payment_account"]>
 
-  export type payment_method_detailSelectScalar = {
+  export type payment_accountSelectScalar = {
     id?: boolean
     user_id?: boolean
-    payment_method_id?: boolean
-    card_number?: boolean
-    card_name?: boolean
+    name?: boolean
+    number?: boolean
+    card_holder?: boolean
+    is_activated?: boolean
   }
 
-  export type payment_method_detailInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    users?: boolean | payment_method_detail$usersArgs<ExtArgs>
-    payment_method?: boolean | payment_method_detail$payment_methodArgs<ExtArgs>
-    bill?: boolean | payment_method_detail$billArgs<ExtArgs>
-    _count?: boolean | Payment_method_detailCountOutputTypeDefaultArgs<ExtArgs>
+  export type payment_accountInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    users?: boolean | payment_account$usersArgs<ExtArgs>
+    bill?: boolean | payment_account$billArgs<ExtArgs>
+    _count?: boolean | Payment_accountCountOutputTypeDefaultArgs<ExtArgs>
   }
 
 
-  export type $payment_method_detailPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "payment_method_detail"
+  export type $payment_accountPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "payment_account"
     objects: {
       users: Prisma.$usersPayload<ExtArgs> | null
-      payment_method: Prisma.$payment_methodPayload<ExtArgs> | null
       bill: Prisma.$billPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
       user_id: number | null
-      payment_method_id: number | null
-      card_number: bigint
-      card_name: string
-    }, ExtArgs["result"]["payment_method_detail"]>
+      name: string
+      number: string
+      card_holder: string
+      is_activated: boolean
+    }, ExtArgs["result"]["payment_account"]>
     composites: {}
   }
 
 
-  type payment_method_detailGetPayload<S extends boolean | null | undefined | payment_method_detailDefaultArgs> = $Result.GetResult<Prisma.$payment_method_detailPayload, S>
+  type payment_accountGetPayload<S extends boolean | null | undefined | payment_accountDefaultArgs> = $Result.GetResult<Prisma.$payment_accountPayload, S>
 
-  type payment_method_detailCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
-    Omit<payment_method_detailFindManyArgs, 'select' | 'include' | 'distinct'> & {
-      select?: Payment_method_detailCountAggregateInputType | true
+  type payment_accountCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<payment_accountFindManyArgs, 'select' | 'include' | 'distinct'> & {
+      select?: Payment_accountCountAggregateInputType | true
     }
 
-  export interface payment_method_detailDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['payment_method_detail'], meta: { name: 'payment_method_detail' } }
+  export interface payment_accountDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['payment_account'], meta: { name: 'payment_account' } }
     /**
-     * Find zero or one Payment_method_detail that matches the filter.
-     * @param {payment_method_detailFindUniqueArgs} args - Arguments to find a Payment_method_detail
+     * Find zero or one Payment_account that matches the filter.
+     * @param {payment_accountFindUniqueArgs} args - Arguments to find a Payment_account
      * @example
-     * // Get one Payment_method_detail
-     * const payment_method_detail = await prisma.payment_method_detail.findUnique({
+     * // Get one Payment_account
+     * const payment_account = await prisma.payment_account.findUnique({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
     **/
-    findUnique<T extends payment_method_detailFindUniqueArgs<ExtArgs>>(
-      args: SelectSubset<T, payment_method_detailFindUniqueArgs<ExtArgs>>
-    ): Prisma__payment_method_detailClient<$Result.GetResult<Prisma.$payment_method_detailPayload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
+    findUnique<T extends payment_accountFindUniqueArgs<ExtArgs>>(
+      args: SelectSubset<T, payment_accountFindUniqueArgs<ExtArgs>>
+    ): Prisma__payment_accountClient<$Result.GetResult<Prisma.$payment_accountPayload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
 
     /**
-     * Find one Payment_method_detail that matches the filter or throw an error  with `error.code='P2025'` 
+     * Find one Payment_account that matches the filter or throw an error  with `error.code='P2025'` 
      *     if no matches were found.
-     * @param {payment_method_detailFindUniqueOrThrowArgs} args - Arguments to find a Payment_method_detail
+     * @param {payment_accountFindUniqueOrThrowArgs} args - Arguments to find a Payment_account
      * @example
-     * // Get one Payment_method_detail
-     * const payment_method_detail = await prisma.payment_method_detail.findUniqueOrThrow({
+     * // Get one Payment_account
+     * const payment_account = await prisma.payment_account.findUniqueOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
     **/
-    findUniqueOrThrow<T extends payment_method_detailFindUniqueOrThrowArgs<ExtArgs>>(
-      args?: SelectSubset<T, payment_method_detailFindUniqueOrThrowArgs<ExtArgs>>
-    ): Prisma__payment_method_detailClient<$Result.GetResult<Prisma.$payment_method_detailPayload<ExtArgs>, T, 'findUniqueOrThrow'>, never, ExtArgs>
+    findUniqueOrThrow<T extends payment_accountFindUniqueOrThrowArgs<ExtArgs>>(
+      args?: SelectSubset<T, payment_accountFindUniqueOrThrowArgs<ExtArgs>>
+    ): Prisma__payment_accountClient<$Result.GetResult<Prisma.$payment_accountPayload<ExtArgs>, T, 'findUniqueOrThrow'>, never, ExtArgs>
 
     /**
-     * Find the first Payment_method_detail that matches the filter.
+     * Find the first Payment_account that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {payment_method_detailFindFirstArgs} args - Arguments to find a Payment_method_detail
+     * @param {payment_accountFindFirstArgs} args - Arguments to find a Payment_account
      * @example
-     * // Get one Payment_method_detail
-     * const payment_method_detail = await prisma.payment_method_detail.findFirst({
+     * // Get one Payment_account
+     * const payment_account = await prisma.payment_account.findFirst({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
     **/
-    findFirst<T extends payment_method_detailFindFirstArgs<ExtArgs>>(
-      args?: SelectSubset<T, payment_method_detailFindFirstArgs<ExtArgs>>
-    ): Prisma__payment_method_detailClient<$Result.GetResult<Prisma.$payment_method_detailPayload<ExtArgs>, T, 'findFirst'> | null, null, ExtArgs>
+    findFirst<T extends payment_accountFindFirstArgs<ExtArgs>>(
+      args?: SelectSubset<T, payment_accountFindFirstArgs<ExtArgs>>
+    ): Prisma__payment_accountClient<$Result.GetResult<Prisma.$payment_accountPayload<ExtArgs>, T, 'findFirst'> | null, null, ExtArgs>
 
     /**
-     * Find the first Payment_method_detail that matches the filter or
+     * Find the first Payment_account that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {payment_method_detailFindFirstOrThrowArgs} args - Arguments to find a Payment_method_detail
+     * @param {payment_accountFindFirstOrThrowArgs} args - Arguments to find a Payment_account
      * @example
-     * // Get one Payment_method_detail
-     * const payment_method_detail = await prisma.payment_method_detail.findFirstOrThrow({
+     * // Get one Payment_account
+     * const payment_account = await prisma.payment_account.findFirstOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
     **/
-    findFirstOrThrow<T extends payment_method_detailFindFirstOrThrowArgs<ExtArgs>>(
-      args?: SelectSubset<T, payment_method_detailFindFirstOrThrowArgs<ExtArgs>>
-    ): Prisma__payment_method_detailClient<$Result.GetResult<Prisma.$payment_method_detailPayload<ExtArgs>, T, 'findFirstOrThrow'>, never, ExtArgs>
+    findFirstOrThrow<T extends payment_accountFindFirstOrThrowArgs<ExtArgs>>(
+      args?: SelectSubset<T, payment_accountFindFirstOrThrowArgs<ExtArgs>>
+    ): Prisma__payment_accountClient<$Result.GetResult<Prisma.$payment_accountPayload<ExtArgs>, T, 'findFirstOrThrow'>, never, ExtArgs>
 
     /**
-     * Find zero or more Payment_method_details that matches the filter.
+     * Find zero or more Payment_accounts that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {payment_method_detailFindManyArgs=} args - Arguments to filter and select certain fields only.
+     * @param {payment_accountFindManyArgs=} args - Arguments to filter and select certain fields only.
      * @example
-     * // Get all Payment_method_details
-     * const payment_method_details = await prisma.payment_method_detail.findMany()
+     * // Get all Payment_accounts
+     * const payment_accounts = await prisma.payment_account.findMany()
      * 
-     * // Get first 10 Payment_method_details
-     * const payment_method_details = await prisma.payment_method_detail.findMany({ take: 10 })
+     * // Get first 10 Payment_accounts
+     * const payment_accounts = await prisma.payment_account.findMany({ take: 10 })
      * 
      * // Only select the `id`
-     * const payment_method_detailWithIdOnly = await prisma.payment_method_detail.findMany({ select: { id: true } })
+     * const payment_accountWithIdOnly = await prisma.payment_account.findMany({ select: { id: true } })
      * 
     **/
-    findMany<T extends payment_method_detailFindManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, payment_method_detailFindManyArgs<ExtArgs>>
-    ): Prisma.PrismaPromise<$Result.GetResult<Prisma.$payment_method_detailPayload<ExtArgs>, T, 'findMany'>>
+    findMany<T extends payment_accountFindManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, payment_accountFindManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<$Result.GetResult<Prisma.$payment_accountPayload<ExtArgs>, T, 'findMany'>>
 
     /**
-     * Create a Payment_method_detail.
-     * @param {payment_method_detailCreateArgs} args - Arguments to create a Payment_method_detail.
+     * Create a Payment_account.
+     * @param {payment_accountCreateArgs} args - Arguments to create a Payment_account.
      * @example
-     * // Create one Payment_method_detail
-     * const Payment_method_detail = await prisma.payment_method_detail.create({
+     * // Create one Payment_account
+     * const Payment_account = await prisma.payment_account.create({
      *   data: {
-     *     // ... data to create a Payment_method_detail
+     *     // ... data to create a Payment_account
      *   }
      * })
      * 
     **/
-    create<T extends payment_method_detailCreateArgs<ExtArgs>>(
-      args: SelectSubset<T, payment_method_detailCreateArgs<ExtArgs>>
-    ): Prisma__payment_method_detailClient<$Result.GetResult<Prisma.$payment_method_detailPayload<ExtArgs>, T, 'create'>, never, ExtArgs>
+    create<T extends payment_accountCreateArgs<ExtArgs>>(
+      args: SelectSubset<T, payment_accountCreateArgs<ExtArgs>>
+    ): Prisma__payment_accountClient<$Result.GetResult<Prisma.$payment_accountPayload<ExtArgs>, T, 'create'>, never, ExtArgs>
 
     /**
-     * Create many Payment_method_details.
-     *     @param {payment_method_detailCreateManyArgs} args - Arguments to create many Payment_method_details.
+     * Create many Payment_accounts.
+     *     @param {payment_accountCreateManyArgs} args - Arguments to create many Payment_accounts.
      *     @example
-     *     // Create many Payment_method_details
-     *     const payment_method_detail = await prisma.payment_method_detail.createMany({
+     *     // Create many Payment_accounts
+     *     const payment_account = await prisma.payment_account.createMany({
      *       data: {
      *         // ... provide data here
      *       }
      *     })
      *     
     **/
-    createMany<T extends payment_method_detailCreateManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, payment_method_detailCreateManyArgs<ExtArgs>>
+    createMany<T extends payment_accountCreateManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, payment_accountCreateManyArgs<ExtArgs>>
     ): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Delete a Payment_method_detail.
-     * @param {payment_method_detailDeleteArgs} args - Arguments to delete one Payment_method_detail.
+     * Delete a Payment_account.
+     * @param {payment_accountDeleteArgs} args - Arguments to delete one Payment_account.
      * @example
-     * // Delete one Payment_method_detail
-     * const Payment_method_detail = await prisma.payment_method_detail.delete({
+     * // Delete one Payment_account
+     * const Payment_account = await prisma.payment_account.delete({
      *   where: {
-     *     // ... filter to delete one Payment_method_detail
+     *     // ... filter to delete one Payment_account
      *   }
      * })
      * 
     **/
-    delete<T extends payment_method_detailDeleteArgs<ExtArgs>>(
-      args: SelectSubset<T, payment_method_detailDeleteArgs<ExtArgs>>
-    ): Prisma__payment_method_detailClient<$Result.GetResult<Prisma.$payment_method_detailPayload<ExtArgs>, T, 'delete'>, never, ExtArgs>
+    delete<T extends payment_accountDeleteArgs<ExtArgs>>(
+      args: SelectSubset<T, payment_accountDeleteArgs<ExtArgs>>
+    ): Prisma__payment_accountClient<$Result.GetResult<Prisma.$payment_accountPayload<ExtArgs>, T, 'delete'>, never, ExtArgs>
 
     /**
-     * Update one Payment_method_detail.
-     * @param {payment_method_detailUpdateArgs} args - Arguments to update one Payment_method_detail.
+     * Update one Payment_account.
+     * @param {payment_accountUpdateArgs} args - Arguments to update one Payment_account.
      * @example
-     * // Update one Payment_method_detail
-     * const payment_method_detail = await prisma.payment_method_detail.update({
+     * // Update one Payment_account
+     * const payment_account = await prisma.payment_account.update({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -8223,34 +5867,34 @@ export namespace Prisma {
      * })
      * 
     **/
-    update<T extends payment_method_detailUpdateArgs<ExtArgs>>(
-      args: SelectSubset<T, payment_method_detailUpdateArgs<ExtArgs>>
-    ): Prisma__payment_method_detailClient<$Result.GetResult<Prisma.$payment_method_detailPayload<ExtArgs>, T, 'update'>, never, ExtArgs>
+    update<T extends payment_accountUpdateArgs<ExtArgs>>(
+      args: SelectSubset<T, payment_accountUpdateArgs<ExtArgs>>
+    ): Prisma__payment_accountClient<$Result.GetResult<Prisma.$payment_accountPayload<ExtArgs>, T, 'update'>, never, ExtArgs>
 
     /**
-     * Delete zero or more Payment_method_details.
-     * @param {payment_method_detailDeleteManyArgs} args - Arguments to filter Payment_method_details to delete.
+     * Delete zero or more Payment_accounts.
+     * @param {payment_accountDeleteManyArgs} args - Arguments to filter Payment_accounts to delete.
      * @example
-     * // Delete a few Payment_method_details
-     * const { count } = await prisma.payment_method_detail.deleteMany({
+     * // Delete a few Payment_accounts
+     * const { count } = await prisma.payment_account.deleteMany({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      * 
     **/
-    deleteMany<T extends payment_method_detailDeleteManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, payment_method_detailDeleteManyArgs<ExtArgs>>
+    deleteMany<T extends payment_accountDeleteManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, payment_accountDeleteManyArgs<ExtArgs>>
     ): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more Payment_method_details.
+     * Update zero or more Payment_accounts.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {payment_method_detailUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {payment_accountUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
-     * // Update many Payment_method_details
-     * const payment_method_detail = await prisma.payment_method_detail.updateMany({
+     * // Update many Payment_accounts
+     * const payment_account = await prisma.payment_account.updateMany({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -8260,59 +5904,59 @@ export namespace Prisma {
      * })
      * 
     **/
-    updateMany<T extends payment_method_detailUpdateManyArgs<ExtArgs>>(
-      args: SelectSubset<T, payment_method_detailUpdateManyArgs<ExtArgs>>
+    updateMany<T extends payment_accountUpdateManyArgs<ExtArgs>>(
+      args: SelectSubset<T, payment_accountUpdateManyArgs<ExtArgs>>
     ): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Create or update one Payment_method_detail.
-     * @param {payment_method_detailUpsertArgs} args - Arguments to update or create a Payment_method_detail.
+     * Create or update one Payment_account.
+     * @param {payment_accountUpsertArgs} args - Arguments to update or create a Payment_account.
      * @example
-     * // Update or create a Payment_method_detail
-     * const payment_method_detail = await prisma.payment_method_detail.upsert({
+     * // Update or create a Payment_account
+     * const payment_account = await prisma.payment_account.upsert({
      *   create: {
-     *     // ... data to create a Payment_method_detail
+     *     // ... data to create a Payment_account
      *   },
      *   update: {
      *     // ... in case it already exists, update
      *   },
      *   where: {
-     *     // ... the filter for the Payment_method_detail we want to update
+     *     // ... the filter for the Payment_account we want to update
      *   }
      * })
     **/
-    upsert<T extends payment_method_detailUpsertArgs<ExtArgs>>(
-      args: SelectSubset<T, payment_method_detailUpsertArgs<ExtArgs>>
-    ): Prisma__payment_method_detailClient<$Result.GetResult<Prisma.$payment_method_detailPayload<ExtArgs>, T, 'upsert'>, never, ExtArgs>
+    upsert<T extends payment_accountUpsertArgs<ExtArgs>>(
+      args: SelectSubset<T, payment_accountUpsertArgs<ExtArgs>>
+    ): Prisma__payment_accountClient<$Result.GetResult<Prisma.$payment_accountPayload<ExtArgs>, T, 'upsert'>, never, ExtArgs>
 
     /**
-     * Count the number of Payment_method_details.
+     * Count the number of Payment_accounts.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {payment_method_detailCountArgs} args - Arguments to filter Payment_method_details to count.
+     * @param {payment_accountCountArgs} args - Arguments to filter Payment_accounts to count.
      * @example
-     * // Count the number of Payment_method_details
-     * const count = await prisma.payment_method_detail.count({
+     * // Count the number of Payment_accounts
+     * const count = await prisma.payment_account.count({
      *   where: {
-     *     // ... the filter for the Payment_method_details we want to count
+     *     // ... the filter for the Payment_accounts we want to count
      *   }
      * })
     **/
-    count<T extends payment_method_detailCountArgs>(
-      args?: Subset<T, payment_method_detailCountArgs>,
+    count<T extends payment_accountCountArgs>(
+      args?: Subset<T, payment_accountCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
           ? number
-          : GetScalarType<T['select'], Payment_method_detailCountAggregateOutputType>
+          : GetScalarType<T['select'], Payment_accountCountAggregateOutputType>
         : number
     >
 
     /**
-     * Allows you to perform aggregations operations on a Payment_method_detail.
+     * Allows you to perform aggregations operations on a Payment_account.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Payment_method_detailAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @param {Payment_accountAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
      * @example
      * // Ordered by age ascending
      * // Where email contains prisma.io
@@ -8332,13 +5976,13 @@ export namespace Prisma {
      *   take: 10,
      * })
     **/
-    aggregate<T extends Payment_method_detailAggregateArgs>(args: Subset<T, Payment_method_detailAggregateArgs>): Prisma.PrismaPromise<GetPayment_method_detailAggregateType<T>>
+    aggregate<T extends Payment_accountAggregateArgs>(args: Subset<T, Payment_accountAggregateArgs>): Prisma.PrismaPromise<GetPayment_accountAggregateType<T>>
 
     /**
-     * Group by Payment_method_detail.
+     * Group by Payment_account.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {payment_method_detailGroupByArgs} args - Group by arguments.
+     * @param {payment_accountGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -8353,14 +5997,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends payment_method_detailGroupByArgs,
+      T extends payment_accountGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: payment_method_detailGroupByArgs['orderBy'] }
-        : { orderBy?: payment_method_detailGroupByArgs['orderBy'] },
+        ? { orderBy: payment_accountGroupByArgs['orderBy'] }
+        : { orderBy?: payment_accountGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -8409,27 +6053,25 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, payment_method_detailGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPayment_method_detailGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, payment_accountGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPayment_accountGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the payment_method_detail model
+   * Fields of the payment_account model
    */
-  readonly fields: payment_method_detailFieldRefs;
+  readonly fields: payment_accountFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for payment_method_detail.
+   * The delegate class that acts as a "Promise-like" for payment_account.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__payment_method_detailClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__payment_accountClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: 'PrismaPromise';
 
-    users<T extends payment_method_detail$usersArgs<ExtArgs> = {}>(args?: Subset<T, payment_method_detail$usersArgs<ExtArgs>>): Prisma__usersClient<$Result.GetResult<Prisma.$usersPayload<ExtArgs>, T, 'findUniqueOrThrow'> | null, null, ExtArgs>;
+    users<T extends payment_account$usersArgs<ExtArgs> = {}>(args?: Subset<T, payment_account$usersArgs<ExtArgs>>): Prisma__usersClient<$Result.GetResult<Prisma.$usersPayload<ExtArgs>, T, 'findUniqueOrThrow'> | null, null, ExtArgs>;
 
-    payment_method<T extends payment_method_detail$payment_methodArgs<ExtArgs> = {}>(args?: Subset<T, payment_method_detail$payment_methodArgs<ExtArgs>>): Prisma__payment_methodClient<$Result.GetResult<Prisma.$payment_methodPayload<ExtArgs>, T, 'findUniqueOrThrow'> | null, null, ExtArgs>;
-
-    bill<T extends payment_method_detail$billArgs<ExtArgs> = {}>(args?: Subset<T, payment_method_detail$billArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$billPayload<ExtArgs>, T, 'findMany'> | Null>;
+    bill<T extends payment_account$billArgs<ExtArgs> = {}>(args?: Subset<T, payment_account$billArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$billPayload<ExtArgs>, T, 'findMany'> | Null>;
 
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -8456,329 +6098,330 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the payment_method_detail model
+   * Fields of the payment_account model
    */ 
-  interface payment_method_detailFieldRefs {
-    readonly id: FieldRef<"payment_method_detail", 'Int'>
-    readonly user_id: FieldRef<"payment_method_detail", 'Int'>
-    readonly payment_method_id: FieldRef<"payment_method_detail", 'Int'>
-    readonly card_number: FieldRef<"payment_method_detail", 'BigInt'>
-    readonly card_name: FieldRef<"payment_method_detail", 'String'>
+  interface payment_accountFieldRefs {
+    readonly id: FieldRef<"payment_account", 'Int'>
+    readonly user_id: FieldRef<"payment_account", 'Int'>
+    readonly name: FieldRef<"payment_account", 'String'>
+    readonly number: FieldRef<"payment_account", 'String'>
+    readonly card_holder: FieldRef<"payment_account", 'String'>
+    readonly is_activated: FieldRef<"payment_account", 'Boolean'>
   }
     
 
   // Custom InputTypes
 
   /**
-   * payment_method_detail findUnique
+   * payment_account findUnique
    */
-  export type payment_method_detailFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type payment_accountFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the payment_method_detail
+     * Select specific fields to fetch from the payment_account
      */
-    select?: payment_method_detailSelect<ExtArgs> | null
+    select?: payment_accountSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well.
      */
-    include?: payment_method_detailInclude<ExtArgs> | null
+    include?: payment_accountInclude<ExtArgs> | null
     /**
-     * Filter, which payment_method_detail to fetch.
+     * Filter, which payment_account to fetch.
      */
-    where: payment_method_detailWhereUniqueInput
+    where: payment_accountWhereUniqueInput
   }
 
 
   /**
-   * payment_method_detail findUniqueOrThrow
+   * payment_account findUniqueOrThrow
    */
-  export type payment_method_detailFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type payment_accountFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the payment_method_detail
+     * Select specific fields to fetch from the payment_account
      */
-    select?: payment_method_detailSelect<ExtArgs> | null
+    select?: payment_accountSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well.
      */
-    include?: payment_method_detailInclude<ExtArgs> | null
+    include?: payment_accountInclude<ExtArgs> | null
     /**
-     * Filter, which payment_method_detail to fetch.
+     * Filter, which payment_account to fetch.
      */
-    where: payment_method_detailWhereUniqueInput
+    where: payment_accountWhereUniqueInput
   }
 
 
   /**
-   * payment_method_detail findFirst
+   * payment_account findFirst
    */
-  export type payment_method_detailFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type payment_accountFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the payment_method_detail
+     * Select specific fields to fetch from the payment_account
      */
-    select?: payment_method_detailSelect<ExtArgs> | null
+    select?: payment_accountSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well.
      */
-    include?: payment_method_detailInclude<ExtArgs> | null
+    include?: payment_accountInclude<ExtArgs> | null
     /**
-     * Filter, which payment_method_detail to fetch.
+     * Filter, which payment_account to fetch.
      */
-    where?: payment_method_detailWhereInput
+    where?: payment_accountWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of payment_method_details to fetch.
+     * Determine the order of payment_accounts to fetch.
      */
-    orderBy?: payment_method_detailOrderByWithRelationInput | payment_method_detailOrderByWithRelationInput[]
+    orderBy?: payment_accountOrderByWithRelationInput | payment_accountOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for payment_method_details.
+     * Sets the position for searching for payment_accounts.
      */
-    cursor?: payment_method_detailWhereUniqueInput
+    cursor?: payment_accountWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` payment_method_details from the position of the cursor.
+     * Take `±n` payment_accounts from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` payment_method_details.
+     * Skip the first `n` payment_accounts.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of payment_method_details.
+     * Filter by unique combinations of payment_accounts.
      */
-    distinct?: Payment_method_detailScalarFieldEnum | Payment_method_detailScalarFieldEnum[]
+    distinct?: Payment_accountScalarFieldEnum | Payment_accountScalarFieldEnum[]
   }
 
 
   /**
-   * payment_method_detail findFirstOrThrow
+   * payment_account findFirstOrThrow
    */
-  export type payment_method_detailFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type payment_accountFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the payment_method_detail
+     * Select specific fields to fetch from the payment_account
      */
-    select?: payment_method_detailSelect<ExtArgs> | null
+    select?: payment_accountSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well.
      */
-    include?: payment_method_detailInclude<ExtArgs> | null
+    include?: payment_accountInclude<ExtArgs> | null
     /**
-     * Filter, which payment_method_detail to fetch.
+     * Filter, which payment_account to fetch.
      */
-    where?: payment_method_detailWhereInput
+    where?: payment_accountWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of payment_method_details to fetch.
+     * Determine the order of payment_accounts to fetch.
      */
-    orderBy?: payment_method_detailOrderByWithRelationInput | payment_method_detailOrderByWithRelationInput[]
+    orderBy?: payment_accountOrderByWithRelationInput | payment_accountOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for payment_method_details.
+     * Sets the position for searching for payment_accounts.
      */
-    cursor?: payment_method_detailWhereUniqueInput
+    cursor?: payment_accountWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` payment_method_details from the position of the cursor.
+     * Take `±n` payment_accounts from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` payment_method_details.
+     * Skip the first `n` payment_accounts.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of payment_method_details.
+     * Filter by unique combinations of payment_accounts.
      */
-    distinct?: Payment_method_detailScalarFieldEnum | Payment_method_detailScalarFieldEnum[]
+    distinct?: Payment_accountScalarFieldEnum | Payment_accountScalarFieldEnum[]
   }
 
 
   /**
-   * payment_method_detail findMany
+   * payment_account findMany
    */
-  export type payment_method_detailFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type payment_accountFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the payment_method_detail
+     * Select specific fields to fetch from the payment_account
      */
-    select?: payment_method_detailSelect<ExtArgs> | null
+    select?: payment_accountSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well.
      */
-    include?: payment_method_detailInclude<ExtArgs> | null
+    include?: payment_accountInclude<ExtArgs> | null
     /**
-     * Filter, which payment_method_details to fetch.
+     * Filter, which payment_accounts to fetch.
      */
-    where?: payment_method_detailWhereInput
+    where?: payment_accountWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of payment_method_details to fetch.
+     * Determine the order of payment_accounts to fetch.
      */
-    orderBy?: payment_method_detailOrderByWithRelationInput | payment_method_detailOrderByWithRelationInput[]
+    orderBy?: payment_accountOrderByWithRelationInput | payment_accountOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing payment_method_details.
+     * Sets the position for listing payment_accounts.
      */
-    cursor?: payment_method_detailWhereUniqueInput
+    cursor?: payment_accountWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` payment_method_details from the position of the cursor.
+     * Take `±n` payment_accounts from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` payment_method_details.
+     * Skip the first `n` payment_accounts.
      */
     skip?: number
-    distinct?: Payment_method_detailScalarFieldEnum | Payment_method_detailScalarFieldEnum[]
+    distinct?: Payment_accountScalarFieldEnum | Payment_accountScalarFieldEnum[]
   }
 
 
   /**
-   * payment_method_detail create
+   * payment_account create
    */
-  export type payment_method_detailCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type payment_accountCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the payment_method_detail
+     * Select specific fields to fetch from the payment_account
      */
-    select?: payment_method_detailSelect<ExtArgs> | null
+    select?: payment_accountSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well.
      */
-    include?: payment_method_detailInclude<ExtArgs> | null
+    include?: payment_accountInclude<ExtArgs> | null
     /**
-     * The data needed to create a payment_method_detail.
+     * The data needed to create a payment_account.
      */
-    data: XOR<payment_method_detailCreateInput, payment_method_detailUncheckedCreateInput>
+    data: XOR<payment_accountCreateInput, payment_accountUncheckedCreateInput>
   }
 
 
   /**
-   * payment_method_detail createMany
+   * payment_account createMany
    */
-  export type payment_method_detailCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type payment_accountCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many payment_method_details.
+     * The data used to create many payment_accounts.
      */
-    data: payment_method_detailCreateManyInput | payment_method_detailCreateManyInput[]
+    data: payment_accountCreateManyInput | payment_accountCreateManyInput[]
     skipDuplicates?: boolean
   }
 
 
   /**
-   * payment_method_detail update
+   * payment_account update
    */
-  export type payment_method_detailUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type payment_accountUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the payment_method_detail
+     * Select specific fields to fetch from the payment_account
      */
-    select?: payment_method_detailSelect<ExtArgs> | null
+    select?: payment_accountSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well.
      */
-    include?: payment_method_detailInclude<ExtArgs> | null
+    include?: payment_accountInclude<ExtArgs> | null
     /**
-     * The data needed to update a payment_method_detail.
+     * The data needed to update a payment_account.
      */
-    data: XOR<payment_method_detailUpdateInput, payment_method_detailUncheckedUpdateInput>
+    data: XOR<payment_accountUpdateInput, payment_accountUncheckedUpdateInput>
     /**
-     * Choose, which payment_method_detail to update.
+     * Choose, which payment_account to update.
      */
-    where: payment_method_detailWhereUniqueInput
+    where: payment_accountWhereUniqueInput
   }
 
 
   /**
-   * payment_method_detail updateMany
+   * payment_account updateMany
    */
-  export type payment_method_detailUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type payment_accountUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update payment_method_details.
+     * The data used to update payment_accounts.
      */
-    data: XOR<payment_method_detailUpdateManyMutationInput, payment_method_detailUncheckedUpdateManyInput>
+    data: XOR<payment_accountUpdateManyMutationInput, payment_accountUncheckedUpdateManyInput>
     /**
-     * Filter which payment_method_details to update
+     * Filter which payment_accounts to update
      */
-    where?: payment_method_detailWhereInput
+    where?: payment_accountWhereInput
   }
 
 
   /**
-   * payment_method_detail upsert
+   * payment_account upsert
    */
-  export type payment_method_detailUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type payment_accountUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the payment_method_detail
+     * Select specific fields to fetch from the payment_account
      */
-    select?: payment_method_detailSelect<ExtArgs> | null
+    select?: payment_accountSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well.
      */
-    include?: payment_method_detailInclude<ExtArgs> | null
+    include?: payment_accountInclude<ExtArgs> | null
     /**
-     * The filter to search for the payment_method_detail to update in case it exists.
+     * The filter to search for the payment_account to update in case it exists.
      */
-    where: payment_method_detailWhereUniqueInput
+    where: payment_accountWhereUniqueInput
     /**
-     * In case the payment_method_detail found by the `where` argument doesn't exist, create a new payment_method_detail with this data.
+     * In case the payment_account found by the `where` argument doesn't exist, create a new payment_account with this data.
      */
-    create: XOR<payment_method_detailCreateInput, payment_method_detailUncheckedCreateInput>
+    create: XOR<payment_accountCreateInput, payment_accountUncheckedCreateInput>
     /**
-     * In case the payment_method_detail was found with the provided `where` argument, update it with this data.
+     * In case the payment_account was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<payment_method_detailUpdateInput, payment_method_detailUncheckedUpdateInput>
+    update: XOR<payment_accountUpdateInput, payment_accountUncheckedUpdateInput>
   }
 
 
   /**
-   * payment_method_detail delete
+   * payment_account delete
    */
-  export type payment_method_detailDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type payment_accountDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the payment_method_detail
+     * Select specific fields to fetch from the payment_account
      */
-    select?: payment_method_detailSelect<ExtArgs> | null
+    select?: payment_accountSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well.
      */
-    include?: payment_method_detailInclude<ExtArgs> | null
+    include?: payment_accountInclude<ExtArgs> | null
     /**
-     * Filter which payment_method_detail to delete.
+     * Filter which payment_account to delete.
      */
-    where: payment_method_detailWhereUniqueInput
+    where: payment_accountWhereUniqueInput
   }
 
 
   /**
-   * payment_method_detail deleteMany
+   * payment_account deleteMany
    */
-  export type payment_method_detailDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type payment_accountDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which payment_method_details to delete
+     * Filter which payment_accounts to delete
      */
-    where?: payment_method_detailWhereInput
+    where?: payment_accountWhereInput
   }
 
 
   /**
-   * payment_method_detail.users
+   * payment_account.users
    */
-  export type payment_method_detail$usersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type payment_account$usersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * Select specific fields to fetch from the users
      */
@@ -8792,25 +6435,9 @@ export namespace Prisma {
 
 
   /**
-   * payment_method_detail.payment_method
+   * payment_account.bill
    */
-  export type payment_method_detail$payment_methodArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the payment_method
-     */
-    select?: payment_methodSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: payment_methodInclude<ExtArgs> | null
-    where?: payment_methodWhereInput
-  }
-
-
-  /**
-   * payment_method_detail.bill
-   */
-  export type payment_method_detail$billArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type payment_account$billArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * Select specific fields to fetch from the bill
      */
@@ -8829,17 +6456,17 @@ export namespace Prisma {
 
 
   /**
-   * payment_method_detail without action
+   * payment_account without action
    */
-  export type payment_method_detailDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type payment_accountDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the payment_method_detail
+     * Select specific fields to fetch from the payment_account
      */
-    select?: payment_method_detailSelect<ExtArgs> | null
+    select?: payment_accountSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well.
      */
-    include?: payment_method_detailInclude<ExtArgs> | null
+    include?: payment_accountInclude<ExtArgs> | null
   }
 
 
@@ -8875,75 +6502,52 @@ export namespace Prisma {
   export type UsersScalarFieldEnum = (typeof UsersScalarFieldEnum)[keyof typeof UsersScalarFieldEnum]
 
 
-  export const OrdersScalarFieldEnum: {
+  export const Order_detailScalarFieldEnum: {
     id: 'id',
-    user_id: 'user_id',
-    bill_id: 'bill_id',
-    menu_name: 'menu_name',
-    qty: 'qty',
+    friend_order_id: 'friend_order_id',
+    menu: 'menu',
+    quantity: 'quantity',
     price: 'price'
   };
 
-  export type OrdersScalarFieldEnum = (typeof OrdersScalarFieldEnum)[keyof typeof OrdersScalarFieldEnum]
+  export type Order_detailScalarFieldEnum = (typeof Order_detailScalarFieldEnum)[keyof typeof Order_detailScalarFieldEnum]
 
 
-  export const Friends_orderScalarFieldEnum: {
+  export const Friend_orderScalarFieldEnum: {
     id: 'id',
-    orders_id: 'orders_id',
-    friends_id: 'friends_id',
-    friend_order_price: 'friend_order_price',
-    is_paid: 'is_paid',
-    created_at: 'created_at',
-    update_at: 'update_at'
+    bill_id: 'bill_id',
+    name: 'name',
+    is_paid: 'is_paid'
   };
 
-  export type Friends_orderScalarFieldEnum = (typeof Friends_orderScalarFieldEnum)[keyof typeof Friends_orderScalarFieldEnum]
-
-
-  export const FriendsScalarFieldEnum: {
-    id: 'id',
-    user_id: 'user_id',
-    friends_name: 'friends_name',
-    friends_photo: 'friends_photo'
-  };
-
-  export type FriendsScalarFieldEnum = (typeof FriendsScalarFieldEnum)[keyof typeof FriendsScalarFieldEnum]
+  export type Friend_orderScalarFieldEnum = (typeof Friend_orderScalarFieldEnum)[keyof typeof Friend_orderScalarFieldEnum]
 
 
   export const BillScalarFieldEnum: {
     id: 'id',
     user_id: 'user_id',
-    payment_method_id: 'payment_method_id',
+    payment_account_id: 'payment_account_id',
     description: 'description',
     discount: 'discount',
     tax: 'tax',
     service: 'service',
     total_price: 'total_price',
-    date: 'date',
-    is_completed: 'is_completed'
+    date: 'date'
   };
 
   export type BillScalarFieldEnum = (typeof BillScalarFieldEnum)[keyof typeof BillScalarFieldEnum]
 
 
-  export const Payment_methodScalarFieldEnum: {
-    id: 'id',
-    payment_method_name: 'payment_method_name',
-    payment_method_logo: 'payment_method_logo'
-  };
-
-  export type Payment_methodScalarFieldEnum = (typeof Payment_methodScalarFieldEnum)[keyof typeof Payment_methodScalarFieldEnum]
-
-
-  export const Payment_method_detailScalarFieldEnum: {
+  export const Payment_accountScalarFieldEnum: {
     id: 'id',
     user_id: 'user_id',
-    payment_method_id: 'payment_method_id',
-    card_number: 'card_number',
-    card_name: 'card_name'
+    name: 'name',
+    number: 'number',
+    card_holder: 'card_holder',
+    is_activated: 'is_activated'
   };
 
-  export type Payment_method_detailScalarFieldEnum = (typeof Payment_method_detailScalarFieldEnum)[keyof typeof Payment_method_detailScalarFieldEnum]
+  export type Payment_accountScalarFieldEnum = (typeof Payment_accountScalarFieldEnum)[keyof typeof Payment_accountScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -9018,20 +6622,6 @@ export namespace Prisma {
 
 
   /**
-   * Reference to a field of type 'BigInt'
-   */
-  export type BigIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'BigInt'>
-    
-
-
-  /**
-   * Reference to a field of type 'BigInt[]'
-   */
-  export type ListBigIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'BigInt[]'>
-    
-
-
-  /**
    * Reference to a field of type 'Boolean'
    */
   export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
@@ -9070,10 +6660,8 @@ export namespace Prisma {
     photo_profile?: StringNullableFilter<"users"> | string | null
     created_at?: DateTimeFilter<"users"> | Date | string
     update_at?: DateTimeFilter<"users"> | Date | string
-    friends?: FriendsListRelationFilter
-    orders?: OrdersListRelationFilter
     bill?: BillListRelationFilter
-    payment_method_detail?: Payment_method_detailListRelationFilter
+    payment_account?: Payment_accountListRelationFilter
   }
 
   export type usersOrderByWithRelationInput = {
@@ -9088,10 +6676,8 @@ export namespace Prisma {
     photo_profile?: SortOrderInput | SortOrder
     created_at?: SortOrder
     update_at?: SortOrder
-    friends?: friendsOrderByRelationAggregateInput
-    orders?: ordersOrderByRelationAggregateInput
     bill?: billOrderByRelationAggregateInput
-    payment_method_detail?: payment_method_detailOrderByRelationAggregateInput
+    payment_account?: payment_accountOrderByRelationAggregateInput
   }
 
   export type usersWhereUniqueInput = Prisma.AtLeast<{
@@ -9109,10 +6695,8 @@ export namespace Prisma {
     photo_profile?: StringNullableFilter<"users"> | string | null
     created_at?: DateTimeFilter<"users"> | Date | string
     update_at?: DateTimeFilter<"users"> | Date | string
-    friends?: FriendsListRelationFilter
-    orders?: OrdersListRelationFilter
     bill?: BillListRelationFilter
-    payment_method_detail?: Payment_method_detailListRelationFilter
+    payment_account?: Payment_accountListRelationFilter
   }, "id" | "username" | "phone_number" | "email">
 
   export type usersOrderByWithAggregationInput = {
@@ -9151,197 +6735,116 @@ export namespace Prisma {
     update_at?: DateTimeWithAggregatesFilter<"users"> | Date | string
   }
 
-  export type ordersWhereInput = {
-    AND?: ordersWhereInput | ordersWhereInput[]
-    OR?: ordersWhereInput[]
-    NOT?: ordersWhereInput | ordersWhereInput[]
-    id?: IntFilter<"orders"> | number
-    user_id?: IntNullableFilter<"orders"> | number | null
-    bill_id?: IntNullableFilter<"orders"> | number | null
-    menu_name?: StringFilter<"orders"> | string
-    qty?: IntFilter<"orders"> | number
-    price?: BigIntFilter<"orders"> | bigint | number
-    users?: XOR<UsersNullableRelationFilter, usersWhereInput> | null
-    bill?: XOR<BillNullableRelationFilter, billWhereInput> | null
-    friends_order?: Friends_orderListRelationFilter
+  export type order_detailWhereInput = {
+    AND?: order_detailWhereInput | order_detailWhereInput[]
+    OR?: order_detailWhereInput[]
+    NOT?: order_detailWhereInput | order_detailWhereInput[]
+    id?: IntFilter<"order_detail"> | number
+    friend_order_id?: IntNullableFilter<"order_detail"> | number | null
+    menu?: StringFilter<"order_detail"> | string
+    quantity?: IntFilter<"order_detail"> | number
+    price?: IntFilter<"order_detail"> | number
+    friend_order?: XOR<Friend_orderNullableRelationFilter, friend_orderWhereInput> | null
   }
 
-  export type ordersOrderByWithRelationInput = {
+  export type order_detailOrderByWithRelationInput = {
     id?: SortOrder
-    user_id?: SortOrderInput | SortOrder
-    bill_id?: SortOrderInput | SortOrder
-    menu_name?: SortOrder
-    qty?: SortOrder
+    friend_order_id?: SortOrderInput | SortOrder
+    menu?: SortOrder
+    quantity?: SortOrder
     price?: SortOrder
-    users?: usersOrderByWithRelationInput
+    friend_order?: friend_orderOrderByWithRelationInput
+  }
+
+  export type order_detailWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    AND?: order_detailWhereInput | order_detailWhereInput[]
+    OR?: order_detailWhereInput[]
+    NOT?: order_detailWhereInput | order_detailWhereInput[]
+    friend_order_id?: IntNullableFilter<"order_detail"> | number | null
+    menu?: StringFilter<"order_detail"> | string
+    quantity?: IntFilter<"order_detail"> | number
+    price?: IntFilter<"order_detail"> | number
+    friend_order?: XOR<Friend_orderNullableRelationFilter, friend_orderWhereInput> | null
+  }, "id">
+
+  export type order_detailOrderByWithAggregationInput = {
+    id?: SortOrder
+    friend_order_id?: SortOrderInput | SortOrder
+    menu?: SortOrder
+    quantity?: SortOrder
+    price?: SortOrder
+    _count?: order_detailCountOrderByAggregateInput
+    _avg?: order_detailAvgOrderByAggregateInput
+    _max?: order_detailMaxOrderByAggregateInput
+    _min?: order_detailMinOrderByAggregateInput
+    _sum?: order_detailSumOrderByAggregateInput
+  }
+
+  export type order_detailScalarWhereWithAggregatesInput = {
+    AND?: order_detailScalarWhereWithAggregatesInput | order_detailScalarWhereWithAggregatesInput[]
+    OR?: order_detailScalarWhereWithAggregatesInput[]
+    NOT?: order_detailScalarWhereWithAggregatesInput | order_detailScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"order_detail"> | number
+    friend_order_id?: IntNullableWithAggregatesFilter<"order_detail"> | number | null
+    menu?: StringWithAggregatesFilter<"order_detail"> | string
+    quantity?: IntWithAggregatesFilter<"order_detail"> | number
+    price?: IntWithAggregatesFilter<"order_detail"> | number
+  }
+
+  export type friend_orderWhereInput = {
+    AND?: friend_orderWhereInput | friend_orderWhereInput[]
+    OR?: friend_orderWhereInput[]
+    NOT?: friend_orderWhereInput | friend_orderWhereInput[]
+    id?: IntFilter<"friend_order"> | number
+    bill_id?: IntNullableFilter<"friend_order"> | number | null
+    name?: StringFilter<"friend_order"> | string
+    is_paid?: BoolFilter<"friend_order"> | boolean
+    bill?: XOR<BillNullableRelationFilter, billWhereInput> | null
+    order_detail?: Order_detailListRelationFilter
+  }
+
+  export type friend_orderOrderByWithRelationInput = {
+    id?: SortOrder
+    bill_id?: SortOrderInput | SortOrder
+    name?: SortOrder
+    is_paid?: SortOrder
     bill?: billOrderByWithRelationInput
-    friends_order?: friends_orderOrderByRelationAggregateInput
+    order_detail?: order_detailOrderByRelationAggregateInput
   }
 
-  export type ordersWhereUniqueInput = Prisma.AtLeast<{
+  export type friend_orderWhereUniqueInput = Prisma.AtLeast<{
     id?: number
-    AND?: ordersWhereInput | ordersWhereInput[]
-    OR?: ordersWhereInput[]
-    NOT?: ordersWhereInput | ordersWhereInput[]
-    user_id?: IntNullableFilter<"orders"> | number | null
-    bill_id?: IntNullableFilter<"orders"> | number | null
-    menu_name?: StringFilter<"orders"> | string
-    qty?: IntFilter<"orders"> | number
-    price?: BigIntFilter<"orders"> | bigint | number
-    users?: XOR<UsersNullableRelationFilter, usersWhereInput> | null
+    AND?: friend_orderWhereInput | friend_orderWhereInput[]
+    OR?: friend_orderWhereInput[]
+    NOT?: friend_orderWhereInput | friend_orderWhereInput[]
+    bill_id?: IntNullableFilter<"friend_order"> | number | null
+    name?: StringFilter<"friend_order"> | string
+    is_paid?: BoolFilter<"friend_order"> | boolean
     bill?: XOR<BillNullableRelationFilter, billWhereInput> | null
-    friends_order?: Friends_orderListRelationFilter
+    order_detail?: Order_detailListRelationFilter
   }, "id">
 
-  export type ordersOrderByWithAggregationInput = {
+  export type friend_orderOrderByWithAggregationInput = {
     id?: SortOrder
-    user_id?: SortOrderInput | SortOrder
     bill_id?: SortOrderInput | SortOrder
-    menu_name?: SortOrder
-    qty?: SortOrder
-    price?: SortOrder
-    _count?: ordersCountOrderByAggregateInput
-    _avg?: ordersAvgOrderByAggregateInput
-    _max?: ordersMaxOrderByAggregateInput
-    _min?: ordersMinOrderByAggregateInput
-    _sum?: ordersSumOrderByAggregateInput
-  }
-
-  export type ordersScalarWhereWithAggregatesInput = {
-    AND?: ordersScalarWhereWithAggregatesInput | ordersScalarWhereWithAggregatesInput[]
-    OR?: ordersScalarWhereWithAggregatesInput[]
-    NOT?: ordersScalarWhereWithAggregatesInput | ordersScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"orders"> | number
-    user_id?: IntNullableWithAggregatesFilter<"orders"> | number | null
-    bill_id?: IntNullableWithAggregatesFilter<"orders"> | number | null
-    menu_name?: StringWithAggregatesFilter<"orders"> | string
-    qty?: IntWithAggregatesFilter<"orders"> | number
-    price?: BigIntWithAggregatesFilter<"orders"> | bigint | number
-  }
-
-  export type friends_orderWhereInput = {
-    AND?: friends_orderWhereInput | friends_orderWhereInput[]
-    OR?: friends_orderWhereInput[]
-    NOT?: friends_orderWhereInput | friends_orderWhereInput[]
-    id?: IntFilter<"friends_order"> | number
-    orders_id?: IntNullableFilter<"friends_order"> | number | null
-    friends_id?: IntNullableFilter<"friends_order"> | number | null
-    friend_order_price?: BigIntFilter<"friends_order"> | bigint | number
-    is_paid?: BoolFilter<"friends_order"> | boolean
-    created_at?: DateTimeFilter<"friends_order"> | Date | string
-    update_at?: DateTimeFilter<"friends_order"> | Date | string
-    orders?: XOR<OrdersNullableRelationFilter, ordersWhereInput> | null
-    friends?: XOR<FriendsNullableRelationFilter, friendsWhereInput> | null
-  }
-
-  export type friends_orderOrderByWithRelationInput = {
-    id?: SortOrder
-    orders_id?: SortOrderInput | SortOrder
-    friends_id?: SortOrderInput | SortOrder
-    friend_order_price?: SortOrder
+    name?: SortOrder
     is_paid?: SortOrder
-    created_at?: SortOrder
-    update_at?: SortOrder
-    orders?: ordersOrderByWithRelationInput
-    friends?: friendsOrderByWithRelationInput
+    _count?: friend_orderCountOrderByAggregateInput
+    _avg?: friend_orderAvgOrderByAggregateInput
+    _max?: friend_orderMaxOrderByAggregateInput
+    _min?: friend_orderMinOrderByAggregateInput
+    _sum?: friend_orderSumOrderByAggregateInput
   }
 
-  export type friends_orderWhereUniqueInput = Prisma.AtLeast<{
-    id?: number
-    AND?: friends_orderWhereInput | friends_orderWhereInput[]
-    OR?: friends_orderWhereInput[]
-    NOT?: friends_orderWhereInput | friends_orderWhereInput[]
-    orders_id?: IntNullableFilter<"friends_order"> | number | null
-    friends_id?: IntNullableFilter<"friends_order"> | number | null
-    friend_order_price?: BigIntFilter<"friends_order"> | bigint | number
-    is_paid?: BoolFilter<"friends_order"> | boolean
-    created_at?: DateTimeFilter<"friends_order"> | Date | string
-    update_at?: DateTimeFilter<"friends_order"> | Date | string
-    orders?: XOR<OrdersNullableRelationFilter, ordersWhereInput> | null
-    friends?: XOR<FriendsNullableRelationFilter, friendsWhereInput> | null
-  }, "id">
-
-  export type friends_orderOrderByWithAggregationInput = {
-    id?: SortOrder
-    orders_id?: SortOrderInput | SortOrder
-    friends_id?: SortOrderInput | SortOrder
-    friend_order_price?: SortOrder
-    is_paid?: SortOrder
-    created_at?: SortOrder
-    update_at?: SortOrder
-    _count?: friends_orderCountOrderByAggregateInput
-    _avg?: friends_orderAvgOrderByAggregateInput
-    _max?: friends_orderMaxOrderByAggregateInput
-    _min?: friends_orderMinOrderByAggregateInput
-    _sum?: friends_orderSumOrderByAggregateInput
-  }
-
-  export type friends_orderScalarWhereWithAggregatesInput = {
-    AND?: friends_orderScalarWhereWithAggregatesInput | friends_orderScalarWhereWithAggregatesInput[]
-    OR?: friends_orderScalarWhereWithAggregatesInput[]
-    NOT?: friends_orderScalarWhereWithAggregatesInput | friends_orderScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"friends_order"> | number
-    orders_id?: IntNullableWithAggregatesFilter<"friends_order"> | number | null
-    friends_id?: IntNullableWithAggregatesFilter<"friends_order"> | number | null
-    friend_order_price?: BigIntWithAggregatesFilter<"friends_order"> | bigint | number
-    is_paid?: BoolWithAggregatesFilter<"friends_order"> | boolean
-    created_at?: DateTimeWithAggregatesFilter<"friends_order"> | Date | string
-    update_at?: DateTimeWithAggregatesFilter<"friends_order"> | Date | string
-  }
-
-  export type friendsWhereInput = {
-    AND?: friendsWhereInput | friendsWhereInput[]
-    OR?: friendsWhereInput[]
-    NOT?: friendsWhereInput | friendsWhereInput[]
-    id?: IntFilter<"friends"> | number
-    user_id?: IntNullableFilter<"friends"> | number | null
-    friends_name?: StringFilter<"friends"> | string
-    friends_photo?: StringNullableFilter<"friends"> | string | null
-    users?: XOR<UsersNullableRelationFilter, usersWhereInput> | null
-    friends_order?: Friends_orderListRelationFilter
-  }
-
-  export type friendsOrderByWithRelationInput = {
-    id?: SortOrder
-    user_id?: SortOrderInput | SortOrder
-    friends_name?: SortOrder
-    friends_photo?: SortOrderInput | SortOrder
-    users?: usersOrderByWithRelationInput
-    friends_order?: friends_orderOrderByRelationAggregateInput
-  }
-
-  export type friendsWhereUniqueInput = Prisma.AtLeast<{
-    id?: number
-    AND?: friendsWhereInput | friendsWhereInput[]
-    OR?: friendsWhereInput[]
-    NOT?: friendsWhereInput | friendsWhereInput[]
-    user_id?: IntNullableFilter<"friends"> | number | null
-    friends_name?: StringFilter<"friends"> | string
-    friends_photo?: StringNullableFilter<"friends"> | string | null
-    users?: XOR<UsersNullableRelationFilter, usersWhereInput> | null
-    friends_order?: Friends_orderListRelationFilter
-  }, "id">
-
-  export type friendsOrderByWithAggregationInput = {
-    id?: SortOrder
-    user_id?: SortOrderInput | SortOrder
-    friends_name?: SortOrder
-    friends_photo?: SortOrderInput | SortOrder
-    _count?: friendsCountOrderByAggregateInput
-    _avg?: friendsAvgOrderByAggregateInput
-    _max?: friendsMaxOrderByAggregateInput
-    _min?: friendsMinOrderByAggregateInput
-    _sum?: friendsSumOrderByAggregateInput
-  }
-
-  export type friendsScalarWhereWithAggregatesInput = {
-    AND?: friendsScalarWhereWithAggregatesInput | friendsScalarWhereWithAggregatesInput[]
-    OR?: friendsScalarWhereWithAggregatesInput[]
-    NOT?: friendsScalarWhereWithAggregatesInput | friendsScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"friends"> | number
-    user_id?: IntNullableWithAggregatesFilter<"friends"> | number | null
-    friends_name?: StringWithAggregatesFilter<"friends"> | string
-    friends_photo?: StringNullableWithAggregatesFilter<"friends"> | string | null
+  export type friend_orderScalarWhereWithAggregatesInput = {
+    AND?: friend_orderScalarWhereWithAggregatesInput | friend_orderScalarWhereWithAggregatesInput[]
+    OR?: friend_orderScalarWhereWithAggregatesInput[]
+    NOT?: friend_orderScalarWhereWithAggregatesInput | friend_orderScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"friend_order"> | number
+    bill_id?: IntNullableWithAggregatesFilter<"friend_order"> | number | null
+    name?: StringWithAggregatesFilter<"friend_order"> | string
+    is_paid?: BoolWithAggregatesFilter<"friend_order"> | boolean
   }
 
   export type billWhereInput = {
@@ -9350,33 +6853,31 @@ export namespace Prisma {
     NOT?: billWhereInput | billWhereInput[]
     id?: IntFilter<"bill"> | number
     user_id?: IntNullableFilter<"bill"> | number | null
-    payment_method_id?: IntNullableFilter<"bill"> | number | null
+    payment_account_id?: IntNullableFilter<"bill"> | number | null
     description?: StringFilter<"bill"> | string
     discount?: FloatNullableFilter<"bill"> | number | null
     tax?: IntFilter<"bill"> | number
     service?: FloatNullableFilter<"bill"> | number | null
-    total_price?: BigIntFilter<"bill"> | bigint | number
+    total_price?: IntFilter<"bill"> | number
     date?: DateTimeFilter<"bill"> | Date | string
-    is_completed?: BoolFilter<"bill"> | boolean
     users?: XOR<UsersNullableRelationFilter, usersWhereInput> | null
-    payment_method_details?: XOR<Payment_method_detailNullableRelationFilter, payment_method_detailWhereInput> | null
-    orders?: OrdersListRelationFilter
+    payment_account?: XOR<Payment_accountNullableRelationFilter, payment_accountWhereInput> | null
+    friend_order?: Friend_orderListRelationFilter
   }
 
   export type billOrderByWithRelationInput = {
     id?: SortOrder
     user_id?: SortOrderInput | SortOrder
-    payment_method_id?: SortOrderInput | SortOrder
+    payment_account_id?: SortOrderInput | SortOrder
     description?: SortOrder
     discount?: SortOrderInput | SortOrder
     tax?: SortOrder
     service?: SortOrderInput | SortOrder
     total_price?: SortOrder
     date?: SortOrder
-    is_completed?: SortOrder
     users?: usersOrderByWithRelationInput
-    payment_method_details?: payment_method_detailOrderByWithRelationInput
-    orders?: ordersOrderByRelationAggregateInput
+    payment_account?: payment_accountOrderByWithRelationInput
+    friend_order?: friend_orderOrderByRelationAggregateInput
   }
 
   export type billWhereUniqueInput = Prisma.AtLeast<{
@@ -9385,30 +6886,28 @@ export namespace Prisma {
     OR?: billWhereInput[]
     NOT?: billWhereInput | billWhereInput[]
     user_id?: IntNullableFilter<"bill"> | number | null
-    payment_method_id?: IntNullableFilter<"bill"> | number | null
+    payment_account_id?: IntNullableFilter<"bill"> | number | null
     description?: StringFilter<"bill"> | string
     discount?: FloatNullableFilter<"bill"> | number | null
     tax?: IntFilter<"bill"> | number
     service?: FloatNullableFilter<"bill"> | number | null
-    total_price?: BigIntFilter<"bill"> | bigint | number
+    total_price?: IntFilter<"bill"> | number
     date?: DateTimeFilter<"bill"> | Date | string
-    is_completed?: BoolFilter<"bill"> | boolean
     users?: XOR<UsersNullableRelationFilter, usersWhereInput> | null
-    payment_method_details?: XOR<Payment_method_detailNullableRelationFilter, payment_method_detailWhereInput> | null
-    orders?: OrdersListRelationFilter
+    payment_account?: XOR<Payment_accountNullableRelationFilter, payment_accountWhereInput> | null
+    friend_order?: Friend_orderListRelationFilter
   }, "id">
 
   export type billOrderByWithAggregationInput = {
     id?: SortOrder
     user_id?: SortOrderInput | SortOrder
-    payment_method_id?: SortOrderInput | SortOrder
+    payment_account_id?: SortOrderInput | SortOrder
     description?: SortOrder
     discount?: SortOrderInput | SortOrder
     tax?: SortOrder
     service?: SortOrderInput | SortOrder
     total_price?: SortOrder
     date?: SortOrder
-    is_completed?: SortOrder
     _count?: billCountOrderByAggregateInput
     _avg?: billAvgOrderByAggregateInput
     _max?: billMaxOrderByAggregateInput
@@ -9422,124 +6921,78 @@ export namespace Prisma {
     NOT?: billScalarWhereWithAggregatesInput | billScalarWhereWithAggregatesInput[]
     id?: IntWithAggregatesFilter<"bill"> | number
     user_id?: IntNullableWithAggregatesFilter<"bill"> | number | null
-    payment_method_id?: IntNullableWithAggregatesFilter<"bill"> | number | null
+    payment_account_id?: IntNullableWithAggregatesFilter<"bill"> | number | null
     description?: StringWithAggregatesFilter<"bill"> | string
     discount?: FloatNullableWithAggregatesFilter<"bill"> | number | null
     tax?: IntWithAggregatesFilter<"bill"> | number
     service?: FloatNullableWithAggregatesFilter<"bill"> | number | null
-    total_price?: BigIntWithAggregatesFilter<"bill"> | bigint | number
+    total_price?: IntWithAggregatesFilter<"bill"> | number
     date?: DateTimeWithAggregatesFilter<"bill"> | Date | string
-    is_completed?: BoolWithAggregatesFilter<"bill"> | boolean
   }
 
-  export type payment_methodWhereInput = {
-    AND?: payment_methodWhereInput | payment_methodWhereInput[]
-    OR?: payment_methodWhereInput[]
-    NOT?: payment_methodWhereInput | payment_methodWhereInput[]
-    id?: IntFilter<"payment_method"> | number
-    payment_method_name?: StringFilter<"payment_method"> | string
-    payment_method_logo?: StringFilter<"payment_method"> | string
-    payment_method_detail?: Payment_method_detailListRelationFilter
-  }
-
-  export type payment_methodOrderByWithRelationInput = {
-    id?: SortOrder
-    payment_method_name?: SortOrder
-    payment_method_logo?: SortOrder
-    payment_method_detail?: payment_method_detailOrderByRelationAggregateInput
-  }
-
-  export type payment_methodWhereUniqueInput = Prisma.AtLeast<{
-    id?: number
-    AND?: payment_methodWhereInput | payment_methodWhereInput[]
-    OR?: payment_methodWhereInput[]
-    NOT?: payment_methodWhereInput | payment_methodWhereInput[]
-    payment_method_name?: StringFilter<"payment_method"> | string
-    payment_method_logo?: StringFilter<"payment_method"> | string
-    payment_method_detail?: Payment_method_detailListRelationFilter
-  }, "id">
-
-  export type payment_methodOrderByWithAggregationInput = {
-    id?: SortOrder
-    payment_method_name?: SortOrder
-    payment_method_logo?: SortOrder
-    _count?: payment_methodCountOrderByAggregateInput
-    _avg?: payment_methodAvgOrderByAggregateInput
-    _max?: payment_methodMaxOrderByAggregateInput
-    _min?: payment_methodMinOrderByAggregateInput
-    _sum?: payment_methodSumOrderByAggregateInput
-  }
-
-  export type payment_methodScalarWhereWithAggregatesInput = {
-    AND?: payment_methodScalarWhereWithAggregatesInput | payment_methodScalarWhereWithAggregatesInput[]
-    OR?: payment_methodScalarWhereWithAggregatesInput[]
-    NOT?: payment_methodScalarWhereWithAggregatesInput | payment_methodScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"payment_method"> | number
-    payment_method_name?: StringWithAggregatesFilter<"payment_method"> | string
-    payment_method_logo?: StringWithAggregatesFilter<"payment_method"> | string
-  }
-
-  export type payment_method_detailWhereInput = {
-    AND?: payment_method_detailWhereInput | payment_method_detailWhereInput[]
-    OR?: payment_method_detailWhereInput[]
-    NOT?: payment_method_detailWhereInput | payment_method_detailWhereInput[]
-    id?: IntFilter<"payment_method_detail"> | number
-    user_id?: IntNullableFilter<"payment_method_detail"> | number | null
-    payment_method_id?: IntNullableFilter<"payment_method_detail"> | number | null
-    card_number?: BigIntFilter<"payment_method_detail"> | bigint | number
-    card_name?: StringFilter<"payment_method_detail"> | string
+  export type payment_accountWhereInput = {
+    AND?: payment_accountWhereInput | payment_accountWhereInput[]
+    OR?: payment_accountWhereInput[]
+    NOT?: payment_accountWhereInput | payment_accountWhereInput[]
+    id?: IntFilter<"payment_account"> | number
+    user_id?: IntNullableFilter<"payment_account"> | number | null
+    name?: StringFilter<"payment_account"> | string
+    number?: StringFilter<"payment_account"> | string
+    card_holder?: StringFilter<"payment_account"> | string
+    is_activated?: BoolFilter<"payment_account"> | boolean
     users?: XOR<UsersNullableRelationFilter, usersWhereInput> | null
-    payment_method?: XOR<Payment_methodNullableRelationFilter, payment_methodWhereInput> | null
     bill?: BillListRelationFilter
   }
 
-  export type payment_method_detailOrderByWithRelationInput = {
+  export type payment_accountOrderByWithRelationInput = {
     id?: SortOrder
     user_id?: SortOrderInput | SortOrder
-    payment_method_id?: SortOrderInput | SortOrder
-    card_number?: SortOrder
-    card_name?: SortOrder
+    name?: SortOrder
+    number?: SortOrder
+    card_holder?: SortOrder
+    is_activated?: SortOrder
     users?: usersOrderByWithRelationInput
-    payment_method?: payment_methodOrderByWithRelationInput
     bill?: billOrderByRelationAggregateInput
   }
 
-  export type payment_method_detailWhereUniqueInput = Prisma.AtLeast<{
+  export type payment_accountWhereUniqueInput = Prisma.AtLeast<{
     id?: number
-    AND?: payment_method_detailWhereInput | payment_method_detailWhereInput[]
-    OR?: payment_method_detailWhereInput[]
-    NOT?: payment_method_detailWhereInput | payment_method_detailWhereInput[]
-    user_id?: IntNullableFilter<"payment_method_detail"> | number | null
-    payment_method_id?: IntNullableFilter<"payment_method_detail"> | number | null
-    card_number?: BigIntFilter<"payment_method_detail"> | bigint | number
-    card_name?: StringFilter<"payment_method_detail"> | string
+    AND?: payment_accountWhereInput | payment_accountWhereInput[]
+    OR?: payment_accountWhereInput[]
+    NOT?: payment_accountWhereInput | payment_accountWhereInput[]
+    user_id?: IntNullableFilter<"payment_account"> | number | null
+    name?: StringFilter<"payment_account"> | string
+    number?: StringFilter<"payment_account"> | string
+    card_holder?: StringFilter<"payment_account"> | string
+    is_activated?: BoolFilter<"payment_account"> | boolean
     users?: XOR<UsersNullableRelationFilter, usersWhereInput> | null
-    payment_method?: XOR<Payment_methodNullableRelationFilter, payment_methodWhereInput> | null
     bill?: BillListRelationFilter
   }, "id">
 
-  export type payment_method_detailOrderByWithAggregationInput = {
+  export type payment_accountOrderByWithAggregationInput = {
     id?: SortOrder
     user_id?: SortOrderInput | SortOrder
-    payment_method_id?: SortOrderInput | SortOrder
-    card_number?: SortOrder
-    card_name?: SortOrder
-    _count?: payment_method_detailCountOrderByAggregateInput
-    _avg?: payment_method_detailAvgOrderByAggregateInput
-    _max?: payment_method_detailMaxOrderByAggregateInput
-    _min?: payment_method_detailMinOrderByAggregateInput
-    _sum?: payment_method_detailSumOrderByAggregateInput
+    name?: SortOrder
+    number?: SortOrder
+    card_holder?: SortOrder
+    is_activated?: SortOrder
+    _count?: payment_accountCountOrderByAggregateInput
+    _avg?: payment_accountAvgOrderByAggregateInput
+    _max?: payment_accountMaxOrderByAggregateInput
+    _min?: payment_accountMinOrderByAggregateInput
+    _sum?: payment_accountSumOrderByAggregateInput
   }
 
-  export type payment_method_detailScalarWhereWithAggregatesInput = {
-    AND?: payment_method_detailScalarWhereWithAggregatesInput | payment_method_detailScalarWhereWithAggregatesInput[]
-    OR?: payment_method_detailScalarWhereWithAggregatesInput[]
-    NOT?: payment_method_detailScalarWhereWithAggregatesInput | payment_method_detailScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"payment_method_detail"> | number
-    user_id?: IntNullableWithAggregatesFilter<"payment_method_detail"> | number | null
-    payment_method_id?: IntNullableWithAggregatesFilter<"payment_method_detail"> | number | null
-    card_number?: BigIntWithAggregatesFilter<"payment_method_detail"> | bigint | number
-    card_name?: StringWithAggregatesFilter<"payment_method_detail"> | string
+  export type payment_accountScalarWhereWithAggregatesInput = {
+    AND?: payment_accountScalarWhereWithAggregatesInput | payment_accountScalarWhereWithAggregatesInput[]
+    OR?: payment_accountScalarWhereWithAggregatesInput[]
+    NOT?: payment_accountScalarWhereWithAggregatesInput | payment_accountScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"payment_account"> | number
+    user_id?: IntNullableWithAggregatesFilter<"payment_account"> | number | null
+    name?: StringWithAggregatesFilter<"payment_account"> | string
+    number?: StringWithAggregatesFilter<"payment_account"> | string
+    card_holder?: StringWithAggregatesFilter<"payment_account"> | string
+    is_activated?: BoolWithAggregatesFilter<"payment_account"> | boolean
   }
 
   export type usersCreateInput = {
@@ -9553,10 +7006,8 @@ export namespace Prisma {
     photo_profile?: string | null
     created_at?: Date | string
     update_at?: Date | string
-    friends?: friendsCreateNestedManyWithoutUsersInput
-    orders?: ordersCreateNestedManyWithoutUsersInput
     bill?: billCreateNestedManyWithoutUsersInput
-    payment_method_detail?: payment_method_detailCreateNestedManyWithoutUsersInput
+    payment_account?: payment_accountCreateNestedManyWithoutUsersInput
   }
 
   export type usersUncheckedCreateInput = {
@@ -9571,10 +7022,8 @@ export namespace Prisma {
     photo_profile?: string | null
     created_at?: Date | string
     update_at?: Date | string
-    friends?: friendsUncheckedCreateNestedManyWithoutUsersInput
-    orders?: ordersUncheckedCreateNestedManyWithoutUsersInput
     bill?: billUncheckedCreateNestedManyWithoutUsersInput
-    payment_method_detail?: payment_method_detailUncheckedCreateNestedManyWithoutUsersInput
+    payment_account?: payment_accountUncheckedCreateNestedManyWithoutUsersInput
   }
 
   export type usersUpdateInput = {
@@ -9588,10 +7037,8 @@ export namespace Prisma {
     photo_profile?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     update_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    friends?: friendsUpdateManyWithoutUsersNestedInput
-    orders?: ordersUpdateManyWithoutUsersNestedInput
     bill?: billUpdateManyWithoutUsersNestedInput
-    payment_method_detail?: payment_method_detailUpdateManyWithoutUsersNestedInput
+    payment_account?: payment_accountUpdateManyWithoutUsersNestedInput
   }
 
   export type usersUncheckedUpdateInput = {
@@ -9606,10 +7053,8 @@ export namespace Prisma {
     photo_profile?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     update_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    friends?: friendsUncheckedUpdateManyWithoutUsersNestedInput
-    orders?: ordersUncheckedUpdateManyWithoutUsersNestedInput
     bill?: billUncheckedUpdateManyWithoutUsersNestedInput
-    payment_method_detail?: payment_method_detailUncheckedUpdateManyWithoutUsersNestedInput
+    payment_account?: payment_accountUncheckedUpdateManyWithoutUsersNestedInput
   }
 
   export type usersCreateManyInput = {
@@ -9653,180 +7098,105 @@ export namespace Prisma {
     update_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type ordersCreateInput = {
-    menu_name: string
-    qty: number
-    price: bigint | number
-    users?: usersCreateNestedOneWithoutOrdersInput
-    bill?: billCreateNestedOneWithoutOrdersInput
-    friends_order?: friends_orderCreateNestedManyWithoutOrdersInput
+  export type order_detailCreateInput = {
+    menu: string
+    quantity: number
+    price: number
+    friend_order?: friend_orderCreateNestedOneWithoutOrder_detailInput
   }
 
-  export type ordersUncheckedCreateInput = {
+  export type order_detailUncheckedCreateInput = {
     id?: number
-    user_id?: number | null
+    friend_order_id?: number | null
+    menu: string
+    quantity: number
+    price: number
+  }
+
+  export type order_detailUpdateInput = {
+    menu?: StringFieldUpdateOperationsInput | string
+    quantity?: IntFieldUpdateOperationsInput | number
+    price?: IntFieldUpdateOperationsInput | number
+    friend_order?: friend_orderUpdateOneWithoutOrder_detailNestedInput
+  }
+
+  export type order_detailUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    friend_order_id?: NullableIntFieldUpdateOperationsInput | number | null
+    menu?: StringFieldUpdateOperationsInput | string
+    quantity?: IntFieldUpdateOperationsInput | number
+    price?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type order_detailCreateManyInput = {
+    id?: number
+    friend_order_id?: number | null
+    menu: string
+    quantity: number
+    price: number
+  }
+
+  export type order_detailUpdateManyMutationInput = {
+    menu?: StringFieldUpdateOperationsInput | string
+    quantity?: IntFieldUpdateOperationsInput | number
+    price?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type order_detailUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    friend_order_id?: NullableIntFieldUpdateOperationsInput | number | null
+    menu?: StringFieldUpdateOperationsInput | string
+    quantity?: IntFieldUpdateOperationsInput | number
+    price?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type friend_orderCreateInput = {
+    name: string
+    is_paid?: boolean
+    bill?: billCreateNestedOneWithoutFriend_orderInput
+    order_detail?: order_detailCreateNestedManyWithoutFriend_orderInput
+  }
+
+  export type friend_orderUncheckedCreateInput = {
+    id?: number
     bill_id?: number | null
-    menu_name: string
-    qty: number
-    price: bigint | number
-    friends_order?: friends_orderUncheckedCreateNestedManyWithoutOrdersInput
+    name: string
+    is_paid?: boolean
+    order_detail?: order_detailUncheckedCreateNestedManyWithoutFriend_orderInput
   }
 
-  export type ordersUpdateInput = {
-    menu_name?: StringFieldUpdateOperationsInput | string
-    qty?: IntFieldUpdateOperationsInput | number
-    price?: BigIntFieldUpdateOperationsInput | bigint | number
-    users?: usersUpdateOneWithoutOrdersNestedInput
-    bill?: billUpdateOneWithoutOrdersNestedInput
-    friends_order?: friends_orderUpdateManyWithoutOrdersNestedInput
+  export type friend_orderUpdateInput = {
+    name?: StringFieldUpdateOperationsInput | string
+    is_paid?: BoolFieldUpdateOperationsInput | boolean
+    bill?: billUpdateOneWithoutFriend_orderNestedInput
+    order_detail?: order_detailUpdateManyWithoutFriend_orderNestedInput
   }
 
-  export type ordersUncheckedUpdateInput = {
+  export type friend_orderUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
-    user_id?: NullableIntFieldUpdateOperationsInput | number | null
     bill_id?: NullableIntFieldUpdateOperationsInput | number | null
-    menu_name?: StringFieldUpdateOperationsInput | string
-    qty?: IntFieldUpdateOperationsInput | number
-    price?: BigIntFieldUpdateOperationsInput | bigint | number
-    friends_order?: friends_orderUncheckedUpdateManyWithoutOrdersNestedInput
+    name?: StringFieldUpdateOperationsInput | string
+    is_paid?: BoolFieldUpdateOperationsInput | boolean
+    order_detail?: order_detailUncheckedUpdateManyWithoutFriend_orderNestedInput
   }
 
-  export type ordersCreateManyInput = {
+  export type friend_orderCreateManyInput = {
     id?: number
-    user_id?: number | null
     bill_id?: number | null
-    menu_name: string
-    qty: number
-    price: bigint | number
+    name: string
+    is_paid?: boolean
   }
 
-  export type ordersUpdateManyMutationInput = {
-    menu_name?: StringFieldUpdateOperationsInput | string
-    qty?: IntFieldUpdateOperationsInput | number
-    price?: BigIntFieldUpdateOperationsInput | bigint | number
+  export type friend_orderUpdateManyMutationInput = {
+    name?: StringFieldUpdateOperationsInput | string
+    is_paid?: BoolFieldUpdateOperationsInput | boolean
   }
 
-  export type ordersUncheckedUpdateManyInput = {
+  export type friend_orderUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
-    user_id?: NullableIntFieldUpdateOperationsInput | number | null
     bill_id?: NullableIntFieldUpdateOperationsInput | number | null
-    menu_name?: StringFieldUpdateOperationsInput | string
-    qty?: IntFieldUpdateOperationsInput | number
-    price?: BigIntFieldUpdateOperationsInput | bigint | number
-  }
-
-  export type friends_orderCreateInput = {
-    friend_order_price: bigint | number
-    is_paid?: boolean
-    created_at?: Date | string
-    update_at?: Date | string
-    orders?: ordersCreateNestedOneWithoutFriends_orderInput
-    friends?: friendsCreateNestedOneWithoutFriends_orderInput
-  }
-
-  export type friends_orderUncheckedCreateInput = {
-    id?: number
-    orders_id?: number | null
-    friends_id?: number | null
-    friend_order_price: bigint | number
-    is_paid?: boolean
-    created_at?: Date | string
-    update_at?: Date | string
-  }
-
-  export type friends_orderUpdateInput = {
-    friend_order_price?: BigIntFieldUpdateOperationsInput | bigint | number
+    name?: StringFieldUpdateOperationsInput | string
     is_paid?: BoolFieldUpdateOperationsInput | boolean
-    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    update_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    orders?: ordersUpdateOneWithoutFriends_orderNestedInput
-    friends?: friendsUpdateOneWithoutFriends_orderNestedInput
-  }
-
-  export type friends_orderUncheckedUpdateInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    orders_id?: NullableIntFieldUpdateOperationsInput | number | null
-    friends_id?: NullableIntFieldUpdateOperationsInput | number | null
-    friend_order_price?: BigIntFieldUpdateOperationsInput | bigint | number
-    is_paid?: BoolFieldUpdateOperationsInput | boolean
-    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    update_at?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type friends_orderCreateManyInput = {
-    id?: number
-    orders_id?: number | null
-    friends_id?: number | null
-    friend_order_price: bigint | number
-    is_paid?: boolean
-    created_at?: Date | string
-    update_at?: Date | string
-  }
-
-  export type friends_orderUpdateManyMutationInput = {
-    friend_order_price?: BigIntFieldUpdateOperationsInput | bigint | number
-    is_paid?: BoolFieldUpdateOperationsInput | boolean
-    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    update_at?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type friends_orderUncheckedUpdateManyInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    orders_id?: NullableIntFieldUpdateOperationsInput | number | null
-    friends_id?: NullableIntFieldUpdateOperationsInput | number | null
-    friend_order_price?: BigIntFieldUpdateOperationsInput | bigint | number
-    is_paid?: BoolFieldUpdateOperationsInput | boolean
-    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    update_at?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type friendsCreateInput = {
-    friends_name: string
-    friends_photo?: string | null
-    users?: usersCreateNestedOneWithoutFriendsInput
-    friends_order?: friends_orderCreateNestedManyWithoutFriendsInput
-  }
-
-  export type friendsUncheckedCreateInput = {
-    id?: number
-    user_id?: number | null
-    friends_name: string
-    friends_photo?: string | null
-    friends_order?: friends_orderUncheckedCreateNestedManyWithoutFriendsInput
-  }
-
-  export type friendsUpdateInput = {
-    friends_name?: StringFieldUpdateOperationsInput | string
-    friends_photo?: NullableStringFieldUpdateOperationsInput | string | null
-    users?: usersUpdateOneWithoutFriendsNestedInput
-    friends_order?: friends_orderUpdateManyWithoutFriendsNestedInput
-  }
-
-  export type friendsUncheckedUpdateInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    user_id?: NullableIntFieldUpdateOperationsInput | number | null
-    friends_name?: StringFieldUpdateOperationsInput | string
-    friends_photo?: NullableStringFieldUpdateOperationsInput | string | null
-    friends_order?: friends_orderUncheckedUpdateManyWithoutFriendsNestedInput
-  }
-
-  export type friendsCreateManyInput = {
-    id?: number
-    user_id?: number | null
-    friends_name: string
-    friends_photo?: string | null
-  }
-
-  export type friendsUpdateManyMutationInput = {
-    friends_name?: StringFieldUpdateOperationsInput | string
-    friends_photo?: NullableStringFieldUpdateOperationsInput | string | null
-  }
-
-  export type friendsUncheckedUpdateManyInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    user_id?: NullableIntFieldUpdateOperationsInput | number | null
-    friends_name?: StringFieldUpdateOperationsInput | string
-    friends_photo?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type billCreateInput = {
@@ -9834,26 +7204,24 @@ export namespace Prisma {
     discount?: number | null
     tax: number
     service?: number | null
-    total_price: bigint | number
+    total_price?: number
     date?: Date | string
-    is_completed?: boolean
     users?: usersCreateNestedOneWithoutBillInput
-    payment_method_details?: payment_method_detailCreateNestedOneWithoutBillInput
-    orders?: ordersCreateNestedManyWithoutBillInput
+    payment_account?: payment_accountCreateNestedOneWithoutBillInput
+    friend_order?: friend_orderCreateNestedManyWithoutBillInput
   }
 
   export type billUncheckedCreateInput = {
     id?: number
     user_id?: number | null
-    payment_method_id?: number | null
+    payment_account_id?: number | null
     description: string
     discount?: number | null
     tax: number
     service?: number | null
-    total_price: bigint | number
+    total_price?: number
     date?: Date | string
-    is_completed?: boolean
-    orders?: ordersUncheckedCreateNestedManyWithoutBillInput
+    friend_order?: friend_orderUncheckedCreateNestedManyWithoutBillInput
   }
 
   export type billUpdateInput = {
@@ -9861,39 +7229,36 @@ export namespace Prisma {
     discount?: NullableFloatFieldUpdateOperationsInput | number | null
     tax?: IntFieldUpdateOperationsInput | number
     service?: NullableFloatFieldUpdateOperationsInput | number | null
-    total_price?: BigIntFieldUpdateOperationsInput | bigint | number
+    total_price?: IntFieldUpdateOperationsInput | number
     date?: DateTimeFieldUpdateOperationsInput | Date | string
-    is_completed?: BoolFieldUpdateOperationsInput | boolean
     users?: usersUpdateOneWithoutBillNestedInput
-    payment_method_details?: payment_method_detailUpdateOneWithoutBillNestedInput
-    orders?: ordersUpdateManyWithoutBillNestedInput
+    payment_account?: payment_accountUpdateOneWithoutBillNestedInput
+    friend_order?: friend_orderUpdateManyWithoutBillNestedInput
   }
 
   export type billUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     user_id?: NullableIntFieldUpdateOperationsInput | number | null
-    payment_method_id?: NullableIntFieldUpdateOperationsInput | number | null
+    payment_account_id?: NullableIntFieldUpdateOperationsInput | number | null
     description?: StringFieldUpdateOperationsInput | string
     discount?: NullableFloatFieldUpdateOperationsInput | number | null
     tax?: IntFieldUpdateOperationsInput | number
     service?: NullableFloatFieldUpdateOperationsInput | number | null
-    total_price?: BigIntFieldUpdateOperationsInput | bigint | number
+    total_price?: IntFieldUpdateOperationsInput | number
     date?: DateTimeFieldUpdateOperationsInput | Date | string
-    is_completed?: BoolFieldUpdateOperationsInput | boolean
-    orders?: ordersUncheckedUpdateManyWithoutBillNestedInput
+    friend_order?: friend_orderUncheckedUpdateManyWithoutBillNestedInput
   }
 
   export type billCreateManyInput = {
     id?: number
     user_id?: number | null
-    payment_method_id?: number | null
+    payment_account_id?: number | null
     description: string
     discount?: number | null
     tax: number
     service?: number | null
-    total_price: bigint | number
+    total_price?: number
     date?: Date | string
-    is_completed?: boolean
   }
 
   export type billUpdateManyMutationInput = {
@@ -9901,120 +7266,83 @@ export namespace Prisma {
     discount?: NullableFloatFieldUpdateOperationsInput | number | null
     tax?: IntFieldUpdateOperationsInput | number
     service?: NullableFloatFieldUpdateOperationsInput | number | null
-    total_price?: BigIntFieldUpdateOperationsInput | bigint | number
+    total_price?: IntFieldUpdateOperationsInput | number
     date?: DateTimeFieldUpdateOperationsInput | Date | string
-    is_completed?: BoolFieldUpdateOperationsInput | boolean
   }
 
   export type billUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     user_id?: NullableIntFieldUpdateOperationsInput | number | null
-    payment_method_id?: NullableIntFieldUpdateOperationsInput | number | null
+    payment_account_id?: NullableIntFieldUpdateOperationsInput | number | null
     description?: StringFieldUpdateOperationsInput | string
     discount?: NullableFloatFieldUpdateOperationsInput | number | null
     tax?: IntFieldUpdateOperationsInput | number
     service?: NullableFloatFieldUpdateOperationsInput | number | null
-    total_price?: BigIntFieldUpdateOperationsInput | bigint | number
+    total_price?: IntFieldUpdateOperationsInput | number
     date?: DateTimeFieldUpdateOperationsInput | Date | string
-    is_completed?: BoolFieldUpdateOperationsInput | boolean
   }
 
-  export type payment_methodCreateInput = {
-    payment_method_name: string
-    payment_method_logo: string
-    payment_method_detail?: payment_method_detailCreateNestedManyWithoutPayment_methodInput
+  export type payment_accountCreateInput = {
+    name: string
+    number: string
+    card_holder: string
+    is_activated: boolean
+    users?: usersCreateNestedOneWithoutPayment_accountInput
+    bill?: billCreateNestedManyWithoutPayment_accountInput
   }
 
-  export type payment_methodUncheckedCreateInput = {
-    id?: number
-    payment_method_name: string
-    payment_method_logo: string
-    payment_method_detail?: payment_method_detailUncheckedCreateNestedManyWithoutPayment_methodInput
-  }
-
-  export type payment_methodUpdateInput = {
-    payment_method_name?: StringFieldUpdateOperationsInput | string
-    payment_method_logo?: StringFieldUpdateOperationsInput | string
-    payment_method_detail?: payment_method_detailUpdateManyWithoutPayment_methodNestedInput
-  }
-
-  export type payment_methodUncheckedUpdateInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    payment_method_name?: StringFieldUpdateOperationsInput | string
-    payment_method_logo?: StringFieldUpdateOperationsInput | string
-    payment_method_detail?: payment_method_detailUncheckedUpdateManyWithoutPayment_methodNestedInput
-  }
-
-  export type payment_methodCreateManyInput = {
-    id?: number
-    payment_method_name: string
-    payment_method_logo: string
-  }
-
-  export type payment_methodUpdateManyMutationInput = {
-    payment_method_name?: StringFieldUpdateOperationsInput | string
-    payment_method_logo?: StringFieldUpdateOperationsInput | string
-  }
-
-  export type payment_methodUncheckedUpdateManyInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    payment_method_name?: StringFieldUpdateOperationsInput | string
-    payment_method_logo?: StringFieldUpdateOperationsInput | string
-  }
-
-  export type payment_method_detailCreateInput = {
-    card_number: bigint | number
-    card_name: string
-    users?: usersCreateNestedOneWithoutPayment_method_detailInput
-    payment_method?: payment_methodCreateNestedOneWithoutPayment_method_detailInput
-    bill?: billCreateNestedManyWithoutPayment_method_detailsInput
-  }
-
-  export type payment_method_detailUncheckedCreateInput = {
+  export type payment_accountUncheckedCreateInput = {
     id?: number
     user_id?: number | null
-    payment_method_id?: number | null
-    card_number: bigint | number
-    card_name: string
-    bill?: billUncheckedCreateNestedManyWithoutPayment_method_detailsInput
+    name: string
+    number: string
+    card_holder: string
+    is_activated: boolean
+    bill?: billUncheckedCreateNestedManyWithoutPayment_accountInput
   }
 
-  export type payment_method_detailUpdateInput = {
-    card_number?: BigIntFieldUpdateOperationsInput | bigint | number
-    card_name?: StringFieldUpdateOperationsInput | string
-    users?: usersUpdateOneWithoutPayment_method_detailNestedInput
-    payment_method?: payment_methodUpdateOneWithoutPayment_method_detailNestedInput
-    bill?: billUpdateManyWithoutPayment_method_detailsNestedInput
+  export type payment_accountUpdateInput = {
+    name?: StringFieldUpdateOperationsInput | string
+    number?: StringFieldUpdateOperationsInput | string
+    card_holder?: StringFieldUpdateOperationsInput | string
+    is_activated?: BoolFieldUpdateOperationsInput | boolean
+    users?: usersUpdateOneWithoutPayment_accountNestedInput
+    bill?: billUpdateManyWithoutPayment_accountNestedInput
   }
 
-  export type payment_method_detailUncheckedUpdateInput = {
+  export type payment_accountUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     user_id?: NullableIntFieldUpdateOperationsInput | number | null
-    payment_method_id?: NullableIntFieldUpdateOperationsInput | number | null
-    card_number?: BigIntFieldUpdateOperationsInput | bigint | number
-    card_name?: StringFieldUpdateOperationsInput | string
-    bill?: billUncheckedUpdateManyWithoutPayment_method_detailsNestedInput
+    name?: StringFieldUpdateOperationsInput | string
+    number?: StringFieldUpdateOperationsInput | string
+    card_holder?: StringFieldUpdateOperationsInput | string
+    is_activated?: BoolFieldUpdateOperationsInput | boolean
+    bill?: billUncheckedUpdateManyWithoutPayment_accountNestedInput
   }
 
-  export type payment_method_detailCreateManyInput = {
+  export type payment_accountCreateManyInput = {
     id?: number
     user_id?: number | null
-    payment_method_id?: number | null
-    card_number: bigint | number
-    card_name: string
+    name: string
+    number: string
+    card_holder: string
+    is_activated: boolean
   }
 
-  export type payment_method_detailUpdateManyMutationInput = {
-    card_number?: BigIntFieldUpdateOperationsInput | bigint | number
-    card_name?: StringFieldUpdateOperationsInput | string
+  export type payment_accountUpdateManyMutationInput = {
+    name?: StringFieldUpdateOperationsInput | string
+    number?: StringFieldUpdateOperationsInput | string
+    card_holder?: StringFieldUpdateOperationsInput | string
+    is_activated?: BoolFieldUpdateOperationsInput | boolean
   }
 
-  export type payment_method_detailUncheckedUpdateManyInput = {
+  export type payment_accountUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     user_id?: NullableIntFieldUpdateOperationsInput | number | null
-    payment_method_id?: NullableIntFieldUpdateOperationsInput | number | null
-    card_number?: BigIntFieldUpdateOperationsInput | bigint | number
-    card_name?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    number?: StringFieldUpdateOperationsInput | string
+    card_holder?: StringFieldUpdateOperationsInput | string
+    is_activated?: BoolFieldUpdateOperationsInput | boolean
   }
 
   export type IntFilter<$PrismaModel = never> = {
@@ -10065,28 +7393,16 @@ export namespace Prisma {
     not?: NestedDateTimeFilter<$PrismaModel> | Date | string
   }
 
-  export type FriendsListRelationFilter = {
-    every?: friendsWhereInput
-    some?: friendsWhereInput
-    none?: friendsWhereInput
-  }
-
-  export type OrdersListRelationFilter = {
-    every?: ordersWhereInput
-    some?: ordersWhereInput
-    none?: ordersWhereInput
-  }
-
   export type BillListRelationFilter = {
     every?: billWhereInput
     some?: billWhereInput
     none?: billWhereInput
   }
 
-  export type Payment_method_detailListRelationFilter = {
-    every?: payment_method_detailWhereInput
-    some?: payment_method_detailWhereInput
-    none?: payment_method_detailWhereInput
+  export type Payment_accountListRelationFilter = {
+    every?: payment_accountWhereInput
+    some?: payment_accountWhereInput
+    none?: payment_accountWhereInput
   }
 
   export type SortOrderInput = {
@@ -10094,19 +7410,11 @@ export namespace Prisma {
     nulls?: NullsOrder
   }
 
-  export type friendsOrderByRelationAggregateInput = {
-    _count?: SortOrder
-  }
-
-  export type ordersOrderByRelationAggregateInput = {
-    _count?: SortOrder
-  }
-
   export type billOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
-  export type payment_method_detailOrderByRelationAggregateInput = {
+  export type payment_accountOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -10248,77 +7556,46 @@ export namespace Prisma {
     not?: NestedStringFilter<$PrismaModel> | string
   }
 
-  export type BigIntFilter<$PrismaModel = never> = {
-    equals?: bigint | number | BigIntFieldRefInput<$PrismaModel>
-    in?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel>
-    notIn?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel>
-    lt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
-    lte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
-    gt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
-    gte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
-    not?: NestedBigIntFilter<$PrismaModel> | bigint | number
+  export type Friend_orderNullableRelationFilter = {
+    is?: friend_orderWhereInput | null
+    isNot?: friend_orderWhereInput | null
   }
 
-  export type UsersNullableRelationFilter = {
-    is?: usersWhereInput | null
-    isNot?: usersWhereInput | null
-  }
-
-  export type BillNullableRelationFilter = {
-    is?: billWhereInput | null
-    isNot?: billWhereInput | null
-  }
-
-  export type Friends_orderListRelationFilter = {
-    every?: friends_orderWhereInput
-    some?: friends_orderWhereInput
-    none?: friends_orderWhereInput
-  }
-
-  export type friends_orderOrderByRelationAggregateInput = {
-    _count?: SortOrder
-  }
-
-  export type ordersCountOrderByAggregateInput = {
+  export type order_detailCountOrderByAggregateInput = {
     id?: SortOrder
-    user_id?: SortOrder
-    bill_id?: SortOrder
-    menu_name?: SortOrder
-    qty?: SortOrder
+    friend_order_id?: SortOrder
+    menu?: SortOrder
+    quantity?: SortOrder
     price?: SortOrder
   }
 
-  export type ordersAvgOrderByAggregateInput = {
+  export type order_detailAvgOrderByAggregateInput = {
     id?: SortOrder
-    user_id?: SortOrder
-    bill_id?: SortOrder
-    qty?: SortOrder
+    friend_order_id?: SortOrder
+    quantity?: SortOrder
     price?: SortOrder
   }
 
-  export type ordersMaxOrderByAggregateInput = {
+  export type order_detailMaxOrderByAggregateInput = {
     id?: SortOrder
-    user_id?: SortOrder
-    bill_id?: SortOrder
-    menu_name?: SortOrder
-    qty?: SortOrder
+    friend_order_id?: SortOrder
+    menu?: SortOrder
+    quantity?: SortOrder
     price?: SortOrder
   }
 
-  export type ordersMinOrderByAggregateInput = {
+  export type order_detailMinOrderByAggregateInput = {
     id?: SortOrder
-    user_id?: SortOrder
-    bill_id?: SortOrder
-    menu_name?: SortOrder
-    qty?: SortOrder
+    friend_order_id?: SortOrder
+    menu?: SortOrder
+    quantity?: SortOrder
     price?: SortOrder
   }
 
-  export type ordersSumOrderByAggregateInput = {
+  export type order_detailSumOrderByAggregateInput = {
     id?: SortOrder
-    user_id?: SortOrder
-    bill_id?: SortOrder
-    qty?: SortOrder
+    friend_order_id?: SortOrder
+    quantity?: SortOrder
     price?: SortOrder
   }
 
@@ -10356,79 +7633,55 @@ export namespace Prisma {
     _max?: NestedStringFilter<$PrismaModel>
   }
 
-  export type BigIntWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: bigint | number | BigIntFieldRefInput<$PrismaModel>
-    in?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel>
-    notIn?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel>
-    lt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
-    lte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
-    gt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
-    gte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
-    not?: NestedBigIntWithAggregatesFilter<$PrismaModel> | bigint | number
-    _count?: NestedIntFilter<$PrismaModel>
-    _avg?: NestedFloatFilter<$PrismaModel>
-    _sum?: NestedBigIntFilter<$PrismaModel>
-    _min?: NestedBigIntFilter<$PrismaModel>
-    _max?: NestedBigIntFilter<$PrismaModel>
-  }
-
   export type BoolFilter<$PrismaModel = never> = {
     equals?: boolean | BooleanFieldRefInput<$PrismaModel>
     not?: NestedBoolFilter<$PrismaModel> | boolean
   }
 
-  export type OrdersNullableRelationFilter = {
-    is?: ordersWhereInput | null
-    isNot?: ordersWhereInput | null
+  export type BillNullableRelationFilter = {
+    is?: billWhereInput | null
+    isNot?: billWhereInput | null
   }
 
-  export type FriendsNullableRelationFilter = {
-    is?: friendsWhereInput | null
-    isNot?: friendsWhereInput | null
+  export type Order_detailListRelationFilter = {
+    every?: order_detailWhereInput
+    some?: order_detailWhereInput
+    none?: order_detailWhereInput
   }
 
-  export type friends_orderCountOrderByAggregateInput = {
+  export type order_detailOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type friend_orderCountOrderByAggregateInput = {
     id?: SortOrder
-    orders_id?: SortOrder
-    friends_id?: SortOrder
-    friend_order_price?: SortOrder
+    bill_id?: SortOrder
+    name?: SortOrder
     is_paid?: SortOrder
-    created_at?: SortOrder
-    update_at?: SortOrder
   }
 
-  export type friends_orderAvgOrderByAggregateInput = {
+  export type friend_orderAvgOrderByAggregateInput = {
     id?: SortOrder
-    orders_id?: SortOrder
-    friends_id?: SortOrder
-    friend_order_price?: SortOrder
+    bill_id?: SortOrder
   }
 
-  export type friends_orderMaxOrderByAggregateInput = {
+  export type friend_orderMaxOrderByAggregateInput = {
     id?: SortOrder
-    orders_id?: SortOrder
-    friends_id?: SortOrder
-    friend_order_price?: SortOrder
+    bill_id?: SortOrder
+    name?: SortOrder
     is_paid?: SortOrder
-    created_at?: SortOrder
-    update_at?: SortOrder
   }
 
-  export type friends_orderMinOrderByAggregateInput = {
+  export type friend_orderMinOrderByAggregateInput = {
     id?: SortOrder
-    orders_id?: SortOrder
-    friends_id?: SortOrder
-    friend_order_price?: SortOrder
+    bill_id?: SortOrder
+    name?: SortOrder
     is_paid?: SortOrder
-    created_at?: SortOrder
-    update_at?: SortOrder
   }
 
-  export type friends_orderSumOrderByAggregateInput = {
+  export type friend_orderSumOrderByAggregateInput = {
     id?: SortOrder
-    orders_id?: SortOrder
-    friends_id?: SortOrder
-    friend_order_price?: SortOrder
+    bill_id?: SortOrder
   }
 
   export type BoolWithAggregatesFilter<$PrismaModel = never> = {
@@ -10437,37 +7690,6 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedBoolFilter<$PrismaModel>
     _max?: NestedBoolFilter<$PrismaModel>
-  }
-
-  export type friendsCountOrderByAggregateInput = {
-    id?: SortOrder
-    user_id?: SortOrder
-    friends_name?: SortOrder
-    friends_photo?: SortOrder
-  }
-
-  export type friendsAvgOrderByAggregateInput = {
-    id?: SortOrder
-    user_id?: SortOrder
-  }
-
-  export type friendsMaxOrderByAggregateInput = {
-    id?: SortOrder
-    user_id?: SortOrder
-    friends_name?: SortOrder
-    friends_photo?: SortOrder
-  }
-
-  export type friendsMinOrderByAggregateInput = {
-    id?: SortOrder
-    user_id?: SortOrder
-    friends_name?: SortOrder
-    friends_photo?: SortOrder
-  }
-
-  export type friendsSumOrderByAggregateInput = {
-    id?: SortOrder
-    user_id?: SortOrder
   }
 
   export type FloatNullableFilter<$PrismaModel = never> = {
@@ -10481,28 +7703,42 @@ export namespace Prisma {
     not?: NestedFloatNullableFilter<$PrismaModel> | number | null
   }
 
-  export type Payment_method_detailNullableRelationFilter = {
-    is?: payment_method_detailWhereInput | null
-    isNot?: payment_method_detailWhereInput | null
+  export type UsersNullableRelationFilter = {
+    is?: usersWhereInput | null
+    isNot?: usersWhereInput | null
+  }
+
+  export type Payment_accountNullableRelationFilter = {
+    is?: payment_accountWhereInput | null
+    isNot?: payment_accountWhereInput | null
+  }
+
+  export type Friend_orderListRelationFilter = {
+    every?: friend_orderWhereInput
+    some?: friend_orderWhereInput
+    none?: friend_orderWhereInput
+  }
+
+  export type friend_orderOrderByRelationAggregateInput = {
+    _count?: SortOrder
   }
 
   export type billCountOrderByAggregateInput = {
     id?: SortOrder
     user_id?: SortOrder
-    payment_method_id?: SortOrder
+    payment_account_id?: SortOrder
     description?: SortOrder
     discount?: SortOrder
     tax?: SortOrder
     service?: SortOrder
     total_price?: SortOrder
     date?: SortOrder
-    is_completed?: SortOrder
   }
 
   export type billAvgOrderByAggregateInput = {
     id?: SortOrder
     user_id?: SortOrder
-    payment_method_id?: SortOrder
+    payment_account_id?: SortOrder
     discount?: SortOrder
     tax?: SortOrder
     service?: SortOrder
@@ -10512,33 +7748,31 @@ export namespace Prisma {
   export type billMaxOrderByAggregateInput = {
     id?: SortOrder
     user_id?: SortOrder
-    payment_method_id?: SortOrder
+    payment_account_id?: SortOrder
     description?: SortOrder
     discount?: SortOrder
     tax?: SortOrder
     service?: SortOrder
     total_price?: SortOrder
     date?: SortOrder
-    is_completed?: SortOrder
   }
 
   export type billMinOrderByAggregateInput = {
     id?: SortOrder
     user_id?: SortOrder
-    payment_method_id?: SortOrder
+    payment_account_id?: SortOrder
     description?: SortOrder
     discount?: SortOrder
     tax?: SortOrder
     service?: SortOrder
     total_price?: SortOrder
     date?: SortOrder
-    is_completed?: SortOrder
   }
 
   export type billSumOrderByAggregateInput = {
     id?: SortOrder
     user_id?: SortOrder
-    payment_method_id?: SortOrder
+    payment_account_id?: SortOrder
     discount?: SortOrder
     tax?: SortOrder
     service?: SortOrder
@@ -10561,87 +7795,41 @@ export namespace Prisma {
     _max?: NestedFloatNullableFilter<$PrismaModel>
   }
 
-  export type payment_methodCountOrderByAggregateInput = {
-    id?: SortOrder
-    payment_method_name?: SortOrder
-    payment_method_logo?: SortOrder
-  }
-
-  export type payment_methodAvgOrderByAggregateInput = {
-    id?: SortOrder
-  }
-
-  export type payment_methodMaxOrderByAggregateInput = {
-    id?: SortOrder
-    payment_method_name?: SortOrder
-    payment_method_logo?: SortOrder
-  }
-
-  export type payment_methodMinOrderByAggregateInput = {
-    id?: SortOrder
-    payment_method_name?: SortOrder
-    payment_method_logo?: SortOrder
-  }
-
-  export type payment_methodSumOrderByAggregateInput = {
-    id?: SortOrder
-  }
-
-  export type Payment_methodNullableRelationFilter = {
-    is?: payment_methodWhereInput | null
-    isNot?: payment_methodWhereInput | null
-  }
-
-  export type payment_method_detailCountOrderByAggregateInput = {
+  export type payment_accountCountOrderByAggregateInput = {
     id?: SortOrder
     user_id?: SortOrder
-    payment_method_id?: SortOrder
-    card_number?: SortOrder
-    card_name?: SortOrder
+    name?: SortOrder
+    number?: SortOrder
+    card_holder?: SortOrder
+    is_activated?: SortOrder
   }
 
-  export type payment_method_detailAvgOrderByAggregateInput = {
+  export type payment_accountAvgOrderByAggregateInput = {
     id?: SortOrder
     user_id?: SortOrder
-    payment_method_id?: SortOrder
-    card_number?: SortOrder
   }
 
-  export type payment_method_detailMaxOrderByAggregateInput = {
+  export type payment_accountMaxOrderByAggregateInput = {
     id?: SortOrder
     user_id?: SortOrder
-    payment_method_id?: SortOrder
-    card_number?: SortOrder
-    card_name?: SortOrder
+    name?: SortOrder
+    number?: SortOrder
+    card_holder?: SortOrder
+    is_activated?: SortOrder
   }
 
-  export type payment_method_detailMinOrderByAggregateInput = {
+  export type payment_accountMinOrderByAggregateInput = {
     id?: SortOrder
     user_id?: SortOrder
-    payment_method_id?: SortOrder
-    card_number?: SortOrder
-    card_name?: SortOrder
+    name?: SortOrder
+    number?: SortOrder
+    card_holder?: SortOrder
+    is_activated?: SortOrder
   }
 
-  export type payment_method_detailSumOrderByAggregateInput = {
+  export type payment_accountSumOrderByAggregateInput = {
     id?: SortOrder
     user_id?: SortOrder
-    payment_method_id?: SortOrder
-    card_number?: SortOrder
-  }
-
-  export type friendsCreateNestedManyWithoutUsersInput = {
-    create?: XOR<friendsCreateWithoutUsersInput, friendsUncheckedCreateWithoutUsersInput> | friendsCreateWithoutUsersInput[] | friendsUncheckedCreateWithoutUsersInput[]
-    connectOrCreate?: friendsCreateOrConnectWithoutUsersInput | friendsCreateOrConnectWithoutUsersInput[]
-    createMany?: friendsCreateManyUsersInputEnvelope
-    connect?: friendsWhereUniqueInput | friendsWhereUniqueInput[]
-  }
-
-  export type ordersCreateNestedManyWithoutUsersInput = {
-    create?: XOR<ordersCreateWithoutUsersInput, ordersUncheckedCreateWithoutUsersInput> | ordersCreateWithoutUsersInput[] | ordersUncheckedCreateWithoutUsersInput[]
-    connectOrCreate?: ordersCreateOrConnectWithoutUsersInput | ordersCreateOrConnectWithoutUsersInput[]
-    createMany?: ordersCreateManyUsersInputEnvelope
-    connect?: ordersWhereUniqueInput | ordersWhereUniqueInput[]
   }
 
   export type billCreateNestedManyWithoutUsersInput = {
@@ -10651,25 +7839,11 @@ export namespace Prisma {
     connect?: billWhereUniqueInput | billWhereUniqueInput[]
   }
 
-  export type payment_method_detailCreateNestedManyWithoutUsersInput = {
-    create?: XOR<payment_method_detailCreateWithoutUsersInput, payment_method_detailUncheckedCreateWithoutUsersInput> | payment_method_detailCreateWithoutUsersInput[] | payment_method_detailUncheckedCreateWithoutUsersInput[]
-    connectOrCreate?: payment_method_detailCreateOrConnectWithoutUsersInput | payment_method_detailCreateOrConnectWithoutUsersInput[]
-    createMany?: payment_method_detailCreateManyUsersInputEnvelope
-    connect?: payment_method_detailWhereUniqueInput | payment_method_detailWhereUniqueInput[]
-  }
-
-  export type friendsUncheckedCreateNestedManyWithoutUsersInput = {
-    create?: XOR<friendsCreateWithoutUsersInput, friendsUncheckedCreateWithoutUsersInput> | friendsCreateWithoutUsersInput[] | friendsUncheckedCreateWithoutUsersInput[]
-    connectOrCreate?: friendsCreateOrConnectWithoutUsersInput | friendsCreateOrConnectWithoutUsersInput[]
-    createMany?: friendsCreateManyUsersInputEnvelope
-    connect?: friendsWhereUniqueInput | friendsWhereUniqueInput[]
-  }
-
-  export type ordersUncheckedCreateNestedManyWithoutUsersInput = {
-    create?: XOR<ordersCreateWithoutUsersInput, ordersUncheckedCreateWithoutUsersInput> | ordersCreateWithoutUsersInput[] | ordersUncheckedCreateWithoutUsersInput[]
-    connectOrCreate?: ordersCreateOrConnectWithoutUsersInput | ordersCreateOrConnectWithoutUsersInput[]
-    createMany?: ordersCreateManyUsersInputEnvelope
-    connect?: ordersWhereUniqueInput | ordersWhereUniqueInput[]
+  export type payment_accountCreateNestedManyWithoutUsersInput = {
+    create?: XOR<payment_accountCreateWithoutUsersInput, payment_accountUncheckedCreateWithoutUsersInput> | payment_accountCreateWithoutUsersInput[] | payment_accountUncheckedCreateWithoutUsersInput[]
+    connectOrCreate?: payment_accountCreateOrConnectWithoutUsersInput | payment_accountCreateOrConnectWithoutUsersInput[]
+    createMany?: payment_accountCreateManyUsersInputEnvelope
+    connect?: payment_accountWhereUniqueInput | payment_accountWhereUniqueInput[]
   }
 
   export type billUncheckedCreateNestedManyWithoutUsersInput = {
@@ -10679,11 +7853,11 @@ export namespace Prisma {
     connect?: billWhereUniqueInput | billWhereUniqueInput[]
   }
 
-  export type payment_method_detailUncheckedCreateNestedManyWithoutUsersInput = {
-    create?: XOR<payment_method_detailCreateWithoutUsersInput, payment_method_detailUncheckedCreateWithoutUsersInput> | payment_method_detailCreateWithoutUsersInput[] | payment_method_detailUncheckedCreateWithoutUsersInput[]
-    connectOrCreate?: payment_method_detailCreateOrConnectWithoutUsersInput | payment_method_detailCreateOrConnectWithoutUsersInput[]
-    createMany?: payment_method_detailCreateManyUsersInputEnvelope
-    connect?: payment_method_detailWhereUniqueInput | payment_method_detailWhereUniqueInput[]
+  export type payment_accountUncheckedCreateNestedManyWithoutUsersInput = {
+    create?: XOR<payment_accountCreateWithoutUsersInput, payment_accountUncheckedCreateWithoutUsersInput> | payment_accountCreateWithoutUsersInput[] | payment_accountUncheckedCreateWithoutUsersInput[]
+    connectOrCreate?: payment_accountCreateOrConnectWithoutUsersInput | payment_accountCreateOrConnectWithoutUsersInput[]
+    createMany?: payment_accountCreateManyUsersInputEnvelope
+    connect?: payment_accountWhereUniqueInput | payment_accountWhereUniqueInput[]
   }
 
   export type NullableStringFieldUpdateOperationsInput = {
@@ -10696,34 +7870,6 @@ export namespace Prisma {
 
   export type DateTimeFieldUpdateOperationsInput = {
     set?: Date | string
-  }
-
-  export type friendsUpdateManyWithoutUsersNestedInput = {
-    create?: XOR<friendsCreateWithoutUsersInput, friendsUncheckedCreateWithoutUsersInput> | friendsCreateWithoutUsersInput[] | friendsUncheckedCreateWithoutUsersInput[]
-    connectOrCreate?: friendsCreateOrConnectWithoutUsersInput | friendsCreateOrConnectWithoutUsersInput[]
-    upsert?: friendsUpsertWithWhereUniqueWithoutUsersInput | friendsUpsertWithWhereUniqueWithoutUsersInput[]
-    createMany?: friendsCreateManyUsersInputEnvelope
-    set?: friendsWhereUniqueInput | friendsWhereUniqueInput[]
-    disconnect?: friendsWhereUniqueInput | friendsWhereUniqueInput[]
-    delete?: friendsWhereUniqueInput | friendsWhereUniqueInput[]
-    connect?: friendsWhereUniqueInput | friendsWhereUniqueInput[]
-    update?: friendsUpdateWithWhereUniqueWithoutUsersInput | friendsUpdateWithWhereUniqueWithoutUsersInput[]
-    updateMany?: friendsUpdateManyWithWhereWithoutUsersInput | friendsUpdateManyWithWhereWithoutUsersInput[]
-    deleteMany?: friendsScalarWhereInput | friendsScalarWhereInput[]
-  }
-
-  export type ordersUpdateManyWithoutUsersNestedInput = {
-    create?: XOR<ordersCreateWithoutUsersInput, ordersUncheckedCreateWithoutUsersInput> | ordersCreateWithoutUsersInput[] | ordersUncheckedCreateWithoutUsersInput[]
-    connectOrCreate?: ordersCreateOrConnectWithoutUsersInput | ordersCreateOrConnectWithoutUsersInput[]
-    upsert?: ordersUpsertWithWhereUniqueWithoutUsersInput | ordersUpsertWithWhereUniqueWithoutUsersInput[]
-    createMany?: ordersCreateManyUsersInputEnvelope
-    set?: ordersWhereUniqueInput | ordersWhereUniqueInput[]
-    disconnect?: ordersWhereUniqueInput | ordersWhereUniqueInput[]
-    delete?: ordersWhereUniqueInput | ordersWhereUniqueInput[]
-    connect?: ordersWhereUniqueInput | ordersWhereUniqueInput[]
-    update?: ordersUpdateWithWhereUniqueWithoutUsersInput | ordersUpdateWithWhereUniqueWithoutUsersInput[]
-    updateMany?: ordersUpdateManyWithWhereWithoutUsersInput | ordersUpdateManyWithWhereWithoutUsersInput[]
-    deleteMany?: ordersScalarWhereInput | ordersScalarWhereInput[]
   }
 
   export type billUpdateManyWithoutUsersNestedInput = {
@@ -10740,18 +7886,18 @@ export namespace Prisma {
     deleteMany?: billScalarWhereInput | billScalarWhereInput[]
   }
 
-  export type payment_method_detailUpdateManyWithoutUsersNestedInput = {
-    create?: XOR<payment_method_detailCreateWithoutUsersInput, payment_method_detailUncheckedCreateWithoutUsersInput> | payment_method_detailCreateWithoutUsersInput[] | payment_method_detailUncheckedCreateWithoutUsersInput[]
-    connectOrCreate?: payment_method_detailCreateOrConnectWithoutUsersInput | payment_method_detailCreateOrConnectWithoutUsersInput[]
-    upsert?: payment_method_detailUpsertWithWhereUniqueWithoutUsersInput | payment_method_detailUpsertWithWhereUniqueWithoutUsersInput[]
-    createMany?: payment_method_detailCreateManyUsersInputEnvelope
-    set?: payment_method_detailWhereUniqueInput | payment_method_detailWhereUniqueInput[]
-    disconnect?: payment_method_detailWhereUniqueInput | payment_method_detailWhereUniqueInput[]
-    delete?: payment_method_detailWhereUniqueInput | payment_method_detailWhereUniqueInput[]
-    connect?: payment_method_detailWhereUniqueInput | payment_method_detailWhereUniqueInput[]
-    update?: payment_method_detailUpdateWithWhereUniqueWithoutUsersInput | payment_method_detailUpdateWithWhereUniqueWithoutUsersInput[]
-    updateMany?: payment_method_detailUpdateManyWithWhereWithoutUsersInput | payment_method_detailUpdateManyWithWhereWithoutUsersInput[]
-    deleteMany?: payment_method_detailScalarWhereInput | payment_method_detailScalarWhereInput[]
+  export type payment_accountUpdateManyWithoutUsersNestedInput = {
+    create?: XOR<payment_accountCreateWithoutUsersInput, payment_accountUncheckedCreateWithoutUsersInput> | payment_accountCreateWithoutUsersInput[] | payment_accountUncheckedCreateWithoutUsersInput[]
+    connectOrCreate?: payment_accountCreateOrConnectWithoutUsersInput | payment_accountCreateOrConnectWithoutUsersInput[]
+    upsert?: payment_accountUpsertWithWhereUniqueWithoutUsersInput | payment_accountUpsertWithWhereUniqueWithoutUsersInput[]
+    createMany?: payment_accountCreateManyUsersInputEnvelope
+    set?: payment_accountWhereUniqueInput | payment_accountWhereUniqueInput[]
+    disconnect?: payment_accountWhereUniqueInput | payment_accountWhereUniqueInput[]
+    delete?: payment_accountWhereUniqueInput | payment_accountWhereUniqueInput[]
+    connect?: payment_accountWhereUniqueInput | payment_accountWhereUniqueInput[]
+    update?: payment_accountUpdateWithWhereUniqueWithoutUsersInput | payment_accountUpdateWithWhereUniqueWithoutUsersInput[]
+    updateMany?: payment_accountUpdateManyWithWhereWithoutUsersInput | payment_accountUpdateManyWithWhereWithoutUsersInput[]
+    deleteMany?: payment_accountScalarWhereInput | payment_accountScalarWhereInput[]
   }
 
   export type IntFieldUpdateOperationsInput = {
@@ -10760,34 +7906,6 @@ export namespace Prisma {
     decrement?: number
     multiply?: number
     divide?: number
-  }
-
-  export type friendsUncheckedUpdateManyWithoutUsersNestedInput = {
-    create?: XOR<friendsCreateWithoutUsersInput, friendsUncheckedCreateWithoutUsersInput> | friendsCreateWithoutUsersInput[] | friendsUncheckedCreateWithoutUsersInput[]
-    connectOrCreate?: friendsCreateOrConnectWithoutUsersInput | friendsCreateOrConnectWithoutUsersInput[]
-    upsert?: friendsUpsertWithWhereUniqueWithoutUsersInput | friendsUpsertWithWhereUniqueWithoutUsersInput[]
-    createMany?: friendsCreateManyUsersInputEnvelope
-    set?: friendsWhereUniqueInput | friendsWhereUniqueInput[]
-    disconnect?: friendsWhereUniqueInput | friendsWhereUniqueInput[]
-    delete?: friendsWhereUniqueInput | friendsWhereUniqueInput[]
-    connect?: friendsWhereUniqueInput | friendsWhereUniqueInput[]
-    update?: friendsUpdateWithWhereUniqueWithoutUsersInput | friendsUpdateWithWhereUniqueWithoutUsersInput[]
-    updateMany?: friendsUpdateManyWithWhereWithoutUsersInput | friendsUpdateManyWithWhereWithoutUsersInput[]
-    deleteMany?: friendsScalarWhereInput | friendsScalarWhereInput[]
-  }
-
-  export type ordersUncheckedUpdateManyWithoutUsersNestedInput = {
-    create?: XOR<ordersCreateWithoutUsersInput, ordersUncheckedCreateWithoutUsersInput> | ordersCreateWithoutUsersInput[] | ordersUncheckedCreateWithoutUsersInput[]
-    connectOrCreate?: ordersCreateOrConnectWithoutUsersInput | ordersCreateOrConnectWithoutUsersInput[]
-    upsert?: ordersUpsertWithWhereUniqueWithoutUsersInput | ordersUpsertWithWhereUniqueWithoutUsersInput[]
-    createMany?: ordersCreateManyUsersInputEnvelope
-    set?: ordersWhereUniqueInput | ordersWhereUniqueInput[]
-    disconnect?: ordersWhereUniqueInput | ordersWhereUniqueInput[]
-    delete?: ordersWhereUniqueInput | ordersWhereUniqueInput[]
-    connect?: ordersWhereUniqueInput | ordersWhereUniqueInput[]
-    update?: ordersUpdateWithWhereUniqueWithoutUsersInput | ordersUpdateWithWhereUniqueWithoutUsersInput[]
-    updateMany?: ordersUpdateManyWithWhereWithoutUsersInput | ordersUpdateManyWithWhereWithoutUsersInput[]
-    deleteMany?: ordersScalarWhereInput | ordersScalarWhereInput[]
   }
 
   export type billUncheckedUpdateManyWithoutUsersNestedInput = {
@@ -10804,90 +7922,38 @@ export namespace Prisma {
     deleteMany?: billScalarWhereInput | billScalarWhereInput[]
   }
 
-  export type payment_method_detailUncheckedUpdateManyWithoutUsersNestedInput = {
-    create?: XOR<payment_method_detailCreateWithoutUsersInput, payment_method_detailUncheckedCreateWithoutUsersInput> | payment_method_detailCreateWithoutUsersInput[] | payment_method_detailUncheckedCreateWithoutUsersInput[]
-    connectOrCreate?: payment_method_detailCreateOrConnectWithoutUsersInput | payment_method_detailCreateOrConnectWithoutUsersInput[]
-    upsert?: payment_method_detailUpsertWithWhereUniqueWithoutUsersInput | payment_method_detailUpsertWithWhereUniqueWithoutUsersInput[]
-    createMany?: payment_method_detailCreateManyUsersInputEnvelope
-    set?: payment_method_detailWhereUniqueInput | payment_method_detailWhereUniqueInput[]
-    disconnect?: payment_method_detailWhereUniqueInput | payment_method_detailWhereUniqueInput[]
-    delete?: payment_method_detailWhereUniqueInput | payment_method_detailWhereUniqueInput[]
-    connect?: payment_method_detailWhereUniqueInput | payment_method_detailWhereUniqueInput[]
-    update?: payment_method_detailUpdateWithWhereUniqueWithoutUsersInput | payment_method_detailUpdateWithWhereUniqueWithoutUsersInput[]
-    updateMany?: payment_method_detailUpdateManyWithWhereWithoutUsersInput | payment_method_detailUpdateManyWithWhereWithoutUsersInput[]
-    deleteMany?: payment_method_detailScalarWhereInput | payment_method_detailScalarWhereInput[]
+  export type payment_accountUncheckedUpdateManyWithoutUsersNestedInput = {
+    create?: XOR<payment_accountCreateWithoutUsersInput, payment_accountUncheckedCreateWithoutUsersInput> | payment_accountCreateWithoutUsersInput[] | payment_accountUncheckedCreateWithoutUsersInput[]
+    connectOrCreate?: payment_accountCreateOrConnectWithoutUsersInput | payment_accountCreateOrConnectWithoutUsersInput[]
+    upsert?: payment_accountUpsertWithWhereUniqueWithoutUsersInput | payment_accountUpsertWithWhereUniqueWithoutUsersInput[]
+    createMany?: payment_accountCreateManyUsersInputEnvelope
+    set?: payment_accountWhereUniqueInput | payment_accountWhereUniqueInput[]
+    disconnect?: payment_accountWhereUniqueInput | payment_accountWhereUniqueInput[]
+    delete?: payment_accountWhereUniqueInput | payment_accountWhereUniqueInput[]
+    connect?: payment_accountWhereUniqueInput | payment_accountWhereUniqueInput[]
+    update?: payment_accountUpdateWithWhereUniqueWithoutUsersInput | payment_accountUpdateWithWhereUniqueWithoutUsersInput[]
+    updateMany?: payment_accountUpdateManyWithWhereWithoutUsersInput | payment_accountUpdateManyWithWhereWithoutUsersInput[]
+    deleteMany?: payment_accountScalarWhereInput | payment_accountScalarWhereInput[]
   }
 
-  export type usersCreateNestedOneWithoutOrdersInput = {
-    create?: XOR<usersCreateWithoutOrdersInput, usersUncheckedCreateWithoutOrdersInput>
-    connectOrCreate?: usersCreateOrConnectWithoutOrdersInput
-    connect?: usersWhereUniqueInput
-  }
-
-  export type billCreateNestedOneWithoutOrdersInput = {
-    create?: XOR<billCreateWithoutOrdersInput, billUncheckedCreateWithoutOrdersInput>
-    connectOrCreate?: billCreateOrConnectWithoutOrdersInput
-    connect?: billWhereUniqueInput
-  }
-
-  export type friends_orderCreateNestedManyWithoutOrdersInput = {
-    create?: XOR<friends_orderCreateWithoutOrdersInput, friends_orderUncheckedCreateWithoutOrdersInput> | friends_orderCreateWithoutOrdersInput[] | friends_orderUncheckedCreateWithoutOrdersInput[]
-    connectOrCreate?: friends_orderCreateOrConnectWithoutOrdersInput | friends_orderCreateOrConnectWithoutOrdersInput[]
-    createMany?: friends_orderCreateManyOrdersInputEnvelope
-    connect?: friends_orderWhereUniqueInput | friends_orderWhereUniqueInput[]
-  }
-
-  export type friends_orderUncheckedCreateNestedManyWithoutOrdersInput = {
-    create?: XOR<friends_orderCreateWithoutOrdersInput, friends_orderUncheckedCreateWithoutOrdersInput> | friends_orderCreateWithoutOrdersInput[] | friends_orderUncheckedCreateWithoutOrdersInput[]
-    connectOrCreate?: friends_orderCreateOrConnectWithoutOrdersInput | friends_orderCreateOrConnectWithoutOrdersInput[]
-    createMany?: friends_orderCreateManyOrdersInputEnvelope
-    connect?: friends_orderWhereUniqueInput | friends_orderWhereUniqueInput[]
+  export type friend_orderCreateNestedOneWithoutOrder_detailInput = {
+    create?: XOR<friend_orderCreateWithoutOrder_detailInput, friend_orderUncheckedCreateWithoutOrder_detailInput>
+    connectOrCreate?: friend_orderCreateOrConnectWithoutOrder_detailInput
+    connect?: friend_orderWhereUniqueInput
   }
 
   export type StringFieldUpdateOperationsInput = {
     set?: string
   }
 
-  export type BigIntFieldUpdateOperationsInput = {
-    set?: bigint | number
-    increment?: bigint | number
-    decrement?: bigint | number
-    multiply?: bigint | number
-    divide?: bigint | number
-  }
-
-  export type usersUpdateOneWithoutOrdersNestedInput = {
-    create?: XOR<usersCreateWithoutOrdersInput, usersUncheckedCreateWithoutOrdersInput>
-    connectOrCreate?: usersCreateOrConnectWithoutOrdersInput
-    upsert?: usersUpsertWithoutOrdersInput
-    disconnect?: usersWhereInput | boolean
-    delete?: usersWhereInput | boolean
-    connect?: usersWhereUniqueInput
-    update?: XOR<XOR<usersUpdateToOneWithWhereWithoutOrdersInput, usersUpdateWithoutOrdersInput>, usersUncheckedUpdateWithoutOrdersInput>
-  }
-
-  export type billUpdateOneWithoutOrdersNestedInput = {
-    create?: XOR<billCreateWithoutOrdersInput, billUncheckedCreateWithoutOrdersInput>
-    connectOrCreate?: billCreateOrConnectWithoutOrdersInput
-    upsert?: billUpsertWithoutOrdersInput
-    disconnect?: billWhereInput | boolean
-    delete?: billWhereInput | boolean
-    connect?: billWhereUniqueInput
-    update?: XOR<XOR<billUpdateToOneWithWhereWithoutOrdersInput, billUpdateWithoutOrdersInput>, billUncheckedUpdateWithoutOrdersInput>
-  }
-
-  export type friends_orderUpdateManyWithoutOrdersNestedInput = {
-    create?: XOR<friends_orderCreateWithoutOrdersInput, friends_orderUncheckedCreateWithoutOrdersInput> | friends_orderCreateWithoutOrdersInput[] | friends_orderUncheckedCreateWithoutOrdersInput[]
-    connectOrCreate?: friends_orderCreateOrConnectWithoutOrdersInput | friends_orderCreateOrConnectWithoutOrdersInput[]
-    upsert?: friends_orderUpsertWithWhereUniqueWithoutOrdersInput | friends_orderUpsertWithWhereUniqueWithoutOrdersInput[]
-    createMany?: friends_orderCreateManyOrdersInputEnvelope
-    set?: friends_orderWhereUniqueInput | friends_orderWhereUniqueInput[]
-    disconnect?: friends_orderWhereUniqueInput | friends_orderWhereUniqueInput[]
-    delete?: friends_orderWhereUniqueInput | friends_orderWhereUniqueInput[]
-    connect?: friends_orderWhereUniqueInput | friends_orderWhereUniqueInput[]
-    update?: friends_orderUpdateWithWhereUniqueWithoutOrdersInput | friends_orderUpdateWithWhereUniqueWithoutOrdersInput[]
-    updateMany?: friends_orderUpdateManyWithWhereWithoutOrdersInput | friends_orderUpdateManyWithWhereWithoutOrdersInput[]
-    deleteMany?: friends_orderScalarWhereInput | friends_orderScalarWhereInput[]
+  export type friend_orderUpdateOneWithoutOrder_detailNestedInput = {
+    create?: XOR<friend_orderCreateWithoutOrder_detailInput, friend_orderUncheckedCreateWithoutOrder_detailInput>
+    connectOrCreate?: friend_orderCreateOrConnectWithoutOrder_detailInput
+    upsert?: friend_orderUpsertWithoutOrder_detailInput
+    disconnect?: friend_orderWhereInput | boolean
+    delete?: friend_orderWhereInput | boolean
+    connect?: friend_orderWhereUniqueInput
+    update?: XOR<XOR<friend_orderUpdateToOneWithWhereWithoutOrder_detailInput, friend_orderUpdateWithoutOrder_detailInput>, friend_orderUncheckedUpdateWithoutOrder_detailInput>
   }
 
   export type NullableIntFieldUpdateOperationsInput = {
@@ -10898,112 +7964,66 @@ export namespace Prisma {
     divide?: number
   }
 
-  export type friends_orderUncheckedUpdateManyWithoutOrdersNestedInput = {
-    create?: XOR<friends_orderCreateWithoutOrdersInput, friends_orderUncheckedCreateWithoutOrdersInput> | friends_orderCreateWithoutOrdersInput[] | friends_orderUncheckedCreateWithoutOrdersInput[]
-    connectOrCreate?: friends_orderCreateOrConnectWithoutOrdersInput | friends_orderCreateOrConnectWithoutOrdersInput[]
-    upsert?: friends_orderUpsertWithWhereUniqueWithoutOrdersInput | friends_orderUpsertWithWhereUniqueWithoutOrdersInput[]
-    createMany?: friends_orderCreateManyOrdersInputEnvelope
-    set?: friends_orderWhereUniqueInput | friends_orderWhereUniqueInput[]
-    disconnect?: friends_orderWhereUniqueInput | friends_orderWhereUniqueInput[]
-    delete?: friends_orderWhereUniqueInput | friends_orderWhereUniqueInput[]
-    connect?: friends_orderWhereUniqueInput | friends_orderWhereUniqueInput[]
-    update?: friends_orderUpdateWithWhereUniqueWithoutOrdersInput | friends_orderUpdateWithWhereUniqueWithoutOrdersInput[]
-    updateMany?: friends_orderUpdateManyWithWhereWithoutOrdersInput | friends_orderUpdateManyWithWhereWithoutOrdersInput[]
-    deleteMany?: friends_orderScalarWhereInput | friends_orderScalarWhereInput[]
+  export type billCreateNestedOneWithoutFriend_orderInput = {
+    create?: XOR<billCreateWithoutFriend_orderInput, billUncheckedCreateWithoutFriend_orderInput>
+    connectOrCreate?: billCreateOrConnectWithoutFriend_orderInput
+    connect?: billWhereUniqueInput
   }
 
-  export type ordersCreateNestedOneWithoutFriends_orderInput = {
-    create?: XOR<ordersCreateWithoutFriends_orderInput, ordersUncheckedCreateWithoutFriends_orderInput>
-    connectOrCreate?: ordersCreateOrConnectWithoutFriends_orderInput
-    connect?: ordersWhereUniqueInput
+  export type order_detailCreateNestedManyWithoutFriend_orderInput = {
+    create?: XOR<order_detailCreateWithoutFriend_orderInput, order_detailUncheckedCreateWithoutFriend_orderInput> | order_detailCreateWithoutFriend_orderInput[] | order_detailUncheckedCreateWithoutFriend_orderInput[]
+    connectOrCreate?: order_detailCreateOrConnectWithoutFriend_orderInput | order_detailCreateOrConnectWithoutFriend_orderInput[]
+    createMany?: order_detailCreateManyFriend_orderInputEnvelope
+    connect?: order_detailWhereUniqueInput | order_detailWhereUniqueInput[]
   }
 
-  export type friendsCreateNestedOneWithoutFriends_orderInput = {
-    create?: XOR<friendsCreateWithoutFriends_orderInput, friendsUncheckedCreateWithoutFriends_orderInput>
-    connectOrCreate?: friendsCreateOrConnectWithoutFriends_orderInput
-    connect?: friendsWhereUniqueInput
+  export type order_detailUncheckedCreateNestedManyWithoutFriend_orderInput = {
+    create?: XOR<order_detailCreateWithoutFriend_orderInput, order_detailUncheckedCreateWithoutFriend_orderInput> | order_detailCreateWithoutFriend_orderInput[] | order_detailUncheckedCreateWithoutFriend_orderInput[]
+    connectOrCreate?: order_detailCreateOrConnectWithoutFriend_orderInput | order_detailCreateOrConnectWithoutFriend_orderInput[]
+    createMany?: order_detailCreateManyFriend_orderInputEnvelope
+    connect?: order_detailWhereUniqueInput | order_detailWhereUniqueInput[]
   }
 
   export type BoolFieldUpdateOperationsInput = {
     set?: boolean
   }
 
-  export type ordersUpdateOneWithoutFriends_orderNestedInput = {
-    create?: XOR<ordersCreateWithoutFriends_orderInput, ordersUncheckedCreateWithoutFriends_orderInput>
-    connectOrCreate?: ordersCreateOrConnectWithoutFriends_orderInput
-    upsert?: ordersUpsertWithoutFriends_orderInput
-    disconnect?: ordersWhereInput | boolean
-    delete?: ordersWhereInput | boolean
-    connect?: ordersWhereUniqueInput
-    update?: XOR<XOR<ordersUpdateToOneWithWhereWithoutFriends_orderInput, ordersUpdateWithoutFriends_orderInput>, ordersUncheckedUpdateWithoutFriends_orderInput>
+  export type billUpdateOneWithoutFriend_orderNestedInput = {
+    create?: XOR<billCreateWithoutFriend_orderInput, billUncheckedCreateWithoutFriend_orderInput>
+    connectOrCreate?: billCreateOrConnectWithoutFriend_orderInput
+    upsert?: billUpsertWithoutFriend_orderInput
+    disconnect?: billWhereInput | boolean
+    delete?: billWhereInput | boolean
+    connect?: billWhereUniqueInput
+    update?: XOR<XOR<billUpdateToOneWithWhereWithoutFriend_orderInput, billUpdateWithoutFriend_orderInput>, billUncheckedUpdateWithoutFriend_orderInput>
   }
 
-  export type friendsUpdateOneWithoutFriends_orderNestedInput = {
-    create?: XOR<friendsCreateWithoutFriends_orderInput, friendsUncheckedCreateWithoutFriends_orderInput>
-    connectOrCreate?: friendsCreateOrConnectWithoutFriends_orderInput
-    upsert?: friendsUpsertWithoutFriends_orderInput
-    disconnect?: friendsWhereInput | boolean
-    delete?: friendsWhereInput | boolean
-    connect?: friendsWhereUniqueInput
-    update?: XOR<XOR<friendsUpdateToOneWithWhereWithoutFriends_orderInput, friendsUpdateWithoutFriends_orderInput>, friendsUncheckedUpdateWithoutFriends_orderInput>
+  export type order_detailUpdateManyWithoutFriend_orderNestedInput = {
+    create?: XOR<order_detailCreateWithoutFriend_orderInput, order_detailUncheckedCreateWithoutFriend_orderInput> | order_detailCreateWithoutFriend_orderInput[] | order_detailUncheckedCreateWithoutFriend_orderInput[]
+    connectOrCreate?: order_detailCreateOrConnectWithoutFriend_orderInput | order_detailCreateOrConnectWithoutFriend_orderInput[]
+    upsert?: order_detailUpsertWithWhereUniqueWithoutFriend_orderInput | order_detailUpsertWithWhereUniqueWithoutFriend_orderInput[]
+    createMany?: order_detailCreateManyFriend_orderInputEnvelope
+    set?: order_detailWhereUniqueInput | order_detailWhereUniqueInput[]
+    disconnect?: order_detailWhereUniqueInput | order_detailWhereUniqueInput[]
+    delete?: order_detailWhereUniqueInput | order_detailWhereUniqueInput[]
+    connect?: order_detailWhereUniqueInput | order_detailWhereUniqueInput[]
+    update?: order_detailUpdateWithWhereUniqueWithoutFriend_orderInput | order_detailUpdateWithWhereUniqueWithoutFriend_orderInput[]
+    updateMany?: order_detailUpdateManyWithWhereWithoutFriend_orderInput | order_detailUpdateManyWithWhereWithoutFriend_orderInput[]
+    deleteMany?: order_detailScalarWhereInput | order_detailScalarWhereInput[]
   }
 
-  export type usersCreateNestedOneWithoutFriendsInput = {
-    create?: XOR<usersCreateWithoutFriendsInput, usersUncheckedCreateWithoutFriendsInput>
-    connectOrCreate?: usersCreateOrConnectWithoutFriendsInput
-    connect?: usersWhereUniqueInput
-  }
-
-  export type friends_orderCreateNestedManyWithoutFriendsInput = {
-    create?: XOR<friends_orderCreateWithoutFriendsInput, friends_orderUncheckedCreateWithoutFriendsInput> | friends_orderCreateWithoutFriendsInput[] | friends_orderUncheckedCreateWithoutFriendsInput[]
-    connectOrCreate?: friends_orderCreateOrConnectWithoutFriendsInput | friends_orderCreateOrConnectWithoutFriendsInput[]
-    createMany?: friends_orderCreateManyFriendsInputEnvelope
-    connect?: friends_orderWhereUniqueInput | friends_orderWhereUniqueInput[]
-  }
-
-  export type friends_orderUncheckedCreateNestedManyWithoutFriendsInput = {
-    create?: XOR<friends_orderCreateWithoutFriendsInput, friends_orderUncheckedCreateWithoutFriendsInput> | friends_orderCreateWithoutFriendsInput[] | friends_orderUncheckedCreateWithoutFriendsInput[]
-    connectOrCreate?: friends_orderCreateOrConnectWithoutFriendsInput | friends_orderCreateOrConnectWithoutFriendsInput[]
-    createMany?: friends_orderCreateManyFriendsInputEnvelope
-    connect?: friends_orderWhereUniqueInput | friends_orderWhereUniqueInput[]
-  }
-
-  export type usersUpdateOneWithoutFriendsNestedInput = {
-    create?: XOR<usersCreateWithoutFriendsInput, usersUncheckedCreateWithoutFriendsInput>
-    connectOrCreate?: usersCreateOrConnectWithoutFriendsInput
-    upsert?: usersUpsertWithoutFriendsInput
-    disconnect?: usersWhereInput | boolean
-    delete?: usersWhereInput | boolean
-    connect?: usersWhereUniqueInput
-    update?: XOR<XOR<usersUpdateToOneWithWhereWithoutFriendsInput, usersUpdateWithoutFriendsInput>, usersUncheckedUpdateWithoutFriendsInput>
-  }
-
-  export type friends_orderUpdateManyWithoutFriendsNestedInput = {
-    create?: XOR<friends_orderCreateWithoutFriendsInput, friends_orderUncheckedCreateWithoutFriendsInput> | friends_orderCreateWithoutFriendsInput[] | friends_orderUncheckedCreateWithoutFriendsInput[]
-    connectOrCreate?: friends_orderCreateOrConnectWithoutFriendsInput | friends_orderCreateOrConnectWithoutFriendsInput[]
-    upsert?: friends_orderUpsertWithWhereUniqueWithoutFriendsInput | friends_orderUpsertWithWhereUniqueWithoutFriendsInput[]
-    createMany?: friends_orderCreateManyFriendsInputEnvelope
-    set?: friends_orderWhereUniqueInput | friends_orderWhereUniqueInput[]
-    disconnect?: friends_orderWhereUniqueInput | friends_orderWhereUniqueInput[]
-    delete?: friends_orderWhereUniqueInput | friends_orderWhereUniqueInput[]
-    connect?: friends_orderWhereUniqueInput | friends_orderWhereUniqueInput[]
-    update?: friends_orderUpdateWithWhereUniqueWithoutFriendsInput | friends_orderUpdateWithWhereUniqueWithoutFriendsInput[]
-    updateMany?: friends_orderUpdateManyWithWhereWithoutFriendsInput | friends_orderUpdateManyWithWhereWithoutFriendsInput[]
-    deleteMany?: friends_orderScalarWhereInput | friends_orderScalarWhereInput[]
-  }
-
-  export type friends_orderUncheckedUpdateManyWithoutFriendsNestedInput = {
-    create?: XOR<friends_orderCreateWithoutFriendsInput, friends_orderUncheckedCreateWithoutFriendsInput> | friends_orderCreateWithoutFriendsInput[] | friends_orderUncheckedCreateWithoutFriendsInput[]
-    connectOrCreate?: friends_orderCreateOrConnectWithoutFriendsInput | friends_orderCreateOrConnectWithoutFriendsInput[]
-    upsert?: friends_orderUpsertWithWhereUniqueWithoutFriendsInput | friends_orderUpsertWithWhereUniqueWithoutFriendsInput[]
-    createMany?: friends_orderCreateManyFriendsInputEnvelope
-    set?: friends_orderWhereUniqueInput | friends_orderWhereUniqueInput[]
-    disconnect?: friends_orderWhereUniqueInput | friends_orderWhereUniqueInput[]
-    delete?: friends_orderWhereUniqueInput | friends_orderWhereUniqueInput[]
-    connect?: friends_orderWhereUniqueInput | friends_orderWhereUniqueInput[]
-    update?: friends_orderUpdateWithWhereUniqueWithoutFriendsInput | friends_orderUpdateWithWhereUniqueWithoutFriendsInput[]
-    updateMany?: friends_orderUpdateManyWithWhereWithoutFriendsInput | friends_orderUpdateManyWithWhereWithoutFriendsInput[]
-    deleteMany?: friends_orderScalarWhereInput | friends_orderScalarWhereInput[]
+  export type order_detailUncheckedUpdateManyWithoutFriend_orderNestedInput = {
+    create?: XOR<order_detailCreateWithoutFriend_orderInput, order_detailUncheckedCreateWithoutFriend_orderInput> | order_detailCreateWithoutFriend_orderInput[] | order_detailUncheckedCreateWithoutFriend_orderInput[]
+    connectOrCreate?: order_detailCreateOrConnectWithoutFriend_orderInput | order_detailCreateOrConnectWithoutFriend_orderInput[]
+    upsert?: order_detailUpsertWithWhereUniqueWithoutFriend_orderInput | order_detailUpsertWithWhereUniqueWithoutFriend_orderInput[]
+    createMany?: order_detailCreateManyFriend_orderInputEnvelope
+    set?: order_detailWhereUniqueInput | order_detailWhereUniqueInput[]
+    disconnect?: order_detailWhereUniqueInput | order_detailWhereUniqueInput[]
+    delete?: order_detailWhereUniqueInput | order_detailWhereUniqueInput[]
+    connect?: order_detailWhereUniqueInput | order_detailWhereUniqueInput[]
+    update?: order_detailUpdateWithWhereUniqueWithoutFriend_orderInput | order_detailUpdateWithWhereUniqueWithoutFriend_orderInput[]
+    updateMany?: order_detailUpdateManyWithWhereWithoutFriend_orderInput | order_detailUpdateManyWithWhereWithoutFriend_orderInput[]
+    deleteMany?: order_detailScalarWhereInput | order_detailScalarWhereInput[]
   }
 
   export type usersCreateNestedOneWithoutBillInput = {
@@ -11012,24 +8032,24 @@ export namespace Prisma {
     connect?: usersWhereUniqueInput
   }
 
-  export type payment_method_detailCreateNestedOneWithoutBillInput = {
-    create?: XOR<payment_method_detailCreateWithoutBillInput, payment_method_detailUncheckedCreateWithoutBillInput>
-    connectOrCreate?: payment_method_detailCreateOrConnectWithoutBillInput
-    connect?: payment_method_detailWhereUniqueInput
+  export type payment_accountCreateNestedOneWithoutBillInput = {
+    create?: XOR<payment_accountCreateWithoutBillInput, payment_accountUncheckedCreateWithoutBillInput>
+    connectOrCreate?: payment_accountCreateOrConnectWithoutBillInput
+    connect?: payment_accountWhereUniqueInput
   }
 
-  export type ordersCreateNestedManyWithoutBillInput = {
-    create?: XOR<ordersCreateWithoutBillInput, ordersUncheckedCreateWithoutBillInput> | ordersCreateWithoutBillInput[] | ordersUncheckedCreateWithoutBillInput[]
-    connectOrCreate?: ordersCreateOrConnectWithoutBillInput | ordersCreateOrConnectWithoutBillInput[]
-    createMany?: ordersCreateManyBillInputEnvelope
-    connect?: ordersWhereUniqueInput | ordersWhereUniqueInput[]
+  export type friend_orderCreateNestedManyWithoutBillInput = {
+    create?: XOR<friend_orderCreateWithoutBillInput, friend_orderUncheckedCreateWithoutBillInput> | friend_orderCreateWithoutBillInput[] | friend_orderUncheckedCreateWithoutBillInput[]
+    connectOrCreate?: friend_orderCreateOrConnectWithoutBillInput | friend_orderCreateOrConnectWithoutBillInput[]
+    createMany?: friend_orderCreateManyBillInputEnvelope
+    connect?: friend_orderWhereUniqueInput | friend_orderWhereUniqueInput[]
   }
 
-  export type ordersUncheckedCreateNestedManyWithoutBillInput = {
-    create?: XOR<ordersCreateWithoutBillInput, ordersUncheckedCreateWithoutBillInput> | ordersCreateWithoutBillInput[] | ordersUncheckedCreateWithoutBillInput[]
-    connectOrCreate?: ordersCreateOrConnectWithoutBillInput | ordersCreateOrConnectWithoutBillInput[]
-    createMany?: ordersCreateManyBillInputEnvelope
-    connect?: ordersWhereUniqueInput | ordersWhereUniqueInput[]
+  export type friend_orderUncheckedCreateNestedManyWithoutBillInput = {
+    create?: XOR<friend_orderCreateWithoutBillInput, friend_orderUncheckedCreateWithoutBillInput> | friend_orderCreateWithoutBillInput[] | friend_orderUncheckedCreateWithoutBillInput[]
+    connectOrCreate?: friend_orderCreateOrConnectWithoutBillInput | friend_orderCreateOrConnectWithoutBillInput[]
+    createMany?: friend_orderCreateManyBillInputEnvelope
+    connect?: friend_orderWhereUniqueInput | friend_orderWhereUniqueInput[]
   }
 
   export type NullableFloatFieldUpdateOperationsInput = {
@@ -11050,157 +8070,99 @@ export namespace Prisma {
     update?: XOR<XOR<usersUpdateToOneWithWhereWithoutBillInput, usersUpdateWithoutBillInput>, usersUncheckedUpdateWithoutBillInput>
   }
 
-  export type payment_method_detailUpdateOneWithoutBillNestedInput = {
-    create?: XOR<payment_method_detailCreateWithoutBillInput, payment_method_detailUncheckedCreateWithoutBillInput>
-    connectOrCreate?: payment_method_detailCreateOrConnectWithoutBillInput
-    upsert?: payment_method_detailUpsertWithoutBillInput
-    disconnect?: payment_method_detailWhereInput | boolean
-    delete?: payment_method_detailWhereInput | boolean
-    connect?: payment_method_detailWhereUniqueInput
-    update?: XOR<XOR<payment_method_detailUpdateToOneWithWhereWithoutBillInput, payment_method_detailUpdateWithoutBillInput>, payment_method_detailUncheckedUpdateWithoutBillInput>
+  export type payment_accountUpdateOneWithoutBillNestedInput = {
+    create?: XOR<payment_accountCreateWithoutBillInput, payment_accountUncheckedCreateWithoutBillInput>
+    connectOrCreate?: payment_accountCreateOrConnectWithoutBillInput
+    upsert?: payment_accountUpsertWithoutBillInput
+    disconnect?: payment_accountWhereInput | boolean
+    delete?: payment_accountWhereInput | boolean
+    connect?: payment_accountWhereUniqueInput
+    update?: XOR<XOR<payment_accountUpdateToOneWithWhereWithoutBillInput, payment_accountUpdateWithoutBillInput>, payment_accountUncheckedUpdateWithoutBillInput>
   }
 
-  export type ordersUpdateManyWithoutBillNestedInput = {
-    create?: XOR<ordersCreateWithoutBillInput, ordersUncheckedCreateWithoutBillInput> | ordersCreateWithoutBillInput[] | ordersUncheckedCreateWithoutBillInput[]
-    connectOrCreate?: ordersCreateOrConnectWithoutBillInput | ordersCreateOrConnectWithoutBillInput[]
-    upsert?: ordersUpsertWithWhereUniqueWithoutBillInput | ordersUpsertWithWhereUniqueWithoutBillInput[]
-    createMany?: ordersCreateManyBillInputEnvelope
-    set?: ordersWhereUniqueInput | ordersWhereUniqueInput[]
-    disconnect?: ordersWhereUniqueInput | ordersWhereUniqueInput[]
-    delete?: ordersWhereUniqueInput | ordersWhereUniqueInput[]
-    connect?: ordersWhereUniqueInput | ordersWhereUniqueInput[]
-    update?: ordersUpdateWithWhereUniqueWithoutBillInput | ordersUpdateWithWhereUniqueWithoutBillInput[]
-    updateMany?: ordersUpdateManyWithWhereWithoutBillInput | ordersUpdateManyWithWhereWithoutBillInput[]
-    deleteMany?: ordersScalarWhereInput | ordersScalarWhereInput[]
+  export type friend_orderUpdateManyWithoutBillNestedInput = {
+    create?: XOR<friend_orderCreateWithoutBillInput, friend_orderUncheckedCreateWithoutBillInput> | friend_orderCreateWithoutBillInput[] | friend_orderUncheckedCreateWithoutBillInput[]
+    connectOrCreate?: friend_orderCreateOrConnectWithoutBillInput | friend_orderCreateOrConnectWithoutBillInput[]
+    upsert?: friend_orderUpsertWithWhereUniqueWithoutBillInput | friend_orderUpsertWithWhereUniqueWithoutBillInput[]
+    createMany?: friend_orderCreateManyBillInputEnvelope
+    set?: friend_orderWhereUniqueInput | friend_orderWhereUniqueInput[]
+    disconnect?: friend_orderWhereUniqueInput | friend_orderWhereUniqueInput[]
+    delete?: friend_orderWhereUniqueInput | friend_orderWhereUniqueInput[]
+    connect?: friend_orderWhereUniqueInput | friend_orderWhereUniqueInput[]
+    update?: friend_orderUpdateWithWhereUniqueWithoutBillInput | friend_orderUpdateWithWhereUniqueWithoutBillInput[]
+    updateMany?: friend_orderUpdateManyWithWhereWithoutBillInput | friend_orderUpdateManyWithWhereWithoutBillInput[]
+    deleteMany?: friend_orderScalarWhereInput | friend_orderScalarWhereInput[]
   }
 
-  export type ordersUncheckedUpdateManyWithoutBillNestedInput = {
-    create?: XOR<ordersCreateWithoutBillInput, ordersUncheckedCreateWithoutBillInput> | ordersCreateWithoutBillInput[] | ordersUncheckedCreateWithoutBillInput[]
-    connectOrCreate?: ordersCreateOrConnectWithoutBillInput | ordersCreateOrConnectWithoutBillInput[]
-    upsert?: ordersUpsertWithWhereUniqueWithoutBillInput | ordersUpsertWithWhereUniqueWithoutBillInput[]
-    createMany?: ordersCreateManyBillInputEnvelope
-    set?: ordersWhereUniqueInput | ordersWhereUniqueInput[]
-    disconnect?: ordersWhereUniqueInput | ordersWhereUniqueInput[]
-    delete?: ordersWhereUniqueInput | ordersWhereUniqueInput[]
-    connect?: ordersWhereUniqueInput | ordersWhereUniqueInput[]
-    update?: ordersUpdateWithWhereUniqueWithoutBillInput | ordersUpdateWithWhereUniqueWithoutBillInput[]
-    updateMany?: ordersUpdateManyWithWhereWithoutBillInput | ordersUpdateManyWithWhereWithoutBillInput[]
-    deleteMany?: ordersScalarWhereInput | ordersScalarWhereInput[]
+  export type friend_orderUncheckedUpdateManyWithoutBillNestedInput = {
+    create?: XOR<friend_orderCreateWithoutBillInput, friend_orderUncheckedCreateWithoutBillInput> | friend_orderCreateWithoutBillInput[] | friend_orderUncheckedCreateWithoutBillInput[]
+    connectOrCreate?: friend_orderCreateOrConnectWithoutBillInput | friend_orderCreateOrConnectWithoutBillInput[]
+    upsert?: friend_orderUpsertWithWhereUniqueWithoutBillInput | friend_orderUpsertWithWhereUniqueWithoutBillInput[]
+    createMany?: friend_orderCreateManyBillInputEnvelope
+    set?: friend_orderWhereUniqueInput | friend_orderWhereUniqueInput[]
+    disconnect?: friend_orderWhereUniqueInput | friend_orderWhereUniqueInput[]
+    delete?: friend_orderWhereUniqueInput | friend_orderWhereUniqueInput[]
+    connect?: friend_orderWhereUniqueInput | friend_orderWhereUniqueInput[]
+    update?: friend_orderUpdateWithWhereUniqueWithoutBillInput | friend_orderUpdateWithWhereUniqueWithoutBillInput[]
+    updateMany?: friend_orderUpdateManyWithWhereWithoutBillInput | friend_orderUpdateManyWithWhereWithoutBillInput[]
+    deleteMany?: friend_orderScalarWhereInput | friend_orderScalarWhereInput[]
   }
 
-  export type payment_method_detailCreateNestedManyWithoutPayment_methodInput = {
-    create?: XOR<payment_method_detailCreateWithoutPayment_methodInput, payment_method_detailUncheckedCreateWithoutPayment_methodInput> | payment_method_detailCreateWithoutPayment_methodInput[] | payment_method_detailUncheckedCreateWithoutPayment_methodInput[]
-    connectOrCreate?: payment_method_detailCreateOrConnectWithoutPayment_methodInput | payment_method_detailCreateOrConnectWithoutPayment_methodInput[]
-    createMany?: payment_method_detailCreateManyPayment_methodInputEnvelope
-    connect?: payment_method_detailWhereUniqueInput | payment_method_detailWhereUniqueInput[]
-  }
-
-  export type payment_method_detailUncheckedCreateNestedManyWithoutPayment_methodInput = {
-    create?: XOR<payment_method_detailCreateWithoutPayment_methodInput, payment_method_detailUncheckedCreateWithoutPayment_methodInput> | payment_method_detailCreateWithoutPayment_methodInput[] | payment_method_detailUncheckedCreateWithoutPayment_methodInput[]
-    connectOrCreate?: payment_method_detailCreateOrConnectWithoutPayment_methodInput | payment_method_detailCreateOrConnectWithoutPayment_methodInput[]
-    createMany?: payment_method_detailCreateManyPayment_methodInputEnvelope
-    connect?: payment_method_detailWhereUniqueInput | payment_method_detailWhereUniqueInput[]
-  }
-
-  export type payment_method_detailUpdateManyWithoutPayment_methodNestedInput = {
-    create?: XOR<payment_method_detailCreateWithoutPayment_methodInput, payment_method_detailUncheckedCreateWithoutPayment_methodInput> | payment_method_detailCreateWithoutPayment_methodInput[] | payment_method_detailUncheckedCreateWithoutPayment_methodInput[]
-    connectOrCreate?: payment_method_detailCreateOrConnectWithoutPayment_methodInput | payment_method_detailCreateOrConnectWithoutPayment_methodInput[]
-    upsert?: payment_method_detailUpsertWithWhereUniqueWithoutPayment_methodInput | payment_method_detailUpsertWithWhereUniqueWithoutPayment_methodInput[]
-    createMany?: payment_method_detailCreateManyPayment_methodInputEnvelope
-    set?: payment_method_detailWhereUniqueInput | payment_method_detailWhereUniqueInput[]
-    disconnect?: payment_method_detailWhereUniqueInput | payment_method_detailWhereUniqueInput[]
-    delete?: payment_method_detailWhereUniqueInput | payment_method_detailWhereUniqueInput[]
-    connect?: payment_method_detailWhereUniqueInput | payment_method_detailWhereUniqueInput[]
-    update?: payment_method_detailUpdateWithWhereUniqueWithoutPayment_methodInput | payment_method_detailUpdateWithWhereUniqueWithoutPayment_methodInput[]
-    updateMany?: payment_method_detailUpdateManyWithWhereWithoutPayment_methodInput | payment_method_detailUpdateManyWithWhereWithoutPayment_methodInput[]
-    deleteMany?: payment_method_detailScalarWhereInput | payment_method_detailScalarWhereInput[]
-  }
-
-  export type payment_method_detailUncheckedUpdateManyWithoutPayment_methodNestedInput = {
-    create?: XOR<payment_method_detailCreateWithoutPayment_methodInput, payment_method_detailUncheckedCreateWithoutPayment_methodInput> | payment_method_detailCreateWithoutPayment_methodInput[] | payment_method_detailUncheckedCreateWithoutPayment_methodInput[]
-    connectOrCreate?: payment_method_detailCreateOrConnectWithoutPayment_methodInput | payment_method_detailCreateOrConnectWithoutPayment_methodInput[]
-    upsert?: payment_method_detailUpsertWithWhereUniqueWithoutPayment_methodInput | payment_method_detailUpsertWithWhereUniqueWithoutPayment_methodInput[]
-    createMany?: payment_method_detailCreateManyPayment_methodInputEnvelope
-    set?: payment_method_detailWhereUniqueInput | payment_method_detailWhereUniqueInput[]
-    disconnect?: payment_method_detailWhereUniqueInput | payment_method_detailWhereUniqueInput[]
-    delete?: payment_method_detailWhereUniqueInput | payment_method_detailWhereUniqueInput[]
-    connect?: payment_method_detailWhereUniqueInput | payment_method_detailWhereUniqueInput[]
-    update?: payment_method_detailUpdateWithWhereUniqueWithoutPayment_methodInput | payment_method_detailUpdateWithWhereUniqueWithoutPayment_methodInput[]
-    updateMany?: payment_method_detailUpdateManyWithWhereWithoutPayment_methodInput | payment_method_detailUpdateManyWithWhereWithoutPayment_methodInput[]
-    deleteMany?: payment_method_detailScalarWhereInput | payment_method_detailScalarWhereInput[]
-  }
-
-  export type usersCreateNestedOneWithoutPayment_method_detailInput = {
-    create?: XOR<usersCreateWithoutPayment_method_detailInput, usersUncheckedCreateWithoutPayment_method_detailInput>
-    connectOrCreate?: usersCreateOrConnectWithoutPayment_method_detailInput
+  export type usersCreateNestedOneWithoutPayment_accountInput = {
+    create?: XOR<usersCreateWithoutPayment_accountInput, usersUncheckedCreateWithoutPayment_accountInput>
+    connectOrCreate?: usersCreateOrConnectWithoutPayment_accountInput
     connect?: usersWhereUniqueInput
   }
 
-  export type payment_methodCreateNestedOneWithoutPayment_method_detailInput = {
-    create?: XOR<payment_methodCreateWithoutPayment_method_detailInput, payment_methodUncheckedCreateWithoutPayment_method_detailInput>
-    connectOrCreate?: payment_methodCreateOrConnectWithoutPayment_method_detailInput
-    connect?: payment_methodWhereUniqueInput
-  }
-
-  export type billCreateNestedManyWithoutPayment_method_detailsInput = {
-    create?: XOR<billCreateWithoutPayment_method_detailsInput, billUncheckedCreateWithoutPayment_method_detailsInput> | billCreateWithoutPayment_method_detailsInput[] | billUncheckedCreateWithoutPayment_method_detailsInput[]
-    connectOrCreate?: billCreateOrConnectWithoutPayment_method_detailsInput | billCreateOrConnectWithoutPayment_method_detailsInput[]
-    createMany?: billCreateManyPayment_method_detailsInputEnvelope
+  export type billCreateNestedManyWithoutPayment_accountInput = {
+    create?: XOR<billCreateWithoutPayment_accountInput, billUncheckedCreateWithoutPayment_accountInput> | billCreateWithoutPayment_accountInput[] | billUncheckedCreateWithoutPayment_accountInput[]
+    connectOrCreate?: billCreateOrConnectWithoutPayment_accountInput | billCreateOrConnectWithoutPayment_accountInput[]
+    createMany?: billCreateManyPayment_accountInputEnvelope
     connect?: billWhereUniqueInput | billWhereUniqueInput[]
   }
 
-  export type billUncheckedCreateNestedManyWithoutPayment_method_detailsInput = {
-    create?: XOR<billCreateWithoutPayment_method_detailsInput, billUncheckedCreateWithoutPayment_method_detailsInput> | billCreateWithoutPayment_method_detailsInput[] | billUncheckedCreateWithoutPayment_method_detailsInput[]
-    connectOrCreate?: billCreateOrConnectWithoutPayment_method_detailsInput | billCreateOrConnectWithoutPayment_method_detailsInput[]
-    createMany?: billCreateManyPayment_method_detailsInputEnvelope
+  export type billUncheckedCreateNestedManyWithoutPayment_accountInput = {
+    create?: XOR<billCreateWithoutPayment_accountInput, billUncheckedCreateWithoutPayment_accountInput> | billCreateWithoutPayment_accountInput[] | billUncheckedCreateWithoutPayment_accountInput[]
+    connectOrCreate?: billCreateOrConnectWithoutPayment_accountInput | billCreateOrConnectWithoutPayment_accountInput[]
+    createMany?: billCreateManyPayment_accountInputEnvelope
     connect?: billWhereUniqueInput | billWhereUniqueInput[]
   }
 
-  export type usersUpdateOneWithoutPayment_method_detailNestedInput = {
-    create?: XOR<usersCreateWithoutPayment_method_detailInput, usersUncheckedCreateWithoutPayment_method_detailInput>
-    connectOrCreate?: usersCreateOrConnectWithoutPayment_method_detailInput
-    upsert?: usersUpsertWithoutPayment_method_detailInput
+  export type usersUpdateOneWithoutPayment_accountNestedInput = {
+    create?: XOR<usersCreateWithoutPayment_accountInput, usersUncheckedCreateWithoutPayment_accountInput>
+    connectOrCreate?: usersCreateOrConnectWithoutPayment_accountInput
+    upsert?: usersUpsertWithoutPayment_accountInput
     disconnect?: usersWhereInput | boolean
     delete?: usersWhereInput | boolean
     connect?: usersWhereUniqueInput
-    update?: XOR<XOR<usersUpdateToOneWithWhereWithoutPayment_method_detailInput, usersUpdateWithoutPayment_method_detailInput>, usersUncheckedUpdateWithoutPayment_method_detailInput>
+    update?: XOR<XOR<usersUpdateToOneWithWhereWithoutPayment_accountInput, usersUpdateWithoutPayment_accountInput>, usersUncheckedUpdateWithoutPayment_accountInput>
   }
 
-  export type payment_methodUpdateOneWithoutPayment_method_detailNestedInput = {
-    create?: XOR<payment_methodCreateWithoutPayment_method_detailInput, payment_methodUncheckedCreateWithoutPayment_method_detailInput>
-    connectOrCreate?: payment_methodCreateOrConnectWithoutPayment_method_detailInput
-    upsert?: payment_methodUpsertWithoutPayment_method_detailInput
-    disconnect?: payment_methodWhereInput | boolean
-    delete?: payment_methodWhereInput | boolean
-    connect?: payment_methodWhereUniqueInput
-    update?: XOR<XOR<payment_methodUpdateToOneWithWhereWithoutPayment_method_detailInput, payment_methodUpdateWithoutPayment_method_detailInput>, payment_methodUncheckedUpdateWithoutPayment_method_detailInput>
-  }
-
-  export type billUpdateManyWithoutPayment_method_detailsNestedInput = {
-    create?: XOR<billCreateWithoutPayment_method_detailsInput, billUncheckedCreateWithoutPayment_method_detailsInput> | billCreateWithoutPayment_method_detailsInput[] | billUncheckedCreateWithoutPayment_method_detailsInput[]
-    connectOrCreate?: billCreateOrConnectWithoutPayment_method_detailsInput | billCreateOrConnectWithoutPayment_method_detailsInput[]
-    upsert?: billUpsertWithWhereUniqueWithoutPayment_method_detailsInput | billUpsertWithWhereUniqueWithoutPayment_method_detailsInput[]
-    createMany?: billCreateManyPayment_method_detailsInputEnvelope
+  export type billUpdateManyWithoutPayment_accountNestedInput = {
+    create?: XOR<billCreateWithoutPayment_accountInput, billUncheckedCreateWithoutPayment_accountInput> | billCreateWithoutPayment_accountInput[] | billUncheckedCreateWithoutPayment_accountInput[]
+    connectOrCreate?: billCreateOrConnectWithoutPayment_accountInput | billCreateOrConnectWithoutPayment_accountInput[]
+    upsert?: billUpsertWithWhereUniqueWithoutPayment_accountInput | billUpsertWithWhereUniqueWithoutPayment_accountInput[]
+    createMany?: billCreateManyPayment_accountInputEnvelope
     set?: billWhereUniqueInput | billWhereUniqueInput[]
     disconnect?: billWhereUniqueInput | billWhereUniqueInput[]
     delete?: billWhereUniqueInput | billWhereUniqueInput[]
     connect?: billWhereUniqueInput | billWhereUniqueInput[]
-    update?: billUpdateWithWhereUniqueWithoutPayment_method_detailsInput | billUpdateWithWhereUniqueWithoutPayment_method_detailsInput[]
-    updateMany?: billUpdateManyWithWhereWithoutPayment_method_detailsInput | billUpdateManyWithWhereWithoutPayment_method_detailsInput[]
+    update?: billUpdateWithWhereUniqueWithoutPayment_accountInput | billUpdateWithWhereUniqueWithoutPayment_accountInput[]
+    updateMany?: billUpdateManyWithWhereWithoutPayment_accountInput | billUpdateManyWithWhereWithoutPayment_accountInput[]
     deleteMany?: billScalarWhereInput | billScalarWhereInput[]
   }
 
-  export type billUncheckedUpdateManyWithoutPayment_method_detailsNestedInput = {
-    create?: XOR<billCreateWithoutPayment_method_detailsInput, billUncheckedCreateWithoutPayment_method_detailsInput> | billCreateWithoutPayment_method_detailsInput[] | billUncheckedCreateWithoutPayment_method_detailsInput[]
-    connectOrCreate?: billCreateOrConnectWithoutPayment_method_detailsInput | billCreateOrConnectWithoutPayment_method_detailsInput[]
-    upsert?: billUpsertWithWhereUniqueWithoutPayment_method_detailsInput | billUpsertWithWhereUniqueWithoutPayment_method_detailsInput[]
-    createMany?: billCreateManyPayment_method_detailsInputEnvelope
+  export type billUncheckedUpdateManyWithoutPayment_accountNestedInput = {
+    create?: XOR<billCreateWithoutPayment_accountInput, billUncheckedCreateWithoutPayment_accountInput> | billCreateWithoutPayment_accountInput[] | billUncheckedCreateWithoutPayment_accountInput[]
+    connectOrCreate?: billCreateOrConnectWithoutPayment_accountInput | billCreateOrConnectWithoutPayment_accountInput[]
+    upsert?: billUpsertWithWhereUniqueWithoutPayment_accountInput | billUpsertWithWhereUniqueWithoutPayment_accountInput[]
+    createMany?: billCreateManyPayment_accountInputEnvelope
     set?: billWhereUniqueInput | billWhereUniqueInput[]
     disconnect?: billWhereUniqueInput | billWhereUniqueInput[]
     delete?: billWhereUniqueInput | billWhereUniqueInput[]
     connect?: billWhereUniqueInput | billWhereUniqueInput[]
-    update?: billUpdateWithWhereUniqueWithoutPayment_method_detailsInput | billUpdateWithWhereUniqueWithoutPayment_method_detailsInput[]
-    updateMany?: billUpdateManyWithWhereWithoutPayment_method_detailsInput | billUpdateManyWithWhereWithoutPayment_method_detailsInput[]
+    update?: billUpdateWithWhereUniqueWithoutPayment_accountInput | billUpdateWithWhereUniqueWithoutPayment_accountInput[]
+    updateMany?: billUpdateManyWithWhereWithoutPayment_accountInput | billUpdateManyWithWhereWithoutPayment_accountInput[]
     deleteMany?: billScalarWhereInput | billScalarWhereInput[]
   }
 
@@ -11348,17 +8310,6 @@ export namespace Prisma {
     not?: NestedStringFilter<$PrismaModel> | string
   }
 
-  export type NestedBigIntFilter<$PrismaModel = never> = {
-    equals?: bigint | number | BigIntFieldRefInput<$PrismaModel>
-    in?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel>
-    notIn?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel>
-    lt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
-    lte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
-    gt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
-    gte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
-    not?: NestedBigIntFilter<$PrismaModel> | bigint | number
-  }
-
   export type NestedIntNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel> | null
     in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
@@ -11403,22 +8354,6 @@ export namespace Prisma {
     _max?: NestedStringFilter<$PrismaModel>
   }
 
-  export type NestedBigIntWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: bigint | number | BigIntFieldRefInput<$PrismaModel>
-    in?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel>
-    notIn?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel>
-    lt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
-    lte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
-    gt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
-    gte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
-    not?: NestedBigIntWithAggregatesFilter<$PrismaModel> | bigint | number
-    _count?: NestedIntFilter<$PrismaModel>
-    _avg?: NestedFloatFilter<$PrismaModel>
-    _sum?: NestedBigIntFilter<$PrismaModel>
-    _min?: NestedBigIntFilter<$PrismaModel>
-    _max?: NestedBigIntFilter<$PrismaModel>
-  }
-
   export type NestedBoolFilter<$PrismaModel = never> = {
     equals?: boolean | BooleanFieldRefInput<$PrismaModel>
     not?: NestedBoolFilter<$PrismaModel> | boolean
@@ -11448,79 +8383,27 @@ export namespace Prisma {
     _max?: NestedFloatNullableFilter<$PrismaModel>
   }
 
-  export type friendsCreateWithoutUsersInput = {
-    friends_name: string
-    friends_photo?: string | null
-    friends_order?: friends_orderCreateNestedManyWithoutFriendsInput
-  }
-
-  export type friendsUncheckedCreateWithoutUsersInput = {
-    id?: number
-    friends_name: string
-    friends_photo?: string | null
-    friends_order?: friends_orderUncheckedCreateNestedManyWithoutFriendsInput
-  }
-
-  export type friendsCreateOrConnectWithoutUsersInput = {
-    where: friendsWhereUniqueInput
-    create: XOR<friendsCreateWithoutUsersInput, friendsUncheckedCreateWithoutUsersInput>
-  }
-
-  export type friendsCreateManyUsersInputEnvelope = {
-    data: friendsCreateManyUsersInput | friendsCreateManyUsersInput[]
-    skipDuplicates?: boolean
-  }
-
-  export type ordersCreateWithoutUsersInput = {
-    menu_name: string
-    qty: number
-    price: bigint | number
-    bill?: billCreateNestedOneWithoutOrdersInput
-    friends_order?: friends_orderCreateNestedManyWithoutOrdersInput
-  }
-
-  export type ordersUncheckedCreateWithoutUsersInput = {
-    id?: number
-    bill_id?: number | null
-    menu_name: string
-    qty: number
-    price: bigint | number
-    friends_order?: friends_orderUncheckedCreateNestedManyWithoutOrdersInput
-  }
-
-  export type ordersCreateOrConnectWithoutUsersInput = {
-    where: ordersWhereUniqueInput
-    create: XOR<ordersCreateWithoutUsersInput, ordersUncheckedCreateWithoutUsersInput>
-  }
-
-  export type ordersCreateManyUsersInputEnvelope = {
-    data: ordersCreateManyUsersInput | ordersCreateManyUsersInput[]
-    skipDuplicates?: boolean
-  }
-
   export type billCreateWithoutUsersInput = {
     description: string
     discount?: number | null
     tax: number
     service?: number | null
-    total_price: bigint | number
+    total_price?: number
     date?: Date | string
-    is_completed?: boolean
-    payment_method_details?: payment_method_detailCreateNestedOneWithoutBillInput
-    orders?: ordersCreateNestedManyWithoutBillInput
+    payment_account?: payment_accountCreateNestedOneWithoutBillInput
+    friend_order?: friend_orderCreateNestedManyWithoutBillInput
   }
 
   export type billUncheckedCreateWithoutUsersInput = {
     id?: number
-    payment_method_id?: number | null
+    payment_account_id?: number | null
     description: string
     discount?: number | null
     tax: number
     service?: number | null
-    total_price: bigint | number
+    total_price?: number
     date?: Date | string
-    is_completed?: boolean
-    orders?: ordersUncheckedCreateNestedManyWithoutBillInput
+    friend_order?: friend_orderUncheckedCreateNestedManyWithoutBillInput
   }
 
   export type billCreateOrConnectWithoutUsersInput = {
@@ -11533,83 +8416,31 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
-  export type payment_method_detailCreateWithoutUsersInput = {
-    card_number: bigint | number
-    card_name: string
-    payment_method?: payment_methodCreateNestedOneWithoutPayment_method_detailInput
-    bill?: billCreateNestedManyWithoutPayment_method_detailsInput
+  export type payment_accountCreateWithoutUsersInput = {
+    name: string
+    number: string
+    card_holder: string
+    is_activated: boolean
+    bill?: billCreateNestedManyWithoutPayment_accountInput
   }
 
-  export type payment_method_detailUncheckedCreateWithoutUsersInput = {
+  export type payment_accountUncheckedCreateWithoutUsersInput = {
     id?: number
-    payment_method_id?: number | null
-    card_number: bigint | number
-    card_name: string
-    bill?: billUncheckedCreateNestedManyWithoutPayment_method_detailsInput
+    name: string
+    number: string
+    card_holder: string
+    is_activated: boolean
+    bill?: billUncheckedCreateNestedManyWithoutPayment_accountInput
   }
 
-  export type payment_method_detailCreateOrConnectWithoutUsersInput = {
-    where: payment_method_detailWhereUniqueInput
-    create: XOR<payment_method_detailCreateWithoutUsersInput, payment_method_detailUncheckedCreateWithoutUsersInput>
+  export type payment_accountCreateOrConnectWithoutUsersInput = {
+    where: payment_accountWhereUniqueInput
+    create: XOR<payment_accountCreateWithoutUsersInput, payment_accountUncheckedCreateWithoutUsersInput>
   }
 
-  export type payment_method_detailCreateManyUsersInputEnvelope = {
-    data: payment_method_detailCreateManyUsersInput | payment_method_detailCreateManyUsersInput[]
+  export type payment_accountCreateManyUsersInputEnvelope = {
+    data: payment_accountCreateManyUsersInput | payment_accountCreateManyUsersInput[]
     skipDuplicates?: boolean
-  }
-
-  export type friendsUpsertWithWhereUniqueWithoutUsersInput = {
-    where: friendsWhereUniqueInput
-    update: XOR<friendsUpdateWithoutUsersInput, friendsUncheckedUpdateWithoutUsersInput>
-    create: XOR<friendsCreateWithoutUsersInput, friendsUncheckedCreateWithoutUsersInput>
-  }
-
-  export type friendsUpdateWithWhereUniqueWithoutUsersInput = {
-    where: friendsWhereUniqueInput
-    data: XOR<friendsUpdateWithoutUsersInput, friendsUncheckedUpdateWithoutUsersInput>
-  }
-
-  export type friendsUpdateManyWithWhereWithoutUsersInput = {
-    where: friendsScalarWhereInput
-    data: XOR<friendsUpdateManyMutationInput, friendsUncheckedUpdateManyWithoutUsersInput>
-  }
-
-  export type friendsScalarWhereInput = {
-    AND?: friendsScalarWhereInput | friendsScalarWhereInput[]
-    OR?: friendsScalarWhereInput[]
-    NOT?: friendsScalarWhereInput | friendsScalarWhereInput[]
-    id?: IntFilter<"friends"> | number
-    user_id?: IntNullableFilter<"friends"> | number | null
-    friends_name?: StringFilter<"friends"> | string
-    friends_photo?: StringNullableFilter<"friends"> | string | null
-  }
-
-  export type ordersUpsertWithWhereUniqueWithoutUsersInput = {
-    where: ordersWhereUniqueInput
-    update: XOR<ordersUpdateWithoutUsersInput, ordersUncheckedUpdateWithoutUsersInput>
-    create: XOR<ordersCreateWithoutUsersInput, ordersUncheckedCreateWithoutUsersInput>
-  }
-
-  export type ordersUpdateWithWhereUniqueWithoutUsersInput = {
-    where: ordersWhereUniqueInput
-    data: XOR<ordersUpdateWithoutUsersInput, ordersUncheckedUpdateWithoutUsersInput>
-  }
-
-  export type ordersUpdateManyWithWhereWithoutUsersInput = {
-    where: ordersScalarWhereInput
-    data: XOR<ordersUpdateManyMutationInput, ordersUncheckedUpdateManyWithoutUsersInput>
-  }
-
-  export type ordersScalarWhereInput = {
-    AND?: ordersScalarWhereInput | ordersScalarWhereInput[]
-    OR?: ordersScalarWhereInput[]
-    NOT?: ordersScalarWhereInput | ordersScalarWhereInput[]
-    id?: IntFilter<"orders"> | number
-    user_id?: IntNullableFilter<"orders"> | number | null
-    bill_id?: IntNullableFilter<"orders"> | number | null
-    menu_name?: StringFilter<"orders"> | string
-    qty?: IntFilter<"orders"> | number
-    price?: BigIntFilter<"orders"> | bigint | number
   }
 
   export type billUpsertWithWhereUniqueWithoutUsersInput = {
@@ -11634,462 +8465,195 @@ export namespace Prisma {
     NOT?: billScalarWhereInput | billScalarWhereInput[]
     id?: IntFilter<"bill"> | number
     user_id?: IntNullableFilter<"bill"> | number | null
-    payment_method_id?: IntNullableFilter<"bill"> | number | null
+    payment_account_id?: IntNullableFilter<"bill"> | number | null
     description?: StringFilter<"bill"> | string
     discount?: FloatNullableFilter<"bill"> | number | null
     tax?: IntFilter<"bill"> | number
     service?: FloatNullableFilter<"bill"> | number | null
-    total_price?: BigIntFilter<"bill"> | bigint | number
+    total_price?: IntFilter<"bill"> | number
     date?: DateTimeFilter<"bill"> | Date | string
-    is_completed?: BoolFilter<"bill"> | boolean
   }
 
-  export type payment_method_detailUpsertWithWhereUniqueWithoutUsersInput = {
-    where: payment_method_detailWhereUniqueInput
-    update: XOR<payment_method_detailUpdateWithoutUsersInput, payment_method_detailUncheckedUpdateWithoutUsersInput>
-    create: XOR<payment_method_detailCreateWithoutUsersInput, payment_method_detailUncheckedCreateWithoutUsersInput>
+  export type payment_accountUpsertWithWhereUniqueWithoutUsersInput = {
+    where: payment_accountWhereUniqueInput
+    update: XOR<payment_accountUpdateWithoutUsersInput, payment_accountUncheckedUpdateWithoutUsersInput>
+    create: XOR<payment_accountCreateWithoutUsersInput, payment_accountUncheckedCreateWithoutUsersInput>
   }
 
-  export type payment_method_detailUpdateWithWhereUniqueWithoutUsersInput = {
-    where: payment_method_detailWhereUniqueInput
-    data: XOR<payment_method_detailUpdateWithoutUsersInput, payment_method_detailUncheckedUpdateWithoutUsersInput>
+  export type payment_accountUpdateWithWhereUniqueWithoutUsersInput = {
+    where: payment_accountWhereUniqueInput
+    data: XOR<payment_accountUpdateWithoutUsersInput, payment_accountUncheckedUpdateWithoutUsersInput>
   }
 
-  export type payment_method_detailUpdateManyWithWhereWithoutUsersInput = {
-    where: payment_method_detailScalarWhereInput
-    data: XOR<payment_method_detailUpdateManyMutationInput, payment_method_detailUncheckedUpdateManyWithoutUsersInput>
+  export type payment_accountUpdateManyWithWhereWithoutUsersInput = {
+    where: payment_accountScalarWhereInput
+    data: XOR<payment_accountUpdateManyMutationInput, payment_accountUncheckedUpdateManyWithoutUsersInput>
   }
 
-  export type payment_method_detailScalarWhereInput = {
-    AND?: payment_method_detailScalarWhereInput | payment_method_detailScalarWhereInput[]
-    OR?: payment_method_detailScalarWhereInput[]
-    NOT?: payment_method_detailScalarWhereInput | payment_method_detailScalarWhereInput[]
-    id?: IntFilter<"payment_method_detail"> | number
-    user_id?: IntNullableFilter<"payment_method_detail"> | number | null
-    payment_method_id?: IntNullableFilter<"payment_method_detail"> | number | null
-    card_number?: BigIntFilter<"payment_method_detail"> | bigint | number
-    card_name?: StringFilter<"payment_method_detail"> | string
+  export type payment_accountScalarWhereInput = {
+    AND?: payment_accountScalarWhereInput | payment_accountScalarWhereInput[]
+    OR?: payment_accountScalarWhereInput[]
+    NOT?: payment_accountScalarWhereInput | payment_accountScalarWhereInput[]
+    id?: IntFilter<"payment_account"> | number
+    user_id?: IntNullableFilter<"payment_account"> | number | null
+    name?: StringFilter<"payment_account"> | string
+    number?: StringFilter<"payment_account"> | string
+    card_holder?: StringFilter<"payment_account"> | string
+    is_activated?: BoolFilter<"payment_account"> | boolean
   }
 
-  export type usersCreateWithoutOrdersInput = {
-    username?: string | null
-    password?: string | null
-    fullname?: string | null
-    phone_number?: string | null
-    email?: string | null
-    bio?: string | null
-    dob?: Date | string | null
-    photo_profile?: string | null
-    created_at?: Date | string
-    update_at?: Date | string
-    friends?: friendsCreateNestedManyWithoutUsersInput
-    bill?: billCreateNestedManyWithoutUsersInput
-    payment_method_detail?: payment_method_detailCreateNestedManyWithoutUsersInput
-  }
-
-  export type usersUncheckedCreateWithoutOrdersInput = {
-    id?: number
-    username?: string | null
-    password?: string | null
-    fullname?: string | null
-    phone_number?: string | null
-    email?: string | null
-    bio?: string | null
-    dob?: Date | string | null
-    photo_profile?: string | null
-    created_at?: Date | string
-    update_at?: Date | string
-    friends?: friendsUncheckedCreateNestedManyWithoutUsersInput
-    bill?: billUncheckedCreateNestedManyWithoutUsersInput
-    payment_method_detail?: payment_method_detailUncheckedCreateNestedManyWithoutUsersInput
-  }
-
-  export type usersCreateOrConnectWithoutOrdersInput = {
-    where: usersWhereUniqueInput
-    create: XOR<usersCreateWithoutOrdersInput, usersUncheckedCreateWithoutOrdersInput>
-  }
-
-  export type billCreateWithoutOrdersInput = {
-    description: string
-    discount?: number | null
-    tax: number
-    service?: number | null
-    total_price: bigint | number
-    date?: Date | string
-    is_completed?: boolean
-    users?: usersCreateNestedOneWithoutBillInput
-    payment_method_details?: payment_method_detailCreateNestedOneWithoutBillInput
-  }
-
-  export type billUncheckedCreateWithoutOrdersInput = {
-    id?: number
-    user_id?: number | null
-    payment_method_id?: number | null
-    description: string
-    discount?: number | null
-    tax: number
-    service?: number | null
-    total_price: bigint | number
-    date?: Date | string
-    is_completed?: boolean
-  }
-
-  export type billCreateOrConnectWithoutOrdersInput = {
-    where: billWhereUniqueInput
-    create: XOR<billCreateWithoutOrdersInput, billUncheckedCreateWithoutOrdersInput>
-  }
-
-  export type friends_orderCreateWithoutOrdersInput = {
-    friend_order_price: bigint | number
+  export type friend_orderCreateWithoutOrder_detailInput = {
+    name: string
     is_paid?: boolean
-    created_at?: Date | string
-    update_at?: Date | string
-    friends?: friendsCreateNestedOneWithoutFriends_orderInput
+    bill?: billCreateNestedOneWithoutFriend_orderInput
   }
 
-  export type friends_orderUncheckedCreateWithoutOrdersInput = {
+  export type friend_orderUncheckedCreateWithoutOrder_detailInput = {
     id?: number
-    friends_id?: number | null
-    friend_order_price: bigint | number
-    is_paid?: boolean
-    created_at?: Date | string
-    update_at?: Date | string
-  }
-
-  export type friends_orderCreateOrConnectWithoutOrdersInput = {
-    where: friends_orderWhereUniqueInput
-    create: XOR<friends_orderCreateWithoutOrdersInput, friends_orderUncheckedCreateWithoutOrdersInput>
-  }
-
-  export type friends_orderCreateManyOrdersInputEnvelope = {
-    data: friends_orderCreateManyOrdersInput | friends_orderCreateManyOrdersInput[]
-    skipDuplicates?: boolean
-  }
-
-  export type usersUpsertWithoutOrdersInput = {
-    update: XOR<usersUpdateWithoutOrdersInput, usersUncheckedUpdateWithoutOrdersInput>
-    create: XOR<usersCreateWithoutOrdersInput, usersUncheckedCreateWithoutOrdersInput>
-    where?: usersWhereInput
-  }
-
-  export type usersUpdateToOneWithWhereWithoutOrdersInput = {
-    where?: usersWhereInput
-    data: XOR<usersUpdateWithoutOrdersInput, usersUncheckedUpdateWithoutOrdersInput>
-  }
-
-  export type usersUpdateWithoutOrdersInput = {
-    username?: NullableStringFieldUpdateOperationsInput | string | null
-    password?: NullableStringFieldUpdateOperationsInput | string | null
-    fullname?: NullableStringFieldUpdateOperationsInput | string | null
-    phone_number?: NullableStringFieldUpdateOperationsInput | string | null
-    email?: NullableStringFieldUpdateOperationsInput | string | null
-    bio?: NullableStringFieldUpdateOperationsInput | string | null
-    dob?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    photo_profile?: NullableStringFieldUpdateOperationsInput | string | null
-    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    update_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    friends?: friendsUpdateManyWithoutUsersNestedInput
-    bill?: billUpdateManyWithoutUsersNestedInput
-    payment_method_detail?: payment_method_detailUpdateManyWithoutUsersNestedInput
-  }
-
-  export type usersUncheckedUpdateWithoutOrdersInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    username?: NullableStringFieldUpdateOperationsInput | string | null
-    password?: NullableStringFieldUpdateOperationsInput | string | null
-    fullname?: NullableStringFieldUpdateOperationsInput | string | null
-    phone_number?: NullableStringFieldUpdateOperationsInput | string | null
-    email?: NullableStringFieldUpdateOperationsInput | string | null
-    bio?: NullableStringFieldUpdateOperationsInput | string | null
-    dob?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    photo_profile?: NullableStringFieldUpdateOperationsInput | string | null
-    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    update_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    friends?: friendsUncheckedUpdateManyWithoutUsersNestedInput
-    bill?: billUncheckedUpdateManyWithoutUsersNestedInput
-    payment_method_detail?: payment_method_detailUncheckedUpdateManyWithoutUsersNestedInput
-  }
-
-  export type billUpsertWithoutOrdersInput = {
-    update: XOR<billUpdateWithoutOrdersInput, billUncheckedUpdateWithoutOrdersInput>
-    create: XOR<billCreateWithoutOrdersInput, billUncheckedCreateWithoutOrdersInput>
-    where?: billWhereInput
-  }
-
-  export type billUpdateToOneWithWhereWithoutOrdersInput = {
-    where?: billWhereInput
-    data: XOR<billUpdateWithoutOrdersInput, billUncheckedUpdateWithoutOrdersInput>
-  }
-
-  export type billUpdateWithoutOrdersInput = {
-    description?: StringFieldUpdateOperationsInput | string
-    discount?: NullableFloatFieldUpdateOperationsInput | number | null
-    tax?: IntFieldUpdateOperationsInput | number
-    service?: NullableFloatFieldUpdateOperationsInput | number | null
-    total_price?: BigIntFieldUpdateOperationsInput | bigint | number
-    date?: DateTimeFieldUpdateOperationsInput | Date | string
-    is_completed?: BoolFieldUpdateOperationsInput | boolean
-    users?: usersUpdateOneWithoutBillNestedInput
-    payment_method_details?: payment_method_detailUpdateOneWithoutBillNestedInput
-  }
-
-  export type billUncheckedUpdateWithoutOrdersInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    user_id?: NullableIntFieldUpdateOperationsInput | number | null
-    payment_method_id?: NullableIntFieldUpdateOperationsInput | number | null
-    description?: StringFieldUpdateOperationsInput | string
-    discount?: NullableFloatFieldUpdateOperationsInput | number | null
-    tax?: IntFieldUpdateOperationsInput | number
-    service?: NullableFloatFieldUpdateOperationsInput | number | null
-    total_price?: BigIntFieldUpdateOperationsInput | bigint | number
-    date?: DateTimeFieldUpdateOperationsInput | Date | string
-    is_completed?: BoolFieldUpdateOperationsInput | boolean
-  }
-
-  export type friends_orderUpsertWithWhereUniqueWithoutOrdersInput = {
-    where: friends_orderWhereUniqueInput
-    update: XOR<friends_orderUpdateWithoutOrdersInput, friends_orderUncheckedUpdateWithoutOrdersInput>
-    create: XOR<friends_orderCreateWithoutOrdersInput, friends_orderUncheckedCreateWithoutOrdersInput>
-  }
-
-  export type friends_orderUpdateWithWhereUniqueWithoutOrdersInput = {
-    where: friends_orderWhereUniqueInput
-    data: XOR<friends_orderUpdateWithoutOrdersInput, friends_orderUncheckedUpdateWithoutOrdersInput>
-  }
-
-  export type friends_orderUpdateManyWithWhereWithoutOrdersInput = {
-    where: friends_orderScalarWhereInput
-    data: XOR<friends_orderUpdateManyMutationInput, friends_orderUncheckedUpdateManyWithoutOrdersInput>
-  }
-
-  export type friends_orderScalarWhereInput = {
-    AND?: friends_orderScalarWhereInput | friends_orderScalarWhereInput[]
-    OR?: friends_orderScalarWhereInput[]
-    NOT?: friends_orderScalarWhereInput | friends_orderScalarWhereInput[]
-    id?: IntFilter<"friends_order"> | number
-    orders_id?: IntNullableFilter<"friends_order"> | number | null
-    friends_id?: IntNullableFilter<"friends_order"> | number | null
-    friend_order_price?: BigIntFilter<"friends_order"> | bigint | number
-    is_paid?: BoolFilter<"friends_order"> | boolean
-    created_at?: DateTimeFilter<"friends_order"> | Date | string
-    update_at?: DateTimeFilter<"friends_order"> | Date | string
-  }
-
-  export type ordersCreateWithoutFriends_orderInput = {
-    menu_name: string
-    qty: number
-    price: bigint | number
-    users?: usersCreateNestedOneWithoutOrdersInput
-    bill?: billCreateNestedOneWithoutOrdersInput
-  }
-
-  export type ordersUncheckedCreateWithoutFriends_orderInput = {
-    id?: number
-    user_id?: number | null
     bill_id?: number | null
-    menu_name: string
-    qty: number
-    price: bigint | number
+    name: string
+    is_paid?: boolean
   }
 
-  export type ordersCreateOrConnectWithoutFriends_orderInput = {
-    where: ordersWhereUniqueInput
-    create: XOR<ordersCreateWithoutFriends_orderInput, ordersUncheckedCreateWithoutFriends_orderInput>
+  export type friend_orderCreateOrConnectWithoutOrder_detailInput = {
+    where: friend_orderWhereUniqueInput
+    create: XOR<friend_orderCreateWithoutOrder_detailInput, friend_orderUncheckedCreateWithoutOrder_detailInput>
   }
 
-  export type friendsCreateWithoutFriends_orderInput = {
-    friends_name: string
-    friends_photo?: string | null
-    users?: usersCreateNestedOneWithoutFriendsInput
+  export type friend_orderUpsertWithoutOrder_detailInput = {
+    update: XOR<friend_orderUpdateWithoutOrder_detailInput, friend_orderUncheckedUpdateWithoutOrder_detailInput>
+    create: XOR<friend_orderCreateWithoutOrder_detailInput, friend_orderUncheckedCreateWithoutOrder_detailInput>
+    where?: friend_orderWhereInput
   }
 
-  export type friendsUncheckedCreateWithoutFriends_orderInput = {
+  export type friend_orderUpdateToOneWithWhereWithoutOrder_detailInput = {
+    where?: friend_orderWhereInput
+    data: XOR<friend_orderUpdateWithoutOrder_detailInput, friend_orderUncheckedUpdateWithoutOrder_detailInput>
+  }
+
+  export type friend_orderUpdateWithoutOrder_detailInput = {
+    name?: StringFieldUpdateOperationsInput | string
+    is_paid?: BoolFieldUpdateOperationsInput | boolean
+    bill?: billUpdateOneWithoutFriend_orderNestedInput
+  }
+
+  export type friend_orderUncheckedUpdateWithoutOrder_detailInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    bill_id?: NullableIntFieldUpdateOperationsInput | number | null
+    name?: StringFieldUpdateOperationsInput | string
+    is_paid?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type billCreateWithoutFriend_orderInput = {
+    description: string
+    discount?: number | null
+    tax: number
+    service?: number | null
+    total_price?: number
+    date?: Date | string
+    users?: usersCreateNestedOneWithoutBillInput
+    payment_account?: payment_accountCreateNestedOneWithoutBillInput
+  }
+
+  export type billUncheckedCreateWithoutFriend_orderInput = {
     id?: number
     user_id?: number | null
-    friends_name: string
-    friends_photo?: string | null
+    payment_account_id?: number | null
+    description: string
+    discount?: number | null
+    tax: number
+    service?: number | null
+    total_price?: number
+    date?: Date | string
   }
 
-  export type friendsCreateOrConnectWithoutFriends_orderInput = {
-    where: friendsWhereUniqueInput
-    create: XOR<friendsCreateWithoutFriends_orderInput, friendsUncheckedCreateWithoutFriends_orderInput>
+  export type billCreateOrConnectWithoutFriend_orderInput = {
+    where: billWhereUniqueInput
+    create: XOR<billCreateWithoutFriend_orderInput, billUncheckedCreateWithoutFriend_orderInput>
   }
 
-  export type ordersUpsertWithoutFriends_orderInput = {
-    update: XOR<ordersUpdateWithoutFriends_orderInput, ordersUncheckedUpdateWithoutFriends_orderInput>
-    create: XOR<ordersCreateWithoutFriends_orderInput, ordersUncheckedCreateWithoutFriends_orderInput>
-    where?: ordersWhereInput
+  export type order_detailCreateWithoutFriend_orderInput = {
+    menu: string
+    quantity: number
+    price: number
   }
 
-  export type ordersUpdateToOneWithWhereWithoutFriends_orderInput = {
-    where?: ordersWhereInput
-    data: XOR<ordersUpdateWithoutFriends_orderInput, ordersUncheckedUpdateWithoutFriends_orderInput>
-  }
-
-  export type ordersUpdateWithoutFriends_orderInput = {
-    menu_name?: StringFieldUpdateOperationsInput | string
-    qty?: IntFieldUpdateOperationsInput | number
-    price?: BigIntFieldUpdateOperationsInput | bigint | number
-    users?: usersUpdateOneWithoutOrdersNestedInput
-    bill?: billUpdateOneWithoutOrdersNestedInput
-  }
-
-  export type ordersUncheckedUpdateWithoutFriends_orderInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    user_id?: NullableIntFieldUpdateOperationsInput | number | null
-    bill_id?: NullableIntFieldUpdateOperationsInput | number | null
-    menu_name?: StringFieldUpdateOperationsInput | string
-    qty?: IntFieldUpdateOperationsInput | number
-    price?: BigIntFieldUpdateOperationsInput | bigint | number
-  }
-
-  export type friendsUpsertWithoutFriends_orderInput = {
-    update: XOR<friendsUpdateWithoutFriends_orderInput, friendsUncheckedUpdateWithoutFriends_orderInput>
-    create: XOR<friendsCreateWithoutFriends_orderInput, friendsUncheckedCreateWithoutFriends_orderInput>
-    where?: friendsWhereInput
-  }
-
-  export type friendsUpdateToOneWithWhereWithoutFriends_orderInput = {
-    where?: friendsWhereInput
-    data: XOR<friendsUpdateWithoutFriends_orderInput, friendsUncheckedUpdateWithoutFriends_orderInput>
-  }
-
-  export type friendsUpdateWithoutFriends_orderInput = {
-    friends_name?: StringFieldUpdateOperationsInput | string
-    friends_photo?: NullableStringFieldUpdateOperationsInput | string | null
-    users?: usersUpdateOneWithoutFriendsNestedInput
-  }
-
-  export type friendsUncheckedUpdateWithoutFriends_orderInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    user_id?: NullableIntFieldUpdateOperationsInput | number | null
-    friends_name?: StringFieldUpdateOperationsInput | string
-    friends_photo?: NullableStringFieldUpdateOperationsInput | string | null
-  }
-
-  export type usersCreateWithoutFriendsInput = {
-    username?: string | null
-    password?: string | null
-    fullname?: string | null
-    phone_number?: string | null
-    email?: string | null
-    bio?: string | null
-    dob?: Date | string | null
-    photo_profile?: string | null
-    created_at?: Date | string
-    update_at?: Date | string
-    orders?: ordersCreateNestedManyWithoutUsersInput
-    bill?: billCreateNestedManyWithoutUsersInput
-    payment_method_detail?: payment_method_detailCreateNestedManyWithoutUsersInput
-  }
-
-  export type usersUncheckedCreateWithoutFriendsInput = {
+  export type order_detailUncheckedCreateWithoutFriend_orderInput = {
     id?: number
-    username?: string | null
-    password?: string | null
-    fullname?: string | null
-    phone_number?: string | null
-    email?: string | null
-    bio?: string | null
-    dob?: Date | string | null
-    photo_profile?: string | null
-    created_at?: Date | string
-    update_at?: Date | string
-    orders?: ordersUncheckedCreateNestedManyWithoutUsersInput
-    bill?: billUncheckedCreateNestedManyWithoutUsersInput
-    payment_method_detail?: payment_method_detailUncheckedCreateNestedManyWithoutUsersInput
+    menu: string
+    quantity: number
+    price: number
   }
 
-  export type usersCreateOrConnectWithoutFriendsInput = {
-    where: usersWhereUniqueInput
-    create: XOR<usersCreateWithoutFriendsInput, usersUncheckedCreateWithoutFriendsInput>
+  export type order_detailCreateOrConnectWithoutFriend_orderInput = {
+    where: order_detailWhereUniqueInput
+    create: XOR<order_detailCreateWithoutFriend_orderInput, order_detailUncheckedCreateWithoutFriend_orderInput>
   }
 
-  export type friends_orderCreateWithoutFriendsInput = {
-    friend_order_price: bigint | number
-    is_paid?: boolean
-    created_at?: Date | string
-    update_at?: Date | string
-    orders?: ordersCreateNestedOneWithoutFriends_orderInput
-  }
-
-  export type friends_orderUncheckedCreateWithoutFriendsInput = {
-    id?: number
-    orders_id?: number | null
-    friend_order_price: bigint | number
-    is_paid?: boolean
-    created_at?: Date | string
-    update_at?: Date | string
-  }
-
-  export type friends_orderCreateOrConnectWithoutFriendsInput = {
-    where: friends_orderWhereUniqueInput
-    create: XOR<friends_orderCreateWithoutFriendsInput, friends_orderUncheckedCreateWithoutFriendsInput>
-  }
-
-  export type friends_orderCreateManyFriendsInputEnvelope = {
-    data: friends_orderCreateManyFriendsInput | friends_orderCreateManyFriendsInput[]
+  export type order_detailCreateManyFriend_orderInputEnvelope = {
+    data: order_detailCreateManyFriend_orderInput | order_detailCreateManyFriend_orderInput[]
     skipDuplicates?: boolean
   }
 
-  export type usersUpsertWithoutFriendsInput = {
-    update: XOR<usersUpdateWithoutFriendsInput, usersUncheckedUpdateWithoutFriendsInput>
-    create: XOR<usersCreateWithoutFriendsInput, usersUncheckedCreateWithoutFriendsInput>
-    where?: usersWhereInput
+  export type billUpsertWithoutFriend_orderInput = {
+    update: XOR<billUpdateWithoutFriend_orderInput, billUncheckedUpdateWithoutFriend_orderInput>
+    create: XOR<billCreateWithoutFriend_orderInput, billUncheckedCreateWithoutFriend_orderInput>
+    where?: billWhereInput
   }
 
-  export type usersUpdateToOneWithWhereWithoutFriendsInput = {
-    where?: usersWhereInput
-    data: XOR<usersUpdateWithoutFriendsInput, usersUncheckedUpdateWithoutFriendsInput>
+  export type billUpdateToOneWithWhereWithoutFriend_orderInput = {
+    where?: billWhereInput
+    data: XOR<billUpdateWithoutFriend_orderInput, billUncheckedUpdateWithoutFriend_orderInput>
   }
 
-  export type usersUpdateWithoutFriendsInput = {
-    username?: NullableStringFieldUpdateOperationsInput | string | null
-    password?: NullableStringFieldUpdateOperationsInput | string | null
-    fullname?: NullableStringFieldUpdateOperationsInput | string | null
-    phone_number?: NullableStringFieldUpdateOperationsInput | string | null
-    email?: NullableStringFieldUpdateOperationsInput | string | null
-    bio?: NullableStringFieldUpdateOperationsInput | string | null
-    dob?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    photo_profile?: NullableStringFieldUpdateOperationsInput | string | null
-    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    update_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    orders?: ordersUpdateManyWithoutUsersNestedInput
-    bill?: billUpdateManyWithoutUsersNestedInput
-    payment_method_detail?: payment_method_detailUpdateManyWithoutUsersNestedInput
+  export type billUpdateWithoutFriend_orderInput = {
+    description?: StringFieldUpdateOperationsInput | string
+    discount?: NullableFloatFieldUpdateOperationsInput | number | null
+    tax?: IntFieldUpdateOperationsInput | number
+    service?: NullableFloatFieldUpdateOperationsInput | number | null
+    total_price?: IntFieldUpdateOperationsInput | number
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
+    users?: usersUpdateOneWithoutBillNestedInput
+    payment_account?: payment_accountUpdateOneWithoutBillNestedInput
   }
 
-  export type usersUncheckedUpdateWithoutFriendsInput = {
+  export type billUncheckedUpdateWithoutFriend_orderInput = {
     id?: IntFieldUpdateOperationsInput | number
-    username?: NullableStringFieldUpdateOperationsInput | string | null
-    password?: NullableStringFieldUpdateOperationsInput | string | null
-    fullname?: NullableStringFieldUpdateOperationsInput | string | null
-    phone_number?: NullableStringFieldUpdateOperationsInput | string | null
-    email?: NullableStringFieldUpdateOperationsInput | string | null
-    bio?: NullableStringFieldUpdateOperationsInput | string | null
-    dob?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    photo_profile?: NullableStringFieldUpdateOperationsInput | string | null
-    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    update_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    orders?: ordersUncheckedUpdateManyWithoutUsersNestedInput
-    bill?: billUncheckedUpdateManyWithoutUsersNestedInput
-    payment_method_detail?: payment_method_detailUncheckedUpdateManyWithoutUsersNestedInput
+    user_id?: NullableIntFieldUpdateOperationsInput | number | null
+    payment_account_id?: NullableIntFieldUpdateOperationsInput | number | null
+    description?: StringFieldUpdateOperationsInput | string
+    discount?: NullableFloatFieldUpdateOperationsInput | number | null
+    tax?: IntFieldUpdateOperationsInput | number
+    service?: NullableFloatFieldUpdateOperationsInput | number | null
+    total_price?: IntFieldUpdateOperationsInput | number
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type friends_orderUpsertWithWhereUniqueWithoutFriendsInput = {
-    where: friends_orderWhereUniqueInput
-    update: XOR<friends_orderUpdateWithoutFriendsInput, friends_orderUncheckedUpdateWithoutFriendsInput>
-    create: XOR<friends_orderCreateWithoutFriendsInput, friends_orderUncheckedCreateWithoutFriendsInput>
+  export type order_detailUpsertWithWhereUniqueWithoutFriend_orderInput = {
+    where: order_detailWhereUniqueInput
+    update: XOR<order_detailUpdateWithoutFriend_orderInput, order_detailUncheckedUpdateWithoutFriend_orderInput>
+    create: XOR<order_detailCreateWithoutFriend_orderInput, order_detailUncheckedCreateWithoutFriend_orderInput>
   }
 
-  export type friends_orderUpdateWithWhereUniqueWithoutFriendsInput = {
-    where: friends_orderWhereUniqueInput
-    data: XOR<friends_orderUpdateWithoutFriendsInput, friends_orderUncheckedUpdateWithoutFriendsInput>
+  export type order_detailUpdateWithWhereUniqueWithoutFriend_orderInput = {
+    where: order_detailWhereUniqueInput
+    data: XOR<order_detailUpdateWithoutFriend_orderInput, order_detailUncheckedUpdateWithoutFriend_orderInput>
   }
 
-  export type friends_orderUpdateManyWithWhereWithoutFriendsInput = {
-    where: friends_orderScalarWhereInput
-    data: XOR<friends_orderUpdateManyMutationInput, friends_orderUncheckedUpdateManyWithoutFriendsInput>
+  export type order_detailUpdateManyWithWhereWithoutFriend_orderInput = {
+    where: order_detailScalarWhereInput
+    data: XOR<order_detailUpdateManyMutationInput, order_detailUncheckedUpdateManyWithoutFriend_orderInput>
+  }
+
+  export type order_detailScalarWhereInput = {
+    AND?: order_detailScalarWhereInput | order_detailScalarWhereInput[]
+    OR?: order_detailScalarWhereInput[]
+    NOT?: order_detailScalarWhereInput | order_detailScalarWhereInput[]
+    id?: IntFilter<"order_detail"> | number
+    friend_order_id?: IntNullableFilter<"order_detail"> | number | null
+    menu?: StringFilter<"order_detail"> | string
+    quantity?: IntFilter<"order_detail"> | number
+    price?: IntFilter<"order_detail"> | number
   }
 
   export type usersCreateWithoutBillInput = {
@@ -12103,9 +8667,7 @@ export namespace Prisma {
     photo_profile?: string | null
     created_at?: Date | string
     update_at?: Date | string
-    friends?: friendsCreateNestedManyWithoutUsersInput
-    orders?: ordersCreateNestedManyWithoutUsersInput
-    payment_method_detail?: payment_method_detailCreateNestedManyWithoutUsersInput
+    payment_account?: payment_accountCreateNestedManyWithoutUsersInput
   }
 
   export type usersUncheckedCreateWithoutBillInput = {
@@ -12120,9 +8682,7 @@ export namespace Prisma {
     photo_profile?: string | null
     created_at?: Date | string
     update_at?: Date | string
-    friends?: friendsUncheckedCreateNestedManyWithoutUsersInput
-    orders?: ordersUncheckedCreateNestedManyWithoutUsersInput
-    payment_method_detail?: payment_method_detailUncheckedCreateNestedManyWithoutUsersInput
+    payment_account?: payment_accountUncheckedCreateNestedManyWithoutUsersInput
   }
 
   export type usersCreateOrConnectWithoutBillInput = {
@@ -12130,50 +8690,48 @@ export namespace Prisma {
     create: XOR<usersCreateWithoutBillInput, usersUncheckedCreateWithoutBillInput>
   }
 
-  export type payment_method_detailCreateWithoutBillInput = {
-    card_number: bigint | number
-    card_name: string
-    users?: usersCreateNestedOneWithoutPayment_method_detailInput
-    payment_method?: payment_methodCreateNestedOneWithoutPayment_method_detailInput
+  export type payment_accountCreateWithoutBillInput = {
+    name: string
+    number: string
+    card_holder: string
+    is_activated: boolean
+    users?: usersCreateNestedOneWithoutPayment_accountInput
   }
 
-  export type payment_method_detailUncheckedCreateWithoutBillInput = {
+  export type payment_accountUncheckedCreateWithoutBillInput = {
     id?: number
     user_id?: number | null
-    payment_method_id?: number | null
-    card_number: bigint | number
-    card_name: string
+    name: string
+    number: string
+    card_holder: string
+    is_activated: boolean
   }
 
-  export type payment_method_detailCreateOrConnectWithoutBillInput = {
-    where: payment_method_detailWhereUniqueInput
-    create: XOR<payment_method_detailCreateWithoutBillInput, payment_method_detailUncheckedCreateWithoutBillInput>
+  export type payment_accountCreateOrConnectWithoutBillInput = {
+    where: payment_accountWhereUniqueInput
+    create: XOR<payment_accountCreateWithoutBillInput, payment_accountUncheckedCreateWithoutBillInput>
   }
 
-  export type ordersCreateWithoutBillInput = {
-    menu_name: string
-    qty: number
-    price: bigint | number
-    users?: usersCreateNestedOneWithoutOrdersInput
-    friends_order?: friends_orderCreateNestedManyWithoutOrdersInput
+  export type friend_orderCreateWithoutBillInput = {
+    name: string
+    is_paid?: boolean
+    order_detail?: order_detailCreateNestedManyWithoutFriend_orderInput
   }
 
-  export type ordersUncheckedCreateWithoutBillInput = {
+  export type friend_orderUncheckedCreateWithoutBillInput = {
     id?: number
-    user_id?: number | null
-    menu_name: string
-    qty: number
-    price: bigint | number
-    friends_order?: friends_orderUncheckedCreateNestedManyWithoutOrdersInput
+    name: string
+    is_paid?: boolean
+    order_detail?: order_detailUncheckedCreateNestedManyWithoutFriend_orderInput
   }
 
-  export type ordersCreateOrConnectWithoutBillInput = {
-    where: ordersWhereUniqueInput
-    create: XOR<ordersCreateWithoutBillInput, ordersUncheckedCreateWithoutBillInput>
+  export type friend_orderCreateOrConnectWithoutBillInput = {
+    where: friend_orderWhereUniqueInput
+    create: XOR<friend_orderCreateWithoutBillInput, friend_orderUncheckedCreateWithoutBillInput>
   }
 
-  export type ordersCreateManyBillInputEnvelope = {
-    data: ordersCreateManyBillInput | ordersCreateManyBillInput[]
+  export type friend_orderCreateManyBillInputEnvelope = {
+    data: friend_orderCreateManyBillInput | friend_orderCreateManyBillInput[]
     skipDuplicates?: boolean
   }
 
@@ -12199,9 +8757,7 @@ export namespace Prisma {
     photo_profile?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     update_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    friends?: friendsUpdateManyWithoutUsersNestedInput
-    orders?: ordersUpdateManyWithoutUsersNestedInput
-    payment_method_detail?: payment_method_detailUpdateManyWithoutUsersNestedInput
+    payment_account?: payment_accountUpdateManyWithoutUsersNestedInput
   }
 
   export type usersUncheckedUpdateWithoutBillInput = {
@@ -12216,95 +8772,64 @@ export namespace Prisma {
     photo_profile?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     update_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    friends?: friendsUncheckedUpdateManyWithoutUsersNestedInput
-    orders?: ordersUncheckedUpdateManyWithoutUsersNestedInput
-    payment_method_detail?: payment_method_detailUncheckedUpdateManyWithoutUsersNestedInput
+    payment_account?: payment_accountUncheckedUpdateManyWithoutUsersNestedInput
   }
 
-  export type payment_method_detailUpsertWithoutBillInput = {
-    update: XOR<payment_method_detailUpdateWithoutBillInput, payment_method_detailUncheckedUpdateWithoutBillInput>
-    create: XOR<payment_method_detailCreateWithoutBillInput, payment_method_detailUncheckedCreateWithoutBillInput>
-    where?: payment_method_detailWhereInput
+  export type payment_accountUpsertWithoutBillInput = {
+    update: XOR<payment_accountUpdateWithoutBillInput, payment_accountUncheckedUpdateWithoutBillInput>
+    create: XOR<payment_accountCreateWithoutBillInput, payment_accountUncheckedCreateWithoutBillInput>
+    where?: payment_accountWhereInput
   }
 
-  export type payment_method_detailUpdateToOneWithWhereWithoutBillInput = {
-    where?: payment_method_detailWhereInput
-    data: XOR<payment_method_detailUpdateWithoutBillInput, payment_method_detailUncheckedUpdateWithoutBillInput>
+  export type payment_accountUpdateToOneWithWhereWithoutBillInput = {
+    where?: payment_accountWhereInput
+    data: XOR<payment_accountUpdateWithoutBillInput, payment_accountUncheckedUpdateWithoutBillInput>
   }
 
-  export type payment_method_detailUpdateWithoutBillInput = {
-    card_number?: BigIntFieldUpdateOperationsInput | bigint | number
-    card_name?: StringFieldUpdateOperationsInput | string
-    users?: usersUpdateOneWithoutPayment_method_detailNestedInput
-    payment_method?: payment_methodUpdateOneWithoutPayment_method_detailNestedInput
+  export type payment_accountUpdateWithoutBillInput = {
+    name?: StringFieldUpdateOperationsInput | string
+    number?: StringFieldUpdateOperationsInput | string
+    card_holder?: StringFieldUpdateOperationsInput | string
+    is_activated?: BoolFieldUpdateOperationsInput | boolean
+    users?: usersUpdateOneWithoutPayment_accountNestedInput
   }
 
-  export type payment_method_detailUncheckedUpdateWithoutBillInput = {
+  export type payment_accountUncheckedUpdateWithoutBillInput = {
     id?: IntFieldUpdateOperationsInput | number
     user_id?: NullableIntFieldUpdateOperationsInput | number | null
-    payment_method_id?: NullableIntFieldUpdateOperationsInput | number | null
-    card_number?: BigIntFieldUpdateOperationsInput | bigint | number
-    card_name?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    number?: StringFieldUpdateOperationsInput | string
+    card_holder?: StringFieldUpdateOperationsInput | string
+    is_activated?: BoolFieldUpdateOperationsInput | boolean
   }
 
-  export type ordersUpsertWithWhereUniqueWithoutBillInput = {
-    where: ordersWhereUniqueInput
-    update: XOR<ordersUpdateWithoutBillInput, ordersUncheckedUpdateWithoutBillInput>
-    create: XOR<ordersCreateWithoutBillInput, ordersUncheckedCreateWithoutBillInput>
+  export type friend_orderUpsertWithWhereUniqueWithoutBillInput = {
+    where: friend_orderWhereUniqueInput
+    update: XOR<friend_orderUpdateWithoutBillInput, friend_orderUncheckedUpdateWithoutBillInput>
+    create: XOR<friend_orderCreateWithoutBillInput, friend_orderUncheckedCreateWithoutBillInput>
   }
 
-  export type ordersUpdateWithWhereUniqueWithoutBillInput = {
-    where: ordersWhereUniqueInput
-    data: XOR<ordersUpdateWithoutBillInput, ordersUncheckedUpdateWithoutBillInput>
+  export type friend_orderUpdateWithWhereUniqueWithoutBillInput = {
+    where: friend_orderWhereUniqueInput
+    data: XOR<friend_orderUpdateWithoutBillInput, friend_orderUncheckedUpdateWithoutBillInput>
   }
 
-  export type ordersUpdateManyWithWhereWithoutBillInput = {
-    where: ordersScalarWhereInput
-    data: XOR<ordersUpdateManyMutationInput, ordersUncheckedUpdateManyWithoutBillInput>
+  export type friend_orderUpdateManyWithWhereWithoutBillInput = {
+    where: friend_orderScalarWhereInput
+    data: XOR<friend_orderUpdateManyMutationInput, friend_orderUncheckedUpdateManyWithoutBillInput>
   }
 
-  export type payment_method_detailCreateWithoutPayment_methodInput = {
-    card_number: bigint | number
-    card_name: string
-    users?: usersCreateNestedOneWithoutPayment_method_detailInput
-    bill?: billCreateNestedManyWithoutPayment_method_detailsInput
+  export type friend_orderScalarWhereInput = {
+    AND?: friend_orderScalarWhereInput | friend_orderScalarWhereInput[]
+    OR?: friend_orderScalarWhereInput[]
+    NOT?: friend_orderScalarWhereInput | friend_orderScalarWhereInput[]
+    id?: IntFilter<"friend_order"> | number
+    bill_id?: IntNullableFilter<"friend_order"> | number | null
+    name?: StringFilter<"friend_order"> | string
+    is_paid?: BoolFilter<"friend_order"> | boolean
   }
 
-  export type payment_method_detailUncheckedCreateWithoutPayment_methodInput = {
-    id?: number
-    user_id?: number | null
-    card_number: bigint | number
-    card_name: string
-    bill?: billUncheckedCreateNestedManyWithoutPayment_method_detailsInput
-  }
-
-  export type payment_method_detailCreateOrConnectWithoutPayment_methodInput = {
-    where: payment_method_detailWhereUniqueInput
-    create: XOR<payment_method_detailCreateWithoutPayment_methodInput, payment_method_detailUncheckedCreateWithoutPayment_methodInput>
-  }
-
-  export type payment_method_detailCreateManyPayment_methodInputEnvelope = {
-    data: payment_method_detailCreateManyPayment_methodInput | payment_method_detailCreateManyPayment_methodInput[]
-    skipDuplicates?: boolean
-  }
-
-  export type payment_method_detailUpsertWithWhereUniqueWithoutPayment_methodInput = {
-    where: payment_method_detailWhereUniqueInput
-    update: XOR<payment_method_detailUpdateWithoutPayment_methodInput, payment_method_detailUncheckedUpdateWithoutPayment_methodInput>
-    create: XOR<payment_method_detailCreateWithoutPayment_methodInput, payment_method_detailUncheckedCreateWithoutPayment_methodInput>
-  }
-
-  export type payment_method_detailUpdateWithWhereUniqueWithoutPayment_methodInput = {
-    where: payment_method_detailWhereUniqueInput
-    data: XOR<payment_method_detailUpdateWithoutPayment_methodInput, payment_method_detailUncheckedUpdateWithoutPayment_methodInput>
-  }
-
-  export type payment_method_detailUpdateManyWithWhereWithoutPayment_methodInput = {
-    where: payment_method_detailScalarWhereInput
-    data: XOR<payment_method_detailUpdateManyMutationInput, payment_method_detailUncheckedUpdateManyWithoutPayment_methodInput>
-  }
-
-  export type usersCreateWithoutPayment_method_detailInput = {
+  export type usersCreateWithoutPayment_accountInput = {
     username?: string | null
     password?: string | null
     fullname?: string | null
@@ -12315,12 +8840,10 @@ export namespace Prisma {
     photo_profile?: string | null
     created_at?: Date | string
     update_at?: Date | string
-    friends?: friendsCreateNestedManyWithoutUsersInput
-    orders?: ordersCreateNestedManyWithoutUsersInput
     bill?: billCreateNestedManyWithoutUsersInput
   }
 
-  export type usersUncheckedCreateWithoutPayment_method_detailInput = {
+  export type usersUncheckedCreateWithoutPayment_accountInput = {
     id?: number
     username?: string | null
     password?: string | null
@@ -12332,79 +8855,59 @@ export namespace Prisma {
     photo_profile?: string | null
     created_at?: Date | string
     update_at?: Date | string
-    friends?: friendsUncheckedCreateNestedManyWithoutUsersInput
-    orders?: ordersUncheckedCreateNestedManyWithoutUsersInput
     bill?: billUncheckedCreateNestedManyWithoutUsersInput
   }
 
-  export type usersCreateOrConnectWithoutPayment_method_detailInput = {
+  export type usersCreateOrConnectWithoutPayment_accountInput = {
     where: usersWhereUniqueInput
-    create: XOR<usersCreateWithoutPayment_method_detailInput, usersUncheckedCreateWithoutPayment_method_detailInput>
+    create: XOR<usersCreateWithoutPayment_accountInput, usersUncheckedCreateWithoutPayment_accountInput>
   }
 
-  export type payment_methodCreateWithoutPayment_method_detailInput = {
-    payment_method_name: string
-    payment_method_logo: string
-  }
-
-  export type payment_methodUncheckedCreateWithoutPayment_method_detailInput = {
-    id?: number
-    payment_method_name: string
-    payment_method_logo: string
-  }
-
-  export type payment_methodCreateOrConnectWithoutPayment_method_detailInput = {
-    where: payment_methodWhereUniqueInput
-    create: XOR<payment_methodCreateWithoutPayment_method_detailInput, payment_methodUncheckedCreateWithoutPayment_method_detailInput>
-  }
-
-  export type billCreateWithoutPayment_method_detailsInput = {
+  export type billCreateWithoutPayment_accountInput = {
     description: string
     discount?: number | null
     tax: number
     service?: number | null
-    total_price: bigint | number
+    total_price?: number
     date?: Date | string
-    is_completed?: boolean
     users?: usersCreateNestedOneWithoutBillInput
-    orders?: ordersCreateNestedManyWithoutBillInput
+    friend_order?: friend_orderCreateNestedManyWithoutBillInput
   }
 
-  export type billUncheckedCreateWithoutPayment_method_detailsInput = {
+  export type billUncheckedCreateWithoutPayment_accountInput = {
     id?: number
     user_id?: number | null
     description: string
     discount?: number | null
     tax: number
     service?: number | null
-    total_price: bigint | number
+    total_price?: number
     date?: Date | string
-    is_completed?: boolean
-    orders?: ordersUncheckedCreateNestedManyWithoutBillInput
+    friend_order?: friend_orderUncheckedCreateNestedManyWithoutBillInput
   }
 
-  export type billCreateOrConnectWithoutPayment_method_detailsInput = {
+  export type billCreateOrConnectWithoutPayment_accountInput = {
     where: billWhereUniqueInput
-    create: XOR<billCreateWithoutPayment_method_detailsInput, billUncheckedCreateWithoutPayment_method_detailsInput>
+    create: XOR<billCreateWithoutPayment_accountInput, billUncheckedCreateWithoutPayment_accountInput>
   }
 
-  export type billCreateManyPayment_method_detailsInputEnvelope = {
-    data: billCreateManyPayment_method_detailsInput | billCreateManyPayment_method_detailsInput[]
+  export type billCreateManyPayment_accountInputEnvelope = {
+    data: billCreateManyPayment_accountInput | billCreateManyPayment_accountInput[]
     skipDuplicates?: boolean
   }
 
-  export type usersUpsertWithoutPayment_method_detailInput = {
-    update: XOR<usersUpdateWithoutPayment_method_detailInput, usersUncheckedUpdateWithoutPayment_method_detailInput>
-    create: XOR<usersCreateWithoutPayment_method_detailInput, usersUncheckedCreateWithoutPayment_method_detailInput>
+  export type usersUpsertWithoutPayment_accountInput = {
+    update: XOR<usersUpdateWithoutPayment_accountInput, usersUncheckedUpdateWithoutPayment_accountInput>
+    create: XOR<usersCreateWithoutPayment_accountInput, usersUncheckedCreateWithoutPayment_accountInput>
     where?: usersWhereInput
   }
 
-  export type usersUpdateToOneWithWhereWithoutPayment_method_detailInput = {
+  export type usersUpdateToOneWithWhereWithoutPayment_accountInput = {
     where?: usersWhereInput
-    data: XOR<usersUpdateWithoutPayment_method_detailInput, usersUncheckedUpdateWithoutPayment_method_detailInput>
+    data: XOR<usersUpdateWithoutPayment_accountInput, usersUncheckedUpdateWithoutPayment_accountInput>
   }
 
-  export type usersUpdateWithoutPayment_method_detailInput = {
+  export type usersUpdateWithoutPayment_accountInput = {
     username?: NullableStringFieldUpdateOperationsInput | string | null
     password?: NullableStringFieldUpdateOperationsInput | string | null
     fullname?: NullableStringFieldUpdateOperationsInput | string | null
@@ -12415,12 +8918,10 @@ export namespace Prisma {
     photo_profile?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     update_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    friends?: friendsUpdateManyWithoutUsersNestedInput
-    orders?: ordersUpdateManyWithoutUsersNestedInput
     bill?: billUpdateManyWithoutUsersNestedInput
   }
 
-  export type usersUncheckedUpdateWithoutPayment_method_detailInput = {
+  export type usersUncheckedUpdateWithoutPayment_accountInput = {
     id?: IntFieldUpdateOperationsInput | number
     username?: NullableStringFieldUpdateOperationsInput | string | null
     password?: NullableStringFieldUpdateOperationsInput | string | null
@@ -12432,124 +8933,42 @@ export namespace Prisma {
     photo_profile?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     update_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    friends?: friendsUncheckedUpdateManyWithoutUsersNestedInput
-    orders?: ordersUncheckedUpdateManyWithoutUsersNestedInput
     bill?: billUncheckedUpdateManyWithoutUsersNestedInput
   }
 
-  export type payment_methodUpsertWithoutPayment_method_detailInput = {
-    update: XOR<payment_methodUpdateWithoutPayment_method_detailInput, payment_methodUncheckedUpdateWithoutPayment_method_detailInput>
-    create: XOR<payment_methodCreateWithoutPayment_method_detailInput, payment_methodUncheckedCreateWithoutPayment_method_detailInput>
-    where?: payment_methodWhereInput
-  }
-
-  export type payment_methodUpdateToOneWithWhereWithoutPayment_method_detailInput = {
-    where?: payment_methodWhereInput
-    data: XOR<payment_methodUpdateWithoutPayment_method_detailInput, payment_methodUncheckedUpdateWithoutPayment_method_detailInput>
-  }
-
-  export type payment_methodUpdateWithoutPayment_method_detailInput = {
-    payment_method_name?: StringFieldUpdateOperationsInput | string
-    payment_method_logo?: StringFieldUpdateOperationsInput | string
-  }
-
-  export type payment_methodUncheckedUpdateWithoutPayment_method_detailInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    payment_method_name?: StringFieldUpdateOperationsInput | string
-    payment_method_logo?: StringFieldUpdateOperationsInput | string
-  }
-
-  export type billUpsertWithWhereUniqueWithoutPayment_method_detailsInput = {
+  export type billUpsertWithWhereUniqueWithoutPayment_accountInput = {
     where: billWhereUniqueInput
-    update: XOR<billUpdateWithoutPayment_method_detailsInput, billUncheckedUpdateWithoutPayment_method_detailsInput>
-    create: XOR<billCreateWithoutPayment_method_detailsInput, billUncheckedCreateWithoutPayment_method_detailsInput>
+    update: XOR<billUpdateWithoutPayment_accountInput, billUncheckedUpdateWithoutPayment_accountInput>
+    create: XOR<billCreateWithoutPayment_accountInput, billUncheckedCreateWithoutPayment_accountInput>
   }
 
-  export type billUpdateWithWhereUniqueWithoutPayment_method_detailsInput = {
+  export type billUpdateWithWhereUniqueWithoutPayment_accountInput = {
     where: billWhereUniqueInput
-    data: XOR<billUpdateWithoutPayment_method_detailsInput, billUncheckedUpdateWithoutPayment_method_detailsInput>
+    data: XOR<billUpdateWithoutPayment_accountInput, billUncheckedUpdateWithoutPayment_accountInput>
   }
 
-  export type billUpdateManyWithWhereWithoutPayment_method_detailsInput = {
+  export type billUpdateManyWithWhereWithoutPayment_accountInput = {
     where: billScalarWhereInput
-    data: XOR<billUpdateManyMutationInput, billUncheckedUpdateManyWithoutPayment_method_detailsInput>
-  }
-
-  export type friendsCreateManyUsersInput = {
-    id?: number
-    friends_name: string
-    friends_photo?: string | null
-  }
-
-  export type ordersCreateManyUsersInput = {
-    id?: number
-    bill_id?: number | null
-    menu_name: string
-    qty: number
-    price: bigint | number
+    data: XOR<billUpdateManyMutationInput, billUncheckedUpdateManyWithoutPayment_accountInput>
   }
 
   export type billCreateManyUsersInput = {
     id?: number
-    payment_method_id?: number | null
+    payment_account_id?: number | null
     description: string
     discount?: number | null
     tax: number
     service?: number | null
-    total_price: bigint | number
+    total_price?: number
     date?: Date | string
-    is_completed?: boolean
   }
 
-  export type payment_method_detailCreateManyUsersInput = {
+  export type payment_accountCreateManyUsersInput = {
     id?: number
-    payment_method_id?: number | null
-    card_number: bigint | number
-    card_name: string
-  }
-
-  export type friendsUpdateWithoutUsersInput = {
-    friends_name?: StringFieldUpdateOperationsInput | string
-    friends_photo?: NullableStringFieldUpdateOperationsInput | string | null
-    friends_order?: friends_orderUpdateManyWithoutFriendsNestedInput
-  }
-
-  export type friendsUncheckedUpdateWithoutUsersInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    friends_name?: StringFieldUpdateOperationsInput | string
-    friends_photo?: NullableStringFieldUpdateOperationsInput | string | null
-    friends_order?: friends_orderUncheckedUpdateManyWithoutFriendsNestedInput
-  }
-
-  export type friendsUncheckedUpdateManyWithoutUsersInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    friends_name?: StringFieldUpdateOperationsInput | string
-    friends_photo?: NullableStringFieldUpdateOperationsInput | string | null
-  }
-
-  export type ordersUpdateWithoutUsersInput = {
-    menu_name?: StringFieldUpdateOperationsInput | string
-    qty?: IntFieldUpdateOperationsInput | number
-    price?: BigIntFieldUpdateOperationsInput | bigint | number
-    bill?: billUpdateOneWithoutOrdersNestedInput
-    friends_order?: friends_orderUpdateManyWithoutOrdersNestedInput
-  }
-
-  export type ordersUncheckedUpdateWithoutUsersInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    bill_id?: NullableIntFieldUpdateOperationsInput | number | null
-    menu_name?: StringFieldUpdateOperationsInput | string
-    qty?: IntFieldUpdateOperationsInput | number
-    price?: BigIntFieldUpdateOperationsInput | bigint | number
-    friends_order?: friends_orderUncheckedUpdateManyWithoutOrdersNestedInput
-  }
-
-  export type ordersUncheckedUpdateManyWithoutUsersInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    bill_id?: NullableIntFieldUpdateOperationsInput | number | null
-    menu_name?: StringFieldUpdateOperationsInput | string
-    qty?: IntFieldUpdateOperationsInput | number
-    price?: BigIntFieldUpdateOperationsInput | bigint | number
+    name: string
+    number: string
+    card_holder: string
+    is_activated: boolean
   }
 
   export type billUpdateWithoutUsersInput = {
@@ -12557,239 +8976,155 @@ export namespace Prisma {
     discount?: NullableFloatFieldUpdateOperationsInput | number | null
     tax?: IntFieldUpdateOperationsInput | number
     service?: NullableFloatFieldUpdateOperationsInput | number | null
-    total_price?: BigIntFieldUpdateOperationsInput | bigint | number
+    total_price?: IntFieldUpdateOperationsInput | number
     date?: DateTimeFieldUpdateOperationsInput | Date | string
-    is_completed?: BoolFieldUpdateOperationsInput | boolean
-    payment_method_details?: payment_method_detailUpdateOneWithoutBillNestedInput
-    orders?: ordersUpdateManyWithoutBillNestedInput
+    payment_account?: payment_accountUpdateOneWithoutBillNestedInput
+    friend_order?: friend_orderUpdateManyWithoutBillNestedInput
   }
 
   export type billUncheckedUpdateWithoutUsersInput = {
     id?: IntFieldUpdateOperationsInput | number
-    payment_method_id?: NullableIntFieldUpdateOperationsInput | number | null
+    payment_account_id?: NullableIntFieldUpdateOperationsInput | number | null
     description?: StringFieldUpdateOperationsInput | string
     discount?: NullableFloatFieldUpdateOperationsInput | number | null
     tax?: IntFieldUpdateOperationsInput | number
     service?: NullableFloatFieldUpdateOperationsInput | number | null
-    total_price?: BigIntFieldUpdateOperationsInput | bigint | number
+    total_price?: IntFieldUpdateOperationsInput | number
     date?: DateTimeFieldUpdateOperationsInput | Date | string
-    is_completed?: BoolFieldUpdateOperationsInput | boolean
-    orders?: ordersUncheckedUpdateManyWithoutBillNestedInput
+    friend_order?: friend_orderUncheckedUpdateManyWithoutBillNestedInput
   }
 
   export type billUncheckedUpdateManyWithoutUsersInput = {
     id?: IntFieldUpdateOperationsInput | number
-    payment_method_id?: NullableIntFieldUpdateOperationsInput | number | null
+    payment_account_id?: NullableIntFieldUpdateOperationsInput | number | null
     description?: StringFieldUpdateOperationsInput | string
     discount?: NullableFloatFieldUpdateOperationsInput | number | null
     tax?: IntFieldUpdateOperationsInput | number
     service?: NullableFloatFieldUpdateOperationsInput | number | null
-    total_price?: BigIntFieldUpdateOperationsInput | bigint | number
+    total_price?: IntFieldUpdateOperationsInput | number
     date?: DateTimeFieldUpdateOperationsInput | Date | string
-    is_completed?: BoolFieldUpdateOperationsInput | boolean
   }
 
-  export type payment_method_detailUpdateWithoutUsersInput = {
-    card_number?: BigIntFieldUpdateOperationsInput | bigint | number
-    card_name?: StringFieldUpdateOperationsInput | string
-    payment_method?: payment_methodUpdateOneWithoutPayment_method_detailNestedInput
-    bill?: billUpdateManyWithoutPayment_method_detailsNestedInput
+  export type payment_accountUpdateWithoutUsersInput = {
+    name?: StringFieldUpdateOperationsInput | string
+    number?: StringFieldUpdateOperationsInput | string
+    card_holder?: StringFieldUpdateOperationsInput | string
+    is_activated?: BoolFieldUpdateOperationsInput | boolean
+    bill?: billUpdateManyWithoutPayment_accountNestedInput
   }
 
-  export type payment_method_detailUncheckedUpdateWithoutUsersInput = {
+  export type payment_accountUncheckedUpdateWithoutUsersInput = {
     id?: IntFieldUpdateOperationsInput | number
-    payment_method_id?: NullableIntFieldUpdateOperationsInput | number | null
-    card_number?: BigIntFieldUpdateOperationsInput | bigint | number
-    card_name?: StringFieldUpdateOperationsInput | string
-    bill?: billUncheckedUpdateManyWithoutPayment_method_detailsNestedInput
+    name?: StringFieldUpdateOperationsInput | string
+    number?: StringFieldUpdateOperationsInput | string
+    card_holder?: StringFieldUpdateOperationsInput | string
+    is_activated?: BoolFieldUpdateOperationsInput | boolean
+    bill?: billUncheckedUpdateManyWithoutPayment_accountNestedInput
   }
 
-  export type payment_method_detailUncheckedUpdateManyWithoutUsersInput = {
+  export type payment_accountUncheckedUpdateManyWithoutUsersInput = {
     id?: IntFieldUpdateOperationsInput | number
-    payment_method_id?: NullableIntFieldUpdateOperationsInput | number | null
-    card_number?: BigIntFieldUpdateOperationsInput | bigint | number
-    card_name?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    number?: StringFieldUpdateOperationsInput | string
+    card_holder?: StringFieldUpdateOperationsInput | string
+    is_activated?: BoolFieldUpdateOperationsInput | boolean
   }
 
-  export type friends_orderCreateManyOrdersInput = {
+  export type order_detailCreateManyFriend_orderInput = {
     id?: number
-    friends_id?: number | null
-    friend_order_price: bigint | number
+    menu: string
+    quantity: number
+    price: number
+  }
+
+  export type order_detailUpdateWithoutFriend_orderInput = {
+    menu?: StringFieldUpdateOperationsInput | string
+    quantity?: IntFieldUpdateOperationsInput | number
+    price?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type order_detailUncheckedUpdateWithoutFriend_orderInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    menu?: StringFieldUpdateOperationsInput | string
+    quantity?: IntFieldUpdateOperationsInput | number
+    price?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type order_detailUncheckedUpdateManyWithoutFriend_orderInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    menu?: StringFieldUpdateOperationsInput | string
+    quantity?: IntFieldUpdateOperationsInput | number
+    price?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type friend_orderCreateManyBillInput = {
+    id?: number
+    name: string
     is_paid?: boolean
-    created_at?: Date | string
-    update_at?: Date | string
   }
 
-  export type friends_orderUpdateWithoutOrdersInput = {
-    friend_order_price?: BigIntFieldUpdateOperationsInput | bigint | number
+  export type friend_orderUpdateWithoutBillInput = {
+    name?: StringFieldUpdateOperationsInput | string
     is_paid?: BoolFieldUpdateOperationsInput | boolean
-    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    update_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    friends?: friendsUpdateOneWithoutFriends_orderNestedInput
+    order_detail?: order_detailUpdateManyWithoutFriend_orderNestedInput
   }
 
-  export type friends_orderUncheckedUpdateWithoutOrdersInput = {
+  export type friend_orderUncheckedUpdateWithoutBillInput = {
     id?: IntFieldUpdateOperationsInput | number
-    friends_id?: NullableIntFieldUpdateOperationsInput | number | null
-    friend_order_price?: BigIntFieldUpdateOperationsInput | bigint | number
+    name?: StringFieldUpdateOperationsInput | string
     is_paid?: BoolFieldUpdateOperationsInput | boolean
-    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    update_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    order_detail?: order_detailUncheckedUpdateManyWithoutFriend_orderNestedInput
   }
 
-  export type friends_orderUncheckedUpdateManyWithoutOrdersInput = {
+  export type friend_orderUncheckedUpdateManyWithoutBillInput = {
     id?: IntFieldUpdateOperationsInput | number
-    friends_id?: NullableIntFieldUpdateOperationsInput | number | null
-    friend_order_price?: BigIntFieldUpdateOperationsInput | bigint | number
+    name?: StringFieldUpdateOperationsInput | string
     is_paid?: BoolFieldUpdateOperationsInput | boolean
-    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    update_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type friends_orderCreateManyFriendsInput = {
-    id?: number
-    orders_id?: number | null
-    friend_order_price: bigint | number
-    is_paid?: boolean
-    created_at?: Date | string
-    update_at?: Date | string
-  }
-
-  export type friends_orderUpdateWithoutFriendsInput = {
-    friend_order_price?: BigIntFieldUpdateOperationsInput | bigint | number
-    is_paid?: BoolFieldUpdateOperationsInput | boolean
-    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    update_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    orders?: ordersUpdateOneWithoutFriends_orderNestedInput
-  }
-
-  export type friends_orderUncheckedUpdateWithoutFriendsInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    orders_id?: NullableIntFieldUpdateOperationsInput | number | null
-    friend_order_price?: BigIntFieldUpdateOperationsInput | bigint | number
-    is_paid?: BoolFieldUpdateOperationsInput | boolean
-    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    update_at?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type friends_orderUncheckedUpdateManyWithoutFriendsInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    orders_id?: NullableIntFieldUpdateOperationsInput | number | null
-    friend_order_price?: BigIntFieldUpdateOperationsInput | bigint | number
-    is_paid?: BoolFieldUpdateOperationsInput | boolean
-    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    update_at?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type ordersCreateManyBillInput = {
-    id?: number
-    user_id?: number | null
-    menu_name: string
-    qty: number
-    price: bigint | number
-  }
-
-  export type ordersUpdateWithoutBillInput = {
-    menu_name?: StringFieldUpdateOperationsInput | string
-    qty?: IntFieldUpdateOperationsInput | number
-    price?: BigIntFieldUpdateOperationsInput | bigint | number
-    users?: usersUpdateOneWithoutOrdersNestedInput
-    friends_order?: friends_orderUpdateManyWithoutOrdersNestedInput
-  }
-
-  export type ordersUncheckedUpdateWithoutBillInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    user_id?: NullableIntFieldUpdateOperationsInput | number | null
-    menu_name?: StringFieldUpdateOperationsInput | string
-    qty?: IntFieldUpdateOperationsInput | number
-    price?: BigIntFieldUpdateOperationsInput | bigint | number
-    friends_order?: friends_orderUncheckedUpdateManyWithoutOrdersNestedInput
-  }
-
-  export type ordersUncheckedUpdateManyWithoutBillInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    user_id?: NullableIntFieldUpdateOperationsInput | number | null
-    menu_name?: StringFieldUpdateOperationsInput | string
-    qty?: IntFieldUpdateOperationsInput | number
-    price?: BigIntFieldUpdateOperationsInput | bigint | number
-  }
-
-  export type payment_method_detailCreateManyPayment_methodInput = {
-    id?: number
-    user_id?: number | null
-    card_number: bigint | number
-    card_name: string
-  }
-
-  export type payment_method_detailUpdateWithoutPayment_methodInput = {
-    card_number?: BigIntFieldUpdateOperationsInput | bigint | number
-    card_name?: StringFieldUpdateOperationsInput | string
-    users?: usersUpdateOneWithoutPayment_method_detailNestedInput
-    bill?: billUpdateManyWithoutPayment_method_detailsNestedInput
-  }
-
-  export type payment_method_detailUncheckedUpdateWithoutPayment_methodInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    user_id?: NullableIntFieldUpdateOperationsInput | number | null
-    card_number?: BigIntFieldUpdateOperationsInput | bigint | number
-    card_name?: StringFieldUpdateOperationsInput | string
-    bill?: billUncheckedUpdateManyWithoutPayment_method_detailsNestedInput
-  }
-
-  export type payment_method_detailUncheckedUpdateManyWithoutPayment_methodInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    user_id?: NullableIntFieldUpdateOperationsInput | number | null
-    card_number?: BigIntFieldUpdateOperationsInput | bigint | number
-    card_name?: StringFieldUpdateOperationsInput | string
-  }
-
-  export type billCreateManyPayment_method_detailsInput = {
+  export type billCreateManyPayment_accountInput = {
     id?: number
     user_id?: number | null
     description: string
     discount?: number | null
     tax: number
     service?: number | null
-    total_price: bigint | number
+    total_price?: number
     date?: Date | string
-    is_completed?: boolean
   }
 
-  export type billUpdateWithoutPayment_method_detailsInput = {
+  export type billUpdateWithoutPayment_accountInput = {
     description?: StringFieldUpdateOperationsInput | string
     discount?: NullableFloatFieldUpdateOperationsInput | number | null
     tax?: IntFieldUpdateOperationsInput | number
     service?: NullableFloatFieldUpdateOperationsInput | number | null
-    total_price?: BigIntFieldUpdateOperationsInput | bigint | number
+    total_price?: IntFieldUpdateOperationsInput | number
     date?: DateTimeFieldUpdateOperationsInput | Date | string
-    is_completed?: BoolFieldUpdateOperationsInput | boolean
     users?: usersUpdateOneWithoutBillNestedInput
-    orders?: ordersUpdateManyWithoutBillNestedInput
+    friend_order?: friend_orderUpdateManyWithoutBillNestedInput
   }
 
-  export type billUncheckedUpdateWithoutPayment_method_detailsInput = {
+  export type billUncheckedUpdateWithoutPayment_accountInput = {
     id?: IntFieldUpdateOperationsInput | number
     user_id?: NullableIntFieldUpdateOperationsInput | number | null
     description?: StringFieldUpdateOperationsInput | string
     discount?: NullableFloatFieldUpdateOperationsInput | number | null
     tax?: IntFieldUpdateOperationsInput | number
     service?: NullableFloatFieldUpdateOperationsInput | number | null
-    total_price?: BigIntFieldUpdateOperationsInput | bigint | number
+    total_price?: IntFieldUpdateOperationsInput | number
     date?: DateTimeFieldUpdateOperationsInput | Date | string
-    is_completed?: BoolFieldUpdateOperationsInput | boolean
-    orders?: ordersUncheckedUpdateManyWithoutBillNestedInput
+    friend_order?: friend_orderUncheckedUpdateManyWithoutBillNestedInput
   }
 
-  export type billUncheckedUpdateManyWithoutPayment_method_detailsInput = {
+  export type billUncheckedUpdateManyWithoutPayment_accountInput = {
     id?: IntFieldUpdateOperationsInput | number
     user_id?: NullableIntFieldUpdateOperationsInput | number | null
     description?: StringFieldUpdateOperationsInput | string
     discount?: NullableFloatFieldUpdateOperationsInput | number | null
     tax?: IntFieldUpdateOperationsInput | number
     service?: NullableFloatFieldUpdateOperationsInput | number | null
-    total_price?: BigIntFieldUpdateOperationsInput | bigint | number
+    total_price?: IntFieldUpdateOperationsInput | number
     date?: DateTimeFieldUpdateOperationsInput | Date | string
-    is_completed?: BoolFieldUpdateOperationsInput | boolean
   }
 
 
@@ -12802,53 +9137,37 @@ export namespace Prisma {
      */
     export type UsersCountOutputTypeArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = UsersCountOutputTypeDefaultArgs<ExtArgs>
     /**
-     * @deprecated Use OrdersCountOutputTypeDefaultArgs instead
+     * @deprecated Use Friend_orderCountOutputTypeDefaultArgs instead
      */
-    export type OrdersCountOutputTypeArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = OrdersCountOutputTypeDefaultArgs<ExtArgs>
-    /**
-     * @deprecated Use FriendsCountOutputTypeDefaultArgs instead
-     */
-    export type FriendsCountOutputTypeArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = FriendsCountOutputTypeDefaultArgs<ExtArgs>
+    export type Friend_orderCountOutputTypeArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = Friend_orderCountOutputTypeDefaultArgs<ExtArgs>
     /**
      * @deprecated Use BillCountOutputTypeDefaultArgs instead
      */
     export type BillCountOutputTypeArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = BillCountOutputTypeDefaultArgs<ExtArgs>
     /**
-     * @deprecated Use Payment_methodCountOutputTypeDefaultArgs instead
+     * @deprecated Use Payment_accountCountOutputTypeDefaultArgs instead
      */
-    export type Payment_methodCountOutputTypeArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = Payment_methodCountOutputTypeDefaultArgs<ExtArgs>
-    /**
-     * @deprecated Use Payment_method_detailCountOutputTypeDefaultArgs instead
-     */
-    export type Payment_method_detailCountOutputTypeArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = Payment_method_detailCountOutputTypeDefaultArgs<ExtArgs>
+    export type Payment_accountCountOutputTypeArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = Payment_accountCountOutputTypeDefaultArgs<ExtArgs>
     /**
      * @deprecated Use usersDefaultArgs instead
      */
     export type usersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = usersDefaultArgs<ExtArgs>
     /**
-     * @deprecated Use ordersDefaultArgs instead
+     * @deprecated Use order_detailDefaultArgs instead
      */
-    export type ordersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = ordersDefaultArgs<ExtArgs>
+    export type order_detailArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = order_detailDefaultArgs<ExtArgs>
     /**
-     * @deprecated Use friends_orderDefaultArgs instead
+     * @deprecated Use friend_orderDefaultArgs instead
      */
-    export type friends_orderArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = friends_orderDefaultArgs<ExtArgs>
-    /**
-     * @deprecated Use friendsDefaultArgs instead
-     */
-    export type friendsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = friendsDefaultArgs<ExtArgs>
+    export type friend_orderArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = friend_orderDefaultArgs<ExtArgs>
     /**
      * @deprecated Use billDefaultArgs instead
      */
     export type billArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = billDefaultArgs<ExtArgs>
     /**
-     * @deprecated Use payment_methodDefaultArgs instead
+     * @deprecated Use payment_accountDefaultArgs instead
      */
-    export type payment_methodArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = payment_methodDefaultArgs<ExtArgs>
-    /**
-     * @deprecated Use payment_method_detailDefaultArgs instead
-     */
-    export type payment_method_detailArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = payment_method_detailDefaultArgs<ExtArgs>
+    export type payment_accountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = payment_accountDefaultArgs<ExtArgs>
 
   /**
    * Batch Payload for updateMany & deleteMany & createMany

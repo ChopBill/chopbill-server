@@ -9,6 +9,8 @@ import { AppController } from './app.controller';
 import { UsersModule } from './users/users.module';
 import { PassportModule } from '@nestjs/passport';
 import { JwtModule } from '@nestjs/jwt';
+import { PaymentAccountModule } from 'payment-accounts/payments.module';
+import { BillModule } from 'bills.ts/bills.module';
 
 @Global()
 @Module({
@@ -18,6 +20,8 @@ import { JwtModule } from '@nestjs/jwt';
     }),
     AuthModule,
     UsersModule,
+    PaymentAccountModule,
+    BillModule,
     PassportModule.register({ defaultStrategy: 'jwt', session: false }),
     JwtModule.register({
       secret: process.env.SECRET_KEY,
